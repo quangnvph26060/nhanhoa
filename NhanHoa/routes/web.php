@@ -28,11 +28,6 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 
 Route::middleware(['checkLogin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::prefix('profit')->name('profit.')->group(function () {
-        Route::get('', [ReportController::class, 'profitIndex'])->name('index');
-        Route::post('/profit-report', [ReportController::class, 'getProfitReportByFilterNew'])->name('getProfitReportByFilter');
-        Route::post('/profit-report-pdf', [ReportController::class, 'getProfitReportByFilterPDF'])->name('getProfitReportByFilterPDF');
-    });
      Route::get('', [DashBoardController::class, 'index'])->name('dashboard');
 
 });
