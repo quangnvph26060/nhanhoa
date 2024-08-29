@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Admin\ServerController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -41,5 +42,10 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
     Route::prefix('config')->name('config.')->group(function () {
         Route::get('', [ConfigController::class, 'index'])->name('detail');
         Route::post('', [ConfigController::class, 'update'])->name('update');
+    });
+
+    Route::prefix('server')->name('server.')->group(function () {
+        Route::get('', [ServerController::class, 'index'])->name('index');
+        Route::get('add', [ServerController::class, 'addform'])->name('addform');
     });
 });
