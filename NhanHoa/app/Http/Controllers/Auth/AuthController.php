@@ -23,11 +23,15 @@ class AuthController extends Controller
 
             if (Auth::attempt($credentials)) {
                 $user = Auth::user();
-
-                if ($user->role_id == 1) {
-                    return redirect()->route('admin.dashboard')->with('successlogin', 'Chào mừng trở lại !, Admin!');
-                } elseif ($user->role_id == 2) {
-                    return redirect()->route('staff.index');
+                // dd($user);
+                if ($user->is_active == 1) {
+                    if ($user->role_id == 1) {
+                        return redirect()->route('admin.dashboard')->with('successlogin', 'Chào mừng trở lại !, Admin!');
+                    } elseif ($user->role_id == 2) {
+                        return redirect()->route('staff.index');
+                    }
+                }else{
+                    return back()->withErrors(['email' => 'Tài khoản chưa được kích hoạt.']);
                 }
             } else {
                 // Nếu xác thực thất bại
@@ -44,5 +48,9 @@ class AuthController extends Controller
         return redirect()->route('form_login');
     }
 
-    
+    public function register(Request $request)
+    {
+        $tt = $request->all();
+        $register = $this->userService->register($tt);
+    }
 }

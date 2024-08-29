@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
@@ -20,14 +21,25 @@ Route::get('/', function () {
     return view('login.index');
 })->name('form_login');
 
+Route::get('/user', function () {
+    return view('welcome');
+})->name('user');
+
+
 Route::post('', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::post('/register', [AuthController::class, 'register'])->name('register');
 
 Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
 
-Route::middleware(['checkLogin'])->prefix('admin')->name('admin.')->group(function () {
-     Route::get('', [DashBoardController::class, 'index'])->name('dashboard');
+Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('', [DashBoardController::class, 'index'])->name('dashboard');
 
+    Route::prefix('config')->name('config.')->group(function () {
+        Route::get('', [ConfigController::class, 'index'])->name('detail');
+        Route::post('', [ConfigController::class, 'update'])->name('update');
+    });
 });

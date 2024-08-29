@@ -3,7 +3,7 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
             <a href="index.html" class="logo">
-                <img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand" height="20" />
+                <img src="{{ asset('assets/img/kaiadmin/logo_light.svg') }}" alt="navbar brand" class="navbar-brand" height="20" />
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -23,7 +23,7 @@
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
                 <li class="nav-item active">
-                    <a  href="" class="collapsed" >
+                    <a  href="{{ route('admin.dashboard') }}" class="collapsed" >
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
 
@@ -199,9 +199,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../../documentation/index.html">
+                    <a href="{{ route('admin.config.detail') }}">
                         <i class="fas fa-file"></i>
-                        <p>Documentation</p>
+                        <p>Cấu hình</p>
                         <span class="badge badge-secondary">1</span>
                     </a>
                 </li>

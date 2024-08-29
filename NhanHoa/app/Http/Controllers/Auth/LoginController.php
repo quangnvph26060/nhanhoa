@@ -30,14 +30,15 @@ class LoginController extends Controller
                     'name' => $user->name,
                     'email' => $user->email,
                     'google_id' => $user->id,
-                    'role_id' => 2
+                    'role_id' => 2,
+                    'is_active' => 1
                 ]);
             }
 
 
             Auth::login($authUser, true);
 
-            return redirect()->route('admin.dashboard')->with('success', 'Đăng nhập thành công!');
+            return redirect()->route('user')->with('success', 'Đăng nhập thành công!');
         } catch (\Exception $e) {
             return redirect()->route('form_login')->withErrors(['message' => 'Đăng nhập thất bại.']);
         }

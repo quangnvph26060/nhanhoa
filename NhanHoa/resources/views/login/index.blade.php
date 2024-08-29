@@ -17,11 +17,18 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="{{ asset('login/css/style.css') }}">
+    <script src="{{ asset('validator/validator.js') }}"></script>
 
     <title>Login</title>
     <style>
         .form-block { display: none; }
         .form-block.active { display: block; }
+        .error{
+            color: red;
+            padding: 5px 0px 0px 10px ;
+            font-size: 13px;
+
+        }
     </style>
 </head>
 
@@ -81,30 +88,35 @@
                             <div class="text-center mb-5">
                                 <h3 class="text-uppercase">Register to <strong>Colorlib</strong></h3>
                             </div>
-                            <form method="post" >
+                            <form method="post" action="{{ route('register') }}" id="registersubmit">
                                 @csrf
                                 <div class="form-group first">
                                     <label for="name">Họ Tên</label>
-                                    <input type="text" class="form-control" placeholder="Họ và tên" name="name" id="name" required>
+                                    <input type="text" class="form-control" placeholder="Họ và tên" name="name" id="nameregister" required>
+                                    <p class="error" id="nameregister_error"></p>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="registerEmail">Email</label>
-                                    <input type="email" class="form-control" placeholder="your-email@gmail.com" name="email"  required>
+                                    <input type="email" class="form-control" placeholder="your-email@gmail.com" name="email" id="emailregister"  required>
+                                    <p class="error" id="emailregister_error"></p>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="phone">Số Điện Thoại</label>
-                                    <input type="tel" class="form-control" placeholder="Số điện thoại" name="phone" id="phone" required>
+                                    <input type="tel" class="form-control" placeholder="Số điện thoại" name="phone" id="phoneregister" required>
+                                    <p class="error" id="phoneregister_error"></p>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="registerPassword">Mật Khẩu</label>
-                                    <input type="password" class="form-control" placeholder="Mật khẩu" name="password"  required>
+                                    <input type="password" class="form-control" placeholder="Mật khẩu" name="password" id="passwordregister"  required>
+                                    <p class="error" id="passwordregister_error"></p>
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="confirm_password">Xác Nhận Mật Khẩu</label>
-                                    <input type="password" class="form-control" placeholder="Xác nhận mật khẩu" name="password_confirmation" id="confirm_password" required>
+                                    <input type="password" class="form-control" placeholder="Xác nhận mật khẩu" name="password_confirmation" id="confirm_passwordregister" required>
+                                    <p class="error" id="confirm_passwordregister_error"></p>
                                 </div>
 
-                                <input type="submit" value="Đăng Ký" class="btn btn-block py-2 btn-primary">
+                                <input type="button" value="Đăng Ký" onclick="submitaddProduct(event)" class="btn btn-block py-2 btn-primary">
 
                             </form>
                             <div style="text-align: center; margin-top: 20px;">
@@ -163,6 +175,69 @@
             document.getElementById('loginForm').classList.remove('active');
             document.getElementById('registerForm').classList.remove('active');
             document.getElementById('forgotPasswordForm').classList.add('active');
+        }
+
+
+        var validateorder = {
+            'nameregister': {
+                'element': document.getElementById('nameregister'),
+                'error': document.getElementById('nameregister_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E001')
+                }, ]
+            },
+            'emailregister': {
+                'element': document.getElementById('emailregister'),
+                'error': document.getElementById('emailregister_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E002')
+                }, ]
+            },
+            'phoneregister': {
+                'element': document.getElementById('phoneregister'),
+                'error': document.getElementById('phoneregister_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E003')
+                }, ]
+            },
+            'passwordregister': {
+                'element': document.getElementById('passwordregister'),
+                'error': document.getElementById('passwordregister_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E004')
+                }, ]
+            },
+            'confirm_passwordregister': {
+                'element': document.getElementById('confirm_passwordregister'),
+                'error': document.getElementById('confirm_passwordregister_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E005')
+                }, ]
+            },
+
+
+        }
+
+        function submitaddProduct(event) {
+            event.preventDefault();
+            if (validateAllFields(validateorder)) {
+                document.getElementById('registersubmit').submit();
+            }
         }
     </script>
 </body>
