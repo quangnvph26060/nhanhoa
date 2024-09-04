@@ -23,4 +23,11 @@ class Server extends Model
         'international',
         'price'
     ];
+
+    protected $appends = ['promotion'];
+
+    public function getPromotionAttribute()
+    {
+        return ServerPromotion::where('server_id', $this->attributes['id'])->get();
+    }
 }

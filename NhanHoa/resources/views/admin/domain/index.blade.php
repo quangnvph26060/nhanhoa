@@ -153,7 +153,8 @@
     #category_kho .form-check {
         margin-bottom: 10px;
     }
-    .page-inner{
+
+    .page-inner {
         min-height: 850px
     }
 </style>
@@ -166,7 +167,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách máy chủ</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách tên miền</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -174,7 +175,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.server.addform') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.domain.addform') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>
@@ -187,33 +188,34 @@
                                         aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-                                                <th>Tên máy chủ</th>
-                                                <th>CPU</th>
-                                                <th>SSD</th>
-                                                <th>RAM</th>
-                                                <th>Dữ liệu chuyền vào</th>
-                                                <th>IP</th>
+                                                <th>Tên miền</th>
+                                                <th>Loại tên miền</th>
+                                                <th>Lệ phí đăng ký</th>
+                                                <th>Phí duy trì</th>
                                                 <th>Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($servers as $key => $item)
+                                            @if($domains)
+                                            @foreach($domains as $key => $item)
                                             <tr>
                                                 <td><a href="#" data-toggle="modal"
                                                         data-target="#productModal{{ $key }}">{{ $item->name }}</a></td>
-                                                <td>{{ $item->cpu }}</td>
-                                                <td>{{ $item->ssd }}</td>
-                                                <td>{{ $item->ram }}GB</td>
-                                                <td>{{ $item->data }}</td>
-                                                <td>{{ $item->ip }}</td>
+                                                <td>{{ $item->domaintype_id == 1 ? 'Tên miền quốc tế' : 'Tên miền quốc
+                                                    gia' }}</td>
+                                                <td>{{number_format($item->le_phi) }}</td>
+                                                <td>{{ number_format($item->phiduytri) }} đ</td>
                                                 <td align="center">
-                                                    <a class="btn btn-warning" href="{{ route('admin.server.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
+                                                    <a class="btn btn-warning"
+                                                        href="{{ route('admin.domain.editform', ['id' => $item->id]) }}"><i
+                                                            class="fas fa-edit"></i></a>
                                                     <button class="btn btn-danger btn-delete" data-id="{{ $item->id }}"
                                                         onclick="deleteConfirmation({{ $item->id }})"><i
                                                             class="fa-solid fa-trash"></i></button>
 
-                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.server.delete', ['id' => $item->id]) }}" method="POST"
-                                                        style="display: none;">
+                                                    <form id="delete-form-{{ $item->id }}"
+                                                        action="{{ route('admin.domain.delete', ['id' => $item->id]) }}"
+                                                        method="POST" style="display: none;">
                                                         @csrf
                                                     </form>
                                                 </td>
@@ -233,17 +235,22 @@
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p><strong>Tên:</strong> {{ $item->name }}</p>
-                                                            <p><strong>CPU:</strong> {{ $item->cpu }}</p>
-                                                            <p><strong>SSD:</strong> {{ $item->ssd }}</p>
-                                                            <p><strong>RAM:</strong> {{ $item->ram }} GB</p>
-                                                            <p><strong>Dữ liệu chuyền vào:</strong> {{ $item->data }}
-                                                            </p>
-                                                            <p><strong>IP:</strong> {{ $item->ip }}</p>
-                                                            <p><strong>Băng thông trong nước:</strong> {{
-                                                                $item->domestic }}Mbps</p>
-                                                            <p><strong>Băng thông quốc tế :</strong> {{
-                                                                $item->international }}Mbps</p>
+                                                            <p><strong>Tên miền :</strong> {{ $item->name }}</p>
+                                                            <p><strong>Loại:</strong> {{ $item->domaintype_id == 1 ?
+                                                                'Tên miền quốc tế' : 'Tên miền quốc gia' }}</p>
+                                                            <p><strong>Phí đăng ký :</strong> {{
+                                                                number_format($item->le_phi) }} đ</p>
+                                                            <p><strong>Phí duy trì:</strong> {{
+                                                                number_format($item->phiduytri) }} đ</p>
+                                                            <p><strong>Dịch vụ quản trị tên miền năm đầu:</strong> {{
+                                                                number_format($item->dichvu) }} đ</p>
+                                                            <p><strong>Dịch vụ quản trị tên miền năm tiếp theo:</strong>
+                                                                {{ number_format($item->dicvunamsau) }} đ</p>
+                                                            <p><strong>Tổng tiền năm đầu :</strong>
+                                                                {{ number_format(($item->le_phi + $item->phiduytri +
+                                                                $item->dichvu) + $item->dichvu * 10/100) }} đ</p>
+                                                            <p><strong>Tổng tiền năm tiếp theo :</strong>
+                                                                {{ number_format(($item->phiduytri + $item->dicvunamsau) + $item->dicvunamsau * 10/100) }} đ</p>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
@@ -253,6 +260,8 @@
                                                 </div>
                                             </div>
                                             @endforeach
+                                            @endif
+
 
                                         </tbody>
                                     </table>
