@@ -716,7 +716,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="https://esoc.vn" title="Hợp đồng điện tử"
+                                <a class="menu-link" href="{{route('page.electronic-contract')}}" title="Hợp đồng điện tử"
                                     target="_blank">
                                     <div class="item-menu">
                                         <div class="icon">
@@ -735,7 +735,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="https://hoadon.biz" title="Hóa đơn điện tử"
+                                <a class="menu-link" href="{{route('page.electronic-invoice')}}" title="Hóa đơn điện tử"
                                     target="_blank">
                                     <div class="item-menu">
                                         <div class="icon">
@@ -824,7 +824,7 @@
     <div class="col-lg-2 col-md-2">
         <div class="header-right">
             <div class="btn-action-header btn-promotion">
-                <a href="https://nhanhoa.com/uu-dai-nhan-hoa.html" title="Chương trình ưu đãi đang diễn ra">
+                <a href="{{route('page.affiliate')}}" title="Chương trình ưu đãi đang diễn ra">
                     Ưu đãi
                 </a>
             </div>

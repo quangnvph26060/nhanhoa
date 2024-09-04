@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body >
     <header>
         <div class="header-top fix_nav {{ request()->routeIs('page.domain-registration') ? 'bg-light' : '' }}">
             <div class="container">

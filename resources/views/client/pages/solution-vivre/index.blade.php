@@ -10,41 +10,22 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="js/easy-responsive-tabs.css " />
+    <link href="{{asset('client/assets/css/bootstrap/bootstrap.v1.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('client/assets/css/easy-responsive-tabs.css')}}" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,bold&subset=all" rel="stylesheet">
-
-    <link rel='canonical' href='https://vfone.vn:443/' />
-    <link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
-    <link type="text/css" rel="stylesheet" href="css/animate.css" />
-    <link href="css/style.css?v=1725414693" rel="stylesheet" type="text/css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css" />
+    <link type="text/css" rel="stylesheet" href="{{asset('client/assets/css/jquery/jquery.mmenu.all.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('client/assets/css/animate.css')}}" />
+    <link href="{{asset('client/assets/css/solution-vfone.css')}}" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset('client/assets/css/jquery/jquery.datetimepicker.css')}}" />
 
 
-    <style>
-        @media(max-width: 414px) {
-            #vfone_call {
-
-                left: 0 !important;
-                bottom: 40% !important;
-                left: auto;
-
-                width: auto;
-                height: auto;
-            }
-        }
-
-        .image-footer {
-            width: 140px;
-        }
-    </style>
     <script src="{{asset('client/assets/js/jquery/jquery-3.6.0.min.js')}}"></script>
     <!-- Important Owl stylesheet -->
-    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="{{asset('client/assets/css/carousel/owl.carousel.css')}}">
     <!-- Default Theme -->
-    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="{{asset('client/assets/css/carousel/owl.theme.css')}}">
     <!-- Include js plugin -->
-    <script src="owl-carousel/owl.carousel.js"></script>
+    <script src="{{asset('client/assets/js/carousel/owl.carousel.js')}}"></script>
     <!-- Add mousewheel plugin (this is optional) -->
     <script src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
     <!-- Add fancyBox -->
@@ -1504,62 +1485,24 @@
 
                 <div style="clear:both"></div>
             </div>
-            <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQRBZW" height="0"
-                    width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
-            <script>
-                $().ready(function() {
-                    $('.iconheart, .btn_addheart').click(function() {
-                        idproduct = $(this).attr('data-id')
-                        $.ajax({
-                            type: "POST",
-                            url: "ajax/addcheck.php",
-                            data: {
-                                idProduct: idproduct
-                            },
-                            success: function(result) {
-                                alert(result);
-                            }
-                        });
-                    })
-                })
-            </script>
+
+            @include('client.include.section-vfone')
+
             <script src="js/wow.js"></script>
             <script>
                 wow = new WOW({
                     animateClass: 'animated',
                     offset: 100,
                     callback: function(box) {
-                        console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                        // console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
                     }
                 });
                 wow.init();
             </script>
 
-            <script>
-                $().ready(function() {
-                    $('.btnaddtocart, .iconcart , .btn_addcart ').click(function() {
-                        idproduct = $(this).attr('data-id')
-                        $.ajax({
-                            type: "POST",
-                            url: "ajax/add_giohang.php",
-                            data: {
-                                pid: idproduct
-                            },
-                            success: function(string) {
-                                setTimeout(function() {
-                                    window.location.href = "thanh-toan.html";
-                                }, 500);
-                            }
-                        })
-                    })
-                })
-            </script>
             <!-- Ads Banner -->
             <div id="adsModal" class="modal fade in" role="dialog">
                 <div class="modal-dialog modal-dialog-centered">
-
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-body" style="padding:0;">
@@ -1581,9 +1524,6 @@
             </div>
 
             <!-- Ads Banner -->
-
-
-
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script>
                 $(document).on("click", "#closeAdsModal", function() {

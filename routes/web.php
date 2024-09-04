@@ -1,20 +1,21 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Page\SslController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Auth\LoginController;
-
-use App\Http\Controllers\Admin\ConfigController;
-use App\Http\Controllers\Admin\DashBoardController;
 
 use App\Http\Controllers\Page\HomeController;
+use App\Http\Controllers\Auth\LoginController;
+
 use App\Http\Controllers\Page\CloudController;
-use App\Http\Controllers\Page\DomainController;
 use App\Http\Controllers\Page\EmailController;
+use App\Http\Controllers\Page\DomainController;
 use App\Http\Controllers\Page\ServerController;
+use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Page\HostingController;
 use App\Http\Controllers\Page\SolutionController;
-use App\Http\Controllers\Page\SslController;
+use App\Http\Controllers\Page\AffiliateController;
+use App\Http\Controllers\Admin\DashBoardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +58,15 @@ Route::name('page.')->group(function () {
     Route::get('ssl-bao-mat/bang-gia-geotrust-ssl', [SslController::class, 'geotrust'])->name('ssl-geotrust');
     Route::get('ssl-bao-mat/bang-gia-symantec-ssl', [SslController::class, 'symantec'])->name('ssl-symantec');
 
-    Route::get('giai-phap/tong-dai-vfone', [SolutionController::class, 'vfone'])->name('solution-vfone');
+    Route::prefix('giai-phap')->group(function () {
+        Route::get('tong-dai-vfone', [SolutionController::class, 'vfone'])->name('solution-vfone');
+        Route::get('hop-dong-dien-tu', [SolutionController::class, 'esoc'])->name('electronic-contract');
+        Route::get('hoa-don-dien-tu', [SolutionController::class, 'electronicInvoice'])->name('electronic-invoice');
+    });
+
+    Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');
+    Route::get('tin-tuc', [AffiliateController::class, 'news'])->name('news');
+    Route::get('lien-he', [AffiliateController::class, 'contact'])->name('contact');
 });
 
 
