@@ -133,8 +133,8 @@
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="addserver"
-                                action="{{ route('admin.server.addsubmit') }}">
+                            <form method="POST" enctype="multipart/form-data" id="addcloud"
+                                action="{{ route('admin.cloud.addsubmit') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
@@ -143,67 +143,87 @@
                                             <label for="name" class="form-label">Tên sản phẩm</label>
                                             <input type="text" class="form-control" name="name" id="name">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="name_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="name_error"></span>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <label for="price" class="form-label">Giá nhập<span class="text text-danger">*</span></label>
-                                            <input value="" min='1' required class="form-control" name="price" type="number" id="price">
+                                            <label for="price" class="form-label">Giá nhập<span
+                                                    class="text text-danger">*</span></label>
+                                            <input value="" min='1' required class="form-control" name="price"
+                                                type="number" id="price">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="price_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="price_error"></span>
                                             </div>
                                         </div>
+
+                                        <div>
+                                            <label for="cloudtypes_id" class="form-label">Loại Cloud </label>
+                                            <select class="form-select" name="cloudtypes_id" id="cloudtypes_id">
+                                                <option value="">Chọn loại Hosting</option>
+                                                <option value="1">SSD Cloud VPS </option>
+                                                <option value="2">SSD Cloud Server</option>
+                                                <option value="3">SSD Cloud High RAM</option>
+                                                <option value="4">SSD Cloud High CPU</option>
+                                                <option value="5">SSD Cloud Storage</option>
+                                            </select>
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="cloudtypes_id_error"></span>
+                                            </div>
+                                        </div>
+
                                         <div>
                                             <label for="cpu" class="form-label">CPU</label>
                                             <input type="text" class="form-control" name="cpu" id="cpu">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="cpu_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="cpu_error"></span>
                                             </div>
                                         </div>
                                         <div>
                                             <label for="core" class="form-label">Core</label>
                                             <input type="text" class="form-control" name="core" id="core">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="core_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="core_error"></span>
                                             </div>
                                         </div>
+
+                                    </div>
+                                    <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="ssd" class="form-label">SSD</label>
                                             <input type="text" class="form-control" name="ssd" id="ssd">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="ssd_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="ssd_error"></span>
                                             </div>
                                         </div>
                                         <div>
                                             <label for="ram" class="form-label">RAM</label>
                                             <input type="number" class="form-control" name="ram" id="ram">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="ram_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="ram_error"></span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-6 add_product">
-                                        <!-- Existing fields -->
                                         <div>
                                             <label for="ip" class="form-label">IP</label>
                                             <input type="text" class="form-control" name="ip" id="ip">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="ip_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="ip_error"></span>
                                             </div>
                                         </div>
                                         <div>
                                             <label for="bandwidth" class="form-label">Bandwidth</label>
                                             <input type="text" class="form-control" name="bandwidth" id="bandwidth">
                                             <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="bandwidth_error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="cloudtypes_id" class="form-label">Cloud Types</label>
-                                            <input type="text" class="form-control" name="cloudtypes_id" id="cloudtypes_id">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="cloudtypes_id_error"></span>
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="bandwidth_error"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -213,9 +233,9 @@
                                         <label class="form-label">Khuyến mãi</label>
                                         <select id="multiple-select" class="form-control" name="promotion[]" multiple>
                                             @forelse($promotion as $key => $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @empty
-                                                <!-- Không có dữ liệu để hiển thị -->
+                                            <!-- Không có dữ liệu để hiển thị -->
                                             @endforelse
                                         </select>
                                     </div>

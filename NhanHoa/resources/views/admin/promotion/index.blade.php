@@ -153,7 +153,8 @@
     #category_kho .form-check {
         margin-bottom: 10px;
     }
-    .page-inner{
+
+    .page-inner {
         min-height: 850px
     }
 </style>
@@ -166,7 +167,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách máy chủ</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách Khuyến mãi</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -174,7 +175,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.server.addform') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.promotion.addform') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>
@@ -187,73 +188,36 @@
                                         aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-                                                <th>Tên máy chủ</th>
-                                                <th>CPU</th>
-                                                <th>SSD</th>
-                                                <th>RAM</th>
-                                                <th>Dữ liệu chuyền vào</th>
-                                                <th>IP</th>
+                                                <th>Khuyến mãi</th>
+                                                <th>Mô tả</th>
                                                 <th>Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($servers as $key => $item)
+                                            @forelse ( $promotions as $key => $item )
                                             <tr>
-                                                <td><a href="#" data-toggle="modal"
-                                                        data-target="#productModal{{ $key }}">{{ $item->name }}</a></td>
-                                                <td>{{ $item->cpu }}</td>
-                                                <td>{{ $item->ssd }}</td>
-                                                <td>{{ $item->ram }}GB</td>
-                                                <td>{{ $item->data }}</td>
-                                                <td>{{ $item->ip }}</td>
+                                                <td>{{ $item->name }}</td>
+                                                <td>{{ $item->description  }}</td>
                                                 <td align="center">
-                                                    <a class="btn btn-warning" href="{{ route('admin.server.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
+                                                    <a class="btn btn-warning"
+                                                        href="{{ route('admin.promotion.editform', ['id' => $item->id]) }}"><i
+                                                            class="fas fa-edit"></i></a>
                                                     <button class="btn btn-danger btn-delete" data-id="{{ $item->id }}"
                                                         onclick="deleteConfirmation({{ $item->id }})"><i
                                                             class="fa-solid fa-trash"></i></button>
 
-                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.server.delete', ['id' => $item->id]) }}" method="POST"
-                                                        style="display: none;">
+                                                    <form id="delete-form-{{ $item->id }}"
+                                                        action="{{ route('admin.promotion.delete', ['id' => $item->id]) }}"
+                                                        method="POST" style="display: none;">
                                                         @csrf
                                                     </form>
                                                 </td>
                                             </tr>
-
-                                            <div class="modal fade" id="productModal{{ $key }}" tabindex="-1"
-                                                role="dialog" aria-labelledby="productModalLabel{{ $key }}"
-                                                aria-hidden="true">
-                                                <div class="modal-dialog" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="productModalLabel{{ $key }}">
-                                                                Thông tin chi tiết</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <p><strong>Tên:</strong> {{ $item->name }}</p>
-                                                            <p><strong>CPU:</strong> {{ $item->cpu }}</p>
-                                                            <p><strong>SSD:</strong> {{ $item->ssd }}</p>
-                                                            <p><strong>RAM:</strong> {{ $item->ram }} GB</p>
-                                                            <p><strong>Dữ liệu chuyền vào:</strong> {{ $item->data }}
-                                                            </p>
-                                                            <p><strong>IP:</strong> {{ $item->ip }}</p>
-                                                            <p><strong>Băng thông trong nước:</strong> {{
-                                                                $item->domestic }}Mbps</p>
-                                                            <p><strong>Băng thông quốc tế :</strong> {{
-                                                                $item->international }}Mbps</p>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary"
-                                                                data-dismiss="modal">Đóng</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            @endforeach
-
+                                            @empty
+                                            <tr>
+                                                <td  colspan="5">Chưa có sản phảm nào</td>
+                                            </tr>
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>
@@ -274,7 +238,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Máy chủ',
+                    title: 'Hosting',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

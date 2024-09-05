@@ -13,6 +13,7 @@ class Cloud extends Model
 
     protected $fillable = [
         'name',
+        'price',
         'cpu',
         'core',
         'ssd',
@@ -20,15 +21,15 @@ class Cloud extends Model
         'ip',
         'bandwidth',
         'cloudtypes_id',
-        'price'
+
     ];
 
-    protected $appends = ['cloudtype'];
+    protected $appends = ['promotion'];
 
-    public function getCloudtypeAttribute()
+    public function getPromotionAttribute()
     {
-        return Cloudtype::where('id', $this->attributes['cloudtypes_id'])->first();
-    }
+        return CloudPromotion::where('cloud_id', $this->attributes['id'])->get();
+    }  
 
 
 }
