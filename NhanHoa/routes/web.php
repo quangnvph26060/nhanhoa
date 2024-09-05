@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ServerController;
 use App\Http\Controllers\Admin\SslController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Page\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,13 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+
+
+
+
 
 Route::get('/', function () {
     return view('login.index');
@@ -107,3 +115,46 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
 
 
 });
+
+
+
+
+
+// fe
+Route::name('page.')->group(function () {
+    // Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('ten-mien/dang-ky-ten-mien', [DomainController::class, 'index'])->name('domain-registration');
+
+    Route::get('hosting/linux-hosting', [HostingController::class, 'linux'])->name('linux-hosting');
+    Route::get('hosting/windows-hosting', [HostingController::class, 'windows'])->name('windows-hosting');
+
+    Route::prefix('may-chu')->group(function () {
+        Route::get('may-chu-cloud-server', [CloudController::class, 'server'])->name('cloud-server');
+        Route::get('may-chu-cloud-backup', [CloudController::class, 'backup'])->name('cloud-backup');
+        Route::get('may-chu-cloud-storage', [CloudController::class, 'storage'])->name('cloud-storage');
+        Route::get('vps-cloud-quoc-te', [CloudController::class, 'international'])->name('cloud-international');
+        Route::get('vps-cloud-quoc-te', [CloudController::class, 'international'])->name('cloud-international');
+        Route::get('may-chu', [ServerController::class, 'dedicatedServer'])->name('dedicated-server');
+        Route::get('cho-dat-may-chu-colo', [ServerController::class, 'serverLocation'])->name('server-location');
+        Route::get('backup365', [ServerController::class, 'serverBackup'])->name('server-backup');
+        Route::get('dich-vu-quan-ly-may-chu', [ServerController::class, 'serverAdministration'])->name('server-administration');
+    });
+
+    Route::get('email/email-server', [EmailController::class, 'emailServer'])->name('email-server');
+    Route::get('email/google-workspace', [EmailController::class, 'googleWorkspace'])->name('google-workspace');
+
+    Route::get('ssl-bao-mat/bang-gia-comodo-ssl', [SslController::class, 'comodo'])->name('ssl-comodo');
+    Route::get('ssl-bao-mat/bang-gia-geotrust-ssl', [SslController::class, 'geotrust'])->name('ssl-geotrust');
+    Route::get('ssl-bao-mat/bang-gia-symantec-ssl', [SslController::class, 'symantec'])->name('ssl-symantec');
+
+    Route::prefix('giai-phap')->group(function () {
+        Route::get('tong-dai-vfone', [SolutionController::class, 'vfone'])->name('solution-vfone');
+        Route::get('hop-dong-dien-tu', [SolutionController::class, 'esoc'])->name('electronic-contract');
+        Route::get('hoa-don-dien-tu', [SolutionController::class, 'electronicInvoice'])->name('electronic-invoice');
+    });
+
+    Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');
+    Route::get('tin-tuc', [AffiliateController::class, 'news'])->name('news');
+    Route::get('lien-he', [AffiliateController::class, 'contact'])->name('contact');
+});
+//
