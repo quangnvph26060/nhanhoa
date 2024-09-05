@@ -174,7 +174,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.server.addform') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.cloud.addform') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>
@@ -187,32 +187,30 @@
                                         aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-                                                <th>Tên máy chủ</th>
+                                                <th>Tên cloud</th>
                                                 <th>CPU</th>
-                                                <th>SSD</th>
+                                                <th>CORE</th>
                                                 <th>RAM</th>
-                                                <th>Dữ liệu chuyền vào</th>
                                                 <th>IP</th>
                                                 <th>Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($servers as $key => $item)
+                                            @foreach($clouds as $key => $item)
                                             <tr>
                                                 <td><a href="#" data-toggle="modal"
                                                         data-target="#productModal{{ $key }}">{{ $item->name }}</a></td>
                                                 <td>{{ $item->cpu }}</td>
                                                 <td>{{ $item->ssd }}</td>
                                                 <td>{{ $item->ram }}GB</td>
-                                                <td>{{ $item->data }}</td>
                                                 <td>{{ $item->ip }}</td>
                                                 <td align="center">
-                                                    <a class="btn btn-warning" href="{{ route('admin.server.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
+                                                    <a class="btn btn-warning" href="{{ route('admin.cloud.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
                                                     <button class="btn btn-danger btn-delete" data-id="{{ $item->id }}"
                                                         onclick="deleteConfirmation({{ $item->id }})"><i
                                                             class="fa-solid fa-trash"></i></button>
 
-                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.server.delete', ['id' => $item->id]) }}" method="POST"
+                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.cloud.delete', ['id' => $item->id]) }}" method="POST"
                                                         style="display: none;">
                                                         @csrf
                                                     </form>
@@ -225,25 +223,29 @@
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="productModalLabel{{ $key }}">
-                                                                Thông tin chi tiết</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
+                                                            <h5 class="modal-title" id="productModalLabel{{ $key }}">Thông tin chi tiết</h5>
+                                                            {{-- <button type="button" class="close" data-dismiss="modal"
                                                                 aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
-                                                            </button>
+                                                            </button> --}}
                                                         </div>
                                                         <div class="modal-body">
                                                             <p><strong>Tên:</strong> {{ $item->name }}</p>
                                                             <p><strong>CPU:</strong> {{ $item->cpu }}</p>
                                                             <p><strong>SSD:</strong> {{ $item->ssd }}</p>
                                                             <p><strong>RAM:</strong> {{ $item->ram }} GB</p>
-                                                            <p><strong>Dữ liệu chuyền vào:</strong> {{ $item->data }}
-                                                            </p>
                                                             <p><strong>IP:</strong> {{ $item->ip }}</p>
-                                                            <p><strong>Băng thông trong nước:</strong> {{
-                                                                $item->domestic }}Mbps</p>
-                                                            <p><strong>Băng thông quốc tế :</strong> {{
-                                                                $item->international }}Mbps</p>
+                                                            <p><strong>Bandwidth:</strong> {{ $item->bandwidth }}</p>
+                                                            <div>
+                                                                <span><strong>Khuyễn mãi :</strong></span>
+                                                                @forelse ( $item->promotion as $promotion )
+                                                                   <div style="margin-left: 10px; margin-top: 5px">
+                                                                    + {{ $promotion->promotion->name }}
+                                                                   </div>
+                                                                @empty
+
+                                                                @endforelse
+                                                            </div>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
