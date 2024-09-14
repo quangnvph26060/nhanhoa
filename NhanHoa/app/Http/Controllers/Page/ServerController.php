@@ -15,7 +15,6 @@ class ServerController extends Controller
 
     public function dedicatedServer(){
         $servers = $this->serverService->getServerAll();
-        //  dd($servers[0]->promotion);
         return view('client.pages.dedicated-server.index', compact('servers'));
     }
 
@@ -35,6 +34,11 @@ class ServerController extends Controller
 
     public function pay(Request $request){
         $serverPay = $this->serverService->PayServer($request->all());
+        return redirect()->back()->with('success', 'Thông báo thành công!');
+    }
+
+    public function paylocation(Request $request){
+        $serverPay = $this->serverService->PayServerLocation($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 

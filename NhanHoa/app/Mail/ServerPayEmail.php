@@ -32,7 +32,7 @@ class ServerPayEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Đặt thành công Hosting')
+        return $this->subject('Đặt thành công Server')
                     ->view('client.email.server');
     }
 }

@@ -32,7 +32,7 @@ class ServerLoactionPayEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Đặt thành công Hosting')
+        return $this->subject('Đặt thành công Vị trí Server')
                     ->view('client.email.serverlocation');
     }
 }

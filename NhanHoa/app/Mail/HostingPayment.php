@@ -32,7 +32,7 @@ class HostingPayment extends Mailable
      */
     public function build()
     {
-        return $this->subject('Đặt thành công Máy chủ')
+        return $this->subject('Đặt thành công Hosting ')
                     ->view('client.email.hosting');
     }
 

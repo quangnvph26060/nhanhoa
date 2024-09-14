@@ -59,9 +59,8 @@
                                         </ul>
                                     </div>
                                     <div class="link-add-cart add_to_cart that_data_service_1462">
-                                        <a class="btn-add-cart btn-service cart add_service_to_cart add_service_colo"
-                                            data-service_id="1462" data-service_name="Colo A - 100"
-                                            href="https://nhanhoa.com/?site=cart&act=cart_add&id=1462&cycle=12">
+                                        <a class="btn-add-cart btn-service add_service_cart"
+                                            onclick="openPopup({{ $item->id }}, '{{ $item->name }}')">
                                             <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                 <div class="rect1"></div>
                                                 <div class="rect2"></div>
@@ -69,7 +68,7 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Mua</span>
+                                            <span class="btn_text">Mua </span>
                                         </a>
                                     </div>
                                 </div>
@@ -77,210 +76,47 @@
                             @empty
 
                             @endforelse
-
-
-                            {{-- <div class="swiper-slide 1 pricing-item-order-1">
-                                <div class="item active">
-                                    <div class="bgr-top">
-                                        <img src="https://nhanhoa.com/templates/images/v2/subtract_hover.png"
-                                            alt="Bảng giá">
-                                    </div>
-                                    <span class="hot">Phổ biến</span>
-                                    <div class="icon-name">
-                                        <div class="icon">
-                                            <img src="https://nhanhoa.com/templates/images/v2/kim_cuong_hover.png"
-                                                alt="Bảng giá">
-                                        </div>
-                                        <div class="name-price">
-                                            <div class="name">
-                                                Starter
-                                            </div>
-                                            <div class="price">
-                                                <span>1.500.000 đ/</span>Tháng
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="info">
-                                        <ul class="pl-0">
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> 100
-                                                    Mbps </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dung lượng lưu trữ: </span><strong> 5
-                                                    Mbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ email: </span><strong> Không giới
-                                                    hạn</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Email forwarder: </span><strong> 1U</strong>
-                                            </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Danh sách email: </span><strong> 400W</strong>
-                                            </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Tên mienf email: </span><strong> Có
-                                                </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ IP riêng: </span><strong> Có</strong>
-                                            </li>
-
-                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                    style="color: #4ABAB9;"></i>
-                                                Tặng gói 200 hóa đơn điện tử</li>
-                                        </ul>
-                                    </div>
-                                    <div class="link-add-cart add_to_cart that_data_service_1465">
-                                        <a class="btn-add-cart btn-service cart add_service_to_cart add_service_colo"
-                                            data-service_id="1465" data-service_name="Colo A - 200"
-                                            href="https://nhanhoa.com/?site=cart&act=cart_add&id=1465&cycle=12">
-                                            <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                <div class="rect1"></div>
-                                                <div class="rect2"></div>
-                                                <div class="rect3"></div>
-                                                <div class="rect4"></div>
-                                                <div class="rect5"></div>
-                                            </div>
-                                            <span class="btn_text">Mua</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide 2 pricing-item-order-2">
-                                <div class="item ">
-                                    <div class="bgr-top">
-                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png" alt="Bảng giá">
-                                    </div>
-
-                                    <div class="icon-name">
-                                        <div class="icon">
-                                            <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                alt="Bảng giá">
-                                        </div>
-                                        <div class="name-price">
-                                            <div class="name">
-                                                Advanced
-                                            </div>
-                                            <div class="price">
-                                                <span>2.100.000 đ/</span>Tháng
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="info">
-                                        <ul class="pl-0">
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> 100
-                                                    Mbps </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dung lượng lưu trữ: </span><strong> 5
-                                                    Mbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ email: </span><strong> Không giới
-                                                    hạn</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Email forwarder: </span><strong> 1U</strong>
-                                            </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Danh sách email: </span><strong> 400W</strong>
-                                            </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Tên mienf email: </span><strong> Có
-                                                </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ IP riêng: </span><strong> Có</strong>
-                                            </li>
-
-                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                    style="color: #4ABAB9;"></i>
-                                                Tặng gói 200 hóa đơn điện tử</li>
-                                        </ul>
-                                    </div>
-                                    <div class="link-add-cart add_to_cart that_data_service_1469">
-                                        <a class="btn-add-cart btn-service cart add_service_to_cart add_service_colo"
-                                            data-service_id="1469" data-service_name="Colo A - 300"
-                                            href="https://nhanhoa.com/?site=cart&act=cart_add&id=1469&cycle=12">
-                                            <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                <div class="rect1"></div>
-                                                <div class="rect2"></div>
-                                                <div class="rect3"></div>
-                                                <div class="rect4"></div>
-                                                <div class="rect5"></div>
-                                            </div>
-                                            <span class="btn_text">Mua</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide 3 pricing-item-order-2">
-                                <div class="item ">
-                                    <div class="bgr-top">
-                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png" alt="Bảng giá">
-                                    </div>
-
-                                    <div class="icon-name">
-                                        <div class="icon">
-                                            <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                alt="Bảng giá">
-                                        </div>
-                                        <div class="name-price">
-                                            <div class="name">
-                                                Extremmer
-                                            </div>
-                                            <div class="price">
-                                                <span>3.000.000 đ/</span>Tháng
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="info">
-                                        <ul class="pl-0">
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> 100
-                                                    Mbps </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dung lượng lưu trữ: </span><strong> 5
-                                                    Mbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ email: </span><strong> Không giới
-                                                    hạn</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Email forwarder: </span><strong> 1U</strong>
-                                            </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Danh sách email: </span><strong> 400W</strong>
-                                            </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Tên mienf email: </span><strong> Có
-                                                </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ IP riêng: </span><strong> Có</strong>
-                                            </li>
-
-                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                    style="color: #4ABAB9;"></i>
-                                                Tặng gói 200 hóa đơn điện tử</li>
-                                        </ul>
-                                    </div>
-                                    <div class="link-add-cart add_to_cart that_data_service_1473">
-                                        <a class="btn-add-cart btn-service cart add_service_to_cart add_service_colo"
-                                            data-service_id="1473" data-service_name="Colo A - 500"
-                                            href="https://nhanhoa.com/?site=cart&act=cart_add&id=1473&cycle=12">
-                                            <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                <div class="rect1"></div>
-                                                <div class="rect2"></div>
-                                                <div class="rect3"></div>
-                                                <div class="rect4"></div>
-                                                <div class="rect5"></div>
-                                            </div>
-                                            <span class="btn_text">Mua</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div> --}}
-
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
+                    </div>
+                    <div class="popup-cart" id="popup">
+                        <div class="content_popup">
+                            <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                title="close">×</a>
+                            <div class="input-content">
+                                <div class="input-content-intro">
+                                    <div class="input-content-intro-icon">
+                                        <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
+                                    </div>
+                                    <div class="input-content-intro-des">
+                                        <div class="text-hello">Xin chào,</div>
+                                        <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với bạn.</p>
+                                    </div>
+                                </div>
+                                <form action="{{ route('page.serverlocation.pay') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" id="cloud_id_input" name="serverlocation_id">
+                                    <input class="form-control" type="text" placeholder="Họ và tên" name="name">
+                                    <input class="form-control" type="text" placeholder="Số điện thoại"
+                                        name="phone">
+                                    <input class="form-control" type="text" placeholder="Email" name="email">
+                                    <div class="product-info">
+                                        <p>Gói vị trí Server : </p>
+                                        <span class="product-name">
+                                            <span id="product_name"></span>
+                                        </span>
+                                    </div>
+
+                                    <div class="submit-content">
+                                        <button class="btn btn-submit">Gửi Đi</button>
+                                        <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                            (24/7)
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="link-dktv-price cta-tu-van">
@@ -310,3 +146,37 @@
         })
 </script>
 @endsection
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+<script>
+    function openPopup(cloudId, productName) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('cloud_id_input').value = cloudId; // Cập nhật giá trị cloud_id
+    document.getElementById('product_name').textContent = productName; // Cập nhật tên sản phẩm
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+
+$(document).ready(function() {
+        @if (session('success'))
+            toastr.success("{{ session('success') }}", "Thông báo:", {
+                positionClass: "toast-bottom-right",
+                timeOut: 3000,
+                closeButton: true,
+                progressBar: true,
+                preventDuplicates: true,
+            });
+        @endif
+    });
+</script>

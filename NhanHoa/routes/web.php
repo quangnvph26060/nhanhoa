@@ -192,6 +192,7 @@ Route::name('page.')->group(function () {
         Route::get('backup365', [PageServerController::class, 'serverBackup'])->name('server-backup');
         Route::get('dich-vu-quan-ly-may-chu', [PageServerController::class, 'serverAdministration'])->name('server-administration');
         Route::Post('pay', [PageServerController::class, 'pay'])->name('server.pay');
+        Route::Post('server-location/pay', [PageServerController::class, 'paylocation'])->name('serverlocation.pay');
     });
 
     Route::get('email/email-server', [EmailController::class, 'emailServer'])->name('email-server');

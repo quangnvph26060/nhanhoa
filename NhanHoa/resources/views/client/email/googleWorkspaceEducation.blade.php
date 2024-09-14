@@ -68,8 +68,7 @@
         </div>
         <div class="content">
             <p>Chào {{ $data['name'] }},</p>
-            <p>Chúng tôi xin thông báo rằng thanh toán của bạn đã được thực hiện thành công.</p>
-            <p><strong>Thông Tin:</strong></p>
+            <p>Chúng tôi xin thông báo rằng bạn đã được thực hiện thành công.</p>
             <ul class="info-list">
                 <li><strong>Tên:</strong> {{ $data['name'] }}</li>
                 <li><strong>Số điện thoại:</strong> {{ $data['phone'] }}</li>

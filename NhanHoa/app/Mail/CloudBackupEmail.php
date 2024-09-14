@@ -32,7 +32,7 @@ class CloudBackupEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Đặt thành công Cloud')
+        return $this->subject('Đặt thành công Cloud Backup')
                     ->view('client.email.cloud');
     }
 }
