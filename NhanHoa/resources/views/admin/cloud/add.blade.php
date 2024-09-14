@@ -162,12 +162,9 @@
                                         <div>
                                             <label for="cloudtypes_id" class="form-label">Loại Cloud </label>
                                             <select class="form-select" name="cloudtypes_id" id="cloudtypes_id">
-                                                <option value="">Chọn loại Hosting</option>
-                                                <option value="1">SSD Cloud VPS </option>
-                                                <option value="2">SSD Cloud Server</option>
-                                                <option value="3">SSD Cloud High RAM</option>
-                                                <option value="4">SSD Cloud High CPU</option>
-                                                <option value="5">SSD Cloud Storage</option>
+                                                <option value="">--- Chọn loại Hosting ---</option>
+                                                <option value="1">SSD Cloud Server </option>
+                                                <option value="2">Cloud VPS Quốc Tế</option>
                                             </select>
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -204,7 +201,7 @@
                                         </div>
                                         <div>
                                             <label for="ram" class="form-label">RAM</label>
-                                            <input type="number" class="form-control" name="ram" id="ram">
+                                            <input type="text" class="form-control" name="ram" id="ram">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ram_error"></span>

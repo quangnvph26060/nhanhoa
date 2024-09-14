@@ -2,20 +2,28 @@
 
 namespace App\Services;
 
+use App\Mail\CloudPayEmail;
 use App\Models\Cloud;
+use App\Models\CloudPay;
 use App\Models\CloudPromotion;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * Summary of cloudService
+ */
 class cloudService
 {
     protected $cloud;
+    protected $cloudPay;
 
-    public function __construct(Cloud $cloud)
+    public function __construct(Cloud $cloud, CloudPay $cloudPay)
     {
         $this->cloud = $cloud;
+        $this->cloudPay = $cloudPay;
     }
 
     public function getcloudAll(){
@@ -25,6 +33,16 @@ class cloudService
         } catch (Exception $e) {
             Log::error('Failed to fetch cloud: ' . $e->getMessage());
             throw new Exception('Failed to fetch cloud');
+        }
+    }
+
+    public function getcloudByType($id){
+        try {
+            Log::info('Fetching all cloud by type');
+            return $this->cloud->where('cloudtypes_id', $id)->get();
+        } catch (Exception $e) {
+            Log::error('Failed to fetch cloud by type: ' . $e->getMessage());
+            throw new Exception('Failed to fetch cloud by type');
         }
     }
 
@@ -65,11 +83,12 @@ class cloudService
     }
 
 
+
     public function updateCloud(array $data, $id): Cloud
     {
         try {
             DB::beginTransaction();
-            $cloud = $this->cloud->find($id);
+            $cloudbyId = $this->cloud->find($id);
             $datanew = [
                 'name' => $data['name'],
                 'price' => $data['price'],
@@ -82,7 +101,7 @@ class cloudService
                 'cloudtypes_id' => $data['cloudtypes_id']
             ];
             CloudPromotion::where('cloud_id', $id)->delete();
-            $cloud = $this->cloud->create($datanew);
+            $cloudbyId->update($datanew);
             if (!empty($data['promotion'])) {
                 foreach ($data['promotion'] as $key => $item) {
                     CloudPromotion::create([
@@ -92,7 +111,7 @@ class cloudService
                 }
             }
             DB::commit();
-            return $cloud;
+            return $cloudbyId;
         } catch (Exception $e) {
             DB::rollback();
             Log::error('Failed to update cloud: ' . $e->getMessage());
@@ -112,6 +131,29 @@ class cloudService
             DB::rollback();
             Log::error('Failed to update cloud: ' . $e->getMessage());
             throw new Exception('Failed to update cloud');
+        }
+    }
+
+    public function PayCloud(array $data)
+    {
+        try {
+            DB::beginTransaction();
+            $cloudPay = $this->cloudPay->create($data);
+            DB::commit();
+            $cloud = $this->cloud->find($data['cloud_id']);
+            $dataemail = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'productname' => $cloud->name,
+            ];
+
+            Mail::to($data['email'])->send(new CloudPayEmail($dataemail));
+            return $cloudPay;
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::error('Failed to create cloud: ' . $e->getMessage());
+            throw new Exception('Failed to create cloud');
         }
     }
 }

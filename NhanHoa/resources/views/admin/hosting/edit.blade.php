@@ -234,6 +234,15 @@
                                                     id="ftp_account_error"></span>
                                             </div>
                                         </div>
+                                        <div>
+                                            <label for="domainInput" class="form-label">Domain</label>
+                                            <input type="number" class="form-control" name="domain" id="domain"
+                                             value="{{ $hosting->domain }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="domain_error"></span>
+                                            </div>
+                                        </div>
 
                                         <div>
                                             <label for="subdomainInput" class="form-label">Subdomain</label>

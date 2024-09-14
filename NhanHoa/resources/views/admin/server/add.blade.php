@@ -134,94 +134,100 @@
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             <form method="POST" enctype="multipart/form-data" id="addserver"
-                                action="{{ route('admin.server.addsubmit') }}">
+                                action="{{ route('admin.server.addsubmit',) }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
                                         <div>
-                                            <label for="name" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="name_error"></span>
-                                            </div>
+                                            <label for="placeholderInput" class="form-label">Tên sản phẩm</label>
+                                            <input type="text" class="form-control" name="name" id="name"
+                                                >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="name_error"></span></div>
                                         </div>
 
                                         <div>
-                                            <label for="price" class="form-label">Giá nhập<span class="text text-danger">*</span></label>
-                                            <input value="" min='1' required class="form-control" name="price" type="number" id="price">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="price_error"></span>
-                                            </div>
+                                            <label for="priceInput" class="form-label">Giá nhập<span
+                                                    class="text text-danger">*</span></label>
+                                            <input min='1' required class="form-control" name="price"
+                                                type="number" id="price">
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="price_error"></span></div>
+                                        </div>
+                                        <!-- New fields -->
+                                        <div>
+                                            <label for="cpuInput" class="form-label">CPU</label>
+                                            <input type="text" class="form-control" name="cpu" id="cpu"
+                                               >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="cpu_error"></span></div>
                                         </div>
                                         <div>
-                                            <label for="cpu" class="form-label">CPU</label>
-                                            <input type="text" class="form-control" name="cpu" id="cpu">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="cpu_error"></span>
-                                            </div>
+                                            <label for="ssdInput" class="form-label">SSD</label>
+                                            <input type="text" class="form-control" name="ssd" id="ssd"
+                                                >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="ssd_error"></span></div>
                                         </div>
                                         <div>
-                                            <label for="core" class="form-label">Core</label>
-                                            <input type="text" class="form-control" name="core" id="core">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="core_error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="ssd" class="form-label">SSD</label>
-                                            <input type="text" class="form-control" name="ssd" id="ssd">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="ssd_error"></span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="ram" class="form-label">RAM</label>
-                                            <input type="number" class="form-control" name="ram" id="ram">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="ram_error"></span>
-                                            </div>
+                                            <label for="ramInput" class="form-label">RAM</label>
+                                            <input type="text" class="form-control" name="ram" id="ram"
+                                               >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="ram_error"></span></div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
+                                        <!-- New fields -->
                                         <div>
-                                            <label for="ip" class="form-label">IP</label>
+                                            <label for="dataInput" class="form-label">Data</label>
+                                            <input type="text" class="form-control" name="data" id="data"
+                                               >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="data_error"></span></div>
+                                        </div>
+                                        <div>
+                                            <label for="ipInput" class="form-label">IP</label>
                                             <input type="text" class="form-control" name="ip" id="ip">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="ip_error"></span>
-                                            </div>
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="ip_error"></span></div>
                                         </div>
                                         <div>
-                                            <label for="bandwidth" class="form-label">Bandwidth</label>
-                                            <input type="text" class="form-control" name="bandwidth" id="bandwidth">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="bandwidth_error"></span>
-                                            </div>
+                                            <label for="domesticInput" class="form-label">Domestic</label>
+                                            <input type="text" class="form-control" name="domestic" id="domestic"
+                                                >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="domestic_error"></span></div>
                                         </div>
                                         <div>
-                                            <label for="cloudtypes_id" class="form-label">Cloud Types</label>
-                                            <input type="text" class="form-control" name="cloudtypes_id" id="cloudtypes_id">
-                                            <div class="col-lg-9">
-                                                <span class="invalid-feedback d-block" style="font-weight: 500" id="cloudtypes_id_error"></span>
-                                            </div>
+                                            <label for="internationalInput" class="form-label">International</label>
+                                            <input type="text" class="form-control" name="international"
+                                                id="international" >
+                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
+                                                    style="font-weight: 500" id="international_error"></span></div>
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="mt-3 add_product">
-                                        <label class="form-label">Khuyến mãi</label>
+                                        <label class="form-label">
+                                            Khuyễn mãi
+                                            <input id="my-input" style="display:none;" />
+                                        </label>
                                         <select id="multiple-select" class="form-control" name="promotion[]" multiple>
-                                            @forelse($promotion as $key => $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @empty
-                                                <!-- Không có dữ liệu để hiển thị -->
-                                            @endforelse
+                                            @foreach($promotion as $key => $item)
+                                            <option   value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                                    <button type="submit" class="btn btn-primary w-md">
+                                        Xác nhận
+                                    </button>
                                 </div>
                             </form>
 

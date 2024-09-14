@@ -7,26 +7,26 @@
 
             <ul class="nav nav-tabs list-tab-main-service" role="tablist">
                 <li class="nav-item active">
-                    <a class="nav-link active" id="sever-tab" href="https://nhanhoa.com/may-chu/may-chu-cloud-server.html"
+                    <a class="nav-link active" id="sever-tab" href="{{ route('page.cloud-server') }}"
                         role="tab" aria-controls="sever" aria-selected="false">
                         SSD Cloud Server
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " id="sever-tab" href="https://nhanhoa.com/may-chu/may-chu-cloud-high-ram.html"
-                        role="tab" aria-controls="sever" aria-selected="false">
+                    <a class="nav-link " id="international-tab" href="{{ route('page.cloud-international') }}"
+                        role="tab" aria-controls="international" aria-selected="international">
                         Cloud VPS Quốc tế
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " id="sever-tab" href="https://nhanhoa.com/may-chu/may-chu-cloud-storage.html"
-                        role="tab" aria-controls="sever" aria-selected="false">
+                    <a class="nav-link " id="storage-tab" href="{{ route('page.cloud-storage') }}"
+                        role="tab" aria-controls="storage" aria-selected="false">
                         SSD Cloud Storage
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " id="sever-tab" href="https://nhanhoa.com/may-chu/may-chu-cloud-storage.html"
-                        role="tab" aria-controls="sever" aria-selected="false">
+                    <a class="nav-link " id="storage-tab" href="{{ route('page.cloud-backup') }}"
+                        role="tab" aria-controls="storage" aria-selected="false">
                         SSD Cloud Backup
                     </a>
                 </li>
@@ -37,6 +37,7 @@
                     <div class="info-table-price">
                         <div class="info-emty">
                             <div class="row">
+                                @forelse ($cloud as $item )
                                 <div class="col-lg-4 col-md-6 col-12 mb-3 0 pricing-item-order-2">
                                     <div class="item">
                                         <div class="bgr-top">
@@ -51,42 +52,42 @@
                                             </div>
                                             <div class="name-price">
                                                 <div class="name">
-                                                    SSD CLOUD SERVER A
+                                                    {{ $item->name }}
                                                 </div>
                                                 <div class="price">
-                                                    <span>1.159.000 đ/</span>Tháng
+                                                    <span>{{ number_format($item->price, 0, '', '.') }} đ/</span>Tháng
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="info">
                                             <ul class="pl-0">
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CPU:
-                                                    <strong> Intel® Xeon®
-                                                        E5-26XX / Gold 6138</strong></li>
+                                                    <strong> {{ $item->cpu }}</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CORE:
-                                                    <strong> 6
-                                                        Cores</strong></li>
+                                                    <strong> {{ $item->core }}</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> SSD:
-                                                    <strong>
-                                                        120GB</strong></li>
+                                                    <strong>{{ $item->ssd }}</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> RAM:
-                                                    <strong> 6GB
-                                                        +2GB(*)</strong></li>
+                                                    <strong> {{ $item->ram }}</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> IP:
-                                                    <strong> 01</strong>
+                                                    <strong> {{ $item->ip }}</strong>
                                                 </li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
                                                     Bandwidth : <strong>
-                                                        Unlimited</strong></li>
-                                                <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                        style="color: red;"></i> (*)Tặng 2GB RAM khi đăng
-                                                    ký 12 tháng</li>
+                                                        {{ $item->bandwidth }}</strong></li>
+                                                        @forelse ($item->promotion as $key => $promotion )
+                                                        <li class="promotion-pricing-table"> <i class="fas fa-check-circle"
+                                                            style="color: #red;"></i> {{ $promotion->promotion->name }}</li>
+                                                        @empty
+
+                                                        @endforelse
                                             </ul>
 
                                         </div>
                                         <div class="link-add-cart add_to_cart that_data_service_1969">
-                                            <a class="btn-add-cart btn-service cart add_service_to_cart add_service_vps_to_cart"
-                                                data-service_id="1969" data-service_name="SSD CLOUD SERVER A"
+                                            <a class="btn-add-cart btn-service add_service_cart"  onclick="openPopup({{ $item->id }}, '{{ $item->name }}')"
+
+                                                data-service_id="{{ $item->id }}" data-service_name="{{ $item->name }}"
                                                 href="javascript:;">
                                                 <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                     <div class="rect1"></div>
@@ -95,346 +96,56 @@
                                                     <div class="rect4"></div>
                                                     <div class="rect5"></div>
                                                 </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 1 pricing-item-order-1">
-                                    <div class="item active">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract_hover.png"
-                                                alt="Bảng giá">
-                                        </div>
-                                        <span class="hot">Phổ biến</span>
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong_hover.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    SSD CLOUD SERVER B
-                                                </div>
-                                                <div class="price">
-                                                    <span>1.390.000 đ/</span>Tháng
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CPU:
-                                                    <strong> Intel® Xeon®
-                                                        E5-26XX/Gold 6138</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CORE:
-                                                    <strong> 8
-                                                        Cores</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> SSD:
-                                                    <strong>
-                                                        150GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> RAM:
-                                                    <strong> 8GB
-                                                        +2GB(*)</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> IP:
-                                                    <strong> 01</strong>
-                                                </li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                                    Bandwidth : <strong>
-                                                        Unlimited</strong></li>
-                                                <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                        style="color: red;"></i> (*)Tặng 2GB RAM khi đăng
-                                                    ký 12 tháng</li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart add_to_cart that_data_service_1970">
-                                            <a class="btn-add-cart btn-service cart add_service_to_cart add_service_vps_to_cart"
-                                                data-service_id="1970" data-service_name="SSD CLOUD SERVER B"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-
-
-
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 2 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    SSD CLOUD SERVER C
-                                                </div>
-                                                <div class="price">
-                                                    <span>1.999.000 đ/</span>Tháng
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CPU:
-                                                    <strong> Intel® Xeon®
-                                                        E5-26XX/Gold 6138</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CORE :
-                                                    <strong> 10
-                                                        Cores</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> SSD :
-                                                    <strong>
-                                                        200GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> RAM :
-                                                    <strong> 10GB
-                                                        +2GB(*)</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> IP :
-                                                    <strong> 01</strong>
-                                                </li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                                    Bandwidth : <strong>
-                                                        Unlimited</strong></li>
-                                                <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                        style="color: red;"></i> (*)Tặng 2GB RAM khi đăng
-                                                    ký 12 tháng</li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart add_to_cart that_data_service_1971">
-                                            <a class="btn-add-cart btn-service cart add_service_to_cart add_service_vps_to_cart"
-                                                data-service_id="1971" data-service_name="SSD CLOUD SERVER C"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
+                                                <span class="btn_text">Mua</span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    SSD CLOUD SERVER D
+                                <div class="popup-cart" id="popup">
+                                    <div class="content_popup">
+                                        <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                            title="close">×</a>
+                                        <div class="input-content">
+                                            <div class="input-content-intro">
+                                                <div class="input-content-intro-icon">
+                                                    <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
                                                 </div>
-                                                <div class="price">
-                                                    <span>2.499.000 đ/</span>Tháng
+                                                <div class="input-content-intro-des">
+                                                    <div class="text-hello">Xin chào,</div>
+                                                    <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ
+                                                        lại
+                                                        với bạn.</p>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CPU:
-                                                    <strong> Intel® Xeon®
-                                                        E5-26XX/Gold 6138</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CORE:
-                                                    <strong> 12
-                                                        Cores</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> SSD:
-                                                    <strong>
-                                                        250GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> RAM:
-                                                    <strong> 12GB
-                                                        +2GB(*)</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> IP:
-                                                    <strong> 01</strong>
-                                                </li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                                    Bandwidth : <strong>
-                                                        Unlimited</strong></li>
-                                                <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                        style="color: red;"></i> (*)Tặng 2GB RAM khi đăng
-                                                    ký 12 tháng</li>
-                                            </ul>
+                                            <form action="{{ route('page.cloud.pay') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" id="cloud_id_input" name="cloud_id">
+                                                <input class="form-control" type="text" placeholder="Họ và tên"
+                                                    name="name">
+                                                <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                    name="phone">
+                                                <input class="form-control" type="text" placeholder="Email"
+                                                    name="email">
+                                                    <div class="product-info">
+                                                        <p>Gói Cloud : </p>
+                                                        <span class="product-name" >
+                                                            {{ $item->cloudtypes_id == 1 ? "Cloud Server - " : "Cloud Quốc Tế - " }} <span id="product_name"></span>
+                                                        </span>
+                                                    </div>
 
-                                        </div>
-                                        <div class="link-add-cart add_to_cart that_data_service_1972">
-                                            <a class="btn-add-cart btn-service cart add_service_to_cart add_service_vps_to_cart"
-                                                data-service_id="1972" data-service_name="SSD CLOUD SERVER D"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
+                                                <div class="submit-content">
+                                                    <button class="btn btn-submit">Gửi Đi</button>
+                                                    <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                                        (24/7)
+                                                    </div>
                                                 </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 4 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    SSD CLOUD SERVER E
-                                                </div>
-                                                <div class="price">
-                                                    <span>2.999.000 đ/</span>Tháng
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CPU:
-                                                    <strong> Intel® Xeon®
-                                                        E5-26XX/Gold 6138</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CORE:
-                                                    <strong> 16
-                                                        Cores</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> SSD:
-                                                    <strong>
-                                                        300GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> RAM:
-                                                    <strong> 14GB
-                                                        +2GB(*)</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> IP:
-                                                    <strong> 01</strong>
-                                                </li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                                    Bandwidth : <strong>
-                                                        Unlimited</strong></li>
-                                                <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                        style="color: red;"></i> (*)Tặng 2GB RAM khi đăng
-                                                    ký 12 tháng</li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart add_to_cart that_data_service_1973">
-                                            <a class="btn-add-cart btn-service cart add_service_to_cart add_service_vps_to_cart"
-                                                data-service_id="1973" data-service_name="SSD CLOUD SERVER E"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 5 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    SSD CLOUD SERVER F
-                                                </div>
-                                                <div class="price">
-                                                    <span>3.839.000 đ/</span>Tháng
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CPU:
-                                                    <strong> Intel® Xeon®
-                                                        E5-26XX/Gold 6138</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> CORE:
-                                                    <strong> 16
-                                                        Cores</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> SSD:
-                                                    <strong>
-                                                        500GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> RAM:
-                                                    <strong> 16GB
-                                                        +2GB(*)</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> IP:
-                                                    <strong> 01</strong>
-                                                </li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                                    Bandwidth: <strong>
-                                                        Unlimited</strong></li>
-                                                <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                        style="color: red;"></i> (*)Tặng 2GB RAM khi đăng
-                                                    ký 12 tháng</li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart add_to_cart that_data_service_1974">
-                                            <a class="btn-add-cart btn-service cart add_service_to_cart add_service_vps_to_cart"
-                                                data-service_id="1974" data-service_name="SSD CLOUD SERVER F"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                @empty
+
+                                @endforelse
 
                             </div>
                         </div>
@@ -471,3 +182,37 @@
         });
     </script>
 @endsection
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+<script>
+function openPopup(cloudId, productName) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('cloud_id_input').value = cloudId; // Cập nhật giá trị cloud_id
+    document.getElementById('product_name').textContent = productName; // Cập nhật tên sản phẩm
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+
+$(document).ready(function() {
+        @if (session('success'))
+            toastr.success("{{ session('success') }}", "Thông báo:", {
+                positionClass: "toast-bottom-right",
+                timeOut: 3000,
+                closeButton: true,
+                progressBar: true,
+                preventDuplicates: true,
+            });
+        @endif
+    });
+</script>

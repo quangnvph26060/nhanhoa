@@ -29,6 +29,7 @@
                     <div class="info-table-price">
                         <div class="info-emty">
                             <div class="row">
+                                @forelse ($cloudvps as $item )
                                 <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
                                     <div class="item">
                                         <div class="bgr-top">
@@ -43,11 +44,11 @@
                                             </div>
                                             <div class="name-price" style="text-align:left;">
                                                 <div class="name">
-                                                    Cloud Backup - Cloud VPS A
+                                                    Cloud Backup - {{ $item->name }}
                                                 </div>
                                                 <div class="price">
                                                     <div class="price">
-                                                        <span class="new hevb"> <strong> 26.000 đ</strong></span>/Tháng
+                                                        <span class="new hevb"> <strong> {{ number_format($item->price, 0, ',', '.') }} đ</strong></span>/Tháng
                                                         <span></span>
                                                     </div>
                                                 </div>
@@ -56,19 +57,19 @@
                                         <div class="info">
                                             <ul class="pl-0">
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud VPS A</strong></li>
+                                                        class="black"> {{  $item->package_applied }} </strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 15GB</strong></li>
+                                                        class="black"> {{ $item->max_storage }}GB</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
+                                                        class="black"> {{ $item->backup_time }}</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
+                                                        class="black"> {{ $item->backup_count }} bản gần nhất</strong></li>
                                             </ul>
 
                                         </div>
                                         <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2588" data-service_name="ĐK Cloud Backup - Cloud VPS A"
+                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart " onclick="openPopup({{ $item->id }}, '{{ $item->name }}')"
+                                                data-service_id="{{ $item->id }}" data-service_name="ĐK Cloud Backup - {{ $item->name }}"
                                                 href="javascript:;">
                                                 <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                     <div class="rect1"></div>
@@ -77,293 +78,54 @@
                                                     <div class="rect4"></div>
                                                     <div class="rect5"></div>
                                                 </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
+                                                <span class="btn_text">Mua</span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
 
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud VPS B
+                                <div class="popup-cart" id="popup">
+                                    <div class="content_popup">
+                                        <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                            title="close">×</a>
+                                        <div class="input-content">
+                                            <div class="input-content-intro">
+                                                <div class="input-content-intro-icon">
+                                                    <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
                                                 </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 54.000 đ</strong></span>/Tháng
-                                                        <span></span>
+                                                <div class="input-content-intro-des">
+                                                    <div class="text-hello">Xin chào,</div>
+                                                    <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại
+                                                        với bạn.</p>
+                                                </div>
+                                            </div>
+                                            <form action="{{ route('page.cloudbackup.pay') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" id="cloud_id_input" name="cloudbackup_id">
+                                                <input class="form-control" type="text" placeholder="Họ và tên" name="name">
+                                                <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                    name="phone">
+                                                <input class="form-control" type="text" placeholder="Email" name="email">
+                                                <div class="product-info">
+                                                    <p>Gói Cloud Backup : </p>
+                                                    <span class="product-name">
+                                                         Cloud VPS -  <span id="product_name"></span>
+                                                    </span>
+                                                </div>
+
+
+                                                <div class="submit-content">
+                                                    <button class="btn btn-submit">Gửi Đi</button>
+                                                    <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span> (24/7)
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud VPS B</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 25GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2589" data-service_name="ĐK Cloud Backup - Cloud VPS B"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                @empty
 
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud VPS C
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 102.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud VPS C</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 50GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2590"
-                                                data-service_name="ĐK Cloud Backup - Cloud VPS C" href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud VPS D
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 165.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud VPS D</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 60GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2591"
-                                                data-service_name="ĐK Cloud Backup - Cloud VPS D" href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud VPS E
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 201.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud VPS E</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 80GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2592"
-                                                data-service_name="ĐK Cloud Backup - Cloud VPS E" href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud VPS F
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 294.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud VPS F</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 100GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2593"
-                                                data-service_name="ĐK Cloud Backup - Cloud VPS F" href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
+                                @endforelse
                             </div>
                         </div>
                         <div class="link-dktv-price">
@@ -378,6 +140,7 @@
                     <div class="info-table-price">
                         <div class="info-emty">
                             <div class="row">
+                                @forelse ($cloudserver as $item )
                                 <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
                                     <div class="item">
                                         <div class="bgr-top">
@@ -392,12 +155,11 @@
                                             </div>
                                             <div class="name-price" style="text-align:left;">
                                                 <div class="name">
-                                                    Cloud Backup - Cloud Server A
+                                                    Cloud Backup - {{ $item->name }}
                                                 </div>
                                                 <div class="price">
                                                     <div class="price">
-                                                        <span class="new hevb"> <strong> 348.000
-                                                                đ</strong></span>/Tháng
+                                                        <span class="new hevb"> <strong> {{ number_format($item->price, 0, ',', '.') }} đ</strong></span>/Tháng
                                                         <span></span>
                                                     </div>
                                                 </div>
@@ -406,20 +168,19 @@
                                         <div class="info">
                                             <ul class="pl-0">
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud Server A</strong></li>
+                                                        class="black"> {{  $item->package_applied }} </strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 120GB</strong></li>
+                                                        class="black"> {{ $item->max_storage }}GB</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
+                                                        class="black"> {{ $item->backup_time }}</strong></li>
                                                 <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
+                                                        class="black"> {{ $item->backup_count }} bản gần nhất</strong></li>
                                             </ul>
 
                                         </div>
                                         <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2594"
-                                                data-service_name="ĐK Cloud Backup - Cloud Server A"
+                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart " onclick="openPopup1({{ $item->id }}, '{{ $item->name }}')"
+                                                data-service_id="{{ $item->id }}" data-service_name="ĐK Cloud Backup - {{ $item->name }}"
                                                 href="javascript:;">
                                                 <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                     <div class="rect1"></div>
@@ -428,296 +189,57 @@
                                                     <div class="rect4"></div>
                                                     <div class="rect5"></div>
                                                 </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
+                                                <span class="btn_text">Mua</span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
 
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud Server B
+                                <div class="popup-cart" id="popup1">
+                                    <div class="content_popup">
+                                        <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup1()"
+                                            title="close">×</a>
+                                        <div class="input-content">
+                                            <div class="input-content-intro">
+                                                <div class="input-content-intro-icon">
+                                                    <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
                                                 </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 417.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
+                                                <div class="input-content-intro-des">
+                                                    <div class="text-hello">Xin chào,</div>
+                                                    <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại
+                                                        với bạn.</p>
+                                                </div>
+                                            </div>
+                                            <form action="{{ route('page.cloudbackup.pay') }}" method="POST">
+                                                @csrf
+                                                <input type="hidden" id="cloud_id_input1" name="cloudbackup_id">
+                                                <input class="form-control" type="text" placeholder="Họ và tên" name="name">
+                                                <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                    name="phone">
+                                                <input class="form-control" type="text" placeholder="Email" name="email">
+                                                <div class="product-info">
+                                                    <p>Gói Cloud Backup : </p>
+                                                    <span class="product-name">
+                                                        Cloud Server - <span id="product_name1"></span>
+                                                    </span>
+                                                </div>
+
+
+                                                <div class="submit-content">
+                                                    <button class="btn btn-submit">Gửi Đi</button>
+                                                    <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span> (24/7)
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud Server B</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 150GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2595"
-                                                data-service_name="ĐK Cloud Backup - Cloud Server B"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
+                                @empty
+
+                                @endforelse
 
 
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
 
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud Server C
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 600.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud Server C</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 200GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2596"
-                                                data-service_name="ĐK Cloud Backup - Cloud Server C"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud Server D
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 750.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud Server D</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 250GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2597"
-                                                data-service_name="ĐK Cloud Backup - Cloud Server D"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud Server E
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 900.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud Server E</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 300GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2598"
-                                                data-service_name="ĐK Cloud Backup - Cloud Server E"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="col-lg-4 col-md-6 col-12 mb-3 pricing-item-order-2">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="name-price" style="text-align:left;">
-                                                <div class="name">
-                                                    Cloud Backup - Cloud Server F
-                                                </div>
-                                                <div class="price">
-                                                    <div class="price">
-                                                        <span class="new hevb"> <strong> 1.152.000
-                                                                đ</strong></span>/Tháng
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Gói áp dụng: <strong
-                                                        class="black"> Cloud Server F</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Dung lượng tối đa: <strong
-                                                        class="black"> 500GB</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Thời gian sao lưu: <strong
-                                                        class="black"> thứ 7 hàng tuần</strong></li>
-                                                <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> Số bản sao lưu: <strong
-                                                        class="black"> 2 bản gần nhất</strong></li>
-                                            </ul>
-
-                                        </div>
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service cart add_service_vps_to_cart "
-                                                data-service_id="2599"
-                                                data-service_name="ĐK Cloud Backup - Cloud Server F"
-                                                href="javascript:;">
-                                                <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                    <div class="rect1"></div>
-                                                    <div class="rect2"></div>
-                                                    <div class="rect3"></div>
-                                                    <div class="rect4"></div>
-                                                    <div class="rect5"></div>
-                                                </div>
-                                                <span class="btn_text">Thêm vào giỏ hàng</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
 
 
 
@@ -737,3 +259,44 @@
         </div>
     </div>
 </div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    function openPopup(cloudId, productName) {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('cloud_id_input').value = cloudId;
+        document.getElementById('product_name').textContent = productName;
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    function openPopup1(cloudId, productName) {
+        document.getElementById('popup1').style.display = 'block';
+        document.getElementById('cloud_id_input1').value = cloudId;
+        document.getElementById('product_name1').textContent = productName;
+    }
+
+    function closePopup1() {
+      document.getElementById('popup1').style.display = 'none';
+    }
+
+
+    $(document).ready(function() {
+            @if (session('success'))
+                toastr.success("{{ session('success') }}", "Thông báo:", {
+                    positionClass: "toast-bottom-right",
+                    timeOut: 3000,
+                    closeButton: true,
+                    progressBar: true,
+                    preventDuplicates: true,
+                });
+            @endif
+        });
+    </script>

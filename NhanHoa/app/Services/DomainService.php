@@ -27,6 +27,16 @@ class DomainService
         }
     }
 
+    public function getDomainByType($id){
+        try {
+            Log::info('Fetching all domain');
+            return $this->domain->where('domaintype_id', $id)->get();
+        } catch (Exception $e) {
+            Log::error('Failed to fetch domain: ' . $e->getMessage());
+            throw new Exception('Failed to fetch domain');
+        }
+    }
+
     public function createDomain(array $data)
     {
         try {

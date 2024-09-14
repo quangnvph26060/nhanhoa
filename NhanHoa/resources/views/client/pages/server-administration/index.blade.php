@@ -315,7 +315,7 @@
                                             <div class="rect4"></div>
                                             <div class="rect5"></div>
                                         </div>
-                                        <span class="btn_text">Thêm vào giỏ hàng</span>
+                                        <span class="btn_text">Mua</span>
 
                                     </a>
                                 </div>
@@ -370,7 +370,7 @@
                                             <div class="rect4"></div>
                                             <div class="rect5"></div>
                                         </div>
-                                        <span class="btn_text">Thêm vào giỏ hàng</span>
+                                        <span class="btn_text">Mua</span>
                                     </a>
                                 </div>
                             </div>

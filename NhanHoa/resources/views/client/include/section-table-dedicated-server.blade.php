@@ -9,7 +9,7 @@
                 <div class="list-sevice">
                     <div class="swiper swiper_email_server">
                         <div class="swiper-wrapper">
-
+                            @forelse ($serverloactions as $item )
                             <div class="swiper-slide 0 pricing-item-order-2">
                                 <div class="item ">
                                     <div class="bgr-top">
@@ -23,45 +23,39 @@
                                         </div>
                                         <div class="name-price">
                                             <div class="name">
-                                                Colo A - 100
+                                                {{ $item->name }}
                                             </div>
                                             <div class="price">
-                                                <span>1.300.000 đ/</span>Tháng
+                                                <span>{{ number_format($item->price) }} đ/</span>Tháng
                                             </div>
                                         </div>
                                     </div>
                                     <div class="info">
                                         <ul class="pl-0">
+                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">BW
+                                                    trong nước: </span><strong> {{ $item->bw_in_country	 }} </strong></li>
+                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">BW
+                                                    quốc tế (up/down): </span><strong> {{ $item->bw_international	 }}</strong></li>
+                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">Dữ
+                                                    liệu truyền: </span><strong> {{ $item->data_transfer	 }}</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW
-                                                    trong nước: </span><strong> 100 Mbps </strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW
-                                                    quốc tế (up/down): </span><strong> 5 Mbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dữ
-                                                    liệu truyền: </span><strong> Không giới hạn</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Không gian rack: </span><strong> 1U</strong>
+                                                    class="package-title">Không gian rack: </span><strong> {{ $item->rack_space	 }}</strong>
                                             </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Công suất nguồn: </span><strong> 400W</strong>
+                                                    class="package-title">Công suất nguồn: </span><strong> {{ $item->power_capacity	 }}</strong>
                                             </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">UPS/Máy điện dự phòng: </span><strong> Có
+                                                    class="package-title">UPS/Máy điện dự phòng: </span><strong> {{ $item->bw_in_country	 }}
                                                 </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Điều hoà nhiệt độ: </span><strong> Có</strong>
+                                                    class="package-title">Điều hoà nhiệt độ: </span><strong> {{ $item->air_conditioning	 }}</strong>
                                             </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Ổ
-                                                    cắm mạng: </span><strong> 100 Mbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa
-                                                    chỉ IP: </span><strong> 1</strong></li>
-                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                    style="color: #4ABAB9;"></i>
-                                                Tặng gói 200 hóa đơn điện tử</li>
+                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">Ổ
+                                                    cắm mạng: </span><strong> {{ $item->network_socket	 }}</strong></li>
+                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">Địa
+                                                    chỉ IP: </span><strong> {{ $item->ip_address	 }}</strong></li>
+                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
+                                                {{ $item->promotion->name }}</li>
                                         </ul>
                                     </div>
                                     <div class="link-add-cart add_to_cart that_data_service_1462">
@@ -75,13 +69,17 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Thêm vào giỏ hàng</span>
+                                            <span class="btn_text">Mua</span>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                            @empty
 
-                            <div class="swiper-slide 1 pricing-item-order-1">
+                            @endforelse
+
+
+                            {{-- <div class="swiper-slide 1 pricing-item-order-1">
                                 <div class="item active">
                                     <div class="bgr-top">
                                         <img src="https://nhanhoa.com/templates/images/v2/subtract_hover.png"
@@ -95,7 +93,7 @@
                                         </div>
                                         <div class="name-price">
                                             <div class="name">
-                                                Colo A - 200
+                                                Starter
                                             </div>
                                             <div class="price">
                                                 <span>1.500.000 đ/</span>Tháng
@@ -105,33 +103,27 @@
                                     <div class="info">
                                         <ul class="pl-0">
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW
-                                                    trong nước: </span><strong> 200 Mbps </strong></li>
+                                                    class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> 100
+                                                    Mbps </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW
-                                                    quốc tế (up/down): </span><strong> 5 Mbps</strong></li>
+                                                    class="package-title">Dung lượng lưu trữ: </span><strong> 5
+                                                    Mbps</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dữ
-                                                    liệu truyền: </span><strong> Không giới hạn</strong></li>
+                                                    class="package-title">Địa chỉ email: </span><strong> Không giới
+                                                    hạn</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Không gian rack: </span><strong> 1U</strong>
+                                                    class="package-title">Email forwarder: </span><strong> 1U</strong>
                                             </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Công suất nguồn: </span><strong> 400W</strong>
+                                                    class="package-title">Danh sách email: </span><strong> 400W</strong>
                                             </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">UPS/Máy điện dự phòng: </span><strong> Có
+                                                    class="package-title">Tên mienf email: </span><strong> Có
                                                 </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Điều hoà nhiệt độ: </span><strong>
-                                                    Có</strong>
+                                                    class="package-title">Địa chỉ IP riêng: </span><strong> Có</strong>
                                             </li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Ổ
-                                                    cắm mạng: </span><strong> 1 Gbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa
-                                                    chỉ IP: </span><strong> 1</strong></li>
+
                                             <li class="promotion-pricing-table"><i class="fas fa-check-circle"
                                                     style="color: #4ABAB9;"></i>
                                                 Tặng gói 200 hóa đơn điện tử</li>
@@ -148,7 +140,7 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Thêm vào giỏ hàng</span>
+                                            <span class="btn_text">Mua</span>
                                         </a>
                                     </div>
                                 </div>
@@ -157,8 +149,7 @@
                             <div class="swiper-slide 2 pricing-item-order-2">
                                 <div class="item ">
                                     <div class="bgr-top">
-                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                            alt="Bảng giá">
+                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png" alt="Bảng giá">
                                     </div>
 
                                     <div class="icon-name">
@@ -168,7 +159,7 @@
                                         </div>
                                         <div class="name-price">
                                             <div class="name">
-                                                Colo A - 300
+                                                Advanced
                                             </div>
                                             <div class="price">
                                                 <span>2.100.000 đ/</span>Tháng
@@ -178,34 +169,30 @@
                                     <div class="info">
                                         <ul class="pl-0">
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW trong nước: </span><strong> 300 Mbps
-                                                </strong></li>
+                                                    class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> 100
+                                                    Mbps </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW quốc tế (up/down): </span><strong> 10
+                                                    class="package-title">Dung lượng lưu trữ: </span><strong> 5
                                                     Mbps</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dữ liệu truyền: </span><strong> Không giới
+                                                    class="package-title">Địa chỉ email: </span><strong> Không giới
                                                     hạn</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Không gian rack: </span><strong> 1U</strong>
+                                                    class="package-title">Email forwarder: </span><strong> 1U</strong>
                                             </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Công suất nguồn: </span><strong>
-                                                    400W</strong></li>
+                                                    class="package-title">Danh sách email: </span><strong> 400W</strong>
+                                            </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">UPS/Máy điện dự phòng: </span><strong> Có
+                                                    class="package-title">Tên mienf email: </span><strong> Có
                                                 </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Điều hoà nhiệt độ: </span><strong>
-                                                    Có</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Ổ
-                                                    cắm mạng: </span><strong> 1 Gbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ IP: </span><strong> 1</strong></li>
-                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                    style="color: red;"></i>Tặng gói 200 hóa đơn điện tử
+                                                    class="package-title">Địa chỉ IP riêng: </span><strong> Có</strong>
                                             </li>
+
+                                            <li class="promotion-pricing-table"><i class="fas fa-check-circle"
+                                                    style="color: #4ABAB9;"></i>
+                                                Tặng gói 200 hóa đơn điện tử</li>
                                         </ul>
                                     </div>
                                     <div class="link-add-cart add_to_cart that_data_service_1469">
@@ -219,7 +206,7 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Thêm vào giỏ hàng</span>
+                                            <span class="btn_text">Mua</span>
                                         </a>
                                     </div>
                                 </div>
@@ -228,8 +215,7 @@
                             <div class="swiper-slide 3 pricing-item-order-2">
                                 <div class="item ">
                                     <div class="bgr-top">
-                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                            alt="Bảng giá">
+                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png" alt="Bảng giá">
                                     </div>
 
                                     <div class="icon-name">
@@ -239,7 +225,7 @@
                                         </div>
                                         <div class="name-price">
                                             <div class="name">
-                                                Colo A - 500
+                                                Extremmer
                                             </div>
                                             <div class="price">
                                                 <span>3.000.000 đ/</span>Tháng
@@ -249,34 +235,30 @@
                                     <div class="info">
                                         <ul class="pl-0">
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW trong nước: </span><strong> 500 Mbps
-                                                </strong></li>
+                                                    class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> 100
+                                                    Mbps </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">BW quốc tế (up/down): </span><strong> 10
+                                                    class="package-title">Dung lượng lưu trữ: </span><strong> 5
                                                     Mbps</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Dữ liệu truyền: </span><strong> Không giới
+                                                    class="package-title">Địa chỉ email: </span><strong> Không giới
                                                     hạn</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Không gian rack: </span><strong> 1U</strong>
+                                                    class="package-title">Email forwarder: </span><strong> 1U</strong>
                                             </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Công suất nguồn: </span><strong>
-                                                    400W</strong></li>
+                                                    class="package-title">Danh sách email: </span><strong> 400W</strong>
+                                            </li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">UPS/Máy điện dự phòng: </span><strong>
-                                                    Có</strong></li>
+                                                    class="package-title">Tên mienf email: </span><strong> Có
+                                                </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Điều hoà nhiệt độ: </span><strong>
-                                                    Có</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Ổ
-                                                    cắm mạng: </span><strong> 1 Gbps</strong></li>
-                                            <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
-                                                    class="package-title">Địa chỉ IP: </span><strong> 1</strong></li>
+                                                    class="package-title">Địa chỉ IP riêng: </span><strong> Có</strong>
+                                            </li>
+
                                             <li class="promotion-pricing-table"><i class="fas fa-check-circle"
-                                                    style="color: red;"></i>Tặng gói 200 hóa đơn điện tử
-                                            </li>
+                                                    style="color: #4ABAB9;"></i>
+                                                Tặng gói 200 hóa đơn điện tử</li>
                                         </ul>
                                     </div>
                                     <div class="link-add-cart add_to_cart that_data_service_1473">
@@ -290,11 +272,11 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Thêm vào giỏ hàng</span>
+                                            <span class="btn_text">Mua</span>
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                         <div class="swiper-button-next"></div>
@@ -312,8 +294,8 @@
 </div>
 
 @section('script')
-    <script>
-        const swiperEmailServer = new Swiper('.swiper_email_server', {
+<script>
+    const swiperEmailServer = new Swiper('.swiper_email_server', {
             slidesPerView: 1,
             spaceBetween: 30,
             navigation: {
@@ -326,5 +308,5 @@
                 }
             }
         })
-    </script>
+</script>
 @endsection

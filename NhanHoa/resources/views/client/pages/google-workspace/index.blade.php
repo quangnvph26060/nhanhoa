@@ -96,6 +96,7 @@
                         <div class="list-sevice">
                             <div class="swiper swiper_pricing_general">
                                 <div class="swiper-wrapper">
+                                    @forelse ( $googleWorkspaceBusiness as $item )
                                     <div class="swiper-slide">
                                         <div class="item ">
                                             <div class="bgr-top">
@@ -110,27 +111,27 @@
                                                 </div>
                                                 <div class="name-price">
                                                     <div class="name">
-                                                        Business Starter
+                                                       {{ $item->name }}
                                                     </div>
                                                     <div class="price">
-                                                        76.000 đ/Tháng
+                                                        {{ number_format($item->price_per_month, 0, ',', '.') }} đ/Tháng
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="info">
                                                 <ul class="pl-0">
                                                     <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Dung
-                                                        lượng lưu trữ: 30GB</li>
+                                                        lượng lưu trữ: {{ $item->storage_capacity }}</li>
                                                     <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> 20 user
-                                                        đầu tiên: 76.000đ/user/tháng</li>
+                                                        đầu tiên:  {{ number_format($item->price_first_20_users, 0, ',', '.') }}đ/user/tháng</li>
                                                     <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> 21 user
-                                                        trở lên: 151.000đ/user/tháng</li>
+                                                        trở lên:  {{ number_format($item->price_after_20_users, 0, ',', '.') }}đ/user/tháng</li>
                                                     <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Gia hạn:
-                                                        179.000đ/user/tháng</li>
+                                                        {{ number_format($item->renewal_price, 0, ',', '.') }}đ/user/tháng</li>
                                                     <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Số lượng
-                                                        user giới hạn: 1 - 300</li>
+                                                        user giới hạn: {{ $item->user_limit }}</li>
                                                     <li class="hot-highlight"><i class="fas fa-gift"
-                                                            style="color: #ee2b2b;"></i> Ưu đãi tới 50% cho đăng ký mới</li>
+                                                            style="color: #ee2b2b;"></i>{{ $item->promotion->name }}</li>
                                                 </ul>
 
 
@@ -155,8 +156,9 @@
                                                 </div>
                                             </div>
                                             <div class="link-add-cart">
-                                                <a class="btn-add-cart btn-service add_cart_workspace"
-                                                    data-service_id="Starter" data-cycle="12" href="javascript:;">
+                                                <a class="btn-add-cart btn-service add_service_cart"
+                                                onclick="openPopup({{ $item->id }}, '{{ $item->name }}')">
+
                                                     <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                         <div class="rect1"></div>
                                                         <div class="rect2"></div>
@@ -164,227 +166,57 @@
                                                         <div class="rect4"></div>
                                                         <div class="rect5"></div>
                                                     </div>
-                                                    <span class="btn_text">Thêm vào giỏ hàng</span>
+                                                    <span class="btn_text">Mua</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
+                                    @empty
 
-                                    <div class="swiper-slide">
-                                        <div class="item active">
-                                            <div class="bgr-top">
-                                                <img src="https://nhanhoa.com/templates/images/v2/subtract_hover.png"
-                                                    alt="Business Standard">
-                                            </div>
-                                            <span class="hot">
-                                                Phổ biến
-                                            </span>
-                                            <div class="icon-name">
-                                                <div class="icon">
-                                                    <img src="https://nhanhoa.com/templates/images/v2/kim_cuong_hover.png"
-                                                        alt="Business Standard">
-                                                </div>
-                                                <div class="name-price">
-                                                    <div class="name">
-                                                        Business Standard
-                                                    </div>
-                                                    <div class="price">
-                                                        181.000 đ/Tháng
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    @endforelse
 
-
-
-                                            <div class="info">
-
-                                                <ul class="pl-0">
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Dung
-                                                        lượng lưu trữ: 2TB</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> 20
-                                                        user đầu tiên: 181.000đ/user/tháng</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> 21
-                                                        user trở lên: 301.000đ/user/tháng</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Gia
-                                                        hạn: 348.000đ/user/tháng</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Số
-                                                        lượng user giới hạn: 1 - 300</li>
-                                                    <li class="hot-highlight"><i class="fas fa-gift"
-                                                            style="color: #ee2b2b;"></i> Ưu đãi tới 40% cho đăng ký mới
-                                                    </li>
-                                                </ul>
-
-
-                                            </div>
-                                            <div class="account-qty">
-                                                <div class="account-qty-item">
-                                                    Số lượng user:
-                                                </div>
-                                                <div class="account-qty-item">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <a class="btn btn-outline-secondary minusBtn"
-                                                                href="javascript:;">-</a>
-                                                        </div>
-                                                        <input type="number" class="form-control account_input"
-                                                            value="1" />
-                                                        <div class="input-group-append">
-                                                            <a class="btn btn-outline-secondary plusBtn"
-                                                                href="javascript:;">+</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="link-add-cart">
-                                                <a class="btn-add-cart btn-service add_cart_workspace"
-                                                    data-service_id="Standard" data-cycle="12" href="javascript:;">
-                                                    <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                        <div class="rect1"></div>
-                                                        <div class="rect2"></div>
-                                                        <div class="rect3"></div>
-                                                        <div class="rect4"></div>
-                                                        <div class="rect5"></div>
-                                                    </div>
-                                                    <span class="btn_text">Thêm vào giỏ hàng</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide">
-                                        <div class="item">
-                                            <div class="bgr-top">
-                                                <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="icon-name">
-                                                <div class="icon">
-                                                    <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                        alt="Business Starter">
-                                                </div>
-                                                <div class="name-price">
-                                                    <div class="name">
-                                                        Business Plus
-                                                    </div>
-                                                    <div class="price">
-                                                        456.000 đ/Tháng
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-
-                                            <div class="info">
-                                                <ul class="pl-0">
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Dung
-                                                        lượng lưu trữ: 5TB</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> 20
-                                                        user đầu tiên: 456.000đ/user/tháng</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> 21
-                                                        user trở lên: 456.000đ/user/tháng</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Gia
-                                                        hạn: 523.000đ/user/tháng</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Số
-                                                        lượng user giới hạn: 1 - 300</li>
-                                                    <li class="hot-highlight"></li>
-                                                </ul>
-
-                                            </div>
-                                            <div class="account-qty">
-                                                <div class="account-qty-item">
-                                                    Số lượng user:
-                                                </div>
-                                                <div class="account-qty-item">
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <a class="btn btn-outline-secondary minusBtn"
-                                                                href="javascript:;">-</a>
-                                                        </div>
-                                                        <input type="number" class="form-control account_input"
-                                                            value="1" />
-                                                        <div class="input-group-append">
-                                                            <a class="btn btn-outline-secondary plusBtn"
-                                                                href="javascript:;">+</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="link-add-cart">
-                                                <a class="btn-add-cart btn-service add_cart_workspace"
-                                                    data-service_id="Plus" data-cycle="12" href="javascript:;">
-                                                    <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                        <div class="rect1"></div>
-                                                        <div class="rect2"></div>
-                                                        <div class="rect3"></div>
-                                                        <div class="rect4"></div>
-                                                        <div class="rect5"></div>
-                                                    </div>
-                                                    <span class="btn_text">Thêm vào giỏ hàng</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide">
-                                        <div class="item ">
-                                            <div class="bgr-top">
-                                                <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                    alt="Bảng giá">
-                                            </div>
-                                            <div class="icon-name">
-                                                <div class="icon">
-                                                    <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                        alt="Business Starter">
-                                                </div>
-                                                <div class="name-price">
-                                                    <div class="name">
-                                                        Enterprise
-                                                    </div>
-                                                    <div class="price">
-                                                        Liên hệ
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="info">
-                                                <ul class="pl-0">
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Dung
-                                                        lượng lưu trữ: 5TB</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Đăng
-                                                        ký >5 user: theo nhu cầu sử dụng(*)</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Số
-                                                        lượng user giới hạn: không giới hạn</li>
-                                                    <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Liên
-                                                        hệ để nhận báo giá</li>
-                                                    <li class="hot-highlight"></li>
-                                                    <li class="hot-highlight"></li>
-                                                </ul>
-
-                                            </div>
-
-                                            <div class="account-qty hidden-input" style="height:45px;">
-
-                                            </div>
-                                            <div class="link-add-cart">
-                                                <a class="btn-add-cart btn_show_popup btn-service"
-                                                    data-title="Tư vấn gói Google Workspace EnterPrise" href="#tuvanngay">
-                                                    Liên hệ tư vấn
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                 </div>
 
-                                <div class="swiper-button-next">
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                            <div class="popup-cart" id="popup">
+                                <div class="content_popup">
+                                    <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                        title="close">×</a>
+                                    <div class="input-content">
+                                        <div class="input-content-intro">
+                                            <div class="input-content-intro-icon">
+                                                <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
+                                            </div>
+                                            <div class="input-content-intro-des">
+                                                <div class="text-hello">Xin chào,</div>
+                                                <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với bạn.</p>
+                                            </div>
+                                        </div>
+                                        <form action="{{ route('page.google-workspace-business-pay') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" id="cloud_id_input" name="googleworkspace_id">
+                                            <input class="form-control" type="text" placeholder="Họ và tên" name="name">
+                                            <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                name="phone">
+                                            <input class="form-control" type="text" placeholder="Email" name="email">
+                                            <div class="product-info">
+                                                <p>Gói Google Workspace : </p>
+                                                <span class="product-name">
+                                                    Business - <span id="product_name"></span>
+                                                </span>
+                                            </div>
 
-                                </div>
-                                <div class="swiper-button-prev">
-
+                                            <div class="submit-content">
+                                                <button class="btn btn-submit">Gửi Đi</button>
+                                                <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                                    (24/7)
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -392,73 +224,126 @@
                     <div class="tab-pane fade" id="edu" role="tabpanel" aria-labelledby="edu-tab">
                         <div class="info-emty">
                             <div class="row">
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="item active">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract_hover.png"
-                                                alt="Bảng giá">
+                              @forelse ($googleWorkspaceEducation as $item )
+                              <div class="col-lg-4 col-md-6 col-12">
+                                <div class="item">
+                                    <div class="bgr-top">
+                                        <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
+                                            alt="Bảng giá">
+                                    </div>
+
+                                    <div class="icon-name">
+                                        <div class="icon">
+                                            <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
+                                                alt="Business Starter">
                                         </div>
-                                        <span class="hot">
-                                            Phổ biến
-                                        </span>
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong_hover.png"
-                                                    alt="Business Starter">
+                                        <div class="name-price">
+                                            <div class="name">
+                                                {{ $item->name }}
                                             </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    Education Standard
-                                                </div>
-                                                <div class="price">
-                                                    7.200 đ/Tháng
-                                                </div>
+                                            <div class="price">
+                                                {{ number_format($item->price, 0, ',', '.') }} đ/Tháng
                                             </div>
-                                        </div>
-
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                        style="color: #74C0FC;"></i> Gói dịch vụ cơ bản với sự nâng cấp về
-                                                    bảo mật, chống lại các mối đe dọa kỹ thuật số tiềm ẩn. <br><br></li>
-                                                <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                        style="color: #74C0FC;"></i> Dung lượng lưu trữ: 100TB lưu trữ dữ
-                                                    liệu Cloud Storage</li>
-
-                                            </ul>
-
-
-                                        </div>
-
-                                        <div class="account-qty d-none">
-                                            <div class="account-qty-item">
-                                                Số lượng user:
-                                            </div>
-                                            <div class="account-qty-item">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <a class="btn btn-outline-secondary minusBtn"
-                                                            href="javascript:;">-</a>
-                                                    </div>
-                                                    <input type="number" class="form-control account_input"
-                                                        value="1" />
-                                                    <div class="input-group-append">
-                                                        <a class="btn btn-outline-secondary plusBtn"
-                                                            href="javascript:;">+</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn_show_popup btn-service"
-                                                data-title="Tư vấn gói Google Workspace Education Standard"
-                                                href="#tuvanngay">
-                                                Liên hệ tư vấn
-                                            </a>
                                         </div>
                                     </div>
+
+                                    <div class="info">
+                                        <ul class="pl-0">
+                                            <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
+                                                    style="color: #74C0FC;"></i> {{ $item->describe }}. </li>
+                                            <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
+                                                    style="color: #74C0FC;"></i> {{ $item->storage }}</li>
+
+                                        </ul>
+
+
+                                    </div>
+
+                                    <div class="account-qty d-none">
+                                        <div class="account-qty-item">
+                                            Số lượng user:
+                                        </div>
+                                        <div class="account-qty-item">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <a class="btn btn-outline-secondary minusBtn"
+                                                        href="javascript:;">-</a>
+                                                </div>
+                                                <input type="number" class="form-control account_input"
+                                                    value="1" />
+                                                <div class="input-group-append">
+                                                    <a class="btn btn-outline-secondary plusBtn"
+                                                        href="javascript:;">+</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="link-add-cart">
+                                        <a class="btn-add-cart btn_show_popup btn-service" style="display: none"
+                                            data-title="Tư vấn gói Google Workspace {{ $item->name }}"
+                                            href="#tuvanngay">
+                                            Liên hệ tư vấn
+                                        </a>
+
+                                        <a class="btn-add-cart btn-service add_service_cart"
+                                            onclick="openPopup1({{ $item->id }}, '{{ $item->name }}')">
+                                            <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
+                                                <div class="rect1"></div>
+                                                <div class="rect2"></div>
+                                                <div class="rect3"></div>
+                                                <div class="rect4"></div>
+                                                <div class="rect5"></div>
+                                            </div>
+                                            <span class="btn_text">Mua</span>
+                                        </a>
+                                    </div>
                                 </div>
+                            </div>
+
+                            <div class="popup-cart" id="popup1">
+                                <div class="content_popup">
+                                    <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup1()"
+                                        title="close">×</a>
+                                    <div class="input-content">
+                                        <div class="input-content-intro">
+                                            <div class="input-content-intro-icon">
+                                                <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
+                                            </div>
+                                            <div class="input-content-intro-des">
+                                                <div class="text-hello">Xin chào,</div>
+                                                <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ
+                                                    lại
+                                                    với bạn.</p>
+                                            </div>
+                                        </div>
+                                        <form action="{{ route('page.google-workspace-education-pay') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" id="cloud_id_input1" name="googleworkspace_id">
+                                            <input class="form-control" type="text" placeholder="Họ và tên" name="name">
+                                            <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                name="phone">
+                                            <input class="form-control" type="text" placeholder="Email" name="email">
+                                            <div class="product-info">
+                                                <p>Gói Google Workspace : </p>
+                                                <span class="product-name">
+                                                    Education - <span id="product_name1"></span>
+                                                </span>
+                                            </div>
+
+                                            <div class="submit-content">
+                                                <button class="btn btn-submit">Gửi Đi</button>
+                                                <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                                    (24/7)
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                              @empty
+
+                              @endforelse
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div class="item ">
                                         <div class="bgr-top">
@@ -1831,3 +1716,47 @@
 
     </script>
 @endsection
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+<script>
+    function openPopup(cloudId, productName) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('cloud_id_input').value = cloudId; // Cập nhật giá trị cloud_id
+    document.getElementById('product_name').textContent = productName; // Cập nhật tên sản phẩm
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function openPopup1(cloudId, productName) {
+    document.getElementById('popup1').style.display = 'block';
+    document.getElementById('cloud_id_input1').value = cloudId; // Cập nhật giá trị cloud_id
+    document.getElementById('product_name1').textContent = productName; // Cập nhật tên sản phẩm
+}
+
+function closePopup1() {
+    document.getElementById('popup1').style.display = 'none';
+}
+
+
+$(document).ready(function() {
+        @if (session('success'))
+            toastr.success("{{ session('success') }}", "Thông báo:", {
+                positionClass: "toast-bottom-right",
+                timeOut: 3000,
+                closeButton: true,
+                progressBar: true,
+                preventDuplicates: true,
+            });
+        @endif
+    });
+</script>

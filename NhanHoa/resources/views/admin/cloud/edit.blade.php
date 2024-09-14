@@ -127,85 +127,100 @@
                 </div>
                 <div class="card-body">
                     <div class="">
-                        <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                        <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4" style="">
                             <form method="POST" enctype="multipart/form-data" id="addserver"
-                                action="{{ route('admin.server.editsubmit', ['id'=> $server->id]) }}">
+                                action="{{ route('admin.cloud.editsubmit', ['id'=> $cloud->id]) }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
                                         <div>
-                                            <label for="placeholderInput" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name"
-                                                value="{{ $server->name }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="name_error"></span></div>
+                                            <label for="name" class="form-label">Tên sản phẩm</label>
+                                            <input type="text" class="form-control" name="name" id="name" value="{{ $cloud->name }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="name_error"></span>
+                                            </div>
                                         </div>
 
                                         <div>
-                                            <label for="priceInput" class="form-label">Giá nhập<span
+                                            <label for="price" class="form-label">Giá nhập<span
                                                     class="text text-danger">*</span></label>
-                                            <input min='1' required class="form-control" name="price"
-                                                value="{{ $server->price }}" type="number" id="price">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="price_error"></span></div>
+                                            <input min='1' required class="form-control" name="price" value="{{ $cloud->price }}"
+                                                type="number" id="price">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="price_error"></span>
+                                            </div>
                                         </div>
-                                        <!-- New fields -->
+
                                         <div>
-                                            <label for="cpuInput" class="form-label">CPU</label>
-                                            <input type="text" class="form-control" name="cpu" id="cpu"
-                                                value="{{ $server->cpu }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="cpu_error"></span></div>
+                                            <label for="cloudtypes_id" class="form-label">Loại Cloud </label>
+                                            <select class="form-select" name="cloudtypes_id" id="cloudtypes_id">
+                                                <option value="">--- Chọn loại Hosting ---</option>
+                                                <option {{ $cloud->cloudtypes_id == 1 ? 'selected' : '' }} value="1">SSD Cloud Server </option>
+                                                <option {{ $cloud->cloudtypes_id == 2 ? 'selected' : '' }} value="2">Cloud VPS Quốc Tế</option>
+                                                <option {{ $cloud->cloudtypes_id == 3 ? 'selected' : '' }} value="3">SSD Cloud Storage</option>
+                                                <option {{ $cloud->cloudtypes_id == 4 ? 'selected' : '' }} value="4">SSD Cloud Backup</option>
+                                            </select>
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="cloudtypes_id_error"></span>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label for="cpu" class="form-label">CPU</label>
+                                            <input type="text" class="form-control" name="cpu" id="cpu" value="{{ $cloud->cpu }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="cpu_error"></span>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label for="ssdInput" class="form-label">SSD</label>
-                                            <input type="text" class="form-control" name="ssd" id="ssd"
-                                                value="{{ $server->ssd }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="ssd_error"></span></div>
+                                            <label for="core" class="form-label">Core</label>
+                                            <input type="text" class="form-control" name="core" id="core" value="{{ $cloud->core }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="core_error"></span>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <label for="ramInput" class="form-label">RAM</label>
-                                            <input type="number" class="form-control" name="ram" id="ram"
-                                                value="{{ $server->ram }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="ram_error"></span></div>
-                                        </div>
+
                                     </div>
                                     <div class="col-lg-6 add_product">
-                                        <!-- Existing fields -->
-                                        <!-- New fields -->
                                         <div>
-                                            <label for="dataInput" class="form-label">Data</label>
-                                            <input type="text" class="form-control" name="data" id="data"
-                                                value="{{ $server->data }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="data_error"></span></div>
+                                            <label for="ssd" class="form-label">SSD</label>
+                                            <input type="text" class="form-control" name="ssd" id="ssd" value="{{ $cloud->ssd }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="ssd_error"></span>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label for="ipInput" class="form-label">IP</label>
-                                            <input type="text" class="form-control" name="ip" id="ip"
-                                                value="{{ $server->ip }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="ip_error"></span></div>
+                                            <label for="ram" class="form-label">RAM</label>
+                                            <input type="text" class="form-control" name="ram" id="ram" value="{{ $cloud->ram }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="ram_error"></span>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label for="domesticInput" class="form-label">Domestic</label>
-                                            <input type="number" class="form-control" name="domestic" id="domestic"
-                                                value="{{ $server->domestic }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="domestic_error"></span></div>
+                                            <label for="ip" class="form-label">IP</label>
+                                            <input type="text" class="form-control" name="ip" id="ip" value="{{ $cloud->ip }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="ip_error"></span>
+                                            </div>
                                         </div>
                                         <div>
-                                            <label for="internationalInput" class="form-label">International</label>
-                                            <input type="number" class="form-control" name="international"
-                                                id="international" value="{{ $server->international }}">
-                                            <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="international_error"></span></div>
+                                            <label for="bandwidth" class="form-label">Bandwidth</label>
+                                            <input type="text" class="form-control" name="bandwidth" id="bandwidth" value="{{ $cloud->bandwidth }}">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="bandwidth_error"></span>
+                                            </div>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row">
                                     <div class="mt-3 add_product">

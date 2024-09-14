@@ -7,4 +7,6 @@
 
 <link rel="stylesheet" href="{{ asset('client/assets/css/main.css') }}">
 
+<link rel="stylesheet" href="{{ asset('client/assets/css/popup.css') }}">
+
 @yield('style')

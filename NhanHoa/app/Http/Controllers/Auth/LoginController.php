@@ -38,7 +38,7 @@ class LoginController extends Controller
 
             Auth::login($authUser, true);
 
-            return redirect()->route('user')->with('success', 'Đăng nhập thành công!');
+            return redirect()->route('page.home')->with('success', 'Đăng nhập thành công!');
         } catch (\Exception $e) {
             return redirect()->route('form_login')->withErrors(['message' => 'Đăng nhập thất bại.']);
         }

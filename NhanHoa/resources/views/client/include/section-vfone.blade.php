@@ -18,7 +18,7 @@
 <!-- Resend call bottom -->
 
 <a id="re-send-call" class="re-send-call" style="display: none;">re-send-call</a>
-<div class="popup-re-call" id="popup-re-call" style="display: none">
+<div class="popup-re-call" id="popup-re-call" style="display: none ; padding-top: 10px !important">
     <div class="content_popup">
         <a href="javascript:void(0)" class="re-close-popup close" data-dismiss="alert" title="close">×</a>
         <div class="input-content">
@@ -36,7 +36,7 @@
             <input class="request_emailx form-control" type="text" name="request_email" id="request_emailx"
                 value="" placeholder="Email">
             <div class="emailx_error alert-danger"></div>
-            <textarea class="request_content form-control" name="request_content" style="margin-top: 0.5rem;" id="request_contentx"
+            <textarea class="request_content form-control" rows="5" name="request_content" style="margin-top: 0.5rem;" id="request_contentx"
                 placeholder="Nội dung tư vấn"></textarea>
             <div class="content_error alert-danger"></div>
             <input type="hidden" id="request_callback_title" value="">

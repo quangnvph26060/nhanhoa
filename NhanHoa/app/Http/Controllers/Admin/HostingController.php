@@ -39,9 +39,10 @@ class HostingController extends Controller
 
     public function editform($id){
         $hosting = Hosting::find($id);
-        $promotions = $this->promotionService->getPromotionAll();
-        $hosting_promotion = SgoHostingPromotion::where('hosting_id', $id)->get();
-        return view('admin.hosting.edit', compact('hosting', 'promotions', 'hosting_promotion'));
+        $promotion = $this->promotionService->getPromotionAll();
+        $promotionArray = SgoHostingPromotion::where('hosting_id', $id)->pluck('promotion_id');
+        $promotionselect = $promotionArray->toArray();
+        return view('admin.hosting.edit', compact('hosting', 'promotion', 'promotionselect'));
     }
 
     public function editsubmit(Request $request, $id){

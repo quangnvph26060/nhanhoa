@@ -167,7 +167,7 @@
                                         </div>
                                         <div>
                                             <label for="ramInput" class="form-label">RAM</label>
-                                            <input type="number" class="form-control" name="ram" id="ram"
+                                            <input type="text" class="form-control" name="ram" id="ram"
                                                 value="{{ $server->ram }}">
                                             <div class="col-lg-9"><span class="invalid-feedback d-block"
                                                     style="font-weight: 500" id="ram_error"></span></div>
@@ -192,14 +192,14 @@
                                         </div>
                                         <div>
                                             <label for="domesticInput" class="form-label">Domestic</label>
-                                            <input type="number" class="form-control" name="domestic" id="domestic"
+                                            <input type="text" class="form-control" name="domestic" id="domestic"
                                                 value="{{ $server->domestic }}">
                                             <div class="col-lg-9"><span class="invalid-feedback d-block"
                                                     style="font-weight: 500" id="domestic_error"></span></div>
                                         </div>
                                         <div>
                                             <label for="internationalInput" class="form-label">International</label>
-                                            <input type="number" class="form-control" name="international"
+                                            <input type="text" class="form-control" name="international"
                                                 id="international" value="{{ $server->international }}">
                                             <div class="col-lg-9"><span class="invalid-feedback d-block"
                                                     style="font-weight: 500" id="international_error"></span></div>

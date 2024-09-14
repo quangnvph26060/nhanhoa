@@ -48,6 +48,27 @@
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>
+                            <li>
+                                <a data-bs-toggle="collapse" href="#location">
+                                    <i class="fas fa-th-list"></i>
+                                    <p>Vị trí server</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="location">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('admin.server.addformlocation') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.server.indexlocation') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -101,14 +122,122 @@
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="maps">
+                        <ul class="nav nav-collapse" style="margin-left: 25px">
+                            <li>
+                                <a data-bs-toggle="collapse" href="#cloud">
+                                    {{-- <i class="fas fa-map-marker-alt"></i> --}}
+                                    <p>SSD Cloud</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="cloud">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('admin.cloud.addform') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.cloud.index') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="collapse" href="#cloudssd">
+                                    {{-- <i class="fas fa-map-marker-alt"></i> --}}
+                                    <p> Cloud BackUp</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="cloudssd">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('admin.cloudbackup.addform') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.cloudbackup.index') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#email">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Email</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="email">
+                        <ul class="nav nav-collapse" style="margin-left: 25px">
+                            <li>
+                                <a data-bs-toggle="collapse" href="#emailserver">
+                                    {{-- <i class="fas fa-map-marker-alt"></i> --}}
+                                    <p>Email Server</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="emailserver">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('admin.email.addform') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.email.index') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="collapse" href="#google">
+                                    {{-- <i class="fas fa-map-marker-alt"></i> --}}
+                                    <p>Google Workspace</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="google">
+                                    <ul class="nav nav-collapse">
+                                        <li>
+                                            <a href="{{ route('admin.cloudbackup.addform') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.cloudbackup.index') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#ssl">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>SSL</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="ssl">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ route('admin.cloud.addform') }}">
+                                <a href="{{ route('admin.ssl.addform') }}">
                                     <span class="sub-item">Thêm</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.cloud.index') }}">
+                                <a href="{{ route('admin.ssl.index') }}">
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>

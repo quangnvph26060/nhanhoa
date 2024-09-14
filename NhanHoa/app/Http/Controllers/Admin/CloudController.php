@@ -30,6 +30,7 @@ class CloudController extends Controller
     }
 
     public function addsubmit(Request $request){
+
         $this->cloudService->createCloud($request->all());
 
         return redirect()->route('admin.cloud.index')->with('success', 'Thêm thành công máy chủ ! ');
@@ -43,11 +44,12 @@ class CloudController extends Controller
     public function editform($id){
         $cloud = Cloud::find($id);
         $promotion = $this->promotionService->getPromotionAll();
-        $promotionselect = CloudPromotion::where('server_id', $id)->pluck('promotion_id')->toArray();
+        $promotionselect = CloudPromotion::where('cloud_id', $id)->pluck('promotion_id')->toArray();
         return view('admin.cloud.edit', compact('cloud', 'promotion', 'promotionselect'));
     }
 
     public function editsubmit($id, Request $request){
+        // dd($request->all());
         $cloud = $this->cloudService->updateCloud($request->all(), $id);
         return redirect()->route('admin.cloud.index')->with('success', 'Sửa thành công máy chủ ! ');
     }

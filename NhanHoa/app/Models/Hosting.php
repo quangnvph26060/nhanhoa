@@ -19,6 +19,7 @@ class Hosting extends Model
         'ram',
         'mysql',
         'ftp_account',
+        'domain',
         'subdomain',
         'alias_parked_domain',
         'email_account',

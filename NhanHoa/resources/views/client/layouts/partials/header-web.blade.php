@@ -18,8 +18,7 @@
                 <div class="dropdown-menu-service">
                     <ul class="list-menu-service">
                         <li>
-                            <a class="menu-link" href="{{route('page.domain-registration')}}"
-                                title="">
+                            <a class="menu-link" href="{{route('page.domain-registration')}}" title="">
                                 <div class="item-menu">
                                     <div class="icon">
                                         <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_dktm.png"
@@ -76,8 +75,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="menu-link" href="https://nhanhoa.com/hosting/wordpress-hosting.html"
-                                title="">
+                            <a class="menu-link" href="https://nhanhoa.com/hosting/wordpress-hosting.html" title="">
                                 <div class="item-menu">
                                     <div class="icon">
                                         <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_hosting_03.png"
@@ -213,7 +211,8 @@
                         </li>
 
 
-                    </ul><!--end menu icon -->
+                    </ul>
+                    <!--end menu icon -->
                 </div>
             </div>
 
@@ -226,8 +225,7 @@
                         </a>
                         <ul class="entry-menu dropdown">
                             <li>
-                                <a class="menu-link" href="{{route('page.domain-registration')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.domain-registration')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_dktm.png"
@@ -284,8 +282,7 @@
                             </li>
                             <li>
                                 <a class="menu-link"
-                                    href="https://nhanhoa.com/trang/ten-mien/chuyen-nhuong-ten-mien.html"
-                                    title="">
+                                    href="https://nhanhoa.com/trang/ten-mien/chuyen-nhuong-ten-mien.html" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_domain.png"
@@ -304,8 +301,7 @@
                             </li>
                             <li>
                                 <a class="menu-link"
-                                    href="https://nhanhoa.com/trang/ten-mien/chuyen-doi-nha-cung-cap.html"
-                                    title="">
+                                    href="https://nhanhoa.com/trang/ten-mien/chuyen-doi-nha-cung-cap.html" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_ten_mien.png"
@@ -323,8 +319,7 @@
                                 </a>
                             </li>
                             <li class="d-none">
-                                <a class="menu-link" href="https://nhanhoa.com/ten-mien/khoa-ten-mien.html"
-                                    title="">
+                                <a class="menu-link" href="https://nhanhoa.com/ten-mien/khoa-ten-mien.html" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_khoa_ten_mien.png"
@@ -351,8 +346,7 @@
                         </a>
                         <ul class="entry-menu dropdown">
                             <li>
-                                <a class="menu-link" href="{{ route('page.linux-hosting') }}"
-                                    title="">
+                                <a class="menu-link" href="{{ route('page.linux-hosting') }}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_hosting_02.png"
@@ -370,8 +364,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{ route('page.windows-hosting') }}"
-                                    title="">
+                                <a class="menu-link" href="{{ route('page.windows-hosting') }}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_hosting_01.png"
@@ -401,8 +394,7 @@
                         </a>
                         <ul class="entry-menu dropdown">
                             <li>
-                                <a class="menu-link" href="{{route('page.cloud-server')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.cloud-server')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_may_chu_01.png"
@@ -422,8 +414,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.cloud-international')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.cloud-international')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_may_chu_02.png"
@@ -441,8 +432,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.cloud-storage')}}"
-                                    title="Cloud Storage">
+                                <a class="menu-link" href="{{route('page.cloud-storage')}}" title="Cloud Storage">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_may_chu_01.png"
@@ -460,8 +450,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.cloud-backup')}}"
-                                    title="Cloud Backup">
+                                <a class="menu-link" href="{{route('page.cloud-backup')}}" title="Cloud Backup">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_may_chu_02.png"
@@ -507,8 +496,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.server-location')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.server-location')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_may_chu_02.png"
@@ -596,8 +584,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.email-server')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.email-server')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_email_04.png"
@@ -625,8 +612,7 @@
                         </a>
                         <ul class="entry-menu dropdown">
                             <li>
-                                <a class="menu-link" href="{{route('page.ssl-comodo')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.ssl-comodo')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_ssl_01.png"
@@ -646,8 +632,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.ssl-geotrust')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.ssl-geotrust')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_ssl_02.png"
@@ -667,8 +652,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.ssl-symantec')}}"
-                                    title="">
+                                <a class="menu-link" href="{{route('page.ssl-symantec')}}" title="">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_ssl_03.png"
@@ -698,7 +682,8 @@
                         <ul class="entry-menu dropdown">
 
                             <li>
-                                <a class="menu-link" href="{{route('page.solution-vfone')}}" title="Vfone" target="_blank">
+                                <a class="menu-link" href="{{route('page.solution-vfone')}}" title="Vfone"
+                                    target="_blank">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/vfone.svg"
@@ -716,8 +701,8 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="menu-link" href="{{route('page.electronic-contract')}}" title="Hợp đồng điện tử"
-                                    target="_blank">
+                                <a class="menu-link" href="{{route('page.electronic-contract')}}"
+                                    title="Hợp đồng điện tử" target="_blank">
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/hopdongdientu.png"
@@ -830,11 +815,27 @@
             </div>
             <!--Begin Member Info-->
 
+            @if (isset($user) && $user)
+            <div class="btn-action-header btn-login" id="member_details"  >
+                <a  title="Tài khoản" style="border-radius: 50% ">
+                    {{ $user->name[0] }}
+                </a>
+
+            </div>
+            @else
             <div class="btn-action-header btn-login" id="member_details">
-                <a href="https://nhanhoa.com/login.html" title="Tài khoản">
+                <a href="{{ route('form_login') }}" title="Tài khoản">
                     Tài khoản
                 </a>
+
             </div>
+            @endif
+            {{-- <div class="btn-action-header btn-login" id="member_details">
+                <a href="{{ route('form_login') }}" title="Tài khoản">
+                    Tài khoản
+                </a>
+
+            </div> --}}
 
             <!--End Member Info-->
             <div class="btn-minicart">

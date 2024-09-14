@@ -3,17 +3,26 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Services\ServerService;
 use Illuminate\Http\Request;
 
 class ServerController extends Controller
 {
+    protected $serverService;
+    public function __construct(ServerService $serverService){
+        $this->serverService = $serverService;
+    }
 
     public function dedicatedServer(){
-        return view('client.pages.dedicated-server.index');
+        $servers = $this->serverService->getServerAll();
+        //  dd($servers[0]->promotion);
+        return view('client.pages.dedicated-server.index', compact('servers'));
     }
 
     public function serverLocation(){
-        return view('client.pages.server-location.index');
+        $serverloactions = $this->serverService->getServerLocationAll();
+        //  dd($serverloactions);
+        return view('client.pages.server-location.index', compact('serverloactions'));
     }
 
     public function serverBackup(){
@@ -23,4 +32,10 @@ class ServerController extends Controller
     public function serverAdministration(){
         return view('client.pages.server-administration.index');
     }
+
+    public function pay(Request $request){
+        $serverPay = $this->serverService->PayServer($request->all());
+        return redirect()->back()->with('success', 'Thông báo thành công!');
+    }
+
 }

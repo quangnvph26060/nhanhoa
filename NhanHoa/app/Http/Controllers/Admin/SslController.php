@@ -15,13 +15,8 @@ class SslController extends Controller
         $this->sslService = $sslService;
     }
     public function index(){
-        $ssls = $this->sslService->getSslAll();
-        return view('admin.ssl.index', compact('ssls'));
-    }
-
-    public function getSslAll(){
-        $ssls = $this->sslService->getSslAll();
-        dd($ssls);
+        $ssl = $this->sslService->getSslAll();
+        return view('admin.ssl.index', compact('ssl'));
     }
 
     public function addform(){
@@ -29,10 +24,6 @@ class SslController extends Controller
     }
 
     public function addsubmit(Request $request){
-        //  dd($request->all());
-        $selectedValues = json_decode($request->input('selectedValues'), true);
-
-        dd($selectedValues);
         $ssl = $this->sslService->createsSsl($request->all());
         return redirect()->route('admin.ssl.index')->with('success', 'Thêm thành công ! ');
     }
