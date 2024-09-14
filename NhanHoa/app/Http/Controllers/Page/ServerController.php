@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Services\backup365Service;
 use App\Services\ServerService;
 use Illuminate\Http\Request;
 
 class ServerController extends Controller
 {
     protected $serverService;
-    public function __construct(ServerService $serverService){
+    protected $backup365Service;
+    public function __construct(ServerService $serverService, backup365Service $backup365Service){
         $this->serverService = $serverService;
+        $this->backup365Service = $backup365Service;
     }
 
     public function dedicatedServer(){
@@ -25,7 +28,8 @@ class ServerController extends Controller
     }
 
     public function serverBackup(){
-        return view('client.pages.server-backup.index');
+        $backupservers = $this->backup365Service->getAllBackup365s();
+        return view('client.pages.server-backup.index', compact('backupservers'));
     }
 
     public function serverAdministration(){

@@ -9,24 +9,27 @@
                             tiện lợi nhất cho nhu cầu sử dung của khách hàng</p>
                         <div class="swiper-solution content-table-price swiper">
                             <div class="list-price swiper-wrapper">
+                                @forelse ($backupservers as $item)
                                 <div class="swiper-slide">
                                     <div class="item-price">
-                                        <div class="title">Server Pro 3</div>
-                                        <div class="gb">100 GB</div>
-                                        <div class="price"><span class="new"><strong> 489.000
-                                                    đ</strong>/tháng</span></div>
+                                        <div class="title">{{ $item->name }}</div>
+                                        <div class="gb">{{ $item->storage }} GB</div>
+                                        <div class="price"><span class="new"><strong> {{ number_format($item->price, 0, ',', '.') }} đ</strong>/tháng</span></div>
                                         <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
+                                            <p class="item_pricing_desc">Agent(Server/VPS): {{ $item->agent }}</p>
+                                            <p class="item_pricing_desc">Mã hóa dữ liệu: {{ $item->data_encryption }}</p>
+                                            <p class="item_pricing_desc">Nén dữ liệu: {{ $item->data_compression }}</p>
+                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: {{ $item->schedule_backup }}</p>
+                                            <p class="item_pricing_desc">Sao lưu tự động: {{ $item->auto_backup }}</p>
                                         </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=2047">ĐĂNG
-                                                KÝ NGAY</a></div>
+                                        <div class="link-register">
+                                            <a class="btn-register">ĐĂNG KÝ NGAY</a>
+                                        </div>
                                     </div>
                                 </div>
+                                @empty
+
+                                @endforelse
                                 <div class="swiper-slide">
                                     <div class="item-price">
                                         <div class="title">Server Pro 4</div>
