@@ -54,9 +54,7 @@
         color: #6c757d;
     }
 
-    .table-responsive {
-        margin-top: 1rem;
-    }
+
 
     .table {
         margin-bottom: 0;

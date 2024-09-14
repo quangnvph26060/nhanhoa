@@ -1,3 +1,8 @@
+<style>
+    .nav-collapse{
+        margin-bottom: 0px;
+    }
+</style>
 <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
         <!-- Logo Header -->
@@ -176,7 +181,7 @@
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="email">
-                        <ul class="nav nav-collapse" style="margin-left: 25px">
+                        <ul class="nav nav-collapse" style="margin-left: 25px; margin: 0" >
                             <li>
                                 <a data-bs-toggle="collapse" href="#emailserver">
                                     {{-- <i class="fas fa-map-marker-alt"></i> --}}
@@ -184,7 +189,7 @@
                                     <span class="caret"></span>
                                 </a>
                                 <div class="collapse" id="emailserver">
-                                    <ul class="nav nav-collapse">
+                                    <ul class="nav nav-collapse" style="margin-bottom: 0">
                                         <li>
                                             <a href="{{ route('admin.email.addform') }}">
                                                 <span class="sub-item">Thêm</span>
@@ -205,14 +210,14 @@
                                     <span class="caret"></span>
                                 </a>
                                 <div class="collapse" id="google">
-                                    <ul class="nav nav-collapse">
+                                    <ul class="nav nav-collapse" style="margin-bottom: 0">
                                         <li>
-                                            <a href="{{ route('admin.cloudbackup.addform') }}">
+                                            <a href="{{ route('admin.googleworkspace.addform') }}">
                                                 <span class="sub-item">Thêm</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('admin.cloudbackup.index') }}">
+                                            <a href="{{ route('admin.googleworkspace.index') }}">
                                                 <span class="sub-item">Danh sách</span>
                                             </a>
                                         </li>

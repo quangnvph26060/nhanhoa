@@ -131,7 +131,7 @@
                                                     <li><i class="fas fa-check-circle" style="color: #74C0FC;"></i> Số lượng
                                                         user giới hạn: {{ $item->user_limit }}</li>
                                                     <li class="hot-highlight"><i class="fas fa-gift"
-                                                            style="color: #ee2b2b;"></i>{{ $item->promotion->name }}</li>
+                                                            style="color: #ee2b2b;"></i>{{ isset($item->promotion) ? $item->promotion->name : '' }}</li>
                                                 </ul>
 
 
@@ -252,7 +252,7 @@
                                             <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
                                                     style="color: #74C0FC;"></i> {{ $item->describe }}. </li>
                                             <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                    style="color: #74C0FC;"></i> {{ $item->storage }}</li>
+                                                    style="color: #74C0FC;"></i> Dung lượng lưu trữ: {{ $item->storage }}</li>
 
                                         </ul>
 
@@ -344,135 +344,6 @@
                               @empty
 
                               @endforelse
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="item ">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Business Starter">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    Teaching & Learning Upgrade
-                                                </div>
-                                                <div class="price">
-                                                    89.000 đ/Tháng
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                        style="color: #74C0FC;"></i> Gói dịch vụ tập trung vào việc nâng
-                                                    cao chất lượng giảng dạy với công cụ video và trải nghiệm lớp học nâng
-                                                    cao</li>
-                                                <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                        style="color: #74C0FC;"></i> Dung lượng lưu trữ: 100TB dữ liệu
-                                                    chung + 100GB cho mỗi tài khoản</li>
-
-                                            </ul>
-
-
-                                        </div>
-                                        <div class="account-qty d-none">
-                                            <div class="account-qty-item">
-                                                Số lượng user:
-                                            </div>
-                                            <div class="account-qty-item">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <a class="btn btn-outline-secondary minusBtn"
-                                                            href="javascript:;">-</a>
-                                                    </div>
-                                                    <input type="number" class="form-control account_input"
-                                                        value="1" />
-                                                    <div class="input-group-append">
-                                                        <a class="btn btn-outline-secondary plusBtn"
-                                                            href="javascript:;">+</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn_show_popup btn-service"
-                                                data-title="Tư vấn gói Google Workspace Teaching & Learning Upgrade"
-                                                href="#tuvanngay">
-                                                Liên hệ tư vấn
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-12">
-                                    <div class="item">
-                                        <div class="bgr-top">
-                                            <img src="https://nhanhoa.com/templates/images/v2/subtract.png"
-                                                alt="Bảng giá">
-                                        </div>
-
-                                        <div class="icon-name">
-                                            <div class="icon">
-                                                <img src="https://nhanhoa.com/templates/images/v2/kim_cuong.png"
-                                                    alt="Business Starter">
-                                            </div>
-                                            <div class="name-price">
-                                                <div class="name">
-                                                    Education Plus
-                                                </div>
-                                                <div class="price">
-                                                    16.500 đ/Tháng
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="info">
-                                            <ul class="pl-0">
-                                                <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                        style="color: #74C0FC;"></i> Gói dịch vụ cao cấp - giải pháp toàn
-                                                    diện cho trường học với tính năng bảo mật, phân tích cùng các công cụ
-                                                    dạy và học tiên tiến</li>
-                                                <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle"
-                                                        style="color: #74C0FC;"></i> Dung lượng lưu trữ: </span> 100TB dữ
-                                                    liệu chung + 20GB cho mỗi tài khoản</li>
-
-                                            </ul>
-
-                                        </div>
-
-                                        <div class="account-qty d-none">
-                                            <div class="account-qty-item">
-                                                Số lượng user:
-                                            </div>
-                                            <div class="account-qty-item">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <a class="btn btn-outline-secondary minusBtn"
-                                                            href="javascript:;">-</a>
-                                                    </div>
-                                                    <input type="number" class="form-control account_input"
-                                                        value="1" />
-                                                    <div class="input-group-append">
-                                                        <a class="btn btn-outline-secondary plusBtn"
-                                                            href="javascript:;">+</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="link-add-cart">
-                                            <a class="btn-add-cart btn_show_popup btn-service"
-                                                data-title="Tư vấn gói Google Workspace Education Plus" href="#tuvanngay">
-                                                Liên hệ tư vấn
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
 
                             </div>
                         </div>
