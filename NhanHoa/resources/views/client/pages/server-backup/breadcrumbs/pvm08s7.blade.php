@@ -14,23 +14,27 @@
                                     <div class="item-price">
                                         <div class="title">{{ $item->name }}</div>
                                         <div class="gb">{{ $item->storage }} GB</div>
-                                        <div class="price"><span class="new"><strong> {{ number_format($item->price, 0, ',', '.') }} đ</strong>/tháng</span></div>
+                                        <div class="price"><span class="new"><strong> {{ number_format($item->price, 0,
+                                                    ',', '.') }} đ</strong>/tháng</span></div>
                                         <div class="info">
                                             <p class="item_pricing_desc">Agent(Server/VPS): {{ $item->agent }}</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: {{ $item->data_encryption }}</p>
+                                            <p class="item_pricing_desc">Mã hóa dữ liệu: {{ $item->data_encryption }}
+                                            </p>
                                             <p class="item_pricing_desc">Nén dữ liệu: {{ $item->data_compression }}</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: {{ $item->schedule_backup }}</p>
+                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: {{
+                                                $item->schedule_backup }}</p>
                                             <p class="item_pricing_desc">Sao lưu tự động: {{ $item->auto_backup }}</p>
                                         </div>
                                         <div class="link-register">
-                                            <a class="btn-register">ĐĂNG KÝ NGAY</a>
+                                            <a class="btn-add-cart btn-service add_service_cart"
+                                            onclick="openPopup({{ $item->id }}, '{{ $item->name }}')">ĐĂNG KÝ NGAY</a>
                                         </div>
                                     </div>
                                 </div>
                                 @empty
 
                                 @endforelse
-                                <div class="swiper-slide">
+                                {{-- <div class="swiper-slide">
                                     <div class="item-price">
                                         <div class="title">Server Pro 4</div>
                                         <div class="gb">150 GB</div>
@@ -173,10 +177,49 @@
                                                 href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=3119">ĐĂNG
                                                 KÝ NGAY</a></div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div><!-- If we need navigation buttons -->
                             <div class="swiper-button-next"><i class="fas fa-angle-right fa-xs"></i></div>
                             <div class="swiper-button-prev"><i class="fas fa-angle-left fa-xs"></i></div>
+                        </div>
+                        <div class="popup-cart" id="popup">
+                            <div class="content_popup">
+                                <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                    title="close">×</a>
+                                <div class="input-content">
+                                    <div class="input-content-intro">
+                                        <div class="input-content-intro-icon">
+                                            <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
+                                        </div>
+                                        <div class="input-content-intro-des">
+                                            <div class="text-hello">Xin chào,</div>
+                                            <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với
+                                                bạn.</p>
+                                        </div>
+                                    </div>
+                                    <form action="{{ route('page.serverlocation.pay') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" id="cloud_id_input" name="serverlocation_id">
+                                        <input class="form-control" type="text" placeholder="Họ và tên" name="name">
+                                        <input class="form-control" type="text" placeholder="Số điện thoại"
+                                            name="phone">
+                                        <input class="form-control" type="text" placeholder="Email" name="email">
+                                        <div class="product-info">
+                                            <p>Gói Server Backup365 : </p>
+                                            <span class="product-name">
+                                                <span id="product_name"></span>
+                                            </span>
+                                        </div>
+
+                                        <div class="submit-content">
+                                            <button class="btn btn-submit">Gửi Đi</button>
+                                            <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                                (24/7)
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -184,3 +227,36 @@
         </div>
     </div>
 </div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+<script>
+    function openPopup(cloudId, productName) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('cloud_id_input').value = cloudId; // Cập nhật giá trị cloud_id
+    document.getElementById('product_name').textContent = productName; // Cập nhật tên sản phẩm
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+
+$(document).ready(function() {
+        @if (session('success'))
+            toastr.success("{{ session('success') }}", "Thông báo:", {
+                positionClass: "toast-bottom-right",
+                timeOut: 3000,
+                closeButton: true,
+                progressBar: true,
+                preventDuplicates: true,
+            });
+        @endif
+    });
+</script>

@@ -261,6 +261,27 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#baocao">
+                        <i class="fas fa-tags"></i> <!-- Icon for Promotion -->
+                        <p>Báo cáo</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="baocao">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.promotion.addform') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.promotion.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

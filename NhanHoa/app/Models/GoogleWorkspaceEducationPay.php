@@ -17,4 +17,10 @@ class GoogleWorkspaceEducationPay extends Model
         'email',
         'googleworkspace_id'
     ];
+    protected $appends = ['education'] ;
+
+    public function getEducationAttribute()
+    {
+        return GoogleWorkspaceEducation::where('id', $this->attributes['googleworkspace_id'])->first();
+    }
 }

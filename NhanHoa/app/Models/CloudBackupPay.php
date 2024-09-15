@@ -18,4 +18,11 @@ class CloudBackupPay extends Model
         'phone',
         'cloudbackup_id',
     ];
+
+    protected $appends = ['cloudbackup'] ;
+
+    public function getCloudbackupAttribute()
+    {
+        return CloudBackup::where('id', $this->attributes['cloudbackup_id'])->first();
+    }
 }

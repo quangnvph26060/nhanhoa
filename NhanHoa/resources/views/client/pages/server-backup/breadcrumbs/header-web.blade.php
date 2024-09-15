@@ -1,4 +1,4 @@
-<div class="row d-none d-md-flex">
+<div class="row d-none d-md-flex" >
     <div class="col-md-3 col-12">
         <div nh-block="qhdw2uy" nh-block-cache="true" class="">
             <div class="logo-section">

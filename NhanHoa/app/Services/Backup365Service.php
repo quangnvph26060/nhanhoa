@@ -116,7 +116,7 @@ class backup365Service
         }
     }
 
-    public function PayCloud(array $data)
+    public function payBackup365(array $data)
     {
         try {
             DB::beginTransaction();

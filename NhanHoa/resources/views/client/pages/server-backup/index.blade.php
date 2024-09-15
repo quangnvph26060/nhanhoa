@@ -15,11 +15,12 @@
     <link href="{{ asset('client/assets/css/page.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('client/assets/css/utilities.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('client/assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('client/assets/css/popup.css') }}" type="text/css">
 
 </head>
 
 <body class=" home">
-    <header>
+    <header style="position: fixed; z-index: 9999; width: 100%;">
         <div nh-row="6uqv1wl" id="webHeader" class="row-align-center setting-menu header-menu py-2">
             <div class="container">
                 <!-- Row cho màn hình lớn (desktop) -->

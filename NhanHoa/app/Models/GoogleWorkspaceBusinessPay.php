@@ -18,4 +18,11 @@ class GoogleWorkspaceBusinessPay extends Model
         'email',
         'googleworkspace_id'
     ];
+
+    protected $appends = ['business'] ;
+
+    public function getBusinessAttribute()
+    {
+        return GoogleWorkspace::where('id', $this->attributes['googleworkspace_id'])->first();
+    }
 }

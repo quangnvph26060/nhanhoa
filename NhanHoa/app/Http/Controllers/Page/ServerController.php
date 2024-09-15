@@ -46,4 +46,9 @@ class ServerController extends Controller
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 
+    public function payBackup365(Request $request){
+        $serverPay = $this->backup365Service->PayBackup365($request->all());
+        return redirect()->back()->with('success', 'Thông báo thành công!');
+    }
+
 }

@@ -17,4 +17,11 @@ class EmailServerPay extends Model
         'email',
         'emailServer_id'
     ];
+
+    protected $appends = ['emailserver'] ;
+
+    public function getEmailserverAttribute()
+    {
+        return EmailServer::where('id', $this->attributes['emailServer_id'])->first();
+    }
 }
