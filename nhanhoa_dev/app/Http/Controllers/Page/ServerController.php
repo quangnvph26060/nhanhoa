@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
-use App\Services\backup365Service;
+use App\Services\Backup365Service;
 use App\Services\ServerService;
 use Illuminate\Http\Request;
 
@@ -11,7 +11,7 @@ class ServerController extends Controller
 {
     protected $serverService;
     protected $backup365Service;
-    public function __construct(ServerService $serverService, backup365Service $backup365Service){
+    public function __construct(ServerService $serverService, Backup365Service $backup365Service){
         $this->serverService = $serverService;
         $this->backup365Service = $backup365Service;
     }
