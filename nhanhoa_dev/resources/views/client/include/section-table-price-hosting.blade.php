@@ -148,7 +148,7 @@
                                         </div>
                                         <form action="{{ route('page.hosting-pay') }}" method="POST">
                                             @csrf
-                                            <input type="hidden" id="cloud_id_input" name="cloud_id">
+                                            <input type="hidden" id="cloud_id_input" name="hostingid">
                                             <input class="form-control" type="text" placeholder="Họ và tên" name="name">
                                             <input class="form-control" type="text" placeholder="Số điện thoại"
                                                 name="phone">
