@@ -12,7 +12,7 @@ class CloudController extends Controller
     protected $cloudBackupService;
     protected $cloudService;
 
-    public function __construct(CloudBackupService $cloudBackupService, cloudService $cloudService){
+    public function __construct(CloudBackupService $cloudBackupService, CloudService $cloudService){
         $this->cloudBackupService = $cloudBackupService;
         $this->cloudService = $cloudService;
     }
