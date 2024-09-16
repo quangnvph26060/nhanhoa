@@ -128,7 +128,7 @@
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="addserver"
+                            <form method="POST" enctype="multipart/form-data" id="server"
                                 action="{{ route('admin.server.editsubmit', ['id'=> $server->id]) }}">
                                 @csrf
                                 <div class="row">
@@ -221,7 +221,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitserver(event)">
                                         Xác nhận
                                     </button>
                                 </div>
@@ -239,5 +239,106 @@
     $jq(document).ready(function() {
         $jq('#multiple-select').select2();
     });
+</script>
+<script>
+    var validateorder = {
+    'name': {
+        'element': document.getElementById('name'),
+        'error': document.getElementById('name_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0062')
+        }]
+    },
+    'price': {
+        'element': document.getElementById('price'),
+        'error': document.getElementById('price_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0063')
+        }]
+    },
+    'cpu': {
+        'element': document.getElementById('cpu'),
+        'error': document.getElementById('cpu_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0064')
+        }]
+    },
+    'ram': {
+        'element': document.getElementById('ram'),
+        'error': document.getElementById('ram_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0066')
+        }]
+    },
+    'ssd': {
+        'element': document.getElementById('ssd'),
+        'error': document.getElementById('ssd_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0065')
+        }]
+    },
+    'data': {
+        'element': document.getElementById('data'),
+        'error': document.getElementById('data_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0067')
+        }]
+    },
+    'ip': {
+        'element': document.getElementById('ip'),
+        'error': document.getElementById('ip_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0068')
+        }]
+    },
+    'domestic': {
+        'element': document.getElementById('domestic'),
+        'error': document.getElementById('domestic_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0069')
+        }]
+    },
+    'international': {
+        'element': document.getElementById('international'),
+        'error': document.getElementById('international_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0070')
+        }]
+    }
+};
+
+function submitserver(event) {
+    event.preventDefault();
+    if (validateAllFields(validateorder)) {
+        document.getElementById('server').submit();
+    }
+}
 </script>
 @endsection

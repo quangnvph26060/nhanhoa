@@ -142,6 +142,42 @@ function generateErrorMessage(code, values = []) {
          E0046: 'Nhập mô tả',
          E0047: 'Nhập chi phí',
          E0048: 'Nhập dung lượng lưu trữ',
+         // Hosting
+         E0049: 'Nhập tên gói',
+         E0050: 'Nhập giá gói',
+         E0051: 'Chọn loại Hosting',
+         E0052: 'Nhập dung lượng lưu trữ',
+         E0053: 'Nhập băng thông',
+         E0054: 'Nhập cpu',
+         E0055: 'Nhập ram',
+         E0056: 'Nhập MySQL/MariaDB',
+         E0057: 'Nhập tài khoản FTP',
+         E0058: 'Nhập Domain',
+         E0059: 'Nhập Subdomain',
+         E0060: 'Nhập Alias/Parked Domain',
+         E0061: 'Nhập Email Account',
+         // server
+         E0062: 'Nhập tên gói',
+         E0063: 'Nhập giá gói',
+         E0064: 'Nhập cpu',
+         E0065: 'Nhập ssd',
+         E0066: 'Nhập ram',
+         E0067: 'Nhập data',
+         E0068: 'Nhập ip',
+         E0069: 'Nhập băng thông trong nước',
+         E0070: 'Nhập băng thông quốc tế',
+         // server location
+         E0071: 'Nhập tên gói.',
+         E0072: 'Nhập giá.',
+         E0073: 'Nhập băng thông trong nước.',
+         E0074: 'Nhập băng thông quốc tế.',
+         E0075: 'Nhập dữ liệu truyền.',
+         E0076: 'Nhập không gian rack.',
+         E0077: 'Nhập công suất nguồn.',
+         E0078: 'Chọn UPS/Máy điện dự phòng.',
+         E0079: 'Chọn điều hòa nhiệt độ.',
+         E0080: 'Nhập ổ cắm mạng.',
+         E0081: 'Nhập địa chỉ IP.'
 
     };
     const errorMessage = errorMessages[code];

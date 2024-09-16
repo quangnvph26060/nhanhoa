@@ -125,7 +125,7 @@
                     <h4 class="card-title" style="text-align: center; color:white">Thêm Server Location</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" id="add_server_location" action="{{route('admin.server.addsubmitlocation')}}">
+                    <form method="POST" id="serverlocation" action="{{route('admin.server.addsubmitlocation')}}">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6 add_product">
@@ -250,7 +250,7 @@
                             </div>
                         </div>
                         <div class="modal-footer m-2">
-                            <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                            <button type="button" class="btn btn-primary w-md" onclick="submitlocation(event)">Xác 1 nhận</button>
                         </div>
                     </form>
                 </div>
@@ -258,5 +258,127 @@
         </div>
     </div>
 </div>
+
+<script>
+    var validateServerLocation = {
+    'name': {
+        'element': document.getElementById('name'),
+        'error': document.getElementById('name_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0071')
+        }]
+    },
+    'price': {
+        'element': document.getElementById('price'),
+        'error': document.getElementById('price_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0072')
+        }]
+    },
+    'bw_in_country': {
+        'element': document.getElementById('bw_in_country'),
+        'error': document.getElementById('bw_in_country_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0073')
+        }]
+    },
+    'bw_international': {
+        'element': document.getElementById('bw_international'),
+        'error': document.getElementById('bw_international_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0074')
+        }]
+    },
+    'data_transfer': {
+        'element': document.getElementById('data_transfer'),
+        'error': document.getElementById('data_transfer_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0075')
+        }]
+    },
+    'rack_space': {
+        'element': document.getElementById('rack_space'),
+        'error': document.getElementById('rack_space_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0076')
+        }]
+    },
+    'power_capacity': {
+        'element': document.getElementById('power_capacity'),
+        'error': document.getElementById('power_capacity_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0077')
+        }]
+    },
+    'ups_backup': {
+        'element': document.getElementById('ups_backup'),
+        'error': document.getElementById('ups_backup_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0078')
+        }]
+    },
+    'air_conditioning': {
+        'element': document.getElementById('air_conditioning'),
+        'error': document.getElementById('air_conditioning_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0079')
+        }]
+    },
+    'network_socket': {
+        'element': document.getElementById('network_socket'),
+        'error': document.getElementById('network_socket_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0080')
+        }]
+    },
+    'ip_address': {
+        'element': document.getElementById('ip_address'),
+        'error': document.getElementById('ip_address_error'),
+        'validations': [{
+            'func': function(value) {
+                return checkRequired(value);
+            },
+            'message': generateErrorMessage('E0081')
+        }]
+    }
+};
+
+function submitlocation(event) {
+    event.preventDefault();
+    if (validateAllFields(validateServerLocation)) {
+        document.getElementById('serverlocation').submit();
+    }
+}
+</script>
 
 @endsection

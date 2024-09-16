@@ -162,7 +162,7 @@
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="addserver"
+                            <form method="POST" enctype="multipart/form-data" id="hosting"
                                 action="{{ route('admin.hosting.addsubmit') }}">
                                 @csrf
                                 <div class="row">
@@ -305,7 +305,8 @@
                                                 Khuyễn mãi
                                                 <input id="my-input" style="display:none;" />
                                             </label>
-                                            <select id="multiple-select" class="form-control" name="promotion[]" multiple>
+                                            <select id="multiple-select" class="form-control" name="promotion[]"
+                                                multiple>
                                                 @forelse($promotion as $key => $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                 @empty
@@ -317,7 +318,7 @@
                                 </div>
 
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submithosting(event)">Xác nhận</button>
                                 </div>
                             </form>
                         </div>
@@ -333,6 +334,151 @@
     $jq(document).ready(function() {
         $jq('#multiple-select').select2();
     });
-</script>s
+</script>
+<script>
+    var validateorder = {
+            'name': {
+                'element': document.getElementById('name'),
+                'error': document.getElementById('name_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0049')
+                }, ]
+            },
+            'price': {
+                'element': document.getElementById('price'),
+                'error': document.getElementById('price_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0050')
+                }, ]
+            },
+            'hostingtype_id': {
+                'element': document.getElementById('hostingtype_id'),
+                'error': document.getElementById('hostingtype_id_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0051')
+                }, ]
+            },
+            'storage': {
+                'element': document.getElementById('storage'),
+                'error': document.getElementById('storage_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0052')
+                }, ]
+            },
+            'bandwidth': {
+                'element': document.getElementById('bandwidth'),
+                'error': document.getElementById('bandwidth_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0053')
+                }, ]
+            },
+            'cpu': {
+                'element': document.getElementById('cpu'),
+                'error': document.getElementById('cpu_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0054')
+                }, ]
+            },
+            'ram': {
+                'element': document.getElementById('ram'),
+                'error': document.getElementById('ram_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0055')
+                }, ]
+            },
+            'mysql': {
+                'element': document.getElementById('mysql'),
+                'error': document.getElementById('mysql_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0056')
+                }, ]
+            },
+            'ftp_account': {
+                'element': document.getElementById('ftp_account'),
+                'error': document.getElementById('ftp_account_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0057')
+                }, ]
+            },
+            'domain': {
+                'element': document.getElementById('domain'),
+                'error': document.getElementById('domain_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0058')
+                }, ]
+            },
+            'subdomain': {
+                'element': document.getElementById('subdomain'),
+                'error': document.getElementById('subdomain_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0059')
+                }, ]
+            },
+            'alias_parked_domain': {
+                'element': document.getElementById('alias_parked_domain'),
+                'error': document.getElementById('alias_parked_domain_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0060')
+                }, ]
+            },
+            'email_account': {
+                'element': document.getElementById('email_account'),
+                'error': document.getElementById('email_account_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0061')
+                }, ]
+            },
+
+        }
+
+        function submithosting(event) {
+            event.preventDefault();
+            if (validateAllFields(validateorder)) {
+                document.getElementById('hosting').submit();
+            }
+        }
+
+
+
+</script>
 
 @endsection
