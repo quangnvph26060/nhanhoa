@@ -127,7 +127,7 @@
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="addproduct"
+                            <form method="POST" enctype="multipart/form-data" id="add"
                                 action="{{ route('admin.domain.addsubmit') }}">
                                 @csrf
                                 <div class="row">
@@ -136,38 +136,62 @@
                                             <label for="name" class="form-label">Tên miền</label>
                                             <input placeholder=".net.vn/ .com.vn/ .com" type="text" class="form-control"
                                                 name="name" id="name">
+                                                <div class="col-lg-9">
+                                                    <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                        id="name_error"></span>
+                                                </div>
                                         </div>
 
 
                                         <div>
-                                            <label for="domaintype_id" class="form-label">Loại tên miền</label>
+                                            <label for="domaintype_id" class="form-label">Loại miền</label>
                                             <select name="domaintype_id" class="form-control" id="domaintype_id">
                                                 <option value="">Chọn loại tên miền</option>
                                                 <option value="1">Tên miền quốc tế</option>
                                                 <option value="2">Tên miền quốc gia</option>
                                             </select>
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="domaintype_id_error"></span>
+                                            </div>
                                         </div>
 
                                         <div>
                                             <label for="le_phi" class="form-label">Lệ Phí</label>
                                             <input type="text" class="form-control" name="le_phi" id="le_phi" >
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="le_phi_error"></span>
+                                            </div>
                                         </div>
 
                                         <div>
                                             <label for="phiduytri" class="form-label">Phí Duy Trì</label>
                                             <input type="number" class="form-control" name="phiduytri" id="phiduytri">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="phiduytri_error"></span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="dichvu" class="form-label">Dịch Vụ</label>
                                             <input type="number" class="form-control" name="dichvu" id="dichvu">
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="dichvu_error"></span>
+                                            </div>
                                         </div>
 
                                         <div>
                                             <label for="dicvunamsau" class="form-label">Dịch Vụ Năm Sau</label>
                                             <input type="number" class="form-control" name="dicvunamsau"
                                                 id="dicvunamsau">
+                                                <div class="col-lg-9">
+                                                    <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                        id="dicvunamsau_error"></span>
+                                                </div>
                                         </div>
                                         <div>
                                             <label for="logo" class="form-label">Logo </label>
@@ -177,13 +201,17 @@
                                                     type="file" name="logo" accept="image/*">
                                                 <label class="custom-file-label" for="logo">Chọn logo</label>
                                             </div>
+                                            <div class="col-lg-9">
+                                                <span class="invalid-feedback d-block" style="font-weight: 500"
+                                                    id="logo_error"></span>
+                                            </div>
                                             <img id="profileImage" style="width: 100px; height: auto;" src=""
                                                 alt="image" class="avatar mt-3">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitadd(event)">Xác nhận</button>
                                 </div>
                             </form>
 
@@ -213,6 +241,87 @@
         value = value.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
         input.value = value;
     }
+
+     var validateorder = {
+            'name': {
+                'element': document.getElementById('name'),
+                'error': document.getElementById('name_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0022')
+                }, ]
+            },
+            'domaintype_id': {
+                'element': document.getElementById('domaintype_id'),
+                'error': document.getElementById('domaintype_id_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0023')
+                }, ]
+            },
+            'le_phi': {
+                'element': document.getElementById('le_phi'),
+                'error': document.getElementById('le_phi_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0024')
+                }, ]
+            },
+            'phiduytri': {
+                'element': document.getElementById('phiduytri'),
+                'error': document.getElementById('phiduytri_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0025')
+                }, ]
+            },
+            'dichvu': {
+                'element': document.getElementById('dichvu'),
+                'error': document.getElementById('dichvu_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0026')
+                }, ]
+            },
+            'dicvunamsau': {
+                'element': document.getElementById('dicvunamsau'),
+                'error': document.getElementById('dicvunamsau_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0027')
+                }, ]
+            },
+            'logo': {
+                'element': document.getElementById('logo'),
+                'error': document.getElementById('logo_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0028')
+                }, ]
+            },
+
+        }
+
+        function submitadd(event) {
+            event.preventDefault();
+            if (validateAllFields(validateorder)) {
+                document.getElementById('add').submit();
+            }
+        }
 
 </script>
 @endsection

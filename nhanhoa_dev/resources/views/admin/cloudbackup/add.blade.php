@@ -199,7 +199,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitadd(event)">Xác nhận</button>
                                 </div>
                             </form>
                         </div>
@@ -209,4 +209,87 @@
         </div>
     </div>
 </div>
+
+<script>
+     var validateorder = {
+            'name': {
+                'element': document.getElementById('name'),
+                'error': document.getElementById('name_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E006')
+                }, ]
+            },
+            'price': {
+                'element': document.getElementById('price'),
+                'error': document.getElementById('price_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E007')
+                }, ]
+            },
+            'backuptype': {
+                'element': document.getElementById('backuptype'),
+                'error': document.getElementById('backuptype_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E008')
+                }, ]
+            },
+            'package_applied': {
+                'element': document.getElementById('package_applied'),
+                'error': document.getElementById('package_applied_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E009')
+                }, ]
+            },
+            'max_storage': {
+                'element': document.getElementById('max_storage'),
+                'error': document.getElementById('max_storage_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0010')
+                }, ]
+            },
+            'backup_time': {
+                'element': document.getElementById('backup_time'),
+                'error': document.getElementById('backup_time_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0011')
+                }, ]
+            },
+            'backup_count': {
+                'element': document.getElementById('backup_count'),
+                'error': document.getElementById('backup_count_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0012')
+                }, ]
+            },
+
+        }
+
+        function submitadd(event) {
+            event.preventDefault();
+            if (validateAllFields(validateorder)) {
+                document.getElementById('addcloudbackup').submit();
+            }
+        }
+</script>
 @endsection

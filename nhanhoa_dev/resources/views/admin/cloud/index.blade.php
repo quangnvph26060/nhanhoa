@@ -166,7 +166,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách máy chủ</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách Cloud</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

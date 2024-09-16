@@ -127,7 +127,7 @@
                 <div class="card-body">
                     <div class="" id="business" style="display: block;">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="addcloudbackup"
+                            <form method="POST" enctype="multipart/form-data" id="education"
                             action="{{ route('admin.googleworkspace.education.editsubmit', ['id' => $education->id]) }}">
                             @csrf
                             <div class="row">
@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer m-2">
-                                <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                                <button type="submit" class="btn btn-primary w-md" onclick="submiteducation(event)">Xác nhận</button>
                             </div>
                         </form>
                         </div>
@@ -191,6 +191,55 @@
         </div>
     </div>
 </div>
-
+<script>
+    var validateeducation = {
+            'nameeducation': {
+                'element': document.getElementById('nameeducation'),
+                'error': document.getElementById('nameeducation_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0045')
+                }, ]
+            },
+            'describe': {
+                'element': document.getElementById('describe'),
+                'error': document.getElementById('describe_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0046')
+                }, ]
+            },
+            'price': {
+                'element': document.getElementById('price'),
+                'error': document.getElementById('price_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0047')
+                }, ]
+            },
+            'storage': {
+                'element': document.getElementById('storage'),
+                'error': document.getElementById('storage_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0048')
+                }, ]
+            },
+    }
+    function submiteducation(event) {
+        event.preventDefault();
+        if (validateAllFields(validateeducation)) {
+            document.getElementById('education').submit();
+        }
+    }
+</script>
 @endsection
 

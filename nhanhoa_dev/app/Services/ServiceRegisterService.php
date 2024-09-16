@@ -14,7 +14,7 @@ use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
-class PromotionService
+class ServiceRegisterService
 {
     protected $backup365Pay;
     protected $cloudBackupPay;

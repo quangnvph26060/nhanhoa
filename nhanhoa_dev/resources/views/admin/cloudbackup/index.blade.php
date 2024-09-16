@@ -166,7 +166,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách máy chủ</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách Cloud Backup</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -174,7 +174,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.cloud.addform') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.cloudbackup.addform') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>

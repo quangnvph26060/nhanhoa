@@ -36,7 +36,8 @@ class EmailServerController extends Controller
     }
     public function editForm($id){
         $email = EmailServer::find($id);
-        return view('admin.cloubbackup.edit', compact('backup'));
+        $promotion = Promotion::all();
+        return view('admin.email.edit', compact('email', 'promotion'));
     }
 
 

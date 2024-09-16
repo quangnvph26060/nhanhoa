@@ -129,14 +129,14 @@
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             <form method="POST" enctype="multipart/form-data" id="add"
-                                action="{{ route('admin.email.addsubmit') }}">
+                                action="{{ route('admin.email.editsubmit', ['id' => $email->id]) }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <!-- Tên dịch vụ -->
                                         <div>
                                             <label for="name" class="form-label">Tên gói dịch vụ</label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="VD : Mini">
+                                            <input type="text" class="form-control" name="name" id="name" value="{{ $email->name }}" placeholder="VD : Mini">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="name_error"></span>
@@ -146,7 +146,7 @@
                                         <!-- Giá -->
                                         <div>
                                             <label for="price" class="form-label">Giá</label>
-                                            <input type="number" class="form-control" name="price" id="price" min="0" placeholder="VD : 100000">
+                                            <input type="number" class="form-control" name="price" id="price" value="{{ $email->price }}"  min="0" placeholder="VD : 100000">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="price_error"></span>
@@ -156,7 +156,7 @@
                                         <!-- Tỷ lệ gửi mail vào inbox -->
                                         <div>
                                             <label for="inbox_rate" class="form-label">Tỷ lệ gửi mail vào inbox (%)</label>
-                                            <input type="number" class="form-control" name="inbox_rate" id="inbox_rate" max="100">
+                                            <input type="number" class="form-control" name="inbox_rate" id="inbox_rate" value="{{ $email->inbox_rate }}"  max="100">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="inbox_rate_error"></span>
@@ -165,7 +165,7 @@
                                         <!-- Dung lượng lưu trữ -->
                                         <div>
                                             <label for="storage_capacity" class="form-label">Dung lượng lưu trữ</label>
-                                            <input type="text" class="form-control" name="storage_capacity" placeholder="VD : 120GB"
+                                            <input type="text" class="form-control" name="storage_capacity" value="{{ $email->storage_capacity }}" placeholder="VD : 120GB"
                                                 id="storage_capacity">
                                                 <div class="col-lg-9">
                                                     <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -176,7 +176,7 @@
                                         <div>
                                             <label for="unlimited_email_addresses" class="form-label">Địa chỉ email
                                                 </label>
-                                            <input type="text" class="form-control" name="unlimited_email_addresses" placeholder="VD : Không giới hạn"
+                                            <input type="text" class="form-control" name="unlimited_email_addresses" value="{{ $email->unlimited_email_addresses }}"  placeholder="VD : Không giới hạn"
                                                 id="unlimited_email_addresses">
                                                 <div class="col-lg-9">
                                                     <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -191,7 +191,7 @@
                                         <div>
                                             <label for="unlimited_email_forwarder" class="form-label">Email forwarder
                                                </label>
-                                            <input type="text" class="form-control" name="unlimited_email_forwarder" placeholder="VD : Không giới hạn"
+                                            <input type="text" class="form-control" name="unlimited_email_forwarder" value="{{ $email->unlimited_email_forwarder }}"  placeholder="VD : Không giới hạn"
                                                 id="unlimited_email_forwarder">
                                                 <div class="col-lg-9">
                                                     <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -202,7 +202,7 @@
                                         <!-- Danh sách email không giới hạn -->
                                         <div>
                                             <label for="unlimited_email_list" class="form-label">Danh sách email </label>
-                                            <input type="text" class="form-control" name="unlimited_email_list" placeholder="VD : Không giới hạn"
+                                            <input type="text" class="form-control" name="unlimited_email_list" value="{{ $email->unlimited_email_list }}"  placeholder="VD : Không giới hạn"
                                                 id="unlimited_email_list">
                                                 <div class="col-lg-9">
                                                     <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -213,7 +213,7 @@
                                         <!-- Tên miền email không giới hạn -->
                                         <div>
                                             <label for="unlimited_email_domain" class="form-label">Tên miền email</label>
-                                            <input type="text" class="form-control" name="unlimited_email_domain" placeholder="VD : Không giới hạn"
+                                            <input type="text" class="form-control" name="unlimited_email_domain" value="{{ $email->unlimited_email_domain }}"  placeholder="VD : Không giới hạn"
                                                 id="unlimited_email_domain">
                                                 <div class="col-lg-9">
                                                     <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -224,7 +224,7 @@
                                         <!-- Địa chỉ IP -->
                                         <div>
                                             <label for="ip_address" class="form-label">Địa chỉ IP</label>
-                                            <input type="text" class="form-control" name="ip_address" id="ip_address" placeholder="VD : 1">
+                                            <input type="text" class="form-control" name="ip_address" id="ip_address" value="{{ $email->ip_address }}"  placeholder="VD : 1">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ip_address_error"></span>
@@ -236,7 +236,7 @@
                                             <select id="multiple-select" class="form-control" name="promotion_id">
                                                 <option value="}">--- Chọn khuyến mãi --- </option>
                                                 @forelse($promotion as $item)
-                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                <option {{ $email->promotion_id == $item->id ? 'selected' : '' }}  value="{{ $item->id }}">{{ $item->name }}</option>
                                                 @empty
                                                 <!-- Không có dữ liệu để hiển thị -->
                                                 @endforelse
@@ -362,7 +362,6 @@
                 document.getElementById('add').submit();
             }
         }
-
 
 
 </script>

@@ -123,19 +123,19 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Sửa sản phẩm </h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa gói cloud </h4>
                 </div>
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4" style="">
-                            <form method="POST" enctype="multipart/form-data" id="addserver"
+                            <form method="POST" enctype="multipart/form-data" id="editcloud"
                                 action="{{ route('admin.cloud.editsubmit', ['id'=> $cloud->id]) }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
                                         <div>
-                                            <label for="name" class="form-label">Tên sản phẩm</label>
+                                            <label for="name" class="form-label">Tên gói</label>
                                             <input type="text" class="form-control" name="name" id="name" value="{{ $cloud->name }}">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -236,7 +236,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitedit(event)">
                                         Xác nhận
                                     </button>
                                 </div>
@@ -254,5 +254,107 @@
     $jq(document).ready(function() {
         $jq('#multiple-select').select2();
     });
+</script>
+<script>
+    var validateorder = {
+           'name': {
+               'element': document.getElementById('name'),
+               'error': document.getElementById('name_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0013')
+               }, ]
+           },
+           'price': {
+               'element': document.getElementById('price'),
+               'error': document.getElementById('price_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0014')
+               }, ]
+           },
+           'cloudtypes_id': {
+               'element': document.getElementById('cloudtypes_id'),
+               'error': document.getElementById('cloudtypes_id_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0015')
+               }, ]
+           },
+           'cpu': {
+               'element': document.getElementById('cpu'),
+               'error': document.getElementById('cpu_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0016')
+               }, ]
+           },
+           'core': {
+               'element': document.getElementById('core'),
+               'error': document.getElementById('core_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0017')
+               }, ]
+           },
+           'ssd': {
+               'element': document.getElementById('ssd'),
+               'error': document.getElementById('ssd_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0019')
+               }, ]
+           },
+           'ram': {
+               'element': document.getElementById('ram'),
+               'error': document.getElementById('ram_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0019')
+               }, ]
+           },
+           'ip': {
+               'element': document.getElementById('ip'),
+               'error': document.getElementById('ip_error'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0020')
+               }, ]
+           },
+           'bandwidth': {
+               'element': document.getElementById('bandwidth'),
+               'error': document.getElementById('bandwidtherror'),
+               'validations': [{
+                   'func': function(value) {
+                       return checkRequired(value);
+                   },
+                   'message': generateErrorMessage('E0021')
+               }, ]
+           },
+
+       }
+
+       function submitedit(event) {
+           event.preventDefault();
+           if (validateAllFields(validateorder)) {
+               document.getElementById('editcloud').submit();
+           }
+       }
 </script>
 @endsection

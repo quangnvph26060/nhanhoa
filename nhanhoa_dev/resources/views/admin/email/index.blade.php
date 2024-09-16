@@ -188,7 +188,7 @@
                                     <td>{{ $item->storage_capacity }}</td>
                                     <td>{{ $item->ip_address }}</td>
                                     <td align="center">
-                                        <a class="btn btn-warning" href="{{ route('admin.cloud.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
+                                        <a class="btn btn-warning" href="{{ route('admin.email.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
                                         <button class="btn btn-danger btn-delete" data-id="{{ $item->id }}"
                                             onclick="deleteConfirmation({{ $item->id }})"><i class="fa-solid fa-trash"></i></button>
 

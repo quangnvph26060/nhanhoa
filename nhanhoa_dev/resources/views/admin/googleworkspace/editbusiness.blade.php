@@ -127,7 +127,7 @@
                 <div class="card-body">
                     <div class="" id="business" style="display: block;">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="addcloudbackup"
+                            <form method="POST" enctype="multipart/form-data" id="business"
                                 action="{{ route('admin.googleworkspace.busniess.editsubmit', ['id' => $business->id]) }}">
                                 @csrf
                                 <div class="row">
@@ -208,7 +208,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md">Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitbusniess(event)">Xác nhận</button>
                                 </div>
                             </form>
                         </div>
@@ -222,6 +222,87 @@
         </div>
     </div>
 </div>
+<script>
+     var validatebusiness = {
+            'name': {
+                'element': document.getElementById('name'),
+                'error': document.getElementById('name_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0038')
+                }, ]
+            },
+            'price_per_month': {
+                'element': document.getElementById('price_per_month'),
+                'error': document.getElementById('price_per_month_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0039')
+                }, ]
+            },
+            'storage_capacity': {
+                'element': document.getElementById('storage_capacity'),
+                'error': document.getElementById('storage_capacity_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0040')
+                }, ]
+            },
+            'price_first_20_users': {
+                'element': document.getElementById('price_first_20_users'),
+                'error': document.getElementById('price_first_20_users_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0041')
+                }, ]
+            },
+            'price_after_20_users': {
+                'element': document.getElementById('price_after_20_users'),
+                'error': document.getElementById('price_after_20_users_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0042')
+                }, ]
+            },
+            'renewal_price': {
+                'element': document.getElementById('renewal_price'),
+                'error': document.getElementById('renewal_price_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0043')
+                }, ]
+            },
+            'user_limit': {
+                'element': document.getElementById('user_limit'),
+                'error': document.getElementById('user_limit_error'),
+                'validations': [{
+                    'func': function(value) {
+                        return checkRequired(value);
+                    },
+                    'message': generateErrorMessage('E0044')
+                }, ]
+            },
 
+    }
+
+    function submitbusniess(event) {
+        event.preventDefault();
+        if (validateAllFields(validatebusiness)) {
+            document.getElementById('busniess').submit();
+        }
+    }
+</script>
 @endsection
 
