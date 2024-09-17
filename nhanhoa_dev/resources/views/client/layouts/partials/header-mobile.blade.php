@@ -155,36 +155,21 @@
                                     </a>
                                     <i class="fas fa-sort-up fa-rotate-180 grower"></i>
                                     <ul nh-toggle-element="email" class="entry-menu dropdown">
+
                                         <li class="">
-                                            <a class="menu-link" href="https://umail.vn" title=""
-                                                target="_blank">
-                                                Umail
-                                            </a>
-                                        </li>
-                                        <li class="">
-                                            <a class="menu-link" href="https://nhanhoa.com/email/email-server.html"
+                                            <a class="menu-link" href="{{ route('page.email-server') }}"
                                                 title="">
                                                 Email Server riêng
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a class="menu-link" href="https://nhanhoa.com/google-workspace.html"
+                                            <a class="menu-link" href="{{ route('page.google-workspace') }}"
                                                 title="">
                                                 Google Workspace
                                             </a>
                                         </li>
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://nhanhoa.com/email365.html"
-                                                title="">
-                                                Email Microsoft
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://sendnow.vn/" title="Sendnow.vn"
-                                                target="_blank">
-                                                Email Marketing
-                                            </a>
-                                        </li>
+
+
 
                                     </ul>
                                 </li>
@@ -197,21 +182,21 @@
                                     <ul nh-toggle-element="ssl" class="entry-menu dropdown">
                                         <li class=" ">
                                             <a class="menu-link"
-                                                href="https://nhanhoa.com/ssl-bao-mat/bang-gia-comodo-ssl.html"
+                                                href="{{ route('page.ssl-comodo') }}"
                                                 title="">
                                                 Comodo SSL
                                             </a>
                                         </li>
                                         <li class=" ">
                                             <a class="menu-link"
-                                                href="https://nhanhoa.com/ssl-bao-mat/bang-gia-geotrust-ssl.html"
+                                                href="{{ route('page.ssl-geotrust') }}"
                                                 title="">
                                                 Geotrust SSL
                                             </a>
                                         </li>
                                         <li class=" ">
                                             <a class="menu-link"
-                                                href="https://nhanhoa.com/ssl-bao-mat/bang-gia-symantec-ssl.html"
+                                                href="{{ route('page.ssl-symantec') }}"
                                                 title="">
                                                 Digicert SSL
                                             </a>

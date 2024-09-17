@@ -6,8 +6,7 @@
             </h2>
             <div class="slogan-section text-thin" style="color:rgb(29, 29, 29);">
                 Nhân Hoà cung cấp các dịch vụ hosting, domain, cloud vps, email doanh nghiệp chất lượng cao
-                với hơn
-                500.000+ khách hàng tin dùng
+                với hơn 500.000+ khách hàng tin dùng
             </div>
             <div class="info--register-service">
                 <ul class="nav nav-tabs" role="tablist">

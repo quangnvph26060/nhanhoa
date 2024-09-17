@@ -3,14 +3,18 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Services\ClientService;
 use App\Services\HostingService;
 use Illuminate\Http\Request;
 
 class HostingController extends Controller
 {
     protected $hostingService;
-    public function __construct(HostingService $hostingService){
+
+    protected $clientService;
+    public function __construct(HostingService $hostingService, ClientService $clientService){
         $this->hostingService = $hostingService;
+        $this->clientService = $clientService;
     }
     public function linux()
     {
@@ -30,6 +34,7 @@ class HostingController extends Controller
 
     public function pay(Request $request){
         $hostingPay = $this->hostingService->payHosting($request->all());
+        $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 }

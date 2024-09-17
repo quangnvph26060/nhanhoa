@@ -719,7 +719,7 @@
             </div>
             <!--Begin Member Info-->
 
-            @if (isset($user) && $user)
+            {{-- @if (isset($user) && $user)
             <div class="btn-action-header btn-login" id="member_details"  >
                 <a  title="Tài khoản" style="border-radius: 50% ">
                     {{ $user->name[0] }}
@@ -733,7 +733,7 @@
                 </a>
 
             </div>
-            @endif
+            @endif --}}
             {{-- <div class="btn-action-header btn-login" id="member_details">
                 <a href="{{ route('form_login') }}" title="Tài khoản">
                     Tài khoản
@@ -742,12 +742,12 @@
             </div> --}}
 
             <!--End Member Info-->
-            <div class="btn-minicart">
+            {{-- <div class="btn-minicart">
                 <a href="https://nhanhoa.com/?site=cart" title="Giỏ hàng ">
                     <img src="https://nhanhoa.com/templates/images/v2/home/icon_minicart.png" alt="Giỏ hàng">
                     <span class="cart_count cart_number">0</span>
                 </a>
-            </div>
+            </div> --}}
             <div class="btn-app">
                 <span>
                     <img src="https://nhanhoa.com/templates/images/v2/home/download_app.png" alt="Download app">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Services\ClientService;
 use App\Services\CloudBackupService;
 use App\Services\cloudService;
 use Illuminate\Http\Request;
@@ -11,10 +12,12 @@ class CloudController extends Controller
 {
     protected $cloudBackupService;
     protected $cloudService;
+    protected $clientService;
 
-    public function __construct(CloudBackupService $cloudBackupService, CloudService $cloudService){
+    public function __construct(CloudBackupService $cloudBackupService, CloudService $cloudService, ClientService $clientService){
         $this->cloudBackupService = $cloudBackupService;
         $this->cloudService = $cloudService;
+        $this->clientService = $clientService;
     }
     public function server(){
         $titleSection = "Cloud365 - Bảng Giá Mua Cloud VPS Giá Rẻ";
@@ -47,6 +50,7 @@ class CloudController extends Controller
 
     public function cloudbackuppay(Request $request){
         $serverPay = $this->cloudBackupService->PayBackup($request->all());
+        $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 

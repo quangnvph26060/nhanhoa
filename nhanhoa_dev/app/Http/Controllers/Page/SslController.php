@@ -3,14 +3,17 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Services\ClientService;
 use App\Services\SslService;
 use Illuminate\Http\Request;
 
 class SslController extends Controller
 {
     protected $sslService;
-    public function __construct(SslService $sslService){
+    protected $clientService;
+    public function __construct(SslService $sslService, ClientService $clientService){
         $this->sslService = $sslService;
+        $this->clientService = $clientService;
     }
     public function comodo()
     {
@@ -33,6 +36,7 @@ class SslController extends Controller
 
     public function pay(Request $request){
         $sslPay = $this->sslService->PaySsl($request->all());
+        $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 }
