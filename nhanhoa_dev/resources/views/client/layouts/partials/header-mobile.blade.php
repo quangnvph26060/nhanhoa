@@ -27,7 +27,7 @@
                 <div class="back-drop"></div>
                 <nav id="main_menu_mobile" class="menu-section active" nh-menu="sidebar" menu-type="main">
                     <div class="menu-info">
-                        <div class="menu-top">
+                        {{-- <div class="menu-top">
                             <div class="btn-close-menu">
                                 <a href="javascript:;" nh-menu="btn-close"
                                     class="close-sidebar effect-rotate icon-close active">
@@ -47,11 +47,11 @@
                                 </li>
                             </ul>
 
-                        </div>
+                        </div> --}}
                         <div class="content-menu">
                             <ul>
                                 <li class="position-relative has-child" nh-toggle="tenmien">
-                                    <a href="javascript:void(0)">
+                                    <a href="">
                                         Tên miền
                                     </a>
                                     <i class="fas fa-sort-up fa-rotate-180 grower"></i>
@@ -64,7 +64,7 @@
                                             </a>
                                         </li>
 
-                                        <li class=" ">
+                                        {{-- <li class=" ">
                                             <a class="menu-link"
                                                 href="https://nhanhoa.com/trang/ten-mien/chuyen-doi-nha-cung-cap.html"
                                                 title="">
@@ -86,7 +86,7 @@
                                                 title="">
                                                 Bảng giá tên miền
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
 

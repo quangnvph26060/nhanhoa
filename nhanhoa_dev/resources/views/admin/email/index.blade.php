@@ -211,7 +211,7 @@
                                             <div class="modal-body">
                                                 <p><strong>Tên: </strong> {{ $item->name }}</p>
                                                 <p><strong>Giá: </strong> {{ number_format($item->price) }} đ/Tháng</p>
-                                                <p><strong>Tỷ lệ gửi mail vào inbox: </strong> {{ $item->inbox_rate }}</p>
+                                                <p><strong>Tỷ lệ gửi mail vào inbox: </strong> {{ $item->inbox_rate }}%</p>
                                                 <p><strong>Dung lượng lưu trữ: </strong> {{ $item->storage_capacity }}</p>
                                                 <p><strong>Địa chỉ email: </strong> {{ $item->unlimited_email_addresses }}</p>
                                                 <p><strong>Email forwarder: </strong> {{ $item->unlimited_email_forwarder }}</p>

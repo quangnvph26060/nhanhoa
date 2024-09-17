@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\CloudBackUpController;
 use App\Http\Controllers\Admin\CloudController;
 use App\Http\Controllers\Admin\ConfigController;
@@ -163,6 +164,13 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
             Route::post('edit/{id}', [GoogleWorkspaceController::class, 'editsubmitBusiness'])->name('editsubmit');
             Route::post('delete/{id}', [GoogleWorkspaceController::class, 'deleteBusiness'])->name('delete');
         });
+
+    });
+
+    Route::prefix('client')->name('client.')->group(function () {
+        Route::get('', [ClientController::class, 'index'])->name('index');
+        Route::get('list', [ClientController::class, 'listclient'])->name('list');
+
     });
 
 

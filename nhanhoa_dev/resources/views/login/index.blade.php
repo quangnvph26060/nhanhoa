@@ -62,12 +62,12 @@
                                         <input type="checkbox" checked="checked" />
                                         <div class="control__indicator"></div>
                                     </label>
-                                    <span class="ml-auto"><a href="#" onclick="showForgotPasswordForm(event);" class="forgot-pass">Forgot Password</a></span>
+                                    {{-- <span class="ml-auto"><a href="#" onclick="showForgotPasswordForm(event);" class="forgot-pass">Forgot Password</a></span> --}}
                                 </div>
 
                                 <input type="submit" value="Log In" class="btn btn-block py-2 btn-primary">
 
-                                <span class="text-center my-3 d-block">or</span>
+                                {{-- <span class="text-center my-3 d-block">or</span>
 
                                 <div class="">
                                     <a href="{{ route('auth.google') }}" class="btn btn-block py-2 btn-facebook">
@@ -76,11 +76,11 @@
                                     <a href="{{ route('auth.google') }}" class="btn btn-block py-2 btn-google">
                                         <span class="icon-google mr-3"></span> Login with Google
                                     </a>
-                                </div>
+                                </div> --}}
                             </form>
-                            <div style="text-align: center; margin-top: 20px;">
+                            {{-- <div style="text-align: center; margin-top: 20px;">
                                 <span>Bạn chưa có tài khoản? <a href="#" onclick="showRegisterForm(event);" style="color: rgb(68, 110, 226); font-weight: 600">Đăng ký ngay</a></span>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <!-- Register Form -->

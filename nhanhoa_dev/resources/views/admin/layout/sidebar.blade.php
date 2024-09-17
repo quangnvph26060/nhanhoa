@@ -34,6 +34,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#client">
+                        <i class="fas fa-users"></i>
+                        <p>Khách hàng</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="client">
+                        <ul class="nav nav-collapse" style="margin-bottom: 0px">
+                            <li>
+                                <a href="{{ route('admin.client.index') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.client.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#base">
                         <i class="fas fa-server"></i> <!-- Icon for server -->
                         <p>Máy chủ</p>

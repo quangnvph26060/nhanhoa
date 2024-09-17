@@ -146,7 +146,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a class="menu-link" href="https://nhanhoa.com/trang/ten-mien/bang-gia-ten-mien.html"
                                     title="">
                                     <div class="item-menu">
@@ -239,7 +239,7 @@
                                         </div>
                                     </div>
                                 </a>
-                            </li>
+                            </li> --}}
 
                         </ul>
                     </li>
