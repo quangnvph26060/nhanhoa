@@ -19,22 +19,25 @@ class CloudController extends Controller
     public function server(){
         $titleSection = "Cloud365 - Bảng Giá Mua Cloud VPS Giá Rẻ";
         $cloud = $this->cloudService->getcloudByType(1);
-        // dd($cloud);
-        return view('client.pages.cloud-server.index', compact('titleSection', 'cloud'));
+        $title = "Cloud Server";
+        return view('client.pages.cloud-server.index', compact('titleSection', 'cloud', 'title'));
     }
 
     public function backup(){
         $cloudvps = $this->cloudBackupService->getBackupsByType(1);
         $cloudserver = $this->cloudBackupService->getBackupsByType(2);
-        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver'));
+        $title = "Cloud Backup";
+        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title'));
     }
 
     public function storage(){
-        return view('client.pages.cloud-storage.index');
+        $title = "Cloud Storage";
+        return view('client.pages.cloud-storage.index', compact('title'));
     }
     public function international(){
         $cloud = $this->cloudService->getcloudByType(2);
-        return view('client.pages.cloud-international.index', compact('cloud'));
+        $title = "Cloud VPS Quốc Tế";
+        return view('client.pages.cloud-international.index', compact('cloud', 'title'));
     }
 
     public function cloudpay(Request $request){

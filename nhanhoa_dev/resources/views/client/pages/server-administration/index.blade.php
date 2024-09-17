@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Dịch vụ quản lý máy chủ</title>
 
     <link rel="stylesheet" type="text/css" media="screen"
         href="{{ asset('client/assets/css/bootstrap/jquery-confirm.min.css') }}" />

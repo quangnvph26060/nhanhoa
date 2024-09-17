@@ -16,6 +16,7 @@ class DomainController extends Controller
     {
         $doaminqt = $this->domainService->getDomainByType(1);
         $doaminvn = $this->domainService->getDomainByType(2);
-        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn'));
+        $title = "Mua đăng ký tên miền";
+        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title'));
     }
 }

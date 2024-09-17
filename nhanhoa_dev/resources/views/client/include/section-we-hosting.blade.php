@@ -22,13 +22,13 @@
                                             src="https://nhanhoa.com/templates/images/v2/hosting/vps.png"
                                             alt="Dịch vụ SSL"></div>
                                     <div class="name"><a
-                                            href="https://nhanhoa.com/ssl-bao-mat/bang-gia-comodo-ssl.html"
+                                            href="{{ route('page.ssl-comodo') }}"
                                             target="">SSL</a></div>
                                     <div class="price">Chỉ từ 198.000đ/năm</div>
                                     <div class="description">Tất cả các dữ liệu được truyền giữa các máy chủ web và các
                                         trình duyệt được bảo mật.</div>
                                     <div class="icon-link">
-                                        <a href="https://nhanhoa.com/ssl-bao-mat/bang-gia-comodo-ssl.html"
+                                        <a href="{{ route('page.ssl-comodo') }}"
                                             target=""><i class="fas fa-arrow-circle-right"
                                                 style="color: #4ABAB9;"></i> </a>
                                     </div>
@@ -39,13 +39,13 @@
                                     <div class="icon"><img
                                             src="https://nhanhoa.com/templates/images/v2/hosting/domain.png"
                                             alt="Dịch vụ Máy chủ"></div>
-                                    <div class="name"><a href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html"
+                                    <div class="name"><a href="{{ route('page.cloud-server') }}"
                                             target="">Máy chủ</a></div>
                                     <div class="price">Chỉ từ 86.000đ/tháng</div>
                                     <div class="description">Giải pháp máy chủ ảo trên nền điện toán đám mây (CLOUD
                                         VPS).</div>
                                     <div class="icon-link">
-                                        <a href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html" target=""> <i
+                                        <a href="{{ route('page.cloud-server') }}" target=""> <i
                                                 class="fas fa-arrow-circle-right" style="color: #4ABAB9;"></i> </a>
                                     </div>
                                 </div>
@@ -55,18 +55,18 @@
                                     <div class="icon"><img
                                             src="https://nhanhoa.com/templates/images/v2/hosting/icon_email.png"
                                             alt="Dịch vụ Email doanh nghiệp"></div>
-                                    <div class="name"><a href="https://umail.vn/" target="">Email doanh
+                                    <div class="name"><a href="{{ route('page.email-server') }}" target="">Email doanh
                                             nghiệp</a></div>
                                     <div class="price">Chỉ từ 15.000đ/tháng</div>
                                     <div class="description">Khẳng định thương hiệu với email theo tên miền riêng.
                                     </div>
                                     <div class="icon-link">
-                                        <a href="https://umail.vn/" target=""> <i class="fas fa-arrow-circle-right"
+                                        <a href="{{ route('page.email-server') }}" target=""> <i class="fas fa-arrow-circle-right"
                                                 style="color: #4ABAB9;"></i> </a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-12">
+                            {{-- <div class="col-md-6 col-12">
                                 <div class="item">
                                     <div class="icon"><img
                                             src="https://nhanhoa.com/templates/images/v2/hosting/icon_email.png"
@@ -81,7 +81,7 @@
                                                 class="fas fa-arrow-circle-right" style="color: #4ABAB9;"></i> </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
 
                         </div>

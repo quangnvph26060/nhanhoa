@@ -15,15 +15,17 @@ class HostingController extends Controller
     public function linux()
     {
         $hosting = $this->hostingService->getHostingByType(2);
-        $titleSection   = "Bảng giá Hosting Linux";
-        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting'));
+        $titleSection  = "Bảng giá Hosting Linux";
+        $title = 'Hosting giá rẻ chất lượng cao';
+        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title'));
     }
 
     public function windows()
     {
         $titleSection   = "Bảng giá Hosting Windows";
         $hosting = $this->hostingService->getHostingByType(1);
-        return view('client.pages.windows-hosting.index', compact('titleSection', 'hosting'));
+        $title = 'Hosting giá rẻ chất lượng cao';
+        return view('client.pages.windows-hosting.index', compact('titleSection', 'hosting', 'title'));
     }
 
     public function pay(Request $request){

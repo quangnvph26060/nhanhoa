@@ -114,63 +114,98 @@
                                             class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
                                             <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529"
                                                 aria-live="polite">
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                alt=" tên miền quốc tế .com">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                ssd cloud vps e
-                                                            </div>
-                                                            <div class="description">
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CPU : <b> Intel® Xeon® E5-26XX / Gold
-                                                                        6138</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CORE : <b> 5 Cores</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    SSD : <b> 80GB</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    RAM : <b> 4GB +1GB(*)</b></p>
-                                                            </div>
-                                                            <div class="price-section">
-                                                                <div class="price b" data-price="849.000 đ">
-                                                                    <span class="new hevb"> <strong>
-                                                                            669.000
-                                                                            đ</strong></span>/Tháng
-                                                                    <span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient btn-add-cart-direct"
-                                                                    data-service_id="1961" href="javascript:;"
-                                                                    title="ssd cloud vps e">
-                                                                    <div
-                                                                        class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                                        <div class="rect1"></div>
-                                                                        <div class="rect2"></div>
-                                                                        <div class="rect3"></div>
-                                                                        <div class="rect4"></div>
-                                                                        <div class="rect5"></div>
-                                                                    </div>
-                                                                    <span class="btn_text">Thêm vào giỏ
-                                                                        hàng</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                               @isset($cloud)
+                                               <div class="swiper-slide swiper-slide--one"
+                                               style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
+                                               <div class="item-service">
+                                                   <div class="img position-relative">
+                                                       <img class="rtbs nh-lazyload lazyloaded"
+                                                           src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
+                                                           data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
+                                                           alt=" tên miền quốc tế .com">
+                                                   </div>
+                                                   <div class="inner-content">
+                                                       <div class="name">
+                                                           Cloud - {{ $cloud->name }}
+                                                       </div>
+                                                       <div class="description">
+                                                           <p><img alt="icon"
+                                                                   src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                               CPU : <b> {{ $cloud->cpu }}</b></p>
+                                                           <p><img alt="icon"
+                                                                   src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                               CORE : <b> {{ $cloud->core }}</b></p>
+                                                           <p><img alt="icon"
+                                                                   src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                               SSD : <b> {{ $cloud->ssd }}</b></p>
+                                                           <p><img alt="icon"
+                                                                   src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                               RAM : <b> {{ $cloud->ram }}</b></p>
+                                                       </div>
+                                                       <div class="price-section">
+                                                           <div class="price b" data-price="849.000 đ">
+                                                               <span class="new hevb"> <strong>
+                                                                {{ number_format($cloud->price, 0, ',', '.') }}
+                                                                       đ</strong></span>/Tháng
+                                                               <span></span>
+                                                           </div>
+                                                       </div>
+                                                       <div class="link-service">
+                                                           <a class="bg-gradient btn-add-cart-direct"
+                                                               data-service_id="1961" href="javascript:;"
+                                                               title="ssd cloud vps e">
+                                                               <div
+                                                                   class="spinner spinner-sm spinner-light nh-btn-loader d-none">
+                                                                   <div class="rect1"></div>
+                                                                   <div class="rect2"></div>
+                                                                   <div class="rect3"></div>
+                                                                   <div class="rect4"></div>
+                                                                   <div class="rect5"></div>
+                                                               </div>
+                                                               <span class="btn_text">Thêm vào giỏ
+                                                                   hàng</span>
+                                                           </a>
+                                                       </div>
+                                                   </div>
+                                               </div>
 
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
+                                           </div>
+                                               @endisset
+                                               @forelse ($domainqg as $item )
+                                               <div class="swiper-slide swiper-slide--one"
+                                               style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
+                                               <div class="item-service">
+                                                   <div class="img position-relative">
+                                                       <img class="rtbs nh-lazyload lazyloaded"
+                                                           src="{{ asset($item->logo) }}"
+                                                           data-src="{{ asset($item->logo) }}"
+                                                           alt=" tên miền quốc gia .vn">
+                                                   </div>
+                                                   <div class="inner-content">
+                                                       <div class="name">
+                                                           tên miền quốc gia {{ $item->name }}
+                                                       </div>
+                                                       <div class="description">
+
+                                                       </div>
+                                                       <div class="price-section">
+                                                           &nbsp;
+                                                       </div>
+                                                       <div class="link-service">
+                                                           <a class="bg-gradient "
+
+                                                               title=" tên miền quốc gia {{ $item->name }}">
+                                                               Đăng ký tên miền
+                                                           </a>
+                                                       </div>
+                                                   </div>
+                                               </div>
+
+                                           </div>
+                                               @empty
+
+                                               @endforelse
+                                                {{-- <div class="swiper-slide swiper-slide--one"
                                                     style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
                                                     <div class="item-service">
                                                         <div class="img position-relative">
@@ -259,8 +294,42 @@
                                                         </div>
                                                     </div>
 
-                                                </div>
+                                                </div> --}}
+                                                @forelse ($domainqt as $item )
                                                 <div class="swiper-slide swiper-slide--one"
+                                                style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
+                                                <div class="item-service">
+                                                    <div class="img position-relative">
+                                                        <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
+                                                            src="{{ asset($item->logo) }}"
+                                                            data-src="{{ asset($item->logo) }}"
+                                                            alt=" tên miền quốc tế {{ $item->name }}">
+                                                    </div>
+                                                    <div class="inner-content">
+                                                        <div class="name">
+                                                            tên miền quốc tế {{ $item->name }}
+                                                        </div>
+                                                        <div class="description">
+
+                                                        </div>
+                                                        <div class="price-section">
+                                                            &nbsp;
+                                                        </div>
+                                                        <div class="link-service">
+                                                            <a class="bg-gradient "
+
+                                                                title=" tên miền quốc tế .org">
+                                                                Đăng ký tên miền
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                                @empty
+
+                                                @endforelse
+                                                {{-- <div class="swiper-slide swiper-slide--one"
                                                     style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
                                                     <div class="item-service">
                                                         <div class="img position-relative">
@@ -348,7 +417,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                             <div class="swiper-button-next" tabindex="0" role="button"
                                                 aria-label="Next slide"

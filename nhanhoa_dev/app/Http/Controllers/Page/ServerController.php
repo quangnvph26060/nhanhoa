@@ -18,13 +18,13 @@ class ServerController extends Controller
 
     public function dedicatedServer(){
         $servers = $this->serverService->getServerAll();
-        return view('client.pages.dedicated-server.index', compact('servers'));
+        $title = "Thuê máy chủ vật lý";
+        return view('client.pages.dedicated-server.index', compact('servers', 'title'));
     }
-
     public function serverLocation(){
         $serverloactions = $this->serverService->getServerLocationAll();
-        //  dd($serverloactions);
-        return view('client.pages.server-location.index', compact('serverloactions'));
+        $title = "Vị trí máy chủ";
+        return view('client.pages.server-location.index', compact('serverloactions', 'title'));
     }
 
     public function serverBackup(){

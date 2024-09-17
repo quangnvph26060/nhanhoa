@@ -19,7 +19,8 @@ class EmailController extends Controller
 
     public function emailServer(){
         $emailServer = $this->emailServerService->getAllEmailServers();
-        return view('client.pages.email-server.index', compact('emailServer'));
+        $title = "Email Server";
+        return view('client.pages.email-server.index', compact('emailServer', 'title'));
     }
 
 
@@ -32,8 +33,8 @@ class EmailController extends Controller
     public function googleWorkspace(){
         $googleWorkspaceEducation = $this->googleWorkspaceService->getAllGoogleWorkspaceEducation();
         $googleWorkspaceBusiness = $this->googleWorkspaceService->getAllGoogleWorkspaceBusiness();
-        // dd($googleWorkspaceEducation);
-        return view('client.pages.google-workspace.index', compact('googleWorkspaceEducation', 'googleWorkspaceBusiness'));
+        $title = "Google Workspace";
+        return view('client.pages.google-workspace.index', compact('googleWorkspaceEducation', 'googleWorkspaceBusiness', 'title'));
     }
 
     public function googleWorkspaceEducationPay(Request $request){
