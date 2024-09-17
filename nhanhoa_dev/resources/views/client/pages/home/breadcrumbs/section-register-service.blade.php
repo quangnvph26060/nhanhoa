@@ -12,7 +12,7 @@
             <div class="info--register-service">
                 <ul class="nav nav-tabs" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="domain-tab" data-toggle="tab" href="#domain" role="tab"
+                        <a class="nav-link active" id="domain-tab" data-toggle="tab" href="{{ route('page.domain-registration') }}" role="tab"
                             aria-controls="domain" aria-selected="true">
                             <img src="https://nhanhoa.com/templates/images/v2/home/icon_domain.svg" alt="">
                             <span>
@@ -21,16 +21,16 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="cloud-tab" data-toggle="tab" href="#cloud" role="tab"
+                        <a class="nav-link" id="cloud-tab" data-toggle="tab" href="{{ route('page.cloud-server') }}" role="tab"
                             aria-controls="cloud" aria-selected="false">
                             <img src="https://nhanhoa.com/templates/images/v2/home/icon_cloud.svg" alt="">
                             <span>
-                                Cloud VPS
+                                Cloud Server
                             </span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="hosting-tab" data-toggle="tab" href="#hosting" role="tab"
+                        <a class="nav-link" id="hosting-tab" data-toggle="tab" href="{{ route('page.linux-hosting') }}" role="tab"
                             aria-controls="hosting" aria-selected="false">
                             <img src="https://nhanhoa.com/templates/images/v2/home/icon_hosting.svg" alt="">
                             <span>
@@ -39,7 +39,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="email-tab" data-toggle="tab" href="#email" role="tab"
+                        <a class="nav-link" id="email-tab" data-toggle="tab" href="{{ route('page.email-server') }}" role="tab"
                             aria-controls="email" aria-selected="false">
                             <img src="https://nhanhoa.com/templates/images/v2/home/icon_email.svg" alt="">
                             <span>
@@ -48,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="ssl-tab" data-toggle="tab" href="#ssl" role="tab"
+                        <a class="nav-link" id="ssl-tab" data-toggle="tab" href="{{ route('page.ssl-comodo') }}" role="tab"
                             aria-controls="ssl" aria-selected="false">
                             <img src="https://nhanhoa.com/templates/images/v2/home/icon_ssl.svg" alt="">
                             <span>

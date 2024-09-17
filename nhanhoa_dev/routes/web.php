@@ -188,7 +188,7 @@ Route::name('page.')->group(function () {
         Route::get('vps-cloud-quoc-te', [PageCloudController::class, 'international'])->name('cloud-international');
         Route::Post('cloud/pay', [PageCloudController::class, 'cloudpay'])->name('cloud.pay');
         Route::Post('cloudbackup/pay', [PageCloudController::class, 'cloudbackuppay'])->name('cloudbackup.pay');
-        Route::Post('server_-backup365/pay', [PageCloudController::class, 'payBackup365'])->name('backup365.pay');
+        Route::Post('server_-backup365/pay', [PageServerController::class, 'payBackup365'])->name('backup365.pay');
         // Route::get('vps-cloud-quoc-te', [PageCloudController::class, 'international'])->name('cloud-international');
         Route::get('may-chu', [PageServerController::class, 'dedicatedServer'])->name('dedicated-server');
         Route::get('cho-dat-may-chu-colo', [PageServerController::class, 'serverLocation'])->name('server-location');

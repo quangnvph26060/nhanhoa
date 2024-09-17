@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="tab-office">
-                        <div class="title-section text-left">Kết nối với Nhân Hoà</div>
+                        <div class="title-section text-left">Kết nối với Nhân Hoà </div>
                         <div class="tab-content-office">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item"><a class="nav-link active" id="ha_noi-tab"
@@ -26,16 +26,14 @@
                                     <div class="info-office">
                                         <p class="address"><img
                                                 src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
-                                                alt="Map"> Tầng 4 - Toà nhà 97 - 99 Láng Hạ, Quận
-                                            Đống Đa, Thành
-                                            Phố Hà Nội</p>
+                                                alt="Map"> {{ $config->address }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
-                                                alt="Phone"> Điện thoại: 1900 6680 - (024) 7308 6680
+                                                alt="Phone"> Điện thoại: {{ $config->phone }}
                                         </p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
-                                                alt="Mail"> Mail: sales@nhanhoa.com</p>
+                                                alt="Mail"> Mail: {{ $config->email }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
-                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: 091 140 8966
+                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
                                         </p>
                                     </div>
                                 </div>
@@ -44,16 +42,14 @@
                                     <div class="info-office">
                                         <p class="address"><img
                                                 src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
-                                                alt="Map"> 927/1 CMT8, Phường 7, Quận Tân Bình, Thành
-                                            phố Hồ Chí
-                                            Minh</p>
+                                                alt="Map"> {{ $config->address }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
-                                                alt="Phone"> Điện thoại: 1900 6680 - (028) 7308 6680
+                                                alt="Phone"> Điện thoại: {{ $config->phone }}
                                         </p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
-                                                alt="Mail"> Mail: hcmsales@nhanhoa.com</p>
+                                                alt="Mail"> Mail: {{ $config->email }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
-                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: 091 140 8966
+                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
                                         </p>
                                     </div>
                                 </div>
@@ -62,16 +58,14 @@
                                     <div class="info-office">
                                         <p class="address"><img
                                                 src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
-                                                alt="Map"> Tầng 2 Tòa nhà Sài Gòn Sky, ngõ 26 Nguyễn
-                                            Thái Học,
-                                            phường Đội Cung, TP. Vinh, Nghệ An</p>
+                                                alt="Map"> {{ $config->address }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
-                                                alt="Phone"> Điện thoại: 1900 6680 - (024) 7308 6680 -
-                                            nhánh 6</p>
+                                                alt="Phone"> Điện thoại: {{ $config->phone }}
+                                        </p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
-                                                alt="Mail"> Mail: contact@nhanhoa.com</p>
+                                                alt="Mail"> Mail: {{ $config->email }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
-                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: 091 140 8966
+                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
                                         </p>
                                     </div>
                                 </div>

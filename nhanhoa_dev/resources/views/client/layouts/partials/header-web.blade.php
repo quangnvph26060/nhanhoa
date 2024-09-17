@@ -36,7 +36,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="menu-link" href="https://nhanhoa.com/email/email-server.html"
+                            <a class="menu-link" href="{{ route('page.email-server') }}"
                                 title="Email Server">
                                 <div class="item-menu">
                                     <div class="icon">
@@ -56,65 +56,9 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a class="menu-link" href="https://nhanhoa.com/hosting/nvme-hosting.html" title="">
-                                <div class="item-menu">
-                                    <div class="icon">
-                                        <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_hosting_01.png"
-                                            alt="NVMe Hosting">
-                                    </div>
-                                    <div class="name-description">
-                                        <span class="name">
-                                            NVMe Hosting
-                                        </span>
-                                        <span class="description">
-                                            X25 tốc độ website với ổ cứng NVMe thế hệ mới.
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-link" href="https://nhanhoa.com/hosting/wordpress-hosting.html" title="">
-                                <div class="item-menu">
-                                    <div class="icon">
-                                        <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_hosting_03.png"
-                                            alt="Wordpress Hosting">
-                                    </div>
-                                    <div class="name-description">
-                                        <span class="name">
-                                            WordPress Hosting
-                                        </span>
-                                        <span class="description">
-                                            Lựa chọn tốt nhất dành cho website WordPress.
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
 
                         <li>
-                            <a class="menu-link" href="https://umail.vn" target="_blank" title="">
-                                <div class="item-menu">
-                                    <div class="icon">
-                                        <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_email_01.png"
-                                            alt="">
-                                    </div>
-                                    <div class="name-description">
-                                        <span class="name">
-                                            Umail
-                                        </span>
-                                        <span class="description">
-                                            Giao diện thân thiện, dễ dàng sử dụng, chi phí cạnh
-                                            tranh.
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="menu-link" href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html" title="">
+                            <a class="menu-link" href="{{ route('page.cloud-international') }}" title="">
                                 <div class="item-menu">
                                     <div class="icon">
                                         <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_may_chu_01.png"
@@ -133,7 +77,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="menu-link" href="https://nhanhoa.com/google-workspace.html" title="">
+                            <a class="menu-link" href="{{ route('page.google-workspace') }}" title="">
                                 <div class="item-menu">
                                     <div class="icon">
                                         <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_email_02.png"
@@ -153,7 +97,7 @@
 
 
                         <li>
-                            <a class="menu-link" href="https://nhanhoa.com/ssl-bao-mat/bang-gia-comodo-ssl.html"
+                            <a class="menu-link" href="{{ route('page.ssl-comodo') }}"
                                 title="Dịch vụ SSL">
                                 <div class="item-menu">
                                     <div class="icon">
@@ -171,46 +115,6 @@
                                 </div>
                             </a>
                         </li>
-
-                        <li>
-                            <a class="menu-link" href="https://web4s.vn/" title="Thiết kế website" target="_blank">
-                                <div class="item-menu">
-                                    <div class="icon">
-                                        <img src="https://nhanhoa.com/templates/images/v2/menu/hoadonbiz.png"
-                                            alt="Thiết kế website">
-                                    </div>
-                                    <div class="name-description">
-                                        <span class="name">
-                                            Thiết kế webiste
-                                        </span>
-                                        <span class="description">
-                                            Dịch Vụ Thiết Kế Website Chuyên Nghiệp Tại – WEB4S
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="menu-link" href="https://esim.nhanhoa.com" title="Esim Data Travel"
-                                target="_blank">
-                                <div class="item-menu">
-                                    <div class="icon">
-                                        <img src="https://nhanhoa.com/templates/images/v2/menu/esimdulich.png"
-                                            alt="Esim Data Travel">
-                                    </div>
-                                    <div class="name-description">
-                                        <span class="name">
-                                            Esim Data Travel
-                                        </span>
-                                        <span class="description">
-                                            Tiết kiệm 96% chi phí trong mỗi chuyến đi.
-                                        </span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-
                     </ul>
                     <!--end menu icon -->
                 </div>
@@ -219,7 +123,7 @@
             <div class="main-menu navbar navbar-expand-lg navbar-light">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a href="javascript:;" class="nav-link">
+                        <a href="javascrip;" class="nav-link">
                             Tên Miền
                             <span class="sub"></span>
                         </a>
