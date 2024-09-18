@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="icon" href="{{ asset('assets/img/kaiadmin/favicon.ico') }}" type="image/x-icon" />
 
@@ -22,20 +22,22 @@
     <script src="{{ asset('assets/js/plugin/webfont/webfont.min.js') }}"></script>
     <script>
         WebFont.load({
-      google: { families: ["Public Sans:300,400,500,600,700"] },
-      custom: {
-        families: [
-          "Font Awesome 5 Solid",
-          "Font Awesome 5 Regular",
-          "Font Awesome 5 Brands",
-          "simple-line-icons",
-        ],
-        urls: ["{{ asset('assets/css/fonts.min.css') }}"],
-      },
-      active: function () {
-        sessionStorage.fonts = true;
-      },
-    });
+            google: {
+                families: ["Public Sans:300,400,500,600,700"]
+            },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["{{ asset('assets/css/fonts.min.css') }}"],
+            },
+            active: function() {
+                sessionStorage.fonts = true;
+            },
+        });
     </script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -137,21 +139,21 @@
     <script>
         $(document).ready(function() {
 
-        @if (session('successlogin'))
-            $.notify({
-                icon: 'icon-bell',
-                title: 'Đăng nhập',
-                message: '{{ session('successlogin') }}',
-            }, {
-                type: 'secondary',
-                placement: {
-                    from: "bottom",
-                    align: "right"
-                },
-                time: 1000,
-            });
-        @endif
-    });
+            @if (session('successlogin'))
+                $.notify({
+                    icon: 'icon-bell',
+                    title: 'Đăng nhập',
+                    message: '{{ session('successlogin') }}',
+                }, {
+                    type: 'secondary',
+                    placement: {
+                        from: "bottom",
+                        align: "right"
+                    },
+                    time: 1000,
+                });
+            @endif
+        });
     </script>
 </body>
 
