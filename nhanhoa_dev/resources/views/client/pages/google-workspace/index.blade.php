@@ -136,7 +136,7 @@
 
 
                                             </div>
-                                            <div class="account-qty">
+                                            {{-- <div class="account-qty">
                                                 <div class="account-qty-item">
                                                     Số lượng user:
                                                 </div>
@@ -154,7 +154,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                             <div class="link-add-cart">
                                                 <a class="btn-add-cart btn-service add_service_cart"
                                                 onclick="openPopup({{ $item->id }}, '{{ $item->name }}')">
@@ -259,7 +259,7 @@
 
                                     </div>
 
-                                    <div class="account-qty d-none">
+                                    {{-- <div class="account-qty d-none">
                                         <div class="account-qty-item">
                                             Số lượng user:
                                         </div>
@@ -277,7 +277,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="link-add-cart">
                                         <a class="btn-add-cart btn_show_popup btn-service" style="display: none"
@@ -354,7 +354,7 @@
         </div>
     </div>
 
-    <div class="section-instruct-wp"
+    {{-- <div class="section-instruct-wp"
         style="background-image: url(https://nhanhoa.com/templates/images/v2/google/banner_huong_dan.jpg);">
         <div class="container">
             <div class="content">
@@ -489,9 +489,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
-    <section class="section-table-compare">
+    {{-- <section class="section-table-compare">
         <div class="container">
             <div class="content">
                 <h2 class="title-section">
@@ -1114,7 +1114,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     <div class="section-diem-noi-troi">
         <div class="container">

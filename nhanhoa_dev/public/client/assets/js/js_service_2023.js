@@ -2562,7 +2562,7 @@ var Service = {
                             System_js.error_notify(msg);
                         } else {
                             _that.find(".un_select").fadeIn("slow");
-                            var msg = "Mua thành công!";
+                            var msg = "Thêm vào giỏ hàng thành công!";
                             System_js.success_notify(msg);
                             $(".cart_number").html(data);
                         }

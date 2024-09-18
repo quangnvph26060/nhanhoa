@@ -222,6 +222,7 @@ Route::name('page.')->group(function () {
         Route::get('tong-dai-vfone', [SolutionController::class, 'vfone'])->name('solution-vfone');
         Route::get('hop-dong-dien-tu', [SolutionController::class, 'esoc'])->name('electronic-contract');
         Route::get('hoa-don-dien-tu', [SolutionController::class, 'electronicInvoice'])->name('electronic-invoice');
+        Route::get('tong-dai-vfone/bang-gia', [SolutionController::class, 'priceList'])->name('price-list');
     });
 
     Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');

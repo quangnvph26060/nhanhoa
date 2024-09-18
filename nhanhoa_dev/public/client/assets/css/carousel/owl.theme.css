@@ -33,13 +33,13 @@
     position: absolute;
     top: -45px;
     right: 43px;
-    background: url(../images/arrow_left.png) top center no-repeat;
+    background: url(https://icons.veryicon.com/png/o/miscellaneous/300-free-vector-icons/arrow_left-7.png) top center no-repeat;
 }
 .owl-theme .owl-controls .owl-buttons div.owl-next{
     position: absolute;
     top: -45px;
     right: 0px;
-    background: url(../images/arrow_right.png) top center no-repeat;
+    background: url(https://icons.veryicon.com/png/o/miscellaneous/300-free-vector-icons/arrow_right-6.png) top center no-repeat;
 }
 
 /* Clickable class fix problem with hover on touch devices */
