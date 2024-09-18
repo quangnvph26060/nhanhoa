@@ -19,9 +19,9 @@ class ServerLocationPay extends Model
         'serverlocation_id',
     ];
 
-    protected $appends = ['serverlocation_id'] ;
+    protected $appends = ['serverlocation'] ;
 
-    public function getServerlocation_idAttribute()
+    public function getServerlocationAttribute()
     {
         return ServerLocation::where('id', $this->attributes['serverlocation_id'])->first();
     }

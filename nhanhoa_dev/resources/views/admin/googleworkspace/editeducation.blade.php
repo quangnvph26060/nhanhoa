@@ -114,7 +114,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Thêm mới</a>
+                <a href="#">Thay đổi</a>
             </li>
         </ul>
     </div>
@@ -122,7 +122,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm Google Workspace - Business</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa Google Workspace - Education</h4>
                 </div>
                 <div class="card-body">
                     <div class="" id="business" style="display: block;">
@@ -134,10 +134,10 @@
                                 <div class="col-lg-6 add_product">
                                     <div>
                                         <label for="name" class="form-label">Tên gói</label>
-                                        <input type="text" class="form-control" name="name" id="name" required value="{{ $education->name }}">
+                                        <input type="text" class="form-control" name="name" id="nameeducation" required value="{{ $education->name }}">
                                         <div class="col-lg-9">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                id="name_error"></span>
+                                                id="nameeducation_error"></span>
                                         </div>
                                     </div>
 
@@ -158,7 +158,7 @@
                                     <div>
                                         <label for="price" class="form-label">Chi phí (đ/tháng)<span
                                                 class="text text-danger">*</span></label>
-                                        <input type="number" class="form-control" name="price" id="price" required value="{{   $education->price }}">
+                                        <input type="number" class="form-control" name="price" id="price" required value="{{ $education->price }}">
                                         <div class="col-lg-9">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="price_error"></span>
@@ -177,7 +177,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer m-2">
-                                <button type="submit" class="btn btn-primary w-md" onclick="submiteducation(event)">Xác nhận</button>
+                                <button type="button" class="btn btn-primary w-md" onclick="submiteducation(event)">Xác nhận</button>
                             </div>
                         </form>
                         </div>

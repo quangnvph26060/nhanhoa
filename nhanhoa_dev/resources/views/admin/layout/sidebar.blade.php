@@ -285,19 +285,36 @@
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#baocao">
                         <i class="fas fa-tags"></i> <!-- Icon for Promotion -->
-                        <p>Báo cáo</p>
+                        <p>Danh sách liên hệ</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="baocao">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ route('admin.promotion.addform') }}">
-                                    <span class="sub-item">Thêm</span>
+                                <a href="{{ route('admin.report.server.index') }}">
+                                    <span class="sub-item">Server</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.promotion.index') }}">
-                                    <span class="sub-item">Danh sách</span>
+                                <a href="{{ route('admin.report.serverlocation.index') }}">
+                                    <span class="sub-item">Server Location</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.report.hosting.index') }}">
+                                    <span class="sub-item">Hosting</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.google.index') }}">
+                                    <span class="sub-item">Google Workspace</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.email.index') }}">
+                                    <span class="sub-item">Email Server</span>
                                 </a>
                             </li>
                         </ul>

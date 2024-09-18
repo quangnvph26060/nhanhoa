@@ -19,4 +19,11 @@ class HostingPay extends Model
         'hostingid',
     ];
 
+    protected $appends = ['hosting'];
+
+    public function getHostingAttribute()
+    {
+        return Hosting::where('id', $this->attributes['hostingid'])->first();
+    }
+
 }

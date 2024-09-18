@@ -153,16 +153,24 @@
     #category_kho .form-check {
         margin-bottom: 10px;
     }
-    .page-inner{
+
+    .page-inner {
         min-height: 850px
     }
-    #pagination{
-        display: none;
+
+    #pagination {
+        display: flex;
 
     }
-    #pagination li{
+
+    #pagination li {
         list-style: none;
         padding: 0px 10px;
+    }
+
+    .btn.active {
+        background-color: #2ae01a;
+        color: white;
     }
 </style>
 
@@ -174,11 +182,20 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách khách hàng</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách liên hệ Google Workspace
+                    </h4>
                 </div>
+                <div style="padding: 10px ; text-align: center">
+                    <button id="business-btn" class="btn btn-primary mr-5"
+                        onclick="showSection('business')">Business</button>
+                    <!-- Education Button -->
+                    <button id="education-btn" class="btn btn-primary"
+                        onclick="showSection('education')">Education</button>
+                </div>
+
                 <div class="card-body">
                     <div class="table-responsive">
-                        <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                        <div id="business" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             {{-- <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
@@ -188,17 +205,19 @@
                             </div> --}}
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                                    <table id="basic-datatables"
+                                        class="display table table-striped table-hover dataTable" role="grid"
+                                        aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-                                                <th>Mã khách hàng</th>
                                                 <th>Tên khách hàng</th>
                                                 <th>Điện thoại</th>
                                                 <th>Email</th>
+                                                <th>Tên gói</th>
                                                 <th>Hành động</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="customer-data">
+                                        <tbody id="server-data">
                                             <!-- Dữ liệu khách hàng sẽ được tải qua AJAX vào đây -->
                                         </tbody>
                                     </table>
@@ -212,6 +231,36 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div id="education" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="basic-datatables"
+                                        class="display table table-striped table-hover dataTable" role="grid"
+                                        aria-describedby="basic-datatables_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th>Tên khách hàng</th>
+                                                <th>Điện thoại</th>
+                                                <th>Email</th>
+                                                <th>Tên gói</th>
+                                                <th>Hành động</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="education-data">
+                                            <!-- Dữ liệu khách hàng sẽ được tải qua AJAX vào đây -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div id="pagination-education" class="dataTables_paginate">
+                                        <!-- Pagination sẽ được tải qua AJAX vào đây -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -219,104 +268,10 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-
+    <script src="{{ asset('page/page.js') }}"></script>
+    <script src="{{ asset('page/pageeducation.js') }}"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            fetchCustomers(1);
-
-            function fetchCustomers(page) {
-                $.ajax({
-                    url: "{{ route('admin.client.list') }}?page=" + page,
-                    method: 'GET',
-                    success: function(data) {
-                        let html = '';
-                        $.each(data.data, function(index, customer) {
-                            html += `
-                                <tr>
-                                    <td>${customer.code}</td>
-                                    <td>${customer.name}</td>
-                                    <td>${customer.phone}</td>
-                                    <td>${customer.email}</td>
-                                    <td align="center">
-                                        <a class="btn btn-warning" href=""><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btn-delete" data-id="${customer.id}" onclick="deleteConfirmation(${customer.id})"><i class="fa-solid fa-trash"></i></button>
-                                        <form id="delete-form-${customer.id}" action="" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </td>
-                                </tr>
-                            `;
-                        });
-                        $('#customer-data').html(html);
-                        let pagination = createPagination(data.current_page, data.last_page);
-                        $('#pagination').html(pagination);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Lỗi khi lấy danh sách khách hàng:', error);
-                    }
-                });
-            }
-
-            function createPagination(current, last) {
-                if (last == 1) {
-                    return '';
-                }
-
-                let pagination = '';
-
-                if (current > 1) {
-                    pagination += `<li class="page-item">
-                        <a class="page-link" href="#" data-page="${current - 1}"><i class="fas fa-backward"></i></a>
-                    </li>`;
-                }
-
-                pagination += `<li class="page-item ${1 === current ? 'active' : ''}">
-                    <a class="page-link" href="#" data-page="1">1</a>
-                </li>`;
-
-                if (current > 3) {
-                    pagination += `<li class="page-item disabled">
-                        <span class="page-link">...</span>
-                    </li>`;
-                }
-
-                let start = Math.max(2, current - 1);
-                let end = Math.min(current + 1, last - 1);
-
-                for (let i = start; i <= end; i++) {
-                    pagination += `<li class="page-item ${i === current ? 'active' : ''}">
-                        <a class="page-link" href="#" data-page="${i}">${i}</a>
-                    </li>`;
-                }
-
-                if (current < last - 2) {
-                    pagination += `<li class="page-item disabled">
-                        <span class="page-link">...</span>
-                    </li>`;
-                }
-
-                pagination += `<li class="page-item ${last === current ? 'active' : ''}">
-                    <a class="page-link" href="#" data-page="${last}">${last}</a>
-                </li>`;
-
-                if (current < last) {
-                    pagination += `<li class="page-item">
-                        <a class="page-link" href="#" data-page="${current + 1}"><i class="fas fa-forward"></i></a>
-                    </li>`;
-                }
-
-                return pagination;
-            }
-
-            $(document).on('click', '#pagination a', function(event) {
-                event.preventDefault();
-                let page = $(this).data('page');
-                fetchCustomers(page);
-            });
-        });
-
         function deleteConfirmation(id) {
             Swal.fire({
                 title: 'Bạn có chắc chắn muốn xóa?',
@@ -333,6 +288,39 @@
                 }
             });
         }
+        function getServerListUrl(page) {
+            return `{{ route('admin.report.list.business')}}?page=${page}`;
+        }
+
+        function getEducationListUrl(page) {
+            return `{{ route('admin.report.list.education')}}?page=${page}`;
+        }
     </script>
 
+<script>
+    // Function để ẩn/hiện các phần tử và đổi màu nút
+    function showSection(section) {
+        // Ẩn tất cả các sections
+        document.getElementById('business').style.display = 'none';
+        document.getElementById('education').style.display = 'none';
+
+        // Hiển thị phần section được chọn
+        document.getElementById(section).style.display = 'block';
+
+        // Xóa lớp active và btn-success khỏi các nút
+        document.getElementById('business-btn').classList.remove('btn-success', 'active');
+        document.getElementById('business-btn').classList.add('btn-primary');
+        document.getElementById('education-btn').classList.remove('btn-success', 'active');
+        document.getElementById('education-btn').classList.add('btn-primary');
+
+        // Thêm lớp active và btn-success vào nút được chọn
+        document.getElementById(section + '-btn').classList.remove('btn-primary');
+        document.getElementById(section + '-btn').classList.add('btn-success', 'active');
+    }
+
+    // Mặc định hiển thị phần business khi tải trang
+    document.addEventListener("DOMContentLoaded", function() {
+        showSection('business');
+    });
+</script>
     @endsection

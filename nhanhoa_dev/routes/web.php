@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\EmailServerController;
 use App\Http\Controllers\Admin\GoogleWorkspaceController;
 use App\Http\Controllers\Admin\HostingController;
 use App\Http\Controllers\Admin\PromotionController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\ServerController;
 use App\Http\Controllers\Admin\SslController;
 use App\Http\Controllers\Auth\AuthController;
@@ -170,6 +171,29 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('', [ClientController::class, 'index'])->name('index');
         Route::get('list', [ClientController::class, 'listclient'])->name('list');
+
+    });
+
+    Route::prefix('report')->name('report.')->group(function(){
+        // server
+        Route::get('', [ReportController::class, 'indexserver'])->name('server.index');
+        Route::get('list-server', [ReportController::class, 'listserver'])->name('list.server');
+         // server location
+        Route::get('location', [ReportController::class, 'indexserverlocation'])->name('serverlocation.index');
+        Route::get('list-location', [ReportController::class, 'listserverlocation'])->name('list.serverlocation');
+
+        // hosting
+        Route::get('hosting', [ReportController::class, 'indexhosting'])->name('hosting.index');
+        Route::get('list-hosting', [ReportController::class, 'listhosting'])->name('list.hosting');
+
+        // google workspace
+        Route::get('google-workspace', [ReportController::class, 'indexgoogle'])->name('google.index');
+        Route::get('list-business', [ReportController::class, 'listbusiness'])->name('list.business');
+        Route::get('list-education', [ReportController::class, 'listeducation'])->name('list.education');
+
+        // email server
+        Route::get('email-server', [ReportController::class, 'indexemail'])->name('email.index');
+        Route::get('list-email', [ReportController::class, 'listemail'])->name('list.email');
 
     });
 

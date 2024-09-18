@@ -10,8 +10,6 @@ class Server extends Model
     use HasFactory;
 
     protected $table = "sgo_server";
-
-
     protected $fillable = [
         'name',
         'cpu',

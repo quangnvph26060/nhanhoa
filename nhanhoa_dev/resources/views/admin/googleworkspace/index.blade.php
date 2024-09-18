@@ -170,7 +170,7 @@
                     <h4 class="card-title" style="text-align: center; color : white;">Danh sách Google Workspace </h4>
                 </div>
 
-                <div style="padding: 10px">
+                <div style="padding: 10px; text-align: center;">
                     <!-- Business Button -->
                     <button id="business-btn"
                         class="btn
