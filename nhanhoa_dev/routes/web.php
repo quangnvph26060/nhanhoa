@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\HostingController;
 use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\ServerController;
+use App\Http\Controllers\Admin\SolutionController as AdminSolutionController;
 use App\Http\Controllers\Admin\SslController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
@@ -59,6 +60,15 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 
 Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('solution')->name('solution.')->group(function () {
+        Route::get('', [AdminSolutionController::class, 'index'])->name('index');
+        Route::get('search', [AdminSolutionController::class, 'search'])->name('search');
+        Route::delete('delete/{id}', [AdminSolutionController::class, 'delete'])->name('delete');
+        Route::get('add', [AdminSolutionController::class, 'add'])->name('add');
+        Route::post('store', [AdminSolutionController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [AdminSolutionController::class, 'edit'])->name('edit');
+        Route::put('update/{id}', [AdminSolutionController::class, 'update'])->name('update');
+    });
     Route::get('', [DashBoardController::class, 'index'])->name('dashboard');
 
     Route::prefix('config')->name('config.')->group(function () {
@@ -89,7 +99,6 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('edit/{id}', [DomainController::class, 'editform'])->name('editform');
         Route::post('edit/{id}', [DomainController::class, 'editsubmit'])->name('editsubmit');
         Route::post('delete/{id}', [DomainController::class, 'delete'])->name('delete');
-
     });
 
     Route::prefix('hosting')->name('hosting.')->group(function () {
@@ -99,12 +108,11 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('edit/{id}', [HostingController::class, 'editform'])->name('editform');
         Route::post('edit/{id}', [HostingController::class, 'editsubmit'])->name('editsubmit');
         Route::post('delete/{id}', [HostingController::class, 'delete'])->name('delete');
-
     });
 
     Route::prefix('cloud')->name('cloud.')->group(function () {
         Route::get('', [CloudController::class, 'index'])->name('index');
-         Route::get('add', [CloudController::class, 'addform'])->name('addform');
+        Route::get('add', [CloudController::class, 'addform'])->name('addform');
         Route::post('add', [CloudController::class, 'addsubmit'])->name('addsubmit');
         Route::get('edit/{id}', [CloudController::class, 'editform'])->name('editform');
         Route::post('edit/{id}', [CloudController::class, 'editsubmit'])->name('editsubmit');
@@ -196,8 +204,6 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('list-email', [ReportController::class, 'listemail'])->name('list.email');
 
     });
-
-
 });
 
 
