@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backup365;
+use App\Models\Backup365Pay;
+use App\Models\CloudBackupPay;
+use App\Models\CloudPay;
 use App\Models\EmailServer;
 use App\Models\EmailServerPay;
 use App\Models\GoogleWorkspaceBusinessPay;
@@ -17,7 +21,7 @@ use Illuminate\Support\Facades\Log;
 class ReportController extends Controller
 {
     // server
-    protected  $perPage = 10;
+    protected  $perPage = 6;
     public function indexserver(){
         return view('admin.report.server');
     }
@@ -149,6 +153,7 @@ class ReportController extends Controller
         ]);
     }
 
+    // email server
     public function indexemail(){
         return view('admin.report.email');
     }
@@ -172,6 +177,87 @@ class ReportController extends Controller
             'last_page' => $email->lastPage(),
             'per_page' => $email->perPage(),
             'total' => $email->total()
+        ]);
+    }
+
+    // cloud
+    public function indexcloud(){
+        return view('admin.report.cloud');
+    }
+    public function listcloud(){
+
+        $cloud = CloudPay::paginate($this->perPage);
+        $data = [];
+        foreach ($cloud as $key => $item) {
+            $data[] = [
+                'name' => $item->name,
+                'phone' => $item->phone,
+                'email' => $item->email,
+                'id' => $item->id,
+                'package_name' => $item->cloud->name,
+            ];
+        }
+
+        return response()->json([
+            'data' => $data,
+            'current_page' => $cloud->currentPage(),
+            'last_page' => $cloud->lastPage(),
+            'per_page' => $cloud->perPage(),
+            'total' => $cloud->total()
+        ]);
+    }
+
+    // cloud backup
+    public function indexcloudbackup(){
+        return view('admin.report.cloudbackup');
+    }
+    public function listcloudbackup(){
+
+        $cloud = CloudBackupPay::paginate($this->perPage);
+        $data = [];
+        foreach ($cloud as $key => $item) {
+            $data[] = [
+                'name' => $item->name,
+                'phone' => $item->phone,
+                'email' => $item->email,
+                'id' => $item->id,
+                'package_name' => $item->cloudbackup->name,
+            ];
+        }
+
+        return response()->json([
+            'data' => $data,
+            'current_page' => $cloud->currentPage(),
+            'last_page' => $cloud->lastPage(),
+            'per_page' => $cloud->perPage(),
+            'total' => $cloud->total()
+        ]);
+    }
+
+    // cloud backup365
+    public function indexcloudbackup365(){
+        return view('admin.report.email');
+    }
+    public function listcloudbackup365(){
+
+        $cloud = Backup365Pay::paginate($this->perPage);
+        $data = [];
+        foreach ($cloud as $key => $item) {
+            $data[] = [
+                'name' => $item->name,
+                'phone' => $item->phone,
+                'email' => $item->email,
+                'id' => $item->id,
+                'package_name' => $item->backup365->name,
+            ];
+        }
+
+        return response()->json([
+            'data' => $data,
+            'current_page' => $cloud->currentPage(),
+            'last_page' => $cloud->lastPage(),
+            'per_page' => $cloud->perPage(),
+            'total' => $cloud->total()
         ]);
     }
 }

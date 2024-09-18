@@ -285,7 +285,7 @@
                 </li>
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#baocao">
-                        <i class="fas fa-tags"></i> <!-- Icon for Promotion -->
+                        <i class="fas fa-flag"></i>
                         <p>Danh sách liên hệ</p>
                         <span class="caret"></span>
                     </a>
@@ -318,6 +318,25 @@
                                     <span class="sub-item">Email Server</span>
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.cloud.index') }}">
+                                    <span class="sub-item">cloud</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.cloudbackup.index') }}">
+                                    <span class="sub-item">Cloud backup</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.cloudbackup365.index') }}">
+                                    <span class="sub-item">Backup 365</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                 </li>

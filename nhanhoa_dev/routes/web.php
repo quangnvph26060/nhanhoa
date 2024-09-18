@@ -203,6 +203,17 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('email-server', [ReportController::class, 'indexemail'])->name('email.index');
         Route::get('list-email', [ReportController::class, 'listemail'])->name('list.email');
 
+        // cloud
+        Route::get('cloud', [ReportController::class, 'indexcloud'])->name('cloud.index');
+        Route::get('list-cloud', [ReportController::class, 'listcloud'])->name('list.cloud');
+
+        // cloud backup
+        Route::get('cloud-backup', [ReportController::class, 'indexcloudbackup'])->name('cloudbackup.index');
+        Route::get('list-cloud-backup', [ReportController::class, 'listcloudbackup'])->name('list.cloudbackup');
+
+         // cloud backup365
+         Route::get('cloud-backup365', [ReportController::class, 'indexcloudbackup365'])->name('cloudbackup365.index');
+         Route::get('list-cloud-backup365', [ReportController::class, 'listcloudbackup365'])->name('list.cloudbackup365');
     });
 });
 

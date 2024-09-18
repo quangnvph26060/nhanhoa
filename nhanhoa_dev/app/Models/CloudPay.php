@@ -17,4 +17,11 @@ class CloudPay extends Model
         'email',
         'cloud_id',
     ];
+
+    protected $appends = ['cloud'];
+
+    public function getCloudAttribute()
+    {
+        return Cloud::where('id', $this->attributes['cloud_id'])->first();
+    }
 }
