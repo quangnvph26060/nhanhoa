@@ -1,122 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('client/pages/solution-electronic-contract/master')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="{{ asset('client/assets/css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('client/assets/css/bootstrap/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('client/assets/css/carousel/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ asset('client/assets/css/carousel/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('client/assets/css/solution-esoc.css') }}">
-</head>
-
-<body>
-    <header class="navbar navbar-expand-md  navbar-light d-print-none sticky-top">
-        <div class="container-xl">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-lg-2">
-                <a href="/">
-                    <img src="https://esoc.vn/Assets/images/Logo/esoc-svg-2.png" alt="Hợp đồng điện tử "
-                        class="navbar-brand-image">
-                </a>
-            </h1>
-            <div class="navbar-nav order-lg-last flex-row ">
-                <a class="default-btn lineargradient-btn d-none btn-login-full" href="https://login.esoc.vn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        stroke-width="2" class="icon bi bi-box-arrow-in-right svg" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z">
-                        </path>
-                        <path fill-rule="evenodd"
-                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z">
-                        </path>
-                    </svg>
-                    Đăng nhập
-                </a>
-                <a class="default-btn lineargradient-btn btn-login" href="https://login.echungtu.com">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        stroke-width="2" class="icon bi bi-box-arrow-in-right svg" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z">
-                        </path>
-                        <path fill-rule="evenodd"
-                            d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse justify-content-center" id="navbar-menu">
-                <div class="d-flex flex-column flex-md-row align-items-stretch align-items-md-center ">
-                    <ul class="navbar-nav">
-                        <li class="nav-item dropdown" id="header_GiaoDich">
-                            <a class="nav-link" href="/gioi-thieu-hop-dong-dien-tu">
-                                <span class="nav-link-title">
-                                    Giới thiệu
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tinh-nang-hop-dong-dien-tu" role="button">
-                                <span class="nav-link-title">
-                                    Tính năng
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/bang-gia-hop-dong-dien-tu" role="button">
-                                <span class="nav-link-title">
-                                    Bảng giá
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link active" href="/" role="button">
-                                <span class="nav-link-title">
-                                    Hợp tác
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tin-tuc" role="button">
-                                <span class="nav-link-title">
-                                    Tin tức
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/van-ban-hop-dong-dien-tu" role="button">
-                                <span class="nav-link-title">
-                                    Văn bản
-                                </span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tra-cuu-hop-dong-dien-tu" role="button">
-                                <span class="nav-link-title">
-                                    Tra cứu
-                                </span>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/dang-ky-nhan-tu-van" role="button">
-                                <span class="nav-link-title">
-                                    Liên hệ
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-
+@section('content')
     <section id="hero">
         <div class="d-sm-none">
             <div class="frame" style="padding-top:71.4%">
@@ -180,10 +64,9 @@
                             <div class="row align-items-center mb-0 pb-0">
                                 <div class="col-auto">
                                     <span class="bg-cyan-lt avatar avatar-rounded">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path
                                                 d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2">
@@ -206,10 +89,9 @@
                             <div class="row align-items-center">
                                 <div class="col-auto">
                                     <span class="bg-cyan-lt avatar avatar-rounded">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path d="M9 12l2 2l4 -4"></path>
                                             <path
@@ -231,10 +113,9 @@
                             <div class="row align-items-center">
                                 <div class="col-auto">
                                     <span class="bg-cyan-lt avatar avatar-rounded">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path
                                                 d="M5 6h10a1 1 0 0 1 1 1v8a4 4 0 0 1 -4 4h-4a4 4 0 0 1 -4 -4v-8a1 1 0 0 1 1 -1">
@@ -257,9 +138,8 @@
                                 <div class="col-auto">
                                     <span class="bg-cyan-lt avatar avatar-rounded">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <path
                                                 d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2">
@@ -280,12 +160,10 @@
                             </div>
                             <div class="row row-cards">
                                 <div class="col-md-auto ms-auto mb-2">
-                                    <a href="/gioi-thieu-hop-dong-dien-tu"
-                                        class="default-btn lineargradient-btn w-100 ">
+                                    <a href="/gioi-thieu-hop-dong-dien-tu" class="default-btn lineargradient-btn w-100 ">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <circle cx="12" cy="12" r="2"></circle>
                                             <path
@@ -296,12 +174,10 @@
                                     </a>
                                 </div>
                                 <div class="col-md-auto mb-2">
-                                    <a href="/tinh-nang-hop-dong-dien-tu"
-                                        class="default-btn lineargradient-btn  w-100 ">
+                                    <a href="/tinh-nang-hop-dong-dien-tu" class="default-btn lineargradient-btn  w-100 ">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <rect x="4" y="4" width="6" height="6" rx="1"></rect>
                                             <rect x="14" y="4" width="6" height="6" rx="1"></rect>
@@ -315,9 +191,8 @@
                                 <div class="col-md-auto">
                                     <a href="/dang-ky-nhan-tu-van" class="default-btn lineargradient-btn w-100">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
+                                            height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                            fill="none" stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                             <rect x="4" y="13" rx="2" width="4" height="6"></rect>
                                             <rect x="16" y="13" rx="2" width="4" height="6"></rect>
@@ -649,8 +524,7 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a class="btn-more" href="/bang-gia-hop-dong-dien-tu">Xem thêm<i
-                        class="bi bi-arrow-right ms-1"></i></a>
+                <a class="btn-more" href="{{route('page.price-list-electronic-contract')}}">Xem thêm<i class="bi bi-arrow-right ms-1"></i></a>
             </div>
         </div>
     </div>
@@ -701,9 +575,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7h-1">
                                         </path>
@@ -717,9 +591,9 @@
                             </div>
                             <div class="row align-items-center mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M19 11v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
                                         <path d="M13 13l9 3l-4 2l-2 4l-3 -9"></path>
@@ -738,9 +612,9 @@
                             </div>
                             <div class="row align-items-center mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <circle cx="9" cy="7" r="4"></circle>
                                         <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
@@ -770,9 +644,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto mt-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="3 9 12 15 21 9 12 3 3 9"></polyline>
                                         <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"></path>
@@ -786,9 +660,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto mt-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="9 11 12 14 20 6"></polyline>
                                         <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9">
@@ -818,9 +692,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="3 9 12 15 21 9 12 3 3 9"></polyline>
                                         <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"></path>
@@ -834,9 +708,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <path d="M9 7h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"></path>
                                         <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"></path>
@@ -862,14 +736,14 @@
                         <div class="card-body">
                             <h2 class="text-center">4. Lưu trữ và quản lý hợp đồng</h2>
                             <div class="mb-3 text-center">
-                                <img src="https://esoc.vn/Assets/Images/Index/quan_ly_va_luu_tru.png"
-                                    class="img-fluid" alt="Tạo hợp đồng">
+                                <img src="https://esoc.vn/Assets/Images/Index/quan_ly_va_luu_tru.png" class="img-fluid"
+                                    alt="Tạo hợp đồng">
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="3 9 12 15 21 9 12 3 3 9"></polyline>
                                         <path d="M21 9v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"></path>
@@ -883,9 +757,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <rect x="3" y="4" width="18" height="8" rx="3"></rect>
                                         <rect x="3" y="12" width="18" height="8" rx="3"></rect>
@@ -899,9 +773,9 @@
                             </div>
                             <div class="row mb-2">
                                 <div class="col-auto">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
+                                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <polyline points="4 19 8 13 12 15 16 10 20 14 20 19 4 19"></polyline>
                                         <polyline points="4 12 7 8 11 10 16 4 20 8"></polyline>
@@ -931,9 +805,9 @@
                     <h3 class="text-h1">Pháp lý hợp đồng điện tử</h3>
                     <div class="row mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-helpdesk text-firstColor"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-helpdesk text-firstColor" width="24"
+                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <circle cx="12" cy="12" r="9"></circle>
                                 <path d="M9 12l2 2l4 -4"></path>
@@ -946,9 +820,9 @@
                     </div>
                     <div class="row mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-helpdesk text-firstColor"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-helpdesk text-firstColor" width="24"
+                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <circle cx="12" cy="12" r="9"></circle>
                                 <path d="M9 12l2 2l4 -4"></path>
@@ -960,9 +834,9 @@
                     </div>
                     <div class="row">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-helpdesk text-firstColor"
-                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-helpdesk text-firstColor" width="24"
+                                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <circle cx="12" cy="12" r="9"></circle>
                                 <path d="M9 12l2 2l4 -4"></path>
@@ -1015,8 +889,7 @@
                         <div class="col-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
                                 width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round">
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1030,10 +903,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1047,10 +919,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1064,10 +935,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1081,10 +951,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1098,10 +967,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1115,10 +983,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1132,10 +999,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1149,10 +1015,9 @@
                     </div>
                     <div class="row align-items-center mb-2">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1166,10 +1031,9 @@
                     </div>
                     <div class="row align-items-center">
                         <div class="col-auto">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="icon-inline icon-helpdesk text-firstColor" width="24" height="24"
-                                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon-inline icon-helpdesk text-firstColor"
+                                width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                 <polyline points="9 11 12 14 20 6"></polyline>
                                 <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path>
@@ -1196,9 +1060,9 @@
                     <div class="accordion" id="accordionFlushExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header mt-1" id="flush-headingOne">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                    aria-expanded="false" aria-controls="flush-collapseOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                    aria-controls="flush-collapseOne">
                                     <i class="bi bi-question-diamond me-2"></i>Hợp đồng điện tử là gì?
                                 </button>
                             </h2>
@@ -1220,9 +1084,9 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header mt-1" id="flush-headinTwo">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                    aria-expanded="false" aria-controls="flush-collapseTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                    aria-controls="flush-collapseTwo">
                                     <i class="bi bi-question-diamond me-2"></i>Giá trị pháp lý của Hợp đồng điện tử?
                                 </button>
                             </h2>
@@ -1254,9 +1118,9 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header mt-1" id="flush-headingThree">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                    aria-expanded="false" aria-controls="flush-collapseThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                    aria-controls="flush-collapseThree">
                                     <i class="bi bi-question-diamond me-2"></i>Các bước ký kết hợp đồng điện tử Esoc?
                                 </button>
                             </h2>
@@ -1283,9 +1147,9 @@
                         </div>
                         <div class="accordion-item">
                             <h2 class="accordion-header mt-1" id="flush-headingFour">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#flush-collapseFour"
-                                    aria-expanded="false" aria-controls="flush-collapseFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                    aria-controls="flush-collapseFour">
                                     <i class="bi bi-question-diamond me-2"></i>Dùng chữ ký gì để ký hợp đồng điện tử?
                                 </button>
                             </h2>
@@ -1425,9 +1289,8 @@
                                 <a href="/tin-tuc/phai-biet-top-5-tieu-chi-lua-chon-giai-phap-hop-dong-dien-tu-phu-hop-cho-doanh-nghiep"
                                     class="btn btn-link link-secondary">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <circle cx="12" cy="12" r="2"></circle>
                                         <path
@@ -1472,9 +1335,8 @@
                                 <a href="/tin-tuc/tong-quan-cac-kien-thuc-lien-quan-den-hop-dong-dan-su"
                                     class="btn btn-link link-secondary">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <circle cx="12" cy="12" r="2"></circle>
                                         <path
@@ -1522,9 +1384,8 @@
                                 <a href="/tin-tuc/quy-trinh-ky-ket-hop-dong-dien-tu-qua-email-nhu-the-nao"
                                     class="btn btn-link link-secondary">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                        height="24" viewBox="0 0 24 24" stroke-width="2"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
+                                        height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                                         <circle cx="12" cy="12" r="2"></circle>
                                         <path
@@ -1559,16 +1420,14 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="hcm-tab" data-bs-toggle="tab"
-                                        data-bs-target="#hcm" role="tab" aria-controls="hcm"
-                                        aria-selected="false">
+                                    <a class="nav-link" id="hcm-tab" data-bs-toggle="tab" data-bs-target="#hcm"
+                                        role="tab" aria-controls="hcm" aria-selected="false">
                                         Văn phòng TP. HCM
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="vinh-tab" data-bs-toggle="tab"
-                                        data-bs-target="#vinh" role="tab" aria-controls="vinh"
-                                        aria-selected="false">
+                                    <a class="nav-link" id="vinh-tab" data-bs-toggle="tab" data-bs-target="#vinh"
+                                        role="tab" aria-controls="vinh" aria-selected="false">
                                         Văn phòng Vinh
                                     </a>
                                 </li>
@@ -1580,8 +1439,7 @@
                                     aria-labelledby="ha_noi-tab">
                                     <div class="info-office">
                                         <p class="address">
-                                            <img src="https://esoc.vn/Assets/Images/Index/icon_map.svg"
-                                                alt="Map">
+                                            <img src="https://esoc.vn/Assets/Images/Index/icon_map.svg" alt="Map">
                                             Tầng 4 - Toà nhà 97 - 99 Láng Hạ, Quận Đống Đa, Thành Phố Hà Nội
                                         </p>
                                         <p>
@@ -1590,8 +1448,7 @@
                                             Điện thoại: (024) 7308 6680
                                         </p>
                                         <p>
-                                            <img src="https://esoc.vn/Assets/Images/Index/icon_fax.svg"
-                                                alt="Mail">
+                                            <img src="https://esoc.vn/Assets/Images/Index/icon_fax.svg" alt="Mail">
                                             Mail: sales@nhanhoa.com
                                         </p>
                                         <p>
@@ -1601,12 +1458,10 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="hcm" role="tabpanel"
-                                    aria-labelledby="hcm-tab">
+                                <div class="tab-pane fade" id="hcm" role="tabpanel" aria-labelledby="hcm-tab">
                                     <div class="info-office">
                                         <p class="address">
-                                            <img src="https://esoc.vn/Assets/Images/Index/icon_map.svg"
-                                                alt="Map">
+                                            <img src="https://esoc.vn/Assets/Images/Index/icon_map.svg" alt="Map">
                                             927/1 CMT8, Phường 7, Quận Tân Bình, Thành phố Hồ Chí Minh
                                         </p>
                                         <p>
@@ -1615,8 +1470,7 @@
                                             Điện thoại: (024) 7308 6680
                                         </p>
                                         <p>
-                                            <img src="https://esoc.vn/Assets/Images/Index/icon_fax.svg"
-                                                alt="Mail">
+                                            <img src="https://esoc.vn/Assets/Images/Index/icon_fax.svg" alt="Mail">
                                             Mail: hcmsales@nhanhoa.com
                                         </p>
                                         <p>
@@ -1631,8 +1485,7 @@
                                     aria-labelledby="vinh-tab">
                                     <div class="info-office">
                                         <p class="address">
-                                            <img src="https://esoc.vn/Assets/Images/Index/icon_map.svg"
-                                                alt="Map">
+                                            <img src="https://esoc.vn/Assets/Images/Index/icon_map.svg" alt="Map">
                                             Tầng 2 Tòa nhà Sài Gòn Sky, ngõ 26 Nguyễn Thái Học, phường Đội Cung, TP.
                                             Vinh, Nghệ An
                                         </p>
@@ -1642,8 +1495,7 @@
                                             Điện thoại: (024) 7308 6680 - nhánh 6
                                         </p>
                                         <p>
-                                            <img src="https://esoc.vn/Assets/Images/Index/icon_fax.svg"
-                                                alt="Mail">
+                                            <img src="https://esoc.vn/Assets/Images/Index/icon_fax.svg" alt="Mail">
                                             Mail: contact@nhanhoa.com
                                         </p>
                                         <p>
@@ -1662,8 +1514,7 @@
                             <div class="app-store-google">
                                 <a href="https://apps.apple.com/vn/app/nh%C3%A2n-ho%C3%A0/id1469246570"
                                     title="App Store" target="_blank">
-                                    <img src="https://esoc.vn/Assets/Images/Index/apple_appstore.png"
-                                        alt="App Store">
+                                    <img src="https://esoc.vn/Assets/Images/Index/apple_appstore.png" alt="App Store">
                                     App Store
                                 </a>
                                 <a href="https://play.google.com/store/apps/details?id=com.nh.domain&amp;hl=vi&amp;pli=1"
@@ -1680,397 +1531,4 @@
             </div>
         </div>
     </div>
-
-    <footer class="footer">
-        <div class="section-footer-top">
-            <div class="container">
-                <div class="item-list-footer">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Công ty
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="https://nhanhoa.com/ve-nhan-hoa.html">
-                                            Giới thiệu về Công ty
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/tuyen-dung.html">
-                                            Tuyển dụng
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/lien-he.html">
-                                            Liên hệ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/cau-hoi-thuong-gap.html">
-                                            Câu hỏi thường gặp
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/tro-giup-khach-hang.html">
-                                            Trợ giúp khách hàng
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Dịch vụ
-                                </div>
-                                <ul>
-                                    <li><a href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                            title="">Đăng ký Tên miền</a></li>
-                                    <li><a href="https://nhanhoa.com/email/email-hosting.html"
-                                            title="Bảng giá Email hosting">Bảng giá Email hosting</a></li>
-                                    <li><a href="https://nhanhoa.com/hosting/windows-hosting.html"
-                                            title="">Unlimited Hosting</a></li>
-                                    <li><a href="https://nhanhoa.com/may-chu/may-chu-ao-vps.html" title="">Máy
-                                            chủ ảo Cloud VPS</a></li>
-                                    <li><a href="https://nhanhoa.com/dich-vu/thiet-ke-website.html"
-                                            title="">Thiết kế website Web4s</a></li>
-                                    <li><a href="https://vfone.vn/" title="">Tổng đài điện thoại Vfone</a>
-                                    </li>
-                                    <li><a href="https://nhanhoa.com/email/gioi-thieu-dich-vu-email.html"
-                                            title="">Dịch vụ Email</a></li>
-                                    <li><a href="https://nhanhoa.com/ssl-bao-mat/gioi-thieu-ssl.html"
-                                            title="">SSL &amp; Bảo mật</a></li>
-                                    <li><a href="https://nhanhoa.com/tin-tuc/v-v-tiep-nhan-y-kien-dong-gop-cua-khach-hang-dich-vu-ten-mien-vn.html"
-                                            title="">Góp ý dịch vụ tên miền .VN</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Trợ giúp
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/huong-dan-thanh-toan.html"
-                                            title=""><span>Hướng dẫn thanh toán</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/quy-dinh-su-dung-ten-mien.html"
-                                            title=""><span>Quy định sử dụng tên miền</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/quy-dinh-su-dung-dich-vu.html"
-                                            title=""><span>Quy định sử dụng dịch vụ</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/quy-dinh-doi-tra-va-hoan-tra-tien.html"
-                                            title=""><span>Quy định đổi trả và hoàn trả tiền</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/download-van-ban.html"
-                                            title=""><span>Download văn bản</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/cau-hoi-thuong-gap-onepay.html"
-                                            title=""><span>Câu hỏi thường gặp (Onepay)</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/chinh-sach-bao-mat-thong-tin.html"
-                                            title=""><span>Chính sách bảo mật thông tin</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/legal-agreements.html"
-                                            title=""><span>Legal Agreements</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/trang/quy-trinh-giai-quyet-khieu-nai-khach-hang.html"
-                                            title=""><span>Quy trình giải quyết khiếu nại khách
-                                                hàng</span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Tin tức
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a target="_blank" href="https://wiki.nhanhoa.com/">
-                                            Tin công nghệ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/tin-tuc/thong-bao_3.html">
-                                            Tin nội bộ
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://nhanhoa.com/khuyen-mai.html">
-                                            Tin khuyến mãi
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item-list-footer">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Điều khoản
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="/">
-                                            Chính sách bảo mật
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            Điều khoản dịch vụ
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Đại lý
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="/">
-                                            Chính sách Đại lý
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            Đăng ký Đại lý
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            Hỏi đáp về Đại lý
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Tải Về App
-                                </div>
-                                <ul>
-                                    <li>
-                                        <a href="/">
-                                            Tải Về Android
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/">
-                                            Tải Về IOS
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-6">
-                            <div class="item-menu-footer">
-                                <div class="title-footer">
-                                    Cộng Đồng
-                                </div>
-                                <ul class="list-img-fanpage">
-                                    <li>
-                                        <a href="https://www.facebook.com/nhanhoacom" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_facebook.png"
-                                                alt="facebook">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/nhanhoagroup" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_twitter.png"
-                                                alt="twitter">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.youtube.com/channel/UCB_gZGsKMNdPCkDyu-mEsAQ"
-                                            target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_youtube.png"
-                                                alt="Youtube">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/company/nhan-hoa-software-company"
-                                            target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_in.png"
-                                                alt="In">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://zalo.me/220654257120240702" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_in.png"
-                                                alt="zalo">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://t.me/nhanhoacom" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_telegram.png"
-                                                alt="telegram">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_skype.png"
-                                                alt="skype">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/nhanhoa.official/" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_instagram.png"
-                                                alt="instagram">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.tiktok.com/@nhanhoa_official" target="_blank">
-                                            <img src="https://esoc.vn/Assets/Images/footer/icon_tiktok.png"
-                                                alt="tiktok">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section-footer-bottom">
-            <div class="container">
-                <div class="item">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7 col-md-7 col-12">
-                            <div class="info-contact-website">
-                                <div class="logo-footer">
-                                    <a href="/">
-                                        <img src="https://esoc.vn/Assets/Images/footer/logo.png" alt="Logo">
-                                    </a>
-                                </div>
-                                <div class="info">
-                                    <p>
-                                        Copyright © 2002 – 2021 Nhan Hoa Software Company. All Rights Reserved.
-                                    </p>
-                                    <p>
-                                        Công ty TNHH Phần mềm Nhân Hòa. Đại diện: Ông Hồ Trung Dũng
-                                    </p>
-                                    <p>
-                                        Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày
-                                        19/09/2002
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-5 col-md-5 col-12">
-                            <div class="item-logo-bmtt float-right">
-                                <div class="logo-bottom logo-ican">
-                                    <a href="javascript:;">
-                                        <img src="https://esoc.vn/Assets/Images/footer/ICANN-Primary-Logo.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="logo-bottom logo-vnnic">
-                                    <a href="javascript:;">
-                                        <img src="https://esoc.vn/Assets/Images/footer/vnnic_logo-01_0.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="logo-bottom logo-google">
-                                    <a href="https://cloud.google.com/find-a-partner/partner/nhan-hoa-software-company-ltd?redirect="
-                                        target="_blank">
-                                        <img src="https://esoc.vn/Assets/Images/footer/Google_Cloud_logo.svg.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="logo-bottom logo-gov">
-                                    <a href="http://online.gov.vn/Home/WebDetails/7714?AspxAutoDetectCookieSupport=1"
-                                        target="_blank">
-                                        <img src="https://esoc.vn/Assets/Images/footer/logoSaleNoti.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="{{ asset('client/assets/js/jquery/jquery-3.6.0.min.js') }}"></script>
-
-    <script src="{{ asset('client/assets/js/carousel/owl.carousel.js') }}"></script>
-
-    <script src="{{ asset('client/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('client/assets/js/bootstrap/bootstrap.min.js') }}"></script>
-
-    @include('client.include.section-vfone')
-
-    <script>
-        $('.about-playicon').on('click', function() {
-            $('.video-play').removeClass('d-none');
-            $('.video-play').attr('src', 'https://www.youtube.com/embed/z8e1scquaF0?autoplay=1');
-        });
-
-        const select = (el, all = false) => {
-            el = el.trim()
-            if (all) {
-                return [...document.querySelectorAll(el)]
-            } else {
-                return document.querySelector(el)
-            }
-        }
-        let heroCarouselIndicators = select("#hero-carousel-indicators")
-        let heroCarouselItems = select('#heroCarousel .carousel-item', true)
-
-        heroCarouselItems.forEach((item, index) => {
-            (index === 0) ?
-            heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index +
-                "' class='active'></li>":
-                heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" +
-                index + "'></li>"
-        });
-
-        $(".owl-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true,
-            nav: true,
-            navText: ["<", ">"]
-        });
-
-        $(".re-close-popup").on('click', function() {
-            $(".popup-re-call").css('display', 'none');
-        })
-    </script>
-
-
-</body>
-
-</html>
+@endsection

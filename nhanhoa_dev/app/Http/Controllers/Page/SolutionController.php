@@ -21,4 +21,12 @@ class SolutionController extends Controller
     public function priceList(){
         return view('client.pages.solution-vivre.price-list');
     }
+
+    public function priceListElectronicContract(){
+        return view('client.pages.solution-electronic-contract.price-list');
+    }
+
+    public function priceListElectronicInvoice(){
+        return view('client/pages/solution-electronic-invoice/price-list');
+    }
 }

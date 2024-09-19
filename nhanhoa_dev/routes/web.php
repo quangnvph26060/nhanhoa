@@ -174,20 +174,18 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
             Route::post('edit/{id}', [GoogleWorkspaceController::class, 'editsubmitBusiness'])->name('editsubmit');
             Route::post('delete/{id}', [GoogleWorkspaceController::class, 'deleteBusiness'])->name('delete');
         });
-
     });
 
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('', [ClientController::class, 'index'])->name('index');
         Route::get('list', [ClientController::class, 'listclient'])->name('list');
-
     });
 
-    Route::prefix('report')->name('report.')->group(function(){
+    Route::prefix('report')->name('report.')->group(function () {
         // server
         Route::get('', [ReportController::class, 'indexserver'])->name('server.index');
         Route::get('list-server', [ReportController::class, 'listserver'])->name('list.server');
-         // server location
+        // server location
         Route::get('location', [ReportController::class, 'indexserverlocation'])->name('serverlocation.index');
         Route::get('list-location', [ReportController::class, 'listserverlocation'])->name('list.serverlocation');
 
@@ -212,9 +210,9 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('cloud-backup', [ReportController::class, 'indexcloudbackup'])->name('cloudbackup.index');
         Route::get('list-cloud-backup', [ReportController::class, 'listcloudbackup'])->name('list.cloudbackup');
 
-         // cloud backup365
-         Route::get('cloud-backup365', [ReportController::class, 'indexcloudbackup365'])->name('cloudbackup365.index');
-         Route::get('list-cloud-backup365', [ReportController::class, 'listcloudbackup365'])->name('list.cloudbackup365');
+        // cloud backup365
+        Route::get('cloud-backup365', [ReportController::class, 'indexcloudbackup365'])->name('cloudbackup365.index');
+        Route::get('list-cloud-backup365', [ReportController::class, 'listcloudbackup365'])->name('list.cloudbackup365');
     });
 });
 
@@ -265,6 +263,8 @@ Route::name('page.')->group(function () {
         Route::get('hop-dong-dien-tu', [SolutionController::class, 'esoc'])->name('electronic-contract');
         Route::get('hoa-don-dien-tu', [SolutionController::class, 'electronicInvoice'])->name('electronic-invoice');
         Route::get('tong-dai-vfone/bang-gia', [SolutionController::class, 'priceList'])->name('price-list');
+        Route::get('hop-dong-dien-tu/bang-gia', [SolutionController::class, 'priceListElectronicContract'])->name('price-list-electronic-contract');
+        Route::get('hoa-don-dien-tu/bang-gia', [SolutionController::class, 'priceListElectronicInvoice'])->name('price-list-electronic-invoice');
     });
 
     Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');
