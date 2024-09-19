@@ -22,6 +22,7 @@ use App\Http\Controllers\Page\DomainController as PageDomainController;
 use App\Http\Controllers\Page\EmailController;
 use App\Http\Controllers\Page\HomeController;
 use App\Http\Controllers\Page\HostingController as PageHostingController;
+use App\Http\Controllers\Page\RegisterConsultationController;
 use App\Http\Controllers\Page\ServerController as PageServerController;
 use App\Http\Controllers\Page\SolutionController;
 use App\Http\Controllers\Page\SslController as PageSslController;
@@ -269,5 +270,7 @@ Route::name('page.')->group(function () {
     Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');
     Route::get('tin-tuc', [AffiliateController::class, 'news'])->name('news');
     Route::get('lien-he', [AffiliateController::class, 'contact'])->name('contact');
+
+    Route::post('register-for-consultation', [RegisterConsultationController::class, 'register'])->name('register.consultation');
 });
 //

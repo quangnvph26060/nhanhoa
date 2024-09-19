@@ -7,7 +7,7 @@
         class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
       >
         <div>
-          <h3 class="fw-bold mb-3">Dashboard</h3>
+          <h3 class="fw-bold mb-3">Bảng điều khiển</h3>
         </div>
         {{-- <div class="ms-md-auto py-2 py-md-0">
           <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
@@ -29,7 +29,7 @@
                 <div class="col col-stats ms-3 ms-sm-0">
                   <div class="numbers">
                     <p class="card-category">Khách hàng</p>
-                    <h4 class="card-title">1,294</h4>
+                    <h4 class="card-title">{{ $clients->count() }}</h4>
                   </div>
                 </div>
               </div>
@@ -42,15 +42,14 @@
               <div class="row align-items-center">
                 <div class="col-icon">
                   <div
-                    class="icon-big text-center icon-info bubble-shadow-small"
-                  >
+                    class="icon-big text-center icon-info bubble-shadow-small">
                     <i class="fas fa-user-check"></i>
                   </div>
                 </div>
                 <div class="col col-stats ms-3 ms-sm-0">
                   <div class="numbers">
-                    <p class="card-category">Subscribers</p>
-                    <h4 class="card-title">1303</h4>
+                    <p class="card-category">Người đăng ký</p>
+                    <h4 class="card-title">{{ $total }}</h4>
                   </div>
                 </div>
               </div>
@@ -331,117 +330,30 @@
                 </div>
               </div>
               <div class="card-list py-4">
-                <div class="item-list">
-                  <div class="avatar">
-                    <img
-                      src="{{ asset('assets/img/jm_denis.jpg') }}"
-                      alt="..."
-                      class="avatar-img rounded-circle"
-                    />
-                  </div>
-                  <div class="info-user ms-3">
-                    <div class="username">Jimmy Denis</div>
-                    <div class="status">Graphic Designer</div>
-                  </div>
-                  <button class="btn btn-icon btn-link op-8 me-1">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                  <button class="btn btn-icon btn-link btn-danger op-8">
-                    <i class="fas fa-ban"></i>
-                  </button>
-                </div>
-                <div class="item-list">
-                  <div class="avatar">
-                    <span
-                      class="avatar-title rounded-circle border border-white"
-                      >CF</span
-                    >
-                  </div>
-                  <div class="info-user ms-3">
-                    <div class="username">Chandra Felix</div>
-                    <div class="status">Sales Promotion</div>
-                  </div>
-                  <button class="btn btn-icon btn-link op-8 me-1">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                  <button class="btn btn-icon btn-link btn-danger op-8">
-                    <i class="fas fa-ban"></i>
-                  </button>
-                </div>
-                <div class="item-list">
-                  <div class="avatar">
-                    <img
-                      src="assets/img/talha.jpg"
-                      alt="..."
-                      class="avatar-img rounded-circle"
-                    />
-                  </div>
-                  <div class="info-user ms-3">
-                    <div class="username">Talha</div>
-                    <div class="status">Front End Designer</div>
-                  </div>
-                  <button class="btn btn-icon btn-link op-8 me-1">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                  <button class="btn btn-icon btn-link btn-danger op-8">
-                    <i class="fas fa-ban"></i>
-                  </button>
-                </div>
-                <div class="item-list">
-                  <div class="avatar">
-                    <img
-                      src="{{ asset('assets/img/chadengle.jpg') }}"
-                      alt="..."
-                      class="avatar-img rounded-circle"
-                    />
-                  </div>
-                  <div class="info-user ms-3">
-                    <div class="username">Chad</div>
-                    <div class="status">CEO Zeleaf</div>
-                  </div>
-                  <button class="btn btn-icon btn-link op-8 me-1">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                  <button class="btn btn-icon btn-link btn-danger op-8">
-                    <i class="fas fa-ban"></i>
-                  </button>
-                </div>
-                <div class="item-list">
-                  <div class="avatar">
-                    <span
-                      class="avatar-title rounded-circle border border-white bg-primary"
-                      >H</span
-                    >
-                  </div>
-                  <div class="info-user ms-3">
-                    <div class="username">Hizrian</div>
-                    <div class="status">Web Designer</div>
-                  </div>
-                  <button class="btn btn-icon btn-link op-8 me-1">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                  <button class="btn btn-icon btn-link btn-danger op-8">
-                    <i class="fas fa-ban"></i>
-                  </button>
-                </div>
-                <div class="item-list">
-                  <div class="avatar">
-                    <span
-                      class="avatar-title rounded-circle border border-white bg-secondary"
-                      >F</span
-                    >
-                  </div>
-                  <div class="info-user ms-3">
-                    <div class="username">Farrah</div>
-                    <div class="status">Marketing</div>
-                  </div>
-                  <button class="btn btn-icon btn-link op-8 me-1">
-                    <i class="far fa-envelope"></i>
-                  </button>
-                  <button class="btn btn-icon btn-link btn-danger op-8">
-                    <i class="fas fa-ban"></i>
-                  </button>
-                </div>
+               @forelse ($clients as $index =>  $item)
+                    @if ($index <= 6)
+                    <div class="item-list">
+                        <div class="avatar">
+                          <span
+                            class="avatar-title rounded-circle border border-white"
+                            >{{ $item->name[0] }}</span
+                          >
+                        </div>
+                        <div class="info-user ms-3">
+                          <div class="username">{{ $item->name }}</div>
+                          <div class="status">{{ $item->phone }}</div>
+                        </div>
+                        <button class="btn btn-icon btn-link op-8 me-1">
+                          <i class="far fa-envelope"></i>
+                        </button>
+                        <button class="btn btn-icon btn-link btn-danger op-8">
+                          <i class="fas fa-ban"></i>
+                        </button>
+                      </div>
+                    @endif
+               @empty
+
+               @endforelse
               </div>
             </div>
           </div>

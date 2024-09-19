@@ -1329,9 +1329,9 @@
                                 nhiều thành quả hơn.
                             </div>
                             <div class="btn-cv">
-                                <a class="btn btn-main btn_show_popup" href="#tuvanngay" title="">
+                                {{-- <a class="btn btn-main btn_show_popup" href="#tuvanngay" title="">
                                     Liên hệ tư vấn
-                                </a>
+                                </a> --}}
                                 <a class="btn btn-gp" href="" title="">
                                     Tìm hiểu giải pháp
                                 </a>
@@ -1529,11 +1529,11 @@
                     </span>
                 </div>
 
-                <div class="text-center">
+                {{-- <div class="text-center">
                     <a href="#tuvanngay" class="btn btn-dt btn_show_popup">
                         Liên hệ tư vấn
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

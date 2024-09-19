@@ -62,7 +62,7 @@
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="base">
-                        <ul class="nav nav-collapse" style="margin-bottom: 0px">
+                        <ul class="nav nav-collapse" style="margin-bottom: 0px; margin-left: 20px">
                             <li>
                                 <a href="{{ route('admin.server.addform') }}">
                                     <span class="sub-item">Thêm</span>

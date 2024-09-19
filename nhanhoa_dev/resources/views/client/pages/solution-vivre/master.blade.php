@@ -988,31 +988,40 @@
 
                     <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với bạn theo lịch hẹn.
                     </p>
-                    <input class="request_phone form-control" type="text" name="request_phone"
-                        id="request_phonex" value="" placeholder="Số điện thoại liên hệ lại">
-                    <div class="phone_error alert-danger"></div>
-                    <textarea class="request_content form-control" name="request_content" style="margin-top: 0.5rem;"
-                        id="request_contentx" placeholder="Nội dung thắc mắc?"></textarea>
-                    <div class="content_error alert-danger"></div>
+                    <form action="{{ route('page.register.consultation') }}" method="post">
+                        @csrf
+                        <input class="request_fullnamex form-control" style="margin-bottom: 0.5rem;" type="text"
+                            name="request_fullname" id="request_fullnamex" value="" placeholder="Họ và tên">
+                        <div class="fullnamex_error alert-danger"></div>
+                        <input class="request_phone form-control" style="margin-bottom: 0.5rem;" type="text"
+                            name="request_phone" id="request_phonex" value="" placeholder="Số điện thoại">
+                        <div class="phone_error alert-danger"></div>
+                        <input class="request_emailx form-control" type="text" name="request_email" id="request_emailx" value=""
+                            placeholder="Email">
+                        <div class="emailx_error alert-danger"></div>
+                        <textarea class="request_content form-control" rows="5" name="request_content"
+                            style="margin-top: 0.5rem;" id="request_contentx" placeholder="Nội dung tư vấn"></textarea>
+                        <div class="content_error alert-danger"></div>
+                        <input type="hidden" id="request_callback_title" value="">
+                        <div>
+                            <p class="conten-sub">Bạn Ở Khu Vực Nào?</p>
 
-                    <div>
-                        <p class="conten-sub">Bạn Ở Khu Vực Nào?</p>
+                            <input type="radio" name="request_locationx" id="request_location1" value="Hà Nội"
+                                class="css-checkbox-x2 request_location" checked="checked">
+                            <label for="request_location1" class="css-label-x2">HN</label>
 
-                        <input type="radio" name="request_locationx" id="request_location1" value="hn"
-                            class="css-checkbox-x2 request_location" checked="checked">
-                        <label for="request_location1" class="css-label-x2">HN</label>
-
-                        <input type="radio" name="request_locationx" id="request_location2" value="hcm"
-                            class="css-checkbox-x2 request_location">
-                        <label for="request_location2" class="css-label-x2">HCM</label>
-                    </div>
+                            <input type="radio" name="request_locationx" id="request_location2" value="Hồ Chí Minh"
+                                class="css-checkbox-x2 request_location">
+                            <label for="request_location2" class="css-label-x2">HCM</label>
+                        </div>
 
 
-                    <div class="submit-content error_send" style="display:none;text-align: center;"></div>
-                    <div class="submit-content js_submit">
-                        <span id="callback" class="send-go btn">Gửi Đi</span>
-                        <div class="go-hotline"> Gọi hotline <span>0915 57 67 55</span> (24/7)</div>
-                    </div>
+                        <div class="submit-content error_send" style="display:none;text-align: center;"></div>
+                        <div class="submit-content js_submit">
+                            <button type="submit" class="btn btn-primary">Gửi đi</button>
+                            <div class="go-hotline"> Gọi hotline <span>(024) 7308 6680</span> (24/7)</div>
+                        </div>
+                    </form>
                 </div>
                 <div class="success-conten" style="display:none">
                     <img src="https://nhanhoa.com/templates/images/success.png">

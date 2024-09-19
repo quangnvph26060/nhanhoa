@@ -46,4 +46,17 @@ class ClientService
             throw new Exception('Failed to create client');
         }
     }
+
+    public function getClientAll(){
+        try {
+            DB::beginTransaction();
+            $clients = $this->client->orderBy('created_at', 'desc')->get();
+            DB::commit();
+            return $clients;
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::error('Failed to  client all: ' . $e->getMessage());
+            throw new Exception('Failed to client all');
+        }
+    }
 }
