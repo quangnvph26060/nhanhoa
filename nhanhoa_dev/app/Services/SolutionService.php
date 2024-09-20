@@ -62,11 +62,8 @@ class SolutionService
     {
         DB::beginTransaction();
         $initializationFee = preg_replace('/[^\d]/', '', $data['initialization_fee']);
-        if (isset($data['fee'])) {
-            $fee = preg_replace('/[^\d]/', '', $data['fee']);
-        } else {
-            $fee = null;
-        }
+        $fee = isset($data['fee']) ? preg_replace('/[^\d]/', '', $data['fee']) : null;
+        $fee = $fee == 0 ? null : $fee;
         try {
             Log::info('Creating new solution');
             $solution = $this->solution->create([
@@ -94,11 +91,8 @@ class SolutionService
                 throw new Exception('cannot find this solution');
             }
             $initializationFee = preg_replace('/[^\d]/', '', $data['initialization_fee']);
-            if (isset($data['fee'])) {
-                $fee = preg_replace('/[^\d]/', '', $data['fee']);
-            } else {
-                $fee = null;
-            }
+            $fee = isset($data['fee']) ? preg_replace('/[^\d]/', '', $data['fee']) : null;
+            $fee = $fee == 0 ? null : $fee;
             $solution->update([
                 'name' => $data['name'],
                 'initialization_fee' => $initializationFee,
