@@ -128,9 +128,15 @@ class backup365Service
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $backup->name,
+                'title' => 'Cloud Backup365',
             ];
 
             Mail::to($data['email'])->send(new Backup365PayEmail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $cloudPay;
         } catch (Exception $e) {
             DB::rollback();

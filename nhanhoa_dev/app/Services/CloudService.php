@@ -146,9 +146,15 @@ class cloudService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $cloud->name,
+                'title' => 'Cloud Backup'
             ];
 
             Mail::to($data['email'])->send(new CloudPayEmail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $cloudPay;
         } catch (Exception $e) {
             DB::rollback();

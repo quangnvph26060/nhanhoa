@@ -136,10 +136,16 @@ class EmailServerService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'emailservername' => $emailServer->name,
+                'productname' => $emailServer->name,
+                'title' => 'Email Server'
             ];
 
             Mail::to($data['email'])->send(new EmailServerPayEmail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $emailserverpay;
         } catch (Exception $e) {
             DB::rollback();

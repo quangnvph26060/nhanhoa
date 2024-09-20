@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\SolutionController as AdminSolutionController;
 use App\Http\Controllers\Admin\SslController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\ContractEsocController;
+use App\Http\Controllers\Admin\EmailSettingController;
 use App\Http\Controllers\Page\AffiliateController;
 use App\Http\Controllers\Page\CloudController as PageCloudController;
 use App\Http\Controllers\Page\DomainController as PageDomainController;
@@ -71,11 +73,14 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('edit/{id}', [AdminSolutionController::class, 'edit'])->name('edit');
         Route::put('update/{id}', [AdminSolutionController::class, 'update'])->name('update');
     });
+
     Route::get('', [DashBoardController::class, 'index'])->name('dashboard');
 
     Route::prefix('config')->name('config.')->group(function () {
         Route::get('', [ConfigController::class, 'index'])->name('detail');
         Route::post('', [ConfigController::class, 'update'])->name('update');
+        Route::post('/email-env',[EmailSettingController::class, 'update'] )->name('update.email');
+        Route::get('/config-email', [EmailSettingController::class, 'showForm'])->name('config.email');
     });
 
     Route::prefix('server')->name('server.')->group(function () {
@@ -214,6 +219,18 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         // cloud backup365
         Route::get('cloud-backup365', [ReportController::class, 'indexcloudbackup365'])->name('cloudbackup365.index');
         Route::get('list-cloud-backup365', [ReportController::class, 'listcloudbackup365'])->name('list.cloudbackup365');
+
+    });
+
+    Route::prefix('giaiphap')->name('giaiphap.')->group(function(){
+        Route::name('contractesoc.')->group(function(){
+            Route::get('', [ContractEsocController::class, 'index'])->name('index');
+            Route::get('add', [ContractEsocController::class, 'addform'])->name('addform');
+            Route::post('add', [ContractEsocController::class, 'addsubmit'])->name('addsubmit');
+            Route::get('edit/{id}', [ContractEsocController::class, 'editform'])->name('editform');
+            Route::post('edit/{id}', [ContractEsocController::class, 'editsubmit'])->name('editsubmit');
+            Route::post('delete/{id}', [ContractEsocController::class, 'delete'])->name('delete');
+        });
     });
 });
 
@@ -266,6 +283,7 @@ Route::name('page.')->group(function () {
         Route::get('tong-dai-vfone/bang-gia', [SolutionController::class, 'priceList'])->name('price-list');
         Route::get('hop-dong-dien-tu/bang-gia', [SolutionController::class, 'priceListElectronicContract'])->name('price-list-electronic-contract');
         Route::get('hoa-don-dien-tu/bang-gia', [SolutionController::class, 'priceListElectronicInvoice'])->name('price-list-electronic-invoice');
+        Route::get('hop-dong-dien-tu/dang-ky-nhan-tu-van', [SolutionController::class, 'electronicContract'])->name('electronic-contract-registration');
     });
 
     Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');

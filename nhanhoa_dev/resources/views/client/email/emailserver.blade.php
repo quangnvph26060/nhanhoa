@@ -74,7 +74,7 @@
                 <li><strong>Tên:</strong> {{ $data['name'] }}</li>
                 <li><strong>Số điện thoại:</strong> {{ $data['phone'] }}</li>
                 <li><strong>Email:</strong> {{ $data['email'] }}</li>
-                <li><strong>Gói Email Server:</strong> {{ $data['emailservername'] }}</li>
+                <li><strong>Gói Email Server:</strong> {{ $data['productname'] }}</li>
             </ul>
         </div>
         <div class="footer">

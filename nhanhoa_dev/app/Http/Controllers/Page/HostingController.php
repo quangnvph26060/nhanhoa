@@ -33,6 +33,7 @@ class HostingController extends Controller
     }
 
     public function pay(Request $request){
+        // dd($request->all());
         $hostingPay = $this->hostingService->payHosting($request->all());
         $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');

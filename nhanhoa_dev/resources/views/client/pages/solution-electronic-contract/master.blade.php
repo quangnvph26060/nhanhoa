@@ -27,7 +27,7 @@
                 </a>
             </h1>
             <div class="navbar-nav order-lg-last flex-row ">
-                <a class="default-btn lineargradient-btn d-none btn-login-full" href="https://login.esoc.vn">
+                {{-- <a class="default-btn lineargradient-btn d-none btn-login-full" href="https://login.esoc.vn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         stroke-width="2" class="icon bi bi-box-arrow-in-right svg" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -38,7 +38,7 @@
                         </path>
                     </svg>
                     Đăng nhập
-                </a>
+                </a> --}}
                 <a class="default-btn lineargradient-btn btn-login" href="https://login.echungtu.com">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         stroke-width="2" class="icon bi bi-box-arrow-in-right svg" viewBox="0 0 16 16">

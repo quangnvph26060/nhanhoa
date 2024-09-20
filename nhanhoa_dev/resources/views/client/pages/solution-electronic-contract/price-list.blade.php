@@ -28,23 +28,24 @@
                 </div>
             </div>
             <div class="row row-cards row-deck">
+               @forelse ($esocs as $item )
                 <div class="col-sm-4 p-3">
                     <div class="card secondColor shadow">
                         <div class="card-body py-3 px-3">
                             <div class="row align-items-center border-bottom mb-3">
                                 <div class="col-12 text-center">
                                     <div class="font-weight-bold">
-                                        ESOC-200
+                                        ESOC-{{ $item->contract_number }}
                                     </div>
                                     <div class="text-muted mb-1">
-                                        Gói 200 hợp đồng
+                                        Gói {{ $item->contract_number }} hợp đồng
                                     </div>
                                 </div>
                             </div>
                             <div class="row align-items-center mb-3">
                                 <div class="col-12 text-center">
                                     <div class="font-weight-bold" style="font-size:1.85em">
-                                        1.920.000
+                                        {{ number_format($item->price, 0, ',', '.') }}
                                     </div>
                                     <div class="text-muted">
                                         VNĐ/Gói
@@ -57,7 +58,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="5" width="16" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="4" y1="11" x2="20" y2="11"></line><rect x="8" y="15" width="2" height="2"></rect></svg>
                                     </div>
                                     <div class="col">
-                                        Thời gian lưu trữ: 10 năm
+                                        Thời gian lưu trữ: {{ $item->storage_duration }} năm
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -65,7 +66,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
                                     </div>
                                     <div class="col">
-                                        Thời gian sử dụng: Không giới hạn
+                                        Thời gian sử dụng: {{  $item->usage_duration  }}
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-2">
@@ -81,7 +82,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 18a4.6 4.4 0 0 1 0 -9a5 4.5 0 0 1 11 2h1a3.5 3.5 0 0 1 0 7"></path><path d="M11 15v.01m0 3v.01m0 3v.01m4 -4v.01m0 3v.01"></path></svg>
                                     </div>
                                     <div class="col">
-                                        Không gian lưu trữ: Đám mây
+                                        Không gian lưu trữ: {{ $item->storage_type }}
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-2">
@@ -89,7 +90,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v6a8 3 0 0 0 16 0v-6"></path><path d="M4 12v6a8 3 0 0 0 16 0v-6"></path></svg>
                                     </div>
                                     <div class="col">
-                                        Hệ thống ổ đĩa truy xuất: SSD
+                                        Hệ thống ổ đĩa truy xuất: {{ $item->storage_system }}
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-2">
@@ -105,7 +106,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="9" r="6"></circle><polyline points="9 14.2 9 21 12 19 15 21 15 14.2" transform="rotate(-30 12 9)"></polyline><polyline points="9 14.2 9 21 12 19 15 21 15 14.2" transform="rotate(30 12 9)"></polyline></svg>
                                     </div>
                                     <div class="col">
-                                        Bảo trì, Bản quyền: 500.000 VNĐ/năm
+                                        Bảo trì, Bản quyền: {{ number_format($item->maintenance_fee, 0, ',', '.') }} VNĐ/năm
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-2">
@@ -124,7 +125,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 p-3">
+               @empty
+
+               @endforelse
+                {{-- <div class="col-sm-4 p-3">
                     <div class="card shadow" style="border: 1px solid #e52e56; color: #e52e56; background: rgb(229 46 86 / 8%); ">
                         <div class="card-body py-3 px-3">
                             <div class="row align-items-center border-bottom mb-3">
@@ -624,7 +628,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -655,20 +659,21 @@
                 </div>
             </div>
             <div class="row row-cards row-deck">
+                @forelse ($usbtoken as $item)
                 <div class="col-sm-4 p-3">
                     <div class="card secondColor shadow">
                         <div class="card-body py-3 px-3">
                             <div class="row align-items-center border-bottom mb-3">
                                 <div class="col-12 text-center">
                                     <div class="font-weight-bold mb-2">
-                                        DOANH NGHIỆP 1
+                                        {{ $item->package_name }}
                                     </div>
                                 </div>
                             </div>
                             <div class="row align-items-center mb-3">
                                 <div class="col-12 text-center">
                                     <div class="font-weight-bold" style="font-size:1.85em">
-                                        1.680.000
+                                        {{ number_format($item->package_price, 0, ',', '.') }}
                                     </div>
                                     <div class="text-muted">
                                         VNĐ/Gói
@@ -681,7 +686,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="5" width="16" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="4" y1="11" x2="20" y2="11"></line><rect x="8" y="15" width="2" height="2"></rect></svg>
                                     </div>
                                     <div class="col">
-                                        Thời hạn: 12 tháng
+                                        Thời hạn: {{ $item->package_price }} tháng
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -689,7 +694,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
                                     </div>
                                     <div class="col">
-                                        Phí dịch vụ: 1.180.000VNĐ
+                                        Phí dịch vụ: {{ number_format($item->service_fee, 0, ',', '.') }}VNĐ
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-2">
@@ -697,7 +702,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><polyline points="9 11 12 14 20 6"></polyline><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path></svg>
                                     </div>
                                     <div class="col">
-                                        USB Token: 500.000VNĐ
+                                        USB Token: {{ $item->usb_token_price > 0 ? number_format($item->service_fee, 0, ',', '.') : 'Miễn phí' }}VNĐ
                                     </div>
                                 </div>
                             </fieldset>
@@ -708,7 +713,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 p-3">
+                @empty
+
+                @endforelse
+                {{-- <div class="col-sm-4 p-3">
                     <div class="card shadow bg-teal-lt" style="border: 1px solid #0ca678">
                         <div class="card-body py-3 px-3">
                             <div class="row align-items-center border-bottom mb-3">
@@ -816,7 +824,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -831,20 +839,21 @@
                 </div>
             </div>
             <div class="row row-cards row-deck">
+                @forelse ($certificate as $item)
                 <div class="col-sm-4 p-3">
                     <div class="card secondColor shadow">
                         <div class="card-body py-3 px-3">
                             <div class="row align-items-center border-bottom mb-3">
                                 <div class="col-12 text-center">
                                     <div class="font-weight-bold mb-2">
-                                        GÓI CƯỚC 1
+                                       {{ $item->package_name }}
                                     </div>
                                 </div>
                             </div>
                             <div class="row align-items-center mb-3">
                                 <div class="col-12 text-center">
                                     <div class="font-weight-bold" style="font-size:1.85em">
-                                        5.390.000
+                                        {{ number_format($item->package_price, 0, ',', '.') }}
                                     </div>
                                     <div class="text-muted">
                                         VNĐ/Gói
@@ -857,7 +866,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><rect x="4" y="5" width="16" height="16" rx="2"></rect><line x1="16" y1="3" x2="16" y2="7"></line><line x1="8" y1="3" x2="8" y2="7"></line><line x1="4" y1="11" x2="20" y2="11"></line><rect x="8" y="15" width="2" height="2"></rect></svg>
                                     </div>
                                     <div class="col">
-                                        Thời hạn: 12 tháng
+                                        Thời hạn: {{ $item->duration }} tháng
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -865,7 +874,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
                                     </div>
                                     <div class="col">
-                                        Phí dịch vụ: 4.900.000VNĐ
+                                        Phí dịch vụ:  {{ number_format($item->service_fee, 0, ',', '.') }}VNĐ
                                     </div>
                                 </div>
                                 <div class="row align-items-center mb-2">
@@ -873,7 +882,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><polyline points="9 11 12 14 20 6"></polyline><path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"></path></svg>
                                     </div>
                                     <div class="col">
-                                        10% vat: 490.000VNĐ
+                                        10% vat: {{ number_format($item->service_fee*10/100, 0, ',', '.') }}VNĐ
                                     </div>
                                 </div>
                             </fieldset>
@@ -884,7 +893,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-4 p-3">
+                @empty
+
+                @endforelse
+
+                {{-- <div class="col-sm-4 p-3">
                     <div class="card shadow bg-teal-lt" style="border: 1px solid #0ca678">
                         <div class="card-body py-3 px-3">
                             <div class="row align-items-center border-bottom mb-3">
@@ -992,7 +1005,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

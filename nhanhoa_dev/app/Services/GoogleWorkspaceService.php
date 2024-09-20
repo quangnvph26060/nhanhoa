@@ -137,10 +137,16 @@ class GoogleWorkspaceService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'googleworkspace' => $googleworkspace->name,
+                'productname' => $googleworkspace->name,
+                'title' => 'Google Workspace Business'
             ];
 
              Mail::to($data['email'])->send(new GoogleWorkspaceBusinessEmail($dataemail));
+             $emailTo = env('MAIL_USERNAME');
+             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                 $message->to($emailTo)
+                     ->subject('Đăng ký tư vấn');
+             });
              return $googleWorkspacebusiness;
         } catch (Exception $e) {
             DB::rollback();
@@ -241,10 +247,16 @@ class GoogleWorkspaceService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'googleworkspace' => $googleworkspace->name,
+                'productname' => $googleworkspace->name,
+                'title' => 'Google Workspace Education'
             ];
 
              Mail::to($data['email'])->send(new GoogleWorkspaceEducationEmail($dataemail));
+             $emailTo = env('MAIL_USERNAME');
+             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                 $message->to($emailTo)
+                     ->subject('Đăng ký tư vấn');
+             });
              return $googleWorkspaceeducation;
         } catch (Exception $e) {
             DB::rollback();

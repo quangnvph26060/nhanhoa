@@ -144,10 +144,16 @@ class SslService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'sslname' => $sslname,
+                'productname' => $sslname,
+                'title' => 'SSL'
             ];
 
             Mail::to($data['email'])->send(new SslPaySuccessMail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $ssl;
         } catch (Exception $e) {
             DB::rollback();

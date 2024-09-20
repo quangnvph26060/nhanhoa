@@ -64,20 +64,20 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Đặt Thành Công</h1>
+            <h1>Khách hàng : {{ $name }} </h1>
         </div>
         <div class="content">
-            <p>Chào {{ $data['name'] }},</p>
-            <p>Chúng tôi xin thông báo rằng bạn đã được thực hiện thành công.</p>
+            <p>Thông báo,</p>
+            <p>Khách hàng muốn liên hệ với bạn để trao đổi gói sản phẩm.</p>
+            <p><strong>Thông tin khách hàng:</strong></p>
             <ul class="info-list">
-                <li><strong>Tên:</strong> {{ $data['name'] }}</li>
-                <li><strong>Số điện thoại:</strong> {{ $data['phone'] }}</li>
-                <li><strong>Email:</strong> {{ $data['email'] }}</li>
-                <li><strong>Gói Google Workspace Education :</strong> {{ $data['productname'] }}</li>
+                <li><strong>Tên:</strong> {{ $name}}</li>
+                <li><strong>Số điện thoại:</strong> {{ $phone }}</li>
+                <li><strong>Email:</strong> {{ $email }}</li>
+                <li><strong>Gói {{ $title }}:</strong> {{ $productname }}</li>
             </ul>
         </div>
         <div class="footer">
-            <p>Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!</p>
             <p>Chúng tôi sẽ liên hệ cho bạn sớm nhất !</p>
         </div>
     </div>

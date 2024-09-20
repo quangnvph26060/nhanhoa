@@ -139,9 +139,15 @@ class ServerService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'servername' => $server->name,
+                'productname' => $server->name,
+                'title' => 'Server'
             ];
             Mail::to($data['email'])->send(new ServerPayEmail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $serverpay;
         } catch (Exception $e) {
             DB::rollback();
@@ -250,8 +256,14 @@ class ServerService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'serverlocationname' => $server->name,
+                'title' => 'Server Location'
             ];
             Mail::to($data['email'])->send(new ServerLoactionPayEmail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $serverpay;
         } catch (Exception $e) {
             DB::rollback();

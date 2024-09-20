@@ -74,7 +74,7 @@
                 <li><strong>Tên:</strong> {{ $data['name'] }}</li>
                 <li><strong>Số điện thoại:</strong> {{ $data['phone'] }}</li>
                 <li><strong>Email:</strong> {{ $data['email'] }}</li>
-                <li><strong>Gói Google Workspace Business :</strong> {{ $data['googleworkspace'] }}</li>
+                <li><strong>Gói Google Workspace Business :</strong> {{ $data['productname'] }}</li>
             </ul>
         </div>
         <div class="footer">

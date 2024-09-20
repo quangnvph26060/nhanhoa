@@ -35,7 +35,8 @@ class ClientService
             ];
             $client = Client::where('email', $data['email'])->first();
             if(!$client){
-                $this->client->create($newBackup);
+                $clients = $this->client->create($newBackup);
+                return $clients;
             }
 
             DB::commit();

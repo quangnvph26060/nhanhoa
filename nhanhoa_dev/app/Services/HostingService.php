@@ -161,10 +161,16 @@ class HostingService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'hostingname' => $hostingname,
+                'productname' => $hostingname,
+                'title' => 'Hosting'
             ];
 
             Mail::to($data['email'])->send(new HostingPayment($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
             return $hostingpay;
         } catch (Exception $e) {
             DB::rollback();

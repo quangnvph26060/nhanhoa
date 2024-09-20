@@ -35,6 +35,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#cauhinh">
+                        <i class="fas fa-users"></i>
+                        <p>Cấu hính</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="cauhinh">
+                        <ul class="nav nav-collapse" style="margin-bottom: 0px">
+                            <li>
+                                <a href="{{ route('admin.config.detail') }}">
+                                    <span class="sub-item">Thông tin</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.config.config.email') }}">
+                                    <span class="sub-item">Email</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#client">
                         <i class="fas fa-users"></i>
                         <p>Khách hàng</p>
@@ -283,6 +304,63 @@
                         </ul>
                     </div>
                 </li>
+                {{-- <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#giaiphap">
+                        <i class="fas fa-flag"></i>
+                        <p>Giải pháp</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="giaiphap">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.giaiphap.contractesoc.index') }}">
+                                    <span class="sub-item">Hợp đồng ESOC</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.report.serverlocation.index') }}">
+                                    <span class="sub-item">Server Location</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.report.hosting.index') }}">
+                                    <span class="sub-item">Hosting</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.google.index') }}">
+                                    <span class="sub-item">Google Workspace</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.email.index') }}">
+                                    <span class="sub-item">Email Server</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.cloud.index') }}">
+                                    <span class="sub-item">cloud</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.cloudbackup.index') }}">
+                                    <span class="sub-item">Cloud backup</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('admin.report.cloudbackup365.index') }}">
+                                    <span class="sub-item">Backup 365</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li> --}}
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#baocao">
                         <i class="fas fa-flag"></i>
@@ -292,7 +370,7 @@
                     <div class="collapse" id="baocao">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ route('admin.report.server.index') }}">
+                                <a href="{{ route('admin.report.serverlocation.index') }}">
                                     <span class="sub-item">Server</span>
                                 </a>
                             </li>

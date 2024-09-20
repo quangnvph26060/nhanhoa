@@ -180,74 +180,77 @@
                     <div class="row row-cards justify-content-center">
                         <div class="col-lg-10">
                             <div class="row ">
-                                <div class="col-lg-4 col-sm-6 p-3 ">
-                                    <div class="card secondColor shadow offer-item">
-                                        <div class="card-body pt-3 px-3">
-                                            <div class="row align-items-center border-bottom mb-3">
-                                                <div class="col-12 text-center">
-                                                    <div class="offer-name">
-                                                        Gói 200 hóa đơn
-                                                    </div>
-                                                    <div class="text-muted mb-1">
-                                                    </div>
+                               @forelse ($electron as $item )
+                               <div class="col-lg-4 col-sm-6 p-3 ">
+                                <div class="card secondColor shadow offer-item">
+                                    <div class="card-body pt-3 px-3">
+                                        <div class="row align-items-center border-bottom mb-3">
+                                            <div class="col-12 text-center">
+                                                <div class="offer-name">
+                                                    Gói {{ $item->invoice_quantity }} hóa đơn
+                                                </div>
+                                                <div class="text-muted mb-1">
                                                 </div>
                                             </div>
-                                            <div class="row align-items-center">
-                                                <div class="col-12 text-center">
-                                                    <div class="offer-price" style="font-size:1.85em">
-                                                        179.000
-                                                    </div>
-                                                    <div class="text-muted">
-                                                        VNĐ/Gói
-                                                    </div>
-                                                    <div class=" text-start des-offer d-flex justify-content-center">
-                                                        <div class="d-flex flex-column justify-content-between">
-                                                            <span>
-                                                                <i class="fas fa-layer-group fa-sm"
-                                                                    style="color: #74C0FC;"></i>Số lượng hóa đơn: 200
-                                                            </span>
-                                                            <span>
-                                                                <i class="fas fa-database fa-sm"
-                                                                    style="color: #74C0FC;"></i>Thời gian lưu trữ: 10
-                                                                năm
-                                                            </span>
-                                                            <span>
-                                                                <i class="far fa-clock fa-sm"
-                                                                    style="color: #74C0FC;"></i>Thời gian sử dụng:
-                                                                không giới hạn
-                                                            </span>
-                                                            <span>
-                                                                <i class="fas fa-cloud fa-sm"
-                                                                    style="color: #74C0FC;"></i>Không gian lưu trữ: đám
-                                                                mây
-                                                            </span>
-                                                            <span>
-                                                                <i class="far fa-save fa-sm"
-                                                                    style="color: #74C0FC;"></i>Hệ thống ổ đĩa truy
-                                                                xuất: SSD
-                                                            </span>
-                                                            <span>
-                                                                <i class="fas fa-folder-plus fa-sm"
-                                                                    style="color: #74C0FC;"></i>Phí khởi tạo: <strong>
-                                                                    Miễn phí </strong>
-                                                            </span>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex justify-content-center">
-                                                <a href="lien-he"
-                                                    class="btn-main bg-gradient text-center offers-btn rounded-pill">
-                                                    <i class="fas fa-shopping-bag fa-sm" style="color: #74C0FC;"></i>
-                                                    Đăng ký sử dụng
-                                                </a>
-                                            </div>
-
                                         </div>
+                                        <div class="row align-items-center">
+                                            <div class="col-12 text-center">
+                                                <div class="offer-price" style="font-size:1.85em">
+                                                    {{ number_format($item->price, 0, ',', '.') }}
+
+                                                </div>
+                                                <div class="text-muted">
+                                                    VNĐ/Gói
+                                                </div>
+                                                <div class=" text-start des-offer d-flex justify-content-center">
+                                                    <div class="d-flex flex-column justify-content-between">
+                                                        <span>
+                                                            <i class="fas fa-layer-group fa-sm"
+                                                                style="color: #74C0FC;"></i>Số lượng hóa đơn: {{ $item->invoice_quantity }}
+                                                        </span>
+                                                        <span>
+                                                            <i class="fas fa-database fa-sm"
+                                                                style="color: #74C0FC;"></i>Thời gian lưu trữ: {{ $item->storage_duration }}
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-clock fa-sm"
+                                                                style="color: #74C0FC;"></i>Thời gian sử dụng:
+                                                            {{ $item->usage_time }}
+                                                        </span>
+                                                        <span>
+                                                            <i class="fas fa-cloud fa-sm"
+                                                                style="color: #74C0FC;"></i>Không gian lưu trữ: {{ $item->usage_time }}
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-save fa-sm"
+                                                                style="color: #74C0FC;"></i>Hệ thống ổ đĩa truy
+                                                            xuất: {{ $item->disk_system }}
+                                                        </span>
+                                                        <span>
+                                                            <i class="fas fa-folder-plus fa-sm"
+                                                                style="color: #74C0FC;"></i>Phí khởi tạo: <strong>
+                                                                Miễn phí </strong>
+                                                        </span>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-center">
+                                            <a href="lien-he"
+                                                class="btn-main bg-gradient text-center offers-btn rounded-pill">
+                                                <i class="fas fa-shopping-bag fa-sm" style="color: #74C0FC;"></i>
+                                                Đăng ký sử dụng
+                                            </a>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-sm-6 p-3 ">
+                            </div>
+                               @empty
+
+                               @endforelse
+                                {{-- <div class="col-lg-4 col-sm-6 p-3 ">
                                     <div class="card secondColor shadow offer-item hotItem">
                                         <div class="card-body pt-3 px-3">
                                             <div class="row align-items-center border-bottom mb-3">
@@ -380,7 +383,7 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
 
