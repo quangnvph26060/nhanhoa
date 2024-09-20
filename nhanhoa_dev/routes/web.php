@@ -61,9 +61,7 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 
 Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.')->group(function () {
-    Route::prefix('customer')->name('customer.')->group(function(){
-
-    });
+    Route::prefix('customer')->name('customer.')->group(function () {});
     Route::prefix('solution')->name('solution.')->group(function () {
         Route::get('', [AdminSolutionController::class, 'index'])->name('index');
         Route::get('search', [AdminSolutionController::class, 'search'])->name('search');
