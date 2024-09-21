@@ -33,13 +33,16 @@ class ClientService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
             ];
+
             $client = Client::where('email', $data['email'])->first();
-            if(!$client){
+
+            if (!$client) {
                 $clients = $this->client->create($newBackup);
+                DB::commit(); // Commit sau khi tạo thành công
                 return $clients;
             }
 
-            DB::commit();
+            DB::commit(); // Commit nếu client đã tồn tại
             return $client;
         } catch (Exception $e) {
             DB::rollback();
@@ -48,7 +51,8 @@ class ClientService
         }
     }
 
-    public function getClientAll(){
+    public function getClientAll()
+    {
         try {
             DB::beginTransaction();
             $clients = $this->client->orderBy('created_at', 'desc')->get();

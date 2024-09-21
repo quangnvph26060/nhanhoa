@@ -1035,9 +1035,9 @@
                 </div>
             </div>
         </div>
-        <link rel="stylesheet" href="https://vfone.vn/css/contactus.css?v=1726582478">
-        <script type="text/javascript" src="https://vfone.vn/js/contactus.js?v=1726582478"></script>
-        <script type="text/javascript" src="https://vfone.vn/js/custom.js?v=1726582478"></script>
+        {{-- <link rel="stylesheet" href="https://vfone.vn/css/contactus.css?v=1726582478"> --}}
+        {{-- <script type="text/javascript" src="https://vfone.vn/js/contactus.js?v=1726582478"></script> --}}
+        {{-- <script type="text/javascript" src="https://vfone.vn/js/custom.js?v=1726582478"></script> --}}
         <!-- IMG BLACK FRIDAY -->
         <div id="img_bf12" class="shake_image_promotion hidden">
             <span class="shake_img_close ">

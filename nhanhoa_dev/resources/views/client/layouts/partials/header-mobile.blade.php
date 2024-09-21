@@ -27,14 +27,14 @@
                 <div class="back-drop"></div>
                 <nav id="main_menu_mobile" class="menu-section active" nh-menu="sidebar" menu-type="main">
                     <div class="menu-info">
-                        {{-- <div class="menu-top">
+                        <div class="menu-top">
                             <div class="btn-close-menu">
                                 <a href="javascript:;" nh-menu="btn-close"
                                     class="close-sidebar effect-rotate icon-close active">
                                     <i class="far fa-times-circle"></i>
                                 </a>
                             </div>
-                            <ul class="menu-login">
+                            {{-- <ul class="menu-login">
                                 <li>
                                     <a class="login" href="https://nhanhoa.com/login.html">
                                         Đăng nhập
@@ -45,9 +45,9 @@
                                         Đăng ký
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> --}}
 
-                        </div> --}}
+                        </div>
                         <div class="content-menu">
                             <ul>
                                 <li class="position-relative has-child" nh-toggle="tenmien">
