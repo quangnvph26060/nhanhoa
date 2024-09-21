@@ -7,6 +7,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+    <link rel="icon" href="{{ asset($config->icon) }}" type="image/x-icon">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- Start Style -->
     @include('client.layouts.partials.style')
@@ -15,6 +17,7 @@
 </head>
 
 <body >
+
     <header>
         <div class="header-top fix_nav {{ request()->routeIs('page.domain-registration') ? 'bg-light' : '' }}">
             <div class="container">

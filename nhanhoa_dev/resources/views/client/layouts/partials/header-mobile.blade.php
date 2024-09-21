@@ -3,7 +3,7 @@
         <div class="logo">
             <a href="{{ route('page.home') }}" title="trang chủ">
                 <img style="{{ request()->routeIs('page.domain-registration') ? 'filter: none' : '' }}" class="img-fluid nh-lazyload lazyloaded"
-                    src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp"
+                    src="{{ asset($config->logo) }}"
                     data-src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp" alt="Logo Nhân Hòa ">
             </a>
         </div>
@@ -203,7 +203,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="position-relative has-child" nh-toggle="giaiphap">
+                                {{-- <li class="position-relative has-child" nh-toggle="giaiphap">
                                     <a href="javascript:void(0)">
                                         Giải pháp
                                     </a>
@@ -273,7 +273,7 @@
                                         Liên hệ
                                     </a>
 
-                                </li>
+                                </li> --}}
                             </ul>
                         </div>
                     </div>

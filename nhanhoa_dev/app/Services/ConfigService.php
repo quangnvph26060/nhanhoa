@@ -69,6 +69,18 @@ class ConfigService
                 $config->logo = $logoFilePath;
             }
 
+            if (isset($data['icon'])) {
+
+                $directoryPathIcon = 'public/icon';
+                Storage::deleteDirectory($directoryPathIcon);
+                Storage::makeDirectory($directoryPathIcon);
+                $icon = $data['icon'];
+                $logoFileNameIcon = 'image_' . $icon->getClientOriginalName();
+                $logoFilePathIcon = 'storage/icon/' . $logoFileNameIcon;
+                Storage::putFileAs('public/icon', $icon, $logoFileNameIcon);
+                $config->icon = $logoFilePathIcon;
+            }
+
             $config->save();
 
             DB::commit();

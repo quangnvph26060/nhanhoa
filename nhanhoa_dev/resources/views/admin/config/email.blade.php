@@ -181,7 +181,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title text-center" style="color:white">Thông tin công ty</h4>
+                        <h4 class="card-title text-center" style="color:white">Thông tin Email</h4>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('admin.config.update.email') }}" method="POST">
@@ -192,11 +192,11 @@
                             </div> --}}
 
                             <div class="form-group">
-                                <label for="mail_username">Mail Username</label>
+                                <label for="mail_username">Email</label>
                                 <input type="text" class="form-control" name="mail_username" value="{{ old('mail_username', $emailSetting->mail_username ?? '') }}" required>
                             </div>
                             <div class="form-group">
-                                <label for="mail_password">Mail Password</label>
+                                <label for="mail_password">Mật khẩu ứng dụng</label>
                                 <input type="text" class="form-control" name="mail_password" value="{{ old('mail_password', $emailSetting->mail_password ?? '') }}" required>
                             </div>
                             {{-- <div class="form-group">

@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $config = \App\Models\Config::first();
         //  $this->loadEmailSettingsToEnv();
+        //  dd($config);
         view()->share('config', $config);
 
     }

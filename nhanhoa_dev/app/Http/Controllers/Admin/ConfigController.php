@@ -23,6 +23,7 @@ class ConfigController extends Controller
     }
 
     public function update(Request $request){
+        // dd($request->all());
         $config = $this->configService->updateConfig($request->all());
         return redirect()->back()->with('success', 'Thay đổi thành công !');
     }

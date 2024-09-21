@@ -13,6 +13,7 @@ class Config extends Model
 
     protected $fillable = [
         'logo',
+        'icon',
         'receiver',
         'bank_account',
         'qr',

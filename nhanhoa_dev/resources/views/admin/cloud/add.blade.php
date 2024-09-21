@@ -141,7 +141,7 @@
                                         <!-- Existing fields -->
                                         <div>
                                             <label for="name" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name">
+                                            <input type="text" class="form-control" name="name" id="name" placeholder="VD: Sinh viên +">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="name_error"></span>
@@ -151,7 +151,7 @@
                                         <div>
                                             <label for="price" class="form-label">Giá nhập<span
                                                     class="text text-danger">*</span></label>
-                                            <input value="" min='1' required class="form-control" name="price"
+                                            <input  min='1' required class="form-control" name="price" placeholder="VD: 1000000"
                                                 type="number" id="price">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -174,7 +174,7 @@
 
                                         <div>
                                             <label for="cpu" class="form-label">CPU</label>
-                                            <input type="text" class="form-control" name="cpu" id="cpu">
+                                            <input type="text" class="form-control" name="cpu" id="cpu" placeholder="VD: Intel® Xeon® E5-26xx V1-8 cores, 16 Threads">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="cpu_error"></span>
@@ -182,7 +182,7 @@
                                         </div>
                                         <div>
                                             <label for="core" class="form-label">Core</label>
-                                            <input type="text" class="form-control" name="core" id="core">
+                                            <input type="text" class="form-control" name="core" id="core" placeholder="VD: 6 Cores">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="core_error"></span>
@@ -193,7 +193,7 @@
                                     <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="ssd" class="form-label">SSD</label>
-                                            <input type="text" class="form-control" name="ssd" id="ssd">
+                                            <input type="text" class="form-control" name="ssd" id="ssd" placeholder="VD: 33GB">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ssd_error"></span>
@@ -201,7 +201,7 @@
                                         </div>
                                         <div>
                                             <label for="ram" class="form-label">RAM</label>
-                                            <input type="text" class="form-control" name="ram" id="ram">
+                                            <input type="text" class="form-control" name="ram" id="ram" placeholder="VD: 33GB">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ram_error"></span>
@@ -209,7 +209,7 @@
                                         </div>
                                         <div>
                                             <label for="ip" class="form-label">IP</label>
-                                            <input type="text" class="form-control" name="ip" id="ip">
+                                            <input type="text" class="form-control" name="ip" id="ip" placeholder="VD: 01">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ip_error"></span>
@@ -217,7 +217,7 @@
                                         </div>
                                         <div>
                                             <label for="bandwidth" class="form-label">Bandwidth</label>
-                                            <input type="text" class="form-control" name="bandwidth" id="bandwidth">
+                                            <input type="text" class="form-control" name="bandwidth" id="bandwidth" placeholder="VD: 33, Unlimited">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="bandwidth_error"></span>

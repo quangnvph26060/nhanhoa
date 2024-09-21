@@ -418,7 +418,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#giaiphap">
                         <i class="fas fa-solid fa-lightbulb"></i> <!-- Icon for Promotion -->
                         <p>Giải pháp</p>
@@ -438,7 +438,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>

@@ -3,7 +3,7 @@
         <div class="logo">
             <a href="{{route('page.home')}}">
                 <img class="img-fluid nh-lazyload ls-is-cached lazyloaded"
-                    src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp"
+                    src="{{ asset($config->logo) }}"
                     data-src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp" alt="Logo Nhân Hòa">
             </a>
         </div>
@@ -577,7 +577,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="javascript:;" title="">
                             Giải Pháp
                             <span class="sub"></span>
@@ -701,7 +701,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li> --}}
 
 
                 </ul>

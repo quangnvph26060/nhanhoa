@@ -129,7 +129,7 @@
             transform: translateY(-2px) !important;
         }
 
-        .avatar {
+        .avatar, .icon {
             width: 75px !important;
             height: 75px !important;
             border-radius: 50% !important;
@@ -248,7 +248,7 @@
                                 <!-- Second Column -->
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="receiver" class="form-label">Tên chủ tài khoản</label>
+                                        <label for="receiver" class="form-label">Người đại diện pháp lý</label>
                                         <input id="receiver" class="form-control @error('receiver') is-invalid @enderror"
                                             name="receiver" type="text"
                                             value="{{ old('receiver', isset($config) ? $config->receiver : '') }}">
@@ -291,6 +291,26 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="icon" class="form-label">Icon</label>
+                                        <div class="custom-file">
+                                            <input id="icon"
+                                                class="custom-file-input @error('icon') is-invalid @enderror" type="file"
+                                                name="icon" accept="image/*">
+                                            <label class="custom-file-label" for="icon">Chọn Icon</label>
+                                        </div>
+                                        @error('icon')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <img id="profileImageIcon"
+                                            src="{{ isset($config->icon) && !empty($config->icon) ? asset($config->icon) : asset('images/avatar2.jpg') }}"
+                                            alt="image icon" class="icon">
                                     </div>
                                 </div>
                             </div>
@@ -339,6 +359,19 @@
 
             reader.onload = function(e) {
                 document.getElementById('profileImage').src = e.target.result;
+            };
+
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0]);
+            }
+        });
+
+        document.getElementById('icon').addEventListener('change', function(event) {
+            const input = event.target;
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                document.getElementById('profileImageIcon').src = e.target.result;
             };
 
             if (input.files && input.files[0]) {
