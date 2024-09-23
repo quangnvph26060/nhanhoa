@@ -35,7 +35,7 @@
                                         <ul class="pl-0">
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
                                                     class="package-title">Tỷ lệ gửi mail vào inbox: </span><strong> {{
-                                                    $item->inbox_rate }} </strong></li>
+                                                    $item->inbox_rate }}% </strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
                                                     class="package-title">Dung lượng lưu trữ: </span><strong> {{
                                                     $item->storage_capacity }} </strong></li>
@@ -74,7 +74,7 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Mua</span>
+                                            <span class="btn_text">Liên hệ</span>
                                         </a>
                                     </div>
                                 </div>

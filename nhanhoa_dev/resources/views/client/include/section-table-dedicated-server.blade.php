@@ -68,7 +68,7 @@
                                                 <div class="rect4"></div>
                                                 <div class="rect5"></div>
                                             </div>
-                                            <span class="btn_text">Mua </span>
+                                            <span class="btn_text">Liên hệ </span>
                                         </a>
                                     </div>
                                 </div>

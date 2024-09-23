@@ -113,66 +113,9 @@
                                             class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
                                             <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529"
                                                 aria-live="polite">
-                                                @isset($cloud)
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                alt=" tên miền quốc tế .com">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                Cloud - {{ $cloud->name }}
-                                                            </div>
-                                                            <div class="description">
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CPU : <b> {{ $cloud->cpu }}</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CORE : <b> {{ $cloud->core }}</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    SSD : <b> {{ $cloud->ssd }}</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    RAM : <b> {{ $cloud->ram }}</b></p>
-                                                            </div>
-                                                            <div class="price-section">
-                                                                <div class="price b" data-price="849.000 đ">
-                                                                    <span class="new hevb"> <strong>
-                                                                            {{ number_format($cloud->price, 0, ',', '.')
-                                                                            }}
-                                                                            đ</strong></span>/Tháng
-                                                                    <span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient btn-add-cart-direct"
-                                                                    data-service_id="1961" href="javascript:;"
-                                                                    title="ssd cloud vps e">
-                                                                    <div
-                                                                        class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                                        <div class="rect1"></div>
-                                                                        <div class="rect2"></div>
-                                                                        <div class="rect3"></div>
-                                                                        <div class="rect4"></div>
-                                                                        <div class="rect5"></div>
-                                                                    </div>
-                                                                    <span class="btn_text">Thêm vào giỏ
-                                                                        hàng</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
-                                                </div>
-                                                @endisset
-                                                @forelse ($domainqg as $item )
-                                                <div class="swiper-slide swiper-slide--one"
+                                                @forelse ($domainqg as $index => $item )
+                                                @if ($index <=3 ) <div class="swiper-slide swiper-slide--one"
                                                     style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
                                                     <div class="item-service">
                                                         <div class="img position-relative">
@@ -200,1446 +143,529 @@
                                                         </div>
                                                     </div>
 
-                                                </div>
-                                                @empty
-
-                                                @endforelse
-                                                {{-- <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                alt=" tên miền quốc gia .vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -17;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                alt=" tên miền quốc gia .com.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .com.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .com.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -14;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                alt=" tên miền quốc tế .net">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .net
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .net">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div> --}}
-                                                @forelse ($domainqt as $item )
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="{{ asset($item->logo) }}"
-                                                                data-src="{{ asset($item->logo) }}"
-                                                                alt=" tên miền quốc tế {{ $item->name }}">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế {{ $item->name }}
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient " title=" tên miền quốc tế .org">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                @empty
-
-                                                @endforelse
-                                                {{-- <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                alt=" tên miền quốc tế .org">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .org
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .org">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -8;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                alt=" tên miền quốc tế .info">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .info
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .info">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                alt=" tên miền quốc gia .edu.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .edu.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .edu.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> --}}
                                             </div>
-                                            <div class="swiper-button-next" tabindex="0" role="button"
-                                                aria-label="Next slide"
-                                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
-                                            <span class="swiper-notification" aria-live="assertive"
-                                                aria-atomic="true"></span>
+                                            @endif
+
+                                            @empty
+
+
+                                            @endforelse
+                                            @forelse ($domainqt as $index => $item )
+                                            @if ($index <=3) <div class="swiper-slide swiper-slide--one"
+                                                style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
+                                                <div class="item-service">
+                                                    <div class="img position-relative">
+                                                        <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
+                                                            src="{{ asset($item->logo) }}"
+                                                            data-src="{{ asset($item->logo) }}"
+                                                            alt=" tên miền quốc tế {{ $item->name }}">
+                                                    </div>
+                                                    <div class="inner-content">
+                                                        <div class="name">
+                                                            tên miền quốc tế {{ $item->name }}
+                                                        </div>
+                                                        <div class="description">
+
+                                                        </div>
+                                                        <div class="price-section">
+                                                            &nbsp;
+                                                        </div>
+                                                        <div class="link-service">
+                                                            <a class="bg-gradient " title=" tên miền quốc tế .org">
+                                                                Đăng ký tên miền
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                         </div>
+                                        @endif
+
+                                        @empty
+
+                                        @endforelse
+
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="cloud" role="tabpanel" aria-labelledby="domain-tab">
-                        <div class="content-info-service">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="content-left">
-                                        <div class="info-top">
-                                            <div class="title">BKAV đã mất 2.3 tỷ để mua lại tên
-                                                miền "bkav.com".</div>
-                                            <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
-                                                miền "bkav.com".
-                                                “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
-                                                USD để mua
-                                                lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
-                                                mua lại tên
-                                                miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
-                                                chọn đúng và
-                                                đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
-                                                miền quốc
-                                                gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
-                                        </div>
-                                        <div class="info-bottom">
-                                            <div class="title">Lưu ý quan trọng khi đăng ký tên miền
-                                            </div>
-                                            <div class="list-description">
-                                                <ul>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đặt tên ngắn </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Kiểm tra domain </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đơn giản là tốt nhất </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Hành động nhanh </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Bao gồm thương hiệu </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đăng ký bao vây</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="section-img-register-service">
-                                        <div
-                                            class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
-                                            <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529"
-                                                aria-live="polite">
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                alt=" tên miền quốc tế .com">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                ssd cloud vps e
-                                                            </div>
-                                                            <div class="description">
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CPU : <b> Intel® Xeon® E5-26XX / Gold
-                                                                        6138</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CORE : <b> 5 Cores</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    SSD : <b> 80GB</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    RAM : <b> 4GB +1GB(*)</b></p>
-                                                            </div>
-                                                            <div class="price-section">
-                                                                <div class="price b" data-price="849.000 đ">
-                                                                    <span class="new hevb"> <strong>
-                                                                            669.000
-                                                                            đ</strong></span>/Tháng
-                                                                    <span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient btn-add-cart-direct"
-                                                                    data-service_id="1961" href="javascript:;"
-                                                                    title="ssd cloud vps e">
-                                                                    <div
-                                                                        class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                                        <div class="rect1"></div>
-                                                                        <div class="rect2"></div>
-                                                                        <div class="rect3"></div>
-                                                                        <div class="rect4"></div>
-                                                                        <div class="rect5"></div>
-                                                                    </div>
-                                                                    <span class="btn_text">Thêm vào giỏ
-                                                                        hàng</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                alt=" tên miền quốc gia .vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -17;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                alt=" tên miền quốc gia .com.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .com.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .com.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -14;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                alt=" tên miền quốc tế .net">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .net
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .net">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                alt=" tên miền quốc tế .org">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .org
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .org">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -8;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                alt=" tên miền quốc tế .info">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .info
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .info">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                alt=" tên miền quốc gia .edu.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .edu.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .edu.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-button-next" tabindex="0" role="button"
-                                                aria-label="Next slide"
-                                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
-                                            <span class="swiper-notification" aria-live="assertive"
-                                                aria-atomic="true"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="hosting" role="tabpanel" aria-labelledby="domain-tab">
-                        <div class="content-info-service">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="content-left">
-                                        <div class="info-top">
-                                            <div class="title"> “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5
-                                                triệu
-                                                USD để mua</div>
-                                            <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
-                                                miền "bkav.com".
-                                                “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
-                                                USD để mua
-                                                lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
-                                                mua lại tên
-                                                miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
-                                                chọn đúng và
-                                                đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
-                                                miền quốc
-                                                gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
-                                        </div>
-                                        <div class="info-bottom">
-                                            <div class="title">Lưu ý quan trọng khi đăng ký tên miền
-                                            </div>
-                                            <div class="list-description">
-                                                <ul>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đặt tên ngắn </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Kiểm tra domain </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đơn giản là tốt nhất </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Hành động nhanh </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Bao gồm thương hiệu </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đăng ký bao vây</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="section-img-register-service">
-                                        <div
-                                            class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
-                                            <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529"
-                                                aria-live="polite">
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                alt=" tên miền quốc tế .com">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                ssd cloud vps e
-                                                            </div>
-                                                            <div class="description">
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CPU : <b> Intel® Xeon® E5-26XX / Gold
-                                                                        6138</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CORE : <b> 5 Cores</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    SSD : <b> 80GB</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    RAM : <b> 4GB +1GB(*)</b></p>
-                                                            </div>
-                                                            <div class="price-section">
-                                                                <div class="price b" data-price="849.000 đ">
-                                                                    <span class="new hevb"> <strong>
-                                                                            669.000
-                                                                            đ</strong></span>/Tháng
-                                                                    <span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient btn-add-cart-direct"
-                                                                    data-service_id="1961" href="javascript:;"
-                                                                    title="ssd cloud vps e">
-                                                                    <div
-                                                                        class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                                        <div class="rect1"></div>
-                                                                        <div class="rect2"></div>
-                                                                        <div class="rect3"></div>
-                                                                        <div class="rect4"></div>
-                                                                        <div class="rect5"></div>
-                                                                    </div>
-                                                                    <span class="btn_text">Thêm vào giỏ
-                                                                        hàng</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                alt=" tên miền quốc gia .vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -17;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                alt=" tên miền quốc gia .com.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .com.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .com.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -14;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                alt=" tên miền quốc tế .net">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .net
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .net">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                alt=" tên miền quốc tế .org">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .org
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .org">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -8;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                alt=" tên miền quốc tế .info">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .info
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .info">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                alt=" tên miền quốc gia .edu.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .edu.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .edu.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-button-next" tabindex="0" role="button"
-                                                aria-label="Next slide"
-                                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
-                                            <span class="swiper-notification" aria-live="assertive"
-                                                aria-atomic="true"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="email" role="tabpanel" aria-labelledby="domain-tab">
-                        <div class="content-info-service">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="content-left">
-                                        <div class="info-top">
-                                            <div class="title"> email “Đại gia” như Apple cũng phải bỏ ra con số lên tới
-                                                4,5
-                                                triệu
-                                                USD để mua</div>
-                                            <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
-                                                miền "bkav.com".
-                                                “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
-                                                USD để mua
-                                                lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
-                                                mua lại tên
-                                                miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
-                                                chọn đúng và
-                                                đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
-                                                miền quốc
-                                                gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
-                                        </div>
-                                        <div class="info-bottom">
-                                            <div class="title">Lưu ý quan trọng khi đăng ký tên miền
-                                            </div>
-                                            <div class="list-description">
-                                                <ul>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đặt tên ngắn </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Kiểm tra domain </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đơn giản là tốt nhất </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Hành động nhanh </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Bao gồm thương hiệu </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đăng ký bao vây</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="section-img-register-service">
-                                        <div
-                                            class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
-                                            <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529"
-                                                aria-live="polite">
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                alt=" tên miền quốc tế .com">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                ssd cloud vps e
-                                                            </div>
-                                                            <div class="description">
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CPU : <b> Intel® Xeon® E5-26XX / Gold
-                                                                        6138</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CORE : <b> 5 Cores</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    SSD : <b> 80GB</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    RAM : <b> 4GB +1GB(*)</b></p>
-                                                            </div>
-                                                            <div class="price-section">
-                                                                <div class="price b" data-price="849.000 đ">
-                                                                    <span class="new hevb"> <strong>
-                                                                            669.000
-                                                                            đ</strong></span>/Tháng
-                                                                    <span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient btn-add-cart-direct"
-                                                                    data-service_id="1961" href="javascript:;"
-                                                                    title="ssd cloud vps e">
-                                                                    <div
-                                                                        class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                                        <div class="rect1"></div>
-                                                                        <div class="rect2"></div>
-                                                                        <div class="rect3"></div>
-                                                                        <div class="rect4"></div>
-                                                                        <div class="rect5"></div>
-                                                                    </div>
-                                                                    <span class="btn_text">Thêm vào giỏ
-                                                                        hàng</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                alt=" tên miền quốc gia .vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -17;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                alt=" tên miền quốc gia .com.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .com.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .com.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -14;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                alt=" tên miền quốc tế .net">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .net
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .net">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                alt=" tên miền quốc tế .org">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .org
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .org">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -8;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                alt=" tên miền quốc tế .info">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .info
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .info">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                alt=" tên miền quốc gia .edu.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .edu.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .edu.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-button-next" tabindex="0" role="button"
-                                                aria-label="Next slide"
-                                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
-                                            <span class="swiper-notification" aria-live="assertive"
-                                                aria-atomic="true"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="ssl" role="tabpanel" aria-labelledby="domain-tab">
-                        <div class="content-info-service">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="content-left">
-                                        <div class="info-top">
-                                            <div class="title"> ssl “Đại gia” như Apple cũng phải bỏ ra con số lên tới
-                                                4,5
-                                                triệu
-                                                USD để mua</div>
-                                            <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
-                                                miền "bkav.com".
-                                                “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
-                                                USD để mua
-                                                lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
-                                                mua lại tên
-                                                miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
-                                                chọn đúng và
-                                                đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
-                                                miền quốc
-                                                gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
-                                        </div>
-                                        <div class="info-bottom">
-                                            <div class="title">Lưu ý quan trọng khi đăng ký tên miền
-                                            </div>
-                                            <div class="list-description">
-                                                <ul>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đặt tên ngắn </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Kiểm tra domain </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đơn giản là tốt nhất </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Hành động nhanh </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Bao gồm thương hiệu </li>
-                                                    <li> <img alt="icon"
-                                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
-                                                        Đăng ký bao vây</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="section-img-register-service">
-                                        <div
-                                            class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
-                                            <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529"
-                                                aria-live="polite">
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com.webp"
-                                                                alt=" tên miền quốc tế .com">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                ssd cloud vps e
-                                                            </div>
-                                                            <div class="description">
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CPU : <b> Intel® Xeon® E5-26XX / Gold
-                                                                        6138</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    CORE : <b> 5 Cores</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    SSD : <b> 80GB</b></p>
-                                                                <p><img alt="icon"
-                                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
-                                                                    RAM : <b> 4GB +1GB(*)</b></p>
-                                                            </div>
-                                                            <div class="price-section">
-                                                                <div class="price b" data-price="849.000 đ">
-                                                                    <span class="new hevb"> <strong>
-                                                                            669.000
-                                                                            đ</strong></span>/Tháng
-                                                                    <span></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient btn-add-cart-direct"
-                                                                    data-service_id="1961" href="javascript:;"
-                                                                    title="ssd cloud vps e">
-                                                                    <div
-                                                                        class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                                                        <div class="rect1"></div>
-                                                                        <div class="rect2"></div>
-                                                                        <div class="rect3"></div>
-                                                                        <div class="rect4"></div>
-                                                                        <div class="rect5"></div>
-                                                                    </div>
-                                                                    <span class="btn_text">Thêm vào giỏ
-                                                                        hàng</span>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2100px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -20;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-vn.webp"
-                                                                alt=" tên miền quốc gia .vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1800px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -17;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-com-vn.webp"
-                                                                alt=" tên miền quốc gia .com.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .com.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .com.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1500px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -14;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-net.webp"
-                                                                alt=" tên miền quốc tế .net">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .net
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .net">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -1200px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -11;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-org.webp"
-                                                                alt=" tên miền quốc tế .org">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .org
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .org">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -900px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -8;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-info.webp"
-                                                                alt=" tên miền quốc tế .info">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc tế .info
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc tế .info">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <div class="swiper-slide swiper-slide--one"
-                                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -600px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -5;">
-                                                    <div class="item-service">
-                                                        <div class="img position-relative">
-                                                            <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
-                                                                src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/service-edu-vn.webp"
-                                                                alt=" tên miền quốc gia .edu.vn">
-                                                        </div>
-                                                        <div class="inner-content">
-                                                            <div class="name">
-                                                                tên miền quốc gia .edu.vn
-                                                            </div>
-                                                            <div class="description">
-
-                                                            </div>
-                                                            <div class="price-section">
-                                                                &nbsp;
-                                                            </div>
-                                                            <div class="link-service">
-                                                                <a class="bg-gradient "
-                                                                    href="https://nhanhoa.com/ten-mien/dang-ky-moi-ten-mien.html"
-                                                                    title=" tên miền quốc gia .edu.vn">
-                                                                    Đăng ký tên miền
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-button-next" tabindex="0" role="button"
-                                                aria-label="Next slide"
-                                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
-                                            <span class="swiper-notification" aria-live="assertive"
-                                                aria-atomic="true"></span>
-                                        </div>
-                                    </div>
+                                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                        aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
+                                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="tab-pane" id="cloud" role="tabpanel" aria-labelledby="domain-tab">
+                <div class="content-info-service">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="content-left">
+                                <div class="info-top">
+                                    <div class="title">BKAV đã mất 2.3 tỷ để mua lại tên
+                                        miền "bkav.com".</div>
+                                    <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
+                                        miền "bkav.com".
+                                        “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
+                                        USD để mua
+                                        lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
+                                        mua lại tên
+                                        miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
+                                        chọn đúng và
+                                        đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
+                                        miền quốc
+                                        gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
+                                </div>
+                                <div class="info-bottom">
+                                    <div class="title">Lưu ý quan trọng khi đăng ký tên miền
+                                    </div>
+                                    <div class="list-description">
+                                        <ul>
+                                            <li> <img alt="icon"
+                                                    src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                                Đặt tên ngắn </li>
+                                            <li> <img alt="icon"
+                                                    src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                                Kiểm tra domain </li>
+                                            <li> <img alt="icon"
+                                                    src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                                Đơn giản là tốt nhất </li>
+                                            <li> <img alt="icon"
+                                                    src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                                Hành động nhanh </li>
+                                            <li> <img alt="icon"
+                                                    src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                                Bao gồm thương hiệu </li>
+                                            <li> <img alt="icon"
+                                                    src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                                Đăng ký bao vây</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <div class="section-img-register-service">
+                                <div
+                                    class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
+                                    <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529" aria-live="polite">
+                                        @forelse ($cloud as $index => $item)
+                                        @if ($index <=3) <div class="swiper-slide swiper-slide--one"
+                                            style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
+                                            <div class="item-service">
+                                                <div class="img position-relative">
+                                                    <img class="rtbs nh-lazyload lazyloaded"
+                                                        src="https://nhanhoa.com/templates/images/v2/webp/home/cloud_dv.webp"
+                                                        data-src="https://nhanhoa.com/templates/images/v2/webp/home/cloud_dv.webp"
+                                                        alt=" tên miền quốc tế .com">
+                                                </div>
+                                                <div class="inner-content">
+                                                    <div class="name">
+                                                        {{ $item->name }}
+                                                    </div>
+                                                    <div class="description">
+                                                        <p><img alt="icon"
+                                                                src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                            CPU : <b> {{ $item->cpu }}</b></p>
+                                                        <p><img alt="icon"
+                                                                src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                            CORE : <b> {{ $item->core }}</b></p>
+                                                        <p><img alt="icon"
+                                                                src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                            SSD : <b> {{ $item->ssd }}</b></p>
+                                                        <p><img alt="icon"
+                                                                src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                            RAM : <b> {{ $item->ram }}</b></p>
+                                                    </div>
+                                                    <div class="price-section">
+                                                        <div class="price b" data-price="849.000 đ">
+                                                            <span class="new hevb"> <strong>
+                                                                    {{ number_format($item->price, 0, '', '.') }}
+                                                                    đ</strong></span>/Tháng
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="link-service">
+                                                        <a class="bg-gradient btn-add-cart-direct"
+                                                            data-service_id="1961" href="javascript:;"
+                                                            title="ssd cloud vps e">
+                                                            <div
+                                                                class="spinner spinner-sm spinner-light nh-btn-loader d-none">
+                                                                <div class="rect1"></div>
+                                                                <div class="rect2"></div>
+                                                                <div class="rect3"></div>
+                                                                <div class="rect4"></div>
+                                                                <div class="rect5"></div>
+                                                            </div>
+                                                            <span class="btn_text">Thêm vào giỏ
+                                                                hàng</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
 
+                                    </div>
+                                    @endif
 
+                                    @empty
+
+                                    @endforelse
+
+                                </div>
+                                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                    aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="hosting" role="tabpanel" aria-labelledby="domain-tab">
+            <div class="content-info-service">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="content-left">
+                            <div class="info-top">
+                                <div class="title">Hosting Nhân Hòa, Load dưới 2S, Không lo bỏ lỡ khách hàng
+                                </div>
+                                <div class="description">Website truy cập rất chậm, khách hàng của bạn đã đặt hàng xong
+                                    ở bên website của đối thủ. Đừng làm kinh doanh cho "vui" nhé. Đăng ký và sử dụng
+                                    ngay dịch vụ Hosting tại Nhân Hòa. Tăng tốc độ website lên gấp 25 lần so với hosting
+                                    thường, Giúp Seo website của bạn lên top Google dễ dàng. Gia tăng thời gian giữ chân
+                                    khách hàng trên website, nâng cao tỷ lệ chuyển đổi.</div>
+                            </div>
+                            <div class="info-bottom">
+                                <div class="title">Mua hosting tốt nhất
+                                </div>
+                                <div class="list-description">
+                                    <ul>
+                                        <li> <img alt="icon"
+                                                src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Tốc độ truy cập cao </li>
+                                        <li> <img alt="icon"
+                                                src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Cpanel quản trị tốt nhất </li>
+                                        <li> <img alt="icon"
+                                                src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Sao lưu hàng ngày</li>
+                                        <li> <img alt="icon"
+                                                src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            100% ổ cứng NVME </li>
+                                        <li> <img alt="icon"
+                                                src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Bảo mật dữ liệu</li>
+                                        <li> <img alt="icon"
+                                                src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Hỗ trợ 24/7</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="section-img-register-service">
+                            <div
+                                class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
+                                <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529" aria-live="polite">
+                                    @forelse ($hosting as $index => $item)
+                                    @if ($index <= 5) <div class="swiper-slide swiper-slide--one"
+                                        style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
+                                        <div class="item-service">
+                                            <div class="img position-relative">
+                                                <img class="rtbs nh-lazyload lazyloaded"
+                                                    src="https://nhanhoa.com/templates/images/v2/webp/home/hosting_dv.webp"
+                                                    data-src="https://nhanhoa.com/templates/images/v2/webp/home/hosting_dv.webp"
+                                                    alt=" tên miền quốc tế .com">
+                                            </div>
+                                            <div class="inner-content">
+                                                <div class="name">
+                                                    Hosting {{ $item->name }}
+                                                </div>
+                                                <div class="description">
+                                                    <p><img alt="icon"
+                                                            src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                        DUng lượng NVMe : <b> {{ $item->storage }} </b></p>
+                                                    <p><img alt="icon"
+                                                            src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                        Băng thông : <b> {{ $item->bandwidth }}</b></p>
+                                                    <p><img alt="icon"
+                                                            src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                        FTP Account : <b> {{ $item->ftp_account }}</b></p>
+                                                    <p><img alt="icon"
+                                                            src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                        CPU : <b> {{ $item->cpu }}</b></p>
+                                                </div>
+                                                <div class="price-section">
+                                                    <div class="price b" data-price="849.000 đ">
+                                                        <span class="new hevb"> <strong>
+                                                                {{ number_format($item->price, 0, ',', '.') }}
+                                                                đ</strong></span>/Tháng
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="link-service">
+                                                    <a class="bg-gradient btn-add-cart-direct" data-service_id="1961"
+                                                        href="javascript:;" title="ssd cloud vps e">
+                                                        <div
+                                                            class="spinner spinner-sm spinner-light nh-btn-loader d-none">
+                                                            <div class="rect1"></div>
+                                                            <div class="rect2"></div>
+                                                            <div class="rect3"></div>
+                                                            <div class="rect4"></div>
+                                                            <div class="rect5"></div>
+                                                        </div>
+                                                        <span class="btn_text">Thêm vào giỏ
+                                                            hàng</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                </div>
+                                @endif
+                                @empty
+
+                                @endforelse
+                            </div>
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="tab-pane" id="email" role="tabpanel" aria-labelledby="domain-tab">
+        <div class="content-info-service">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="content-left">
+                        <div class="info-top">
+                            <div class="title"> Khẳng định sự chuyên nghiệp trong mắt khách hàng, đối tác với Email
+                                doanh nghiệp.</div>
+                            <div class="description">Thay vì dùng email miễn phí @gmail/ @yahoo.com, Email doanh nghiệp
+                                sẽ giúp khách hàng sở hữu địa chỉ email dạng @tenmiencongty.com. Email doanh nghiệp
+                                không chỉ giúp doanh nghiệp quảng bá thương hiệu, mà còn tạo luồng kết nối thông suốt:
+                                tăng tỉ lệ gửi mail vào hòm thư chính, hạn chế spam, tăng tính bảo mật... Đa dạng lựa
+                                chọn phù hợp với mọi loại hình doanh nghiệp, mở "hòm thư chính chủ" của bạn tại Nhân Hoà
+                                ngay!.</div>
+                        </div>
+                        <div class="info-bottom">
+                            <div class="title">Điểm nổi bật của Email doanh nghiệp tại Nhân Hòa?
+                            </div>
+                            <div class="list-description">
+                                <ul>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                        Tỷ lệ inbox tới 99%</li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                        Giao diện thân thiện</li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                        Tương thích mọi thiết bị </li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                        Đáp ứng mọi nhu cầu</li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                        An toàn, bảo mật </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="section-img-register-service">
+                        <div
+                            class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
+                            <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529" aria-live="polite">
+                                @forelse ($email as $index => $item)
+                                <div class="swiper-slide swiper-slide--one"
+                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
+                                    <div class="item-service">
+                                        <div class="img position-relative">
+                                            <img class="rtbs nh-lazyload lazyloaded"
+                                                src="https://nhanhoa.com/templates/images/v2/webp/home/email.dv.webp"
+                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/email.dv.webp"
+                                                alt=" tên miền quốc tế .com">
+                                        </div>
+                                        <div class="inner-content">
+                                            <div class="name">
+                                                {{ $item->name }}
+                                            </div>
+                                            <div class="description">
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Dung lượng lưu trữ : <b> {{ $item->storage_capacity }}</b></p>
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Địa chỉ Email: <b> {{ $item->unlimited_email_addresses }}</b></p>
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Tên miền Email : <b> {{ $item->unlimited_email_domain }}</b></p>
+
+                                            </div>
+                                            <div class="price-section">
+                                                <div class="price b" data-price="849.000 đ">
+                                                    <span class="new hevb"> <strong>
+                                                            {{ number_format($item->price, 0, ',', '.') }}
+                                                            đ</strong></span>/Tháng
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="link-service">
+                                                <a class="bg-gradient btn-add-cart-direct" data-service_id="1961"
+                                                    href="javascript:;" title="ssd cloud vps e">
+                                                    <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
+                                                        <div class="rect1"></div>
+                                                        <div class="rect2"></div>
+                                                        <div class="rect3"></div>
+                                                        <div class="rect4"></div>
+                                                        <div class="rect5"></div>
+                                                    </div>
+                                                    <span class="btn_text">Thêm vào giỏ
+                                                        hàng</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                @empty
+
+                                @endforelse
+                            </div>
+                            <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                                aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane" id="ssl" role="tabpanel" aria-labelledby="domain-tab">
+        <div class="content-info-service">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="content-left">
+                        <div class="info-top">
+                            <div class="title"> Bí kíp bảo mật website tuyệt đối không được bỏ qua.</div>
+                            <div class="description">Được ví như "Hàng rào bảo mật" vô cùng vững chắc, Secure Sockets
+                                Layer (SSL) là tiêu chuẩn của công nghệ bảo mật, truyền thông mã hoá giữa máy chủ Web
+                                server và trình duyệt. SSL hiện tại cũng là tiêu chuẩn bảo mật cho hàng triệu website
+                                trên toàn thế giới, nó bảo vệ dữ liệu truyền đi trên môi trường internet được an toàn.
+                                Đích thực là "bé hạt tiêu của làng công nghệ", nhỏ mà có võ, tuyệt đối đừng bỏ qua khi
+                                xây dựng website bạn nhé!.</div>
+                        </div>
+                        <div class="info-bottom">
+                            <div class="title">Lưu ý quan trọng khi đăng ký tên miền
+                            </div>
+                            <div class="list-description">
+                                <ul>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Tiết kiệm chi phí </li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Lựa chọn phong phú </li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Hỗ trợ từ chuyên gia </li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Cài đặt nhanh chóng </li>
+                                    <li> <img alt="icon"
+                                            src="https://nhanhoa.com/uploads/attach/1702005614_icon_check_service.png">
+                                            Hỗ trợ 24/7 </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-12">
+                    <div class="section-img-register-service">
+                        <div
+                            class="swiper swiper_register_service swiper-coverflow swiper-3d swiper-initialized swiper-horizontal swiper-pointer-events swiper-watch-progress">
+                            <div class="swiper-wrapper" id="swiper-wrapper-4d4818bdfed8e529" aria-live="polite">
+                                @forelse ($ssl as $index => $item)
+                                @if ($index <= 5) <div class="swiper-slide swiper-slide--one"
+                                    style="width: 335px; transition-duration: 0ms; transform: translate3d(0px, 0px, -2400px) rotateX(0deg) rotateY(0deg) scale(1); z-index: -23;">
+                                    <div class="item-service">
+                                        <div class="img position-relative">
+                                            <img class="rtbs nh-lazyload lazyloaded"
+                                                src="https://nhanhoa.com/templates/images/v2/webp/home/ssl_dv.webp"
+                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/ssl_dv.webp"
+                                                alt="ssl">
+                                        </div>
+                                        <div class="inner-content">
+                                            <div class="name">
+                                                SSL {{ $item->name }}
+                                            </div>
+                                            <div class="description">
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Phí cài đặt : <b>Miễn phí </b></p>
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Chứng thực : <b> {{ $item->certification }}</b></p>
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Số domain được bảo mật : <b> {{ $item->numberdomain }}</b></p>
+                                                <p><img alt="icon"
+                                                        src="https://nhanhoa.com/templates/images/v2/home/Icon_feather-check.png">
+                                                    Hỗ trợ SAN : <b> {{ $item->sansupport }}</b></p>
+                                            </div>
+                                            <div class="price-section">
+                                                <div class="price b" data-price="849.000 đ">
+                                                    <span class="new hevb"> <strong>
+                                                            {{ number_format($item->price, 0, ',', '.') }}
+                                                            đ</strong></span>/Tháng
+                                                    <span></span>
+                                                </div>
+                                            </div>
+                                            <div class="link-service">
+                                                <a class="bg-gradient btn-add-cart-direct" data-service_id="1961"
+                                                    href="javascript:;" title="ssd cloud vps e">
+                                                    <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
+                                                        <div class="rect1"></div>
+                                                        <div class="rect2"></div>
+                                                        <div class="rect3"></div>
+                                                        <div class="rect4"></div>
+                                                        <div class="rect5"></div>
+                                                    </div>
+                                                    <span class="btn_text">Thêm vào giỏ
+                                                        hàng</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                            </div>
+                            @endif
+                            @empty
+
+                            @endforelse
+
+                        </div>
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                            aria-controls="swiper-wrapper-10a777ad2f7349fde"></div>
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
 </div>

@@ -15,15 +15,17 @@ use Illuminate\Support\Facades\Storage;
 /**
  * Summary of cloudService
  */
-class cloudService
+class CloudService
 {
     protected $cloud;
     protected $cloudPay;
+    protected $clientService;
 
-    public function __construct(Cloud $cloud, CloudPay $cloudPay)
+    public function __construct(Cloud $cloud, CloudPay $cloudPay, ClientService $clientService)
     {
         $this->cloud = $cloud;
         $this->cloudPay = $cloudPay;
+        $this->clientService = $clientService;
     }
 
     public function getcloudAll(){
@@ -146,9 +148,16 @@ class cloudService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $cloud->name,
+                'package_name' => 'Cloud Backup - '.$cloud->name,
                 'title' => 'Cloud Backup'
             ];
-
+            // $dataclient =  [
+            //     'name' => $data['name'],
+            //     'phone' => $data['phone'],
+            //     'email' => $data['email'],
+            //     'package_name' => 'Cloud Backup - '.$cloud->name,
+            // ];
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new CloudPayEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

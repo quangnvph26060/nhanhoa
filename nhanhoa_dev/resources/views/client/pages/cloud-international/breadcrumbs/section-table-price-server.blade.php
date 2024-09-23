@@ -72,7 +72,7 @@
                                                     <div class="rect4"></div>
                                                     <div class="rect5"></div>
                                                 </div>
-                                                <span class="btn_text">Mua</span>
+                                                <span class="btn_text">Liên hệ</span>
                                             </a>
                                             <input type="hidden" name="cloud_virt" value="1" class="cloud_virt">
 

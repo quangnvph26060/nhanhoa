@@ -17,11 +17,13 @@ class backup365Service
 {
     protected $backup365;
     protected $backup365Pay;
+    protected $clientService;
 
-    public function __construct(Backup365 $backup365, Backup365Pay $backup365Pay)
+    public function __construct(Backup365 $backup365, Backup365Pay $backup365Pay, ClientService $clientService)
     {
         $this->backup365 = $backup365;
         $this->backup365Pay = $backup365Pay;
+        $this->clientService = $clientService;
     }
 
     // Lấy tất cả bản ghi
@@ -128,9 +130,10 @@ class backup365Service
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $backup->name,
+                'package_name' => 'Cloud Backup365 - '.$backup->name,
                 'title' => 'Cloud Backup365',
             ];
-
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new Backup365PayEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

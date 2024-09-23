@@ -15,11 +15,13 @@ class CloudBackupService
 {
     protected $cloudBackup;
     protected $cloudBackupPay;
+    protected $clientService;
 
-    public function __construct(CloudBackup $cloudBackup, CloudBackupPay $cloudBackupPay)
+    public function __construct(CloudBackup $cloudBackup, CloudBackupPay $cloudBackupPay, ClientService $clientService)
     {
         $this->cloudBackup = $cloudBackup;
         $this->cloudBackupPay = $cloudBackupPay;
+        $this->clientService = $clientService;
     }
 
     // Lấy tất cả các gói Cloud Backup
@@ -145,9 +147,11 @@ class CloudBackupService
                 'email' => $data['email'],
                 'phone' => $data['phone'],
                 'productname' => $backupname,
+                'package_name' => $backupname,
                 'title' => 'Cloud Backup'
 
             ];
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new CloudBackupEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

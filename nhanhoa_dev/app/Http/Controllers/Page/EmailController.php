@@ -42,7 +42,7 @@ class EmailController extends Controller
     }
 
     public function googleWorkspaceEducationPay(Request $request){
-        $client = $this->clientService->createClient($request->all());
+        // $client = $this->clientService->createClient($request->all());
         $googleWorkspaceEducationPay = $this->googleWorkspaceService->PayGoogleWorkspaceEducation($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
@@ -51,7 +51,7 @@ class EmailController extends Controller
     public function googleWorkspaceBusinessPay(Request $request){
 
         $googleWorkspaceBusinessPay = $this->googleWorkspaceService->PayGoogleWorkspaceBusiness($request->all());
-        $client = $this->clientService->createClient($request->all());
+        // $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 }

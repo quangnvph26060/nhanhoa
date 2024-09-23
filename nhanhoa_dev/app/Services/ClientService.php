@@ -32,18 +32,19 @@ class ClientService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
+                'package_name' => $data['package_name'],
             ];
+            $clients = $this->client->create($newBackup);
+            // $client = Client::where('email', $data['email'])->first();
 
-            $client = Client::where('email', $data['email'])->first();
-
-            if (!$client) {
-                $clients = $this->client->create($newBackup);
-                DB::commit(); // Commit sau khi tạo thành công
-                return $clients;
-            }
+            // if (!$client) {
+            //     $clients = $this->client->create($newBackup);
+            //     DB::commit(); // Commit sau khi tạo thành công
+            //     return $clients;
+            // }
 
             DB::commit(); // Commit nếu client đã tồn tại
-            return $client;
+            return $clients;
         } catch (Exception $e) {
             DB::rollback();
             Log::error('Failed to create client: ' . $e->getMessage());

@@ -22,13 +22,15 @@ class GoogleWorkspaceService
     protected $googleWorkspaceeducation;
     protected $googleWorkspaceBusinessPay;
     protected $googleWorkspaceEducationPay;
+    protected $clientService;
 
-    public function __construct(GoogleWorkspace $googleWorkspacebusiness, GoogleWorkspaceEducation $googleWorkspaceeducation , GoogleWorkspaceBusinessPay $googleWorkspaceBusinessPay, GoogleWorkspaceEducationPay $googleWorkspaceEducationPay)
+    public function __construct(GoogleWorkspace $googleWorkspacebusiness, GoogleWorkspaceEducation $googleWorkspaceeducation , GoogleWorkspaceBusinessPay $googleWorkspaceBusinessPay, GoogleWorkspaceEducationPay $googleWorkspaceEducationPay, ClientService $clientService)
     {
         $this->googleWorkspacebusiness = $googleWorkspacebusiness;
         $this->googleWorkspaceeducation = $googleWorkspaceeducation;
         $this->googleWorkspaceBusinessPay = $googleWorkspaceBusinessPay;
         $this->googleWorkspaceEducationPay = $googleWorkspaceEducationPay;
+        $this->clientService = $clientService;
     }
 
     // Lấy tất cả các Google Workspace
@@ -138,9 +140,10 @@ class GoogleWorkspaceService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $googleworkspace->name,
+                'package_name' => 'Google Workspace Business - '.$googleworkspace->name,
                 'title' => 'Google Workspace Business'
             ];
-
+            $this->clientService->createClient($dataemail);
              Mail::to($data['email'])->send(new GoogleWorkspaceBusinessEmail($dataemail));
              $emailTo = env('MAIL_USERNAME');
              Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
@@ -248,9 +251,10 @@ class GoogleWorkspaceService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $googleworkspace->name,
+                'package_name' => 'Google Workspace Education - '.$googleworkspace->name,
                 'title' => 'Google Workspace Education'
             ];
-
+            $this->clientService->createClient($dataemail);
              Mail::to($data['email'])->send(new GoogleWorkspaceEducationEmail($dataemail));
              $emailTo = env('MAIL_USERNAME');
              Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

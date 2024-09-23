@@ -185,6 +185,8 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
     Route::prefix('client')->name('client.')->group(function () {
         Route::get('', [ClientController::class, 'index'])->name('index');
         Route::get('list', [ClientController::class, 'listclient'])->name('list');
+        Route::delete('{id}', [ClientController::class, 'delete'])->name('delete');
+
     });
 
     Route::prefix('report')->name('report.')->group(function () {

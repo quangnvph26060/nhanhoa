@@ -41,19 +41,19 @@ class ServerController extends Controller
 
     public function pay(Request $request){
         $serverPay = $this->serverService->PayServer($request->all());
-        $client = $this->clientService->createClient($request->all());
+        // $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 
     public function paylocation(Request $request){
         $serverPay = $this->serverService->PayServerLocation($request->all());
-        $client = $this->clientService->createClient($request->all());
+        // $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 
     public function payBackup365(Request $request){
         $serverPay = $this->backup365Service->PayBackup365($request->all());
-        $client = $this->clientService->createClient($request->all());
+        // $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 

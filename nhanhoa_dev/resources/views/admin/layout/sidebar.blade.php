@@ -361,7 +361,7 @@
                         </ul>
                     </div>
                 </li> --}}
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#baocao">
                         <i class="fas fa-flag"></i>
                         <p>Danh sách liên hệ</p>
@@ -417,7 +417,7 @@
 
                         </ul>
                     </div>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#giaiphap">
                         <i class="fas fa-solid fa-lightbulb"></i> <!-- Icon for Promotion -->

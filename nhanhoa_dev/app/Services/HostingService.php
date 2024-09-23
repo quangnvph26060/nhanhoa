@@ -17,10 +17,12 @@ class HostingService
     protected $hosting;
     protected $hostingPay;
 
-    public function __construct(Hosting $hosting, HostingPay $hostingPay)
+    protected $clientService;
+    public function __construct(Hosting $hosting, HostingPay $hostingPay, ClientService $clientService)
     {
         $this->hosting = $hosting;
         $this->hostingPay = $hostingPay;
+        $this->clientService = $clientService;
     }
 
     public function getHostingAll(){
@@ -140,16 +142,16 @@ class HostingService
     public function payHosting(array $data){
         try {
             DB::beginTransaction();
-
+            // dd($data);
             $datanew = [
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' =>$data['email'] ,
-                'hostingid' => $data['hostingid'],
+                'hostingid' => $data['cloud_id'],
             ];
             $hostingpay = $this->hostingPay->create($datanew);
             DB::commit();
-            $hosting = $this->hosting->find($data['hostingid']);
+            $hosting = $this->hosting->find($data['cloud_id']);
 
             if ($hosting->hostingtype_id == 1) {
                 $hostingname = 'Windows Hosting - ' . $hosting->name;
@@ -162,9 +164,10 @@ class HostingService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $hostingname,
+                'package_name' => $hostingname,
                 'title' => 'Hosting'
             ];
-
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new HostingPayment($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

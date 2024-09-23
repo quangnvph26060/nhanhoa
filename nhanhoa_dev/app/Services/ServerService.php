@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
+use League\OAuth1\Client\Credentials\ClientCredentialsInterface;
 
 class ServerService
 {
@@ -21,13 +22,15 @@ class ServerService
     protected $serverPay;
     protected $serverLocation;
     protected $serverLocationPay;
+    protected $clientService;
 
-    public function __construct(Server $server, ServerPay $serverPay, ServerLocation $serverLocation, ServerLocationPay $serverLocationPay)
+    public function __construct(Server $server, ServerPay $serverPay, ServerLocation $serverLocation, ServerLocationPay $serverLocationPay, ClientService $clientService)
     {
         $this->server = $server;
         $this->serverPay = $serverPay;
         $this->serverLocation = $serverLocation;
         $this->serverLocationPay = $serverLocationPay;
+        $this->clientService = $clientService;
     }
 
     public function getServerAll()
@@ -140,8 +143,10 @@ class ServerService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $server->name,
+                'package_name' => 'Server - '.$server->name,
                 'title' => 'Server'
             ];
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new ServerPayEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
@@ -256,8 +261,10 @@ class ServerService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'serverlocationname' => $server->name,
+                'package_name' => 'Server Location - '.$server->name,
                 'title' => 'Server Location'
             ];
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new ServerLoactionPayEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

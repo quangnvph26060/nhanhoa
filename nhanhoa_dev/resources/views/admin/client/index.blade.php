@@ -153,14 +153,17 @@
     #category_kho .form-check {
         margin-bottom: 10px;
     }
-    .page-inner{
+
+    .page-inner {
         min-height: 850px
     }
-    #pagination{
-        display: none;
+
+    #pagination {
+        display: flex;
 
     }
-    #pagination li{
+
+    #pagination li {
         list-style: none;
         padding: 0px 10px;
     }
@@ -188,17 +191,20 @@
                             </div> --}}
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
+                                    <table id="basic-datatables"
+                                        class="display table table-striped table-hover dataTable" role="grid"
+                                        aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-                                                <th>Mã khách hàng</th>
-                                                <th>Tên khách hàng</th>
-                                                <th>Điện thoại</th>
-                                                <th>Email</th>
+                                                <th>MKH</th>
+                                                <th style="width: 100px;">Họ tên</th>
+                                                <th style="width: 100px;">Email (SDT)</th>
+                                                <th>Tên gói</th>
+                                                <th style="width: 100px;">Ngày tạo</th>
                                                 <th>Hành động</th>
                                             </tr>
                                         </thead>
-                                        <tbody id="customer-data">
+                                        <tbody id="server-data">
                                             <!-- Dữ liệu khách hàng sẽ được tải qua AJAX vào đây -->
                                         </tbody>
                                     </table>
@@ -219,63 +225,32 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
 
-    <script type="text/javascript">
+    <script>
         $(document).ready(function() {
-            fetchCustomers(1);
-
-            function fetchCustomers(page) {
-                $.ajax({
-                    url: "{{ route('admin.client.list') }}?page=" + page,
-                    method: 'GET',
-                    success: function(data) {
-                        let html = '';
-                        $.each(data.data, function(index, customer) {
-                            html += `
-                                <tr>
-                                    <td>${customer.code}</td>
-                                    <td>${customer.name}</td>
-                                    <td>${customer.phone}</td>
-                                    <td>${customer.email}</td>
-                                    <td align="center">
-                                        <a class="btn btn-warning" href=""><i class="fas fa-edit"></i></a>
-                                        <button class="btn btn-danger btn-delete" data-id="${customer.id}" onclick="deleteConfirmation(${customer.id})"><i class="fa-solid fa-trash"></i></button>
-                                        <form id="delete-form-${customer.id}" action="" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </td>
-                                </tr>
-                            `;
-                        });
-                        $('#customer-data').html(html);
-                        let pagination = createPagination(data.current_page, data.last_page);
-                        $('#pagination').html(pagination);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Lỗi khi lấy danh sách khách hàng:', error);
-                    }
-                });
-            }
+            fetchservers(1);
 
             function createPagination(current, last) {
-                if (last == 1) {
+                if (last <= 1) {
                     return '';
                 }
 
                 let pagination = '';
 
+                // Previous Button
                 if (current > 1) {
                     pagination += `<li class="page-item">
                         <a class="page-link" href="#" data-page="${current - 1}"><i class="fas fa-backward"></i></a>
                     </li>`;
                 }
 
-                pagination += `<li class="page-item ${1 === current ? 'active' : ''}">
+                // First Page
+                pagination += `<li class="page-item ${current === 1 ? 'active' : ''}">
                     <a class="page-link" href="#" data-page="1">1</a>
                 </li>`;
 
+                // Ellipsis and Middle Pages
                 if (current > 3) {
                     pagination += `<li class="page-item disabled">
                         <span class="page-link">...</span>
@@ -297,10 +272,12 @@
                     </li>`;
                 }
 
-                pagination += `<li class="page-item ${last === current ? 'active' : ''}">
+                // Last Page
+                pagination += `<li class="page-item ${current === last ? 'active' : ''}">
                     <a class="page-link" href="#" data-page="${last}">${last}</a>
                 </li>`;
 
+                // Next Button
                 if (current < last) {
                     pagination += `<li class="page-item">
                         <a class="page-link" href="#" data-page="${current + 1}"><i class="fas fa-forward"></i></a>
@@ -313,26 +290,82 @@
             $(document).on('click', '#pagination a', function(event) {
                 event.preventDefault();
                 let page = $(this).data('page');
-                fetchCustomers(page);
+                fetchservers(page);
             });
-        });
 
-        function deleteConfirmation(id) {
-            Swal.fire({
-                title: 'Bạn có chắc chắn muốn xóa?',
-                text: "Bạn sẽ không thể khôi phục lại dữ liệu này!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Xóa!',
-                cancelButtonText: 'Hủy'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    document.getElementById(`delete-form-${id}`).submit();
+
+        });
+        function fetchservers(page) {
+            $.ajax({
+                url: `{{ route('admin.client.list') }}?page=${page}`,
+                method: 'GET',
+                success: function(data) {
+                    let html = '';
+                    console.log(data);
+
+                    $.each(data.data, function(index, item) {
+                        html += `
+                            <tr>
+                                <td>${item.code}</td>
+                                <td>${item.name}</td>
+                                <td>${item.email} (${item.phone})</td>
+                                <td>${item.package_name}</td>
+                                <td>${item.created_at}</td>
+                                <td align="center">
+                                    <button class="btn btn-danger btn-delete" data-id="${item.id}" onclick="deleteConfirmation(${item.id})"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        `;
+                    });
+
+                    $('#server-data').html(html);
+
+                    // Cập nhật phân trang
+                    let pagination = createPagination(data.current_page, data.last_page);
+                    $('#pagination').html(pagination);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Lỗi khi lấy danh sách server:', error);
                 }
             });
         }
+
+
+
+        function deleteConfirmation(id) {
+                Swal.fire({
+                    title: 'Bạn có chắc chắn muốn xóa?',
+                    text: "Bạn sẽ không thể khôi phục lại dữ liệu này!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Xóa!',
+                    cancelButtonText: 'Hủy'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: `{{ route('admin.client.delete', '') }}/${id}`,
+                            type: 'DELETE',
+                            data: {
+                                _token: '{{ csrf_token() }}'
+                            },
+                            success: function(response) {
+                                if (response.success) {
+                                    fetchservers(1);
+                                    Swal.fire('Đã xóa!', response.message, 'success');
+                                } else {
+                                    Swal.fire('Lỗi!', response.message, 'error');
+                                }
+                            },
+                            error: function(xhr) {
+                                Swal.fire('Lỗi!', 'Có lỗi xảy ra khi xóa khách hàng.', 'error');
+                            }
+                        });
+                    }
+                });
+            }
+
     </script>
 
     @endsection

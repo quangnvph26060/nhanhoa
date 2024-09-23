@@ -9,7 +9,7 @@ class Client extends Model
 {
     use HasFactory;
     protected $table = 'sgo_client';
-    protected $fillable = ['code', 'name', 'phone', 'email'];
+    protected $fillable = ['code', 'name', 'phone', 'email', 'package_name'];
     protected static function boot()
     {
         parent::boot();

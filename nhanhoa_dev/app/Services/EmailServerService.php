@@ -19,11 +19,13 @@ class EmailServerService
     protected $emailServer;
 
     protected $emailServerPay;
+    protected $clientService;
 
-    public function __construct(EmailServer $emailServer, EmailServerPay $emailServerPay)
+    public function __construct(EmailServer $emailServer, EmailServerPay $emailServerPay, ClientService $clientService)
     {
         $this->emailServer = $emailServer;
         $this->emailServerPay = $emailServerPay;
+        $this->clientService = $clientService;
     }
 
     // Lấy tất cả các email server
@@ -137,9 +139,10 @@ class EmailServerService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $emailServer->name,
+                'package_name' => 'Email - '.$emailServer->name,
                 'title' => 'Email Server'
             ];
-
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new EmailServerPayEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

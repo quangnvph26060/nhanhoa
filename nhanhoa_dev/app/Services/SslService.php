@@ -15,11 +15,13 @@ class SslService
 {
     protected $sslPay;
     protected $ssl;
+    protected $clientService;
 
-    public function __construct(Ssl $ssl, SslPay $sslPay)
+    public function __construct(Ssl $ssl, SslPay $sslPay, ClientService $clientService)
     {
         $this->ssl = $ssl;
         $this->sslPay = $sslPay;
+        $this->clientService = $clientService;
     }
 
     public function getSslAll(){
@@ -145,9 +147,10 @@ class SslService
                 'phone' => $data['phone'],
                 'email' => $data['email'],
                 'productname' => $sslname,
+                'package_name' => 'SSL - '.$sslname,
                 'title' => 'SSL'
             ];
-
+            $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new SslPaySuccessMail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {

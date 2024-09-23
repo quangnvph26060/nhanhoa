@@ -50,7 +50,7 @@ class CloudController extends Controller
 
     public function cloudbackuppay(Request $request){
         $serverPay = $this->cloudBackupService->PayBackup($request->all());
-        $client = $this->clientService->createClient($request->all());
+        // $client = $this->clientService->createClient($request->all());
         return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 
