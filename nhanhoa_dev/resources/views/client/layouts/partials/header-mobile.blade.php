@@ -10,14 +10,14 @@
     </div>
     <div class="col-6">
         <div class="mobile-top-header">
-            <div class="top-header-cart">
+            {{-- <div class="top-header-cart">
                 <div class="btn-minicart">
                     <a style="background: transparent;" href="https://nhanhoa.com/?site=cart" title="Giỏ hàng ">
                         <img style="{{ request()->routeIs('page.domain-registration') ? 'filter: none' : '' }}" src="https://nhanhoa.com/templates/images/v2/webp/home/icon_minicart.webp" alt="Giỏ hàng">
                         <span class="cart_count cart_number">0</span>
                     </a>
                 </div>
-            </div>
+            </div> --}}
             <div class="menu-container">
                 <a class="btn-menu-mobile active" nh-menu="btn-open" menu-type="main" href="javascript:;">
                     <img style="{{ request()->routeIs('page.domain-registration') ? 'filter: none' : '' }}"

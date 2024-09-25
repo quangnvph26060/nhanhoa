@@ -85,7 +85,7 @@ class NewsController extends Controller
         $sgoNews = SgoNews::find($id);
         $sgoNews->update($validatedData);
 
-        return redirect()->route('admin.new.index', ['slug' => $sgoNews->slug, 'id' => $sgoNews->id])->with('success', 'Bài viết đã được cập nhật thành công!');
+        return redirect()->route('admin.new.index')->with('success', 'Bài viết đã được cập nhật thành công!');
     }
 
     // Xóa bài báo khỏi cơ sở dữ liệu
