@@ -232,8 +232,8 @@
 </div>
 
 <script>
-    CKEDITOR.replace('content', {
-      toolbar: [
+CKEDITOR.replace('content', {
+    toolbar: [
         { name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
         { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
         { name: 'editing', items: [ 'Find', 'Replace', '-', 'SelectAll', '-', 'SpellChecker', 'Scayt' ] },
@@ -248,13 +248,11 @@
         { name: 'colors', items: [ 'TextColor', 'BGColor' ] },
         { name: 'tools', items: [ 'Maximize', 'ShowBlocks', '-' ] },
         { name: 'about', items: [ 'About' ] }
-      ],
+    ],
+    extraPlugins: 'font,colorbutton,justify',
+    fontSize_sizes: '11px;12px;13px;14px;15px;16px;18px;20px;22px;24px;26px;28px;30px;32px;34px;36px',
+});
 
-      extraPlugins: 'font',
-      // Set the available font sizes
-      fontSize_sizes: '11px;12px;13px;14px;15px;16px;18px;20px;22px;24px;26px;28px;30px;32px;34px;36px',
-
-    });
 
     document.getElementById('logo').addEventListener('change', function(event) {
             const input = event.target;
