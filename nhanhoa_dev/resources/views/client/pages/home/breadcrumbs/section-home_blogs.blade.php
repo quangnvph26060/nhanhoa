@@ -8,19 +8,21 @@
                             kiện</h2>
                     </div>
                     <div class="col-lg-7 col-md-7 col-12">
+                        @forelse ($news as $index => $item)
+                        @if($index < 1)
                         <div class="item-article-hot item-article-hot-left">
                             <div class="img position-relative">
-                                <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-cloud-storage.html">
+                                <a href="{{ route('page.news-detail', ['slug' => $item->slug , 'id' => $item->id]) }}">
                                     <img class="rtbs" align="left"
-                                        src="https://uploads.nhanhoa.com/news/1724494946_cloud-storage-thumb.png"
+                                        src="{{ asset($item->logo) }}"
                                         width="130" height="100" border="0">
                                 </a>
                             </div>
                             <div class="inner-content">
                                 <div class="name">
-                                    <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-cloud-storage.html"
-                                        title="Nhân Hòa Cloud Storage - Lưu trữ thông minh, An tâm vận hành">
-                                        Nhân Hòa Cloud Storage - Lưu trữ thông minh, An tâm vận hành
+                                    <a href="{{ route('page.news-detail', ['slug' => $item->slug , 'id' => $item->id]) }}"
+                                        title="{{ $item->title }}">
+                                       {{ $item->title }}
                                     </a>
                                 </div>
                                 <div class="description">
@@ -36,23 +38,72 @@
                                             src="https://uploads.nhanhoa.com/news/no-avatar.png"
                                             alt="Author Avatar">
                                         <span class="meta--author meta--author-new">
-                                            <a href="javascript:void(0)" tabindex="0">Elly Duong</a>
-                                            <span class="seperate">|</span>22/08/2024
+                                            <a href="javascript:void(0)" tabindex="0">{{$item->user->name }}</a>
+                                            <span class="seperate">|</span>{{ $item->created_at->format('d-m-Y') }}
                                         </span>
                                     </div>
-                                    <a nh-btn-action="bookmark" bookmark-id="4473" href="javascript:;"
+                                    {{-- <a nh-btn-action="bookmark" bookmark-id="4473" href="javascript:;"
                                         class="ml-auto bookmark" tabindex="0">
                                         <i class="far fa-bookmark fs-20"></i>
-                                    </a>
+                                    </a> --}}
                                 </div>
 
                             </div>
                         </div>
+                        @endif
+                    @empty
+
+                    @endforelse
                     </div>
 
                     <div class="col-lg-5 col-md-5 col-12">
                         <div class="row">
-                            <div class="col-md-6 col-6">
+                            @forelse ($news as $index => $item)
+                                @if($index >= 1 && $index <= 4)
+                                <div class="col-md-6 col-6">
+                                    <div class="item-article-hot item-article-hot-right">
+                                        <div class="img position-relative">
+                                            <a href="{{ route('page.news-detail', ['slug' => $item->slug , 'id' => $item->id]) }}">
+                                                <img class="rtbs" align="left"
+                                                    src="{{ asset($item->logo) }}"
+                                                    width="130" height="100" border="0">
+                                            </a>
+                                        </div>
+                                        <div class="inner-content">
+                                            <div class="name">
+                                                <a href="{{ route('page.news-detail', ['slug' => $item->slug , 'id' => $item->id]) }}" style="display: -webkit-box;
+                                                -webkit-line-clamp: 2;
+                                                -webkit-box-orient: vertical;
+                                                overflow: hidden;
+                                                text-overflow: ellipsis; "
+                                                    title=" {{ $item->title }}">
+                                                    {{ $item->title }}
+                                                </a>
+                                            </div>
+                                            <div
+                                                class="d-flex align-items-center justify-content-between meta--wrap">
+                                                <div class="meta">
+                                                    <img class="author-avatar"
+                                                        src="https://uploads.nhanhoa.com/news/no-avatar.png"
+                                                        alt="Author Avatar">
+                                                    <span class="meta--author meta--author-new">
+                                                        <a href="javascript:void(0)" tabindex="0">{{$item->user->name}}</a>
+                                                        <span class="seperate">|</span>{{ $item->created_at->format('d-m-Y') }}
+                                                    </span>
+                                                </div>
+                                                {{-- <a nh-btn-action="bookmark" bookmark-id="4473"
+                                                    href="javascript:;" class="ml-auto bookmark" tabindex="0">
+                                                    <i class="far fa-bookmark fs-20"></i>
+                                                </a> --}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
+                            @empty
+
+                            @endforelse
+                            {{-- <div class="col-md-6 col-6">
                                 <div class="item-article-hot item-article-hot-right">
                                     <div class="img position-relative">
                                         <a href="https://nhanhoa.com/tin-tuc/thue-website.html">
@@ -201,7 +252,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>

@@ -18,6 +18,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\ContractEsocController;
 use App\Http\Controllers\Admin\EmailSettingController;
+use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Page\AffiliateController;
 use App\Http\Controllers\Page\CloudController as PageCloudController;
 use App\Http\Controllers\Page\DomainController as PageDomainController;
@@ -28,6 +30,8 @@ use App\Http\Controllers\Page\RegisterConsultationController;
 use App\Http\Controllers\Page\ServerController as PageServerController;
 use App\Http\Controllers\Page\SolutionController;
 use App\Http\Controllers\Page\SslController as PageSslController;
+use App\Http\Controllers\Page\SystemController as PageSystemController;
+use App\Http\Controllers\SystemController;
 use App\Models\CloudBackup;
 use Illuminate\Support\Facades\Route;
 
@@ -63,7 +67,8 @@ Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallbac
 
 
 Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.')->group(function () {
-    Route::prefix('customer')->name('customer.')->group(function () {});
+    Route::prefix('customer')->name('customer.')->group(function () {
+    });
     Route::prefix('solution')->name('solution.')->group(function () {
         Route::get('', [AdminSolutionController::class, 'index'])->name('index');
         Route::get('search', [AdminSolutionController::class, 'search'])->name('search');
@@ -79,7 +84,7 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
     Route::prefix('config')->name('config.')->group(function () {
         Route::get('', [ConfigController::class, 'index'])->name('detail');
         Route::post('', [ConfigController::class, 'update'])->name('update');
-        Route::post('/email-env',[EmailSettingController::class, 'update'] )->name('update.email');
+        Route::post('/email-env', [EmailSettingController::class, 'update'])->name('update.email');
         Route::get('/config-email', [EmailSettingController::class, 'showForm'])->name('config.email');
     });
 
@@ -186,7 +191,6 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('', [ClientController::class, 'index'])->name('index');
         Route::get('list', [ClientController::class, 'listclient'])->name('list');
         Route::delete('{id}', [ClientController::class, 'delete'])->name('delete');
-
     });
 
     Route::prefix('report')->name('report.')->group(function () {
@@ -221,11 +225,10 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         // cloud backup365
         Route::get('cloud-backup365', [ReportController::class, 'indexcloudbackup365'])->name('cloudbackup365.index');
         Route::get('list-cloud-backup365', [ReportController::class, 'listcloudbackup365'])->name('list.cloudbackup365');
-
     });
 
-    Route::prefix('giaiphap')->name('giaiphap.')->group(function(){
-        Route::name('contractesoc.')->group(function(){
+    Route::prefix('giaiphap')->name('giaiphap.')->group(function () {
+        Route::name('contractesoc.')->group(function () {
             Route::get('', [ContractEsocController::class, 'index'])->name('index');
             Route::get('add', [ContractEsocController::class, 'addform'])->name('addform');
             Route::post('add', [ContractEsocController::class, 'addsubmit'])->name('addsubmit');
@@ -233,6 +236,14 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
             Route::post('edit/{id}', [ContractEsocController::class, 'editsubmit'])->name('editsubmit');
             Route::post('delete/{id}', [ContractEsocController::class, 'delete'])->name('delete');
         });
+    });
+
+    Route::prefix('news')->name('new.')->group(function () {
+        Route::get('index', [AdminNewsController::class, 'index'])->name('index');
+        Route::get('add', [AdminNewsController::class, 'create'])->name('add');
+        Route::post('store', [AdminNewsController::class, 'store'])->name('store');
+        Route::get('{slug}.{id}', [AdminNewsController::class, 'show'])->name('show');
+        Route::post('{slug}.{id}', [AdminNewsController::class, 'update'])->name('update');
     });
 });
 
@@ -291,7 +302,15 @@ Route::name('page.')->group(function () {
     Route::get('uu-dai-nhan-hoa', [AffiliateController::class, 'index'])->name('affiliate');
     Route::get('tin-tuc', [AffiliateController::class, 'news'])->name('news');
     Route::get('lien-he', [AffiliateController::class, 'contact'])->name('contact');
+    Route::get('tin-tuc/tin-tuc_{id}', [AffiliateController::class, 'newsChild'])->name('news-child');
+    Route::get('tin-tuc/{slug}_{id}', [AffiliateController::class, 'newsDetail'])->name('news-detail');
 
     Route::post('register-for-consultation', [RegisterConsultationController::class, 'register'])->name('register.consultation');
+
+    Route::get('/xay-dung-cum-server-rieng', [PageSystemController::class, 'showServerCluster'])->name('server-cluster');
+    Route::get('giai-phap-bao-mat', [PageSystemController::class, 'showSecuritySolutions'])->name('security-solutions');
+    Route::get('/can-bang-tai-he-thong', [PageSystemController::class, 'showLoadBalancing'])->name('load-balancing');
+    Route::get('/chong-ddos', [PageSystemController::class, 'showDDoSProtection'])->name('ddos-protection');
+    Route::get('/tu-van-thiet-ke-he-thong-mang', [PageSystemController::class, 'showNetworkConsulting'])->name('network-consulting');
 });
 //

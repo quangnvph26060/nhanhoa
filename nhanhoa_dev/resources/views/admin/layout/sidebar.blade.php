@@ -439,6 +439,27 @@
                         </ul>
                     </div>
                 </li> --}}
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#news">
+                        <i class="fas fa-tags"></i> <!-- Icon for Promotion -->
+                        <p>Tin tức</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="news">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.new.add') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.new.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>

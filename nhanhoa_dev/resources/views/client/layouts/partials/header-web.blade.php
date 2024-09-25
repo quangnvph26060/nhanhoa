@@ -240,7 +240,7 @@
                                     </div>
                                 </a>
                             </li> --}}
-                            
+
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -702,7 +702,12 @@
 
                         </ul>
                     </li> --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('page.server-cluster') }}" title="">
+                            Giải Pháp
 
+                        </a>
+                    </li>
 
                 </ul>
             </div>
