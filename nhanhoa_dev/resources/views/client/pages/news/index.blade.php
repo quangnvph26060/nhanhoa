@@ -11,12 +11,26 @@
                 <div class="col-md-3">
                     <div class="category-item">
                         <div class="category-img">
-                            <a href="https://nhanhoa.com/tin-tuc/thong-bao_3.html">
+                            <a href="{{ route('page.news-child', ['id'=>1]) }}">
                                 <img src="https://nhanhoa.com/templates/images/v2/icon-news-thong-bao.png">
                             </a>
                         </div>
                         <div class="category-text">
-                            <a href="https://nhanhoa.com/tin-tuc/thong-bao_3.html">
+                            <a href="{{ route('page.news-child', ['id'=>1]) }}">
+                               Tin tức
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="category-item">
+                        <div class="category-img">
+                            <a href="{{ route('page.news-child', ['id'=>2]) }}">
+                                <img src="https://nhanhoa.com/templates/images/v2/icon-news-thong-bao.png">
+                            </a>
+                        </div>
+                        <div class="category-text">
+                            <a href="{{ route('page.news-child', ['id'=>2]) }}">
                                 Thông báo
                             </a>
                         </div>
@@ -25,27 +39,13 @@
                 <div class="col-md-3">
                     <div class="category-item">
                         <div class="category-img">
-                            <a href="https://nhanhoa.com/uu-dai-nhan-hoa.html">
-                                <img src="https://nhanhoa.com/templates/images/v2/icon-news-uu-dai.png">
-                            </a>
-                        </div>
-                        <div class="category-text">
-                            <a href="https://nhanhoa.com/uu-dai-nhan-hoa.html">
-                                Ưu đãi
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="category-item">
-                        <div class="category-img">
-                            <a href="https://nhanhoa.com/tin-tuc.html">
+                            <a href="{{ route('page.news-child', ['id'=>3]) }}">
                                 <img src="https://nhanhoa.com/templates/images/v2/icon-news-tin-tuc.png">
                             </a>
                         </div>
                         <div class="category-text">
-                            <a href="https://nhanhoa.com/tin-tuc.html">
-                                Tin tức
+                            <a href="{{ route('page.news-child', ['id'=>3]) }}">
+                               Tuyển dụng
                             </a>
                         </div>
                     </div>
@@ -53,13 +53,13 @@
                 <div class="col-md-3">
                     <div class="category-item">
                         <div class="category-img">
-                            <a href="https://wiki.nhanhoa.com/" target="_blank">
+                            <a href="{{ route('page.news-child', ['id'=>4]) }}">
                                 <img src="https://nhanhoa.com/templates/images/v2/icon-news-ky-thuat.png">
                             </a>
                         </div>
                         <div class="category-text">
-                            <a href="https://wiki.nhanhoa.com/" target="_blank">
-                                Kỹ thuật
+                            <a href="{{ route('page.news-child', ['id'=>4]) }}">
+                                Công nghệ
                             </a>
                         </div>
                     </div>
