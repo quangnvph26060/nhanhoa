@@ -790,7 +790,7 @@
                 </div>
             </div>
             <div class="slogan text-left">
-                Web.nhanhoa.com
+                {{ config('app.url') }}
             </div>
             <div class="row row-small">
                 @forelse ($new4 as $index => $item)
