@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <!-- Start Style -->
     @include('client.layouts.partials.style')
+    <script src="{{ asset('validator/validator.js') }}"></script>
     <!-- End Style -->
 
 </head>

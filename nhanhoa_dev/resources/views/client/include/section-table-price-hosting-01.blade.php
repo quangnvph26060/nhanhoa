@@ -103,7 +103,8 @@
 
                                         </div>
                                         <div class="link-add-cart">
-                                            <a class="btn-add-cart btn-service add_service_cart" onclick="openPopup({{ $ssl->id }}, '{{ $ssl->name }}')"
+                                            <a class="btn-add-cart btn-service add_service_cart"
+                                                onclick="openPopup({{ $ssl->id }}, '{{ $ssl->name }}')"
                                                 data-service_id="{{ $ssl->id }}" data-service_name="{{ $ssl->name }}">
                                                 <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                     <div class="rect1"></div>
@@ -138,11 +139,22 @@
                                                 @csrf
                                                 <input type="hidden" id="cloud_id_input" name="sslid">
                                                 <input class="form-control" type="text" placeholder="Họ và tên"
-                                                    name="name">
+                                                    name="name" id="name">
+                                                <span class="invalid-feedback d-block"
+                                                    style="text-align: left; margin-bottom: 20px"
+                                                    id="name_error"></span>
+
                                                 <input class="form-control" type="text" placeholder="Số điện thoại"
-                                                    name="phone">
-                                                <input class="form-control" type="text" placeholder="Email"
-                                                    name="email">
+                                                    name="phone" id="phone">
+                                                <span class="invalid-feedback d-block"
+                                                    style="text-align: left; margin-bottom: 20px"
+                                                    id="phone_error"></span>
+
+                                                <input class="form-control" type="text" placeholder="Email" name="email"
+                                                    id="email">
+                                                <span class="invalid-feedback d-block"
+                                                    style="text-align: left; margin-bottom: 20px"
+                                                    id="email_error"></span>
                                                 <div class="product-info">
                                                     <p>Sản phẩm: </p>
                                                     <span class="product-name">
@@ -157,7 +169,7 @@
                                                 </div>
 
                                                 <div class="submit-content">
-                                                    <button class="btn btn-submit">Gửi Đi</button>
+                                                    <button type="button" class="btn btn-submit" onclick="submitlienhe(event)">Gửi Đi</button>
                                                     <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
                                                         (24/7)
                                                     </div>
@@ -1669,6 +1681,7 @@
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<script src="{{ asset('validator/client.js') }}"></script>
 
 <script>
     function openPopup(cloudId, productName ) {

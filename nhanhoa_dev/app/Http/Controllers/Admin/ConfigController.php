@@ -17,13 +17,14 @@ class ConfigController extends Controller
     }
 
     public function index(){
+         $title = 'Cấu hình';
          $config = $this->configService->getConfig();
          $bank = Bank::all();
-         return view('admin.config.index', compact('config', 'bank'));
+         return view('admin.config.index', compact('config', 'bank', 'title'));
     }
 
     public function update(Request $request){
-        // dd($request->all());
+        $title = 'Cấu hình';
         $config = $this->configService->updateConfig($request->all());
         return redirect()->back()->with('success', 'Thay đổi thành công !');
     }

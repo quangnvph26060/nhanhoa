@@ -4,7 +4,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="item-text-left">
-                        <div class="name">Đối Tác Của Nhân Hoà</div>
+                        <div class="name">Đối Tác Của Chúng Tôi</div>
                         <div class="description">
                             Các đối tác và khách hàng tiêu biểu của chúng tôi <span><img
                                     src="https://nhanhoa.com/templates/images/v2/home/icon_before_doi_tac.svg"

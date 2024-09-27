@@ -260,7 +260,7 @@ class ServerService
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' => $data['email'],
-                'serverlocationname' => $server->name,
+                'productname' => $server->name,
                 'package_name' => 'Server Location - '.$server->name,
                 'title' => 'Server Location'
             ];

@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cloud;
+use App\Models\Config as ModelsConfig;
 use App\Models\SgoNews;
 use App\Services\CloudService;
 use App\Services\DomainService;
 use App\Services\EmailServerService;
 use App\Services\HostingService;
 use App\Services\SslService;
+use Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,10 +42,10 @@ class HomeController extends Controller
         // email
         $email = $this->emailServerService->getAllEmailServers();
         $ssl = $this->sslService->getSslAll();
-
+        $config = \App\Models\Config::first();
+        // dd($config);
         $news = SgoNews::get();
-
-        $title = "Nhân hòa - Nhà cung cấp dịch vụ";
+         $title = $config->title;
 
         return view('client.pages.home.index', compact('user', 'cloud', 'domainqt', 'domainqg','hosting', 'email', 'ssl', 'news', 'title', ));
     }

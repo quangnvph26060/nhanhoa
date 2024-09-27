@@ -1,6 +1,10 @@
 @extends('admin.layout.index')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <!-- Thêm Selectize.js -->
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/css/selectize.default.css" />
+ <script src="https://cdn.jsdelivr.net/npm/selectize@0.12.6/dist/js/standalone/selectize.min.js"></script>
     <style>
         /* Add your styles here */
         .breadcrumbs {
@@ -225,6 +229,21 @@
                                             </span>
                                         @enderror
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="title" class="form-label">Title</label>
+                                        <input id="title" class="form-control @error('title') is-invalid @enderror"
+                                            name="title" type="text"
+                                            value="{{ old('title', isset($config) ? $config->title : '') }}">
+                                        @error('title')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+
+                                    c
+
                                     <div class="form-group">
                                         <label for="logo" class="form-label">Logo công ty</label>
                                         <div class="custom-file">
@@ -349,6 +368,22 @@
                     },
                     time: 1000,
                 });
+
+
+                $('#mota').selectize({
+                    delimiter: ',',
+                    persist: false,
+                    create: function(input) {
+                        return {
+                            value: input,
+                            text: input
+                        }
+                    },
+                    // Hiển thị nút "x" để xóa tag
+                    plugins: ['remove_button']
+                });
+
+
             });
         </script>
     @endif
@@ -378,5 +413,15 @@
                 reader.readAsDataURL(input.files[0]);
             }
         });
+
+        function handleKeydown(event) {
+            if (event.key === 'Tab') {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của phím Tab
+                // Thực hiện hành động khác nếu cần
+            }
+        }
+
     </script>
+
+
 @endsection

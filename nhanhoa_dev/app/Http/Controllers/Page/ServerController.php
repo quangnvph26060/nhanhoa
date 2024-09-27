@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\ServicePricing;
 use App\Services\Backup365Service;
 use App\Services\ClientService;
 use App\Services\ServerService;
+use App\Services\ServicePricingService;
 use Illuminate\Http\Request;
 
 class ServerController extends Controller
@@ -13,10 +15,12 @@ class ServerController extends Controller
     protected $serverService;
     protected $backup365Service;
     protected $clientService;
-    public function __construct(ServerService $serverService, Backup365Service $backup365Service, ClientService $clientService){
+    protected $servicePricingService;
+    public function __construct(ServerService $serverService, Backup365Service $backup365Service, ClientService $clientService, ServicePricingService $servicePricingService){
         $this->serverService = $serverService;
         $this->backup365Service = $backup365Service;
         $this->clientService = $clientService;
+        $this->servicePricingService = $servicePricingService;
     }
 
     public function dedicatedServer(){
@@ -36,7 +40,15 @@ class ServerController extends Controller
     }
 
     public function serverAdministration(){
-        return view('client.pages.server-administration.index');
+        $servicePricing = $this->servicePricingService->getServicePricingAll();
+        return view('client.pages.server-administration.index', compact('servicePricing'));
+    }
+
+    public function PayserverAdministration(Request $request){
+       $this->servicePricingService->PayService($request->all());
+        // $client = $this->clientService->createClient($request->all());
+        return redirect()->back()->with('success', 'Thông báo thành công!');
+
     }
 
     public function pay(Request $request){

@@ -18,12 +18,14 @@ class CloudBackUpController extends Controller
 
     public function index()
     {
+        $title = 'Cloud Backup';
         $backups = $this->cloudBackupService->getAllBackups();
-        return view('admin.cloudbackup.index', compact('backups'));
+        return view('admin.cloudbackup.index', compact('backups', 'title'));
     }
 
     public function addForm(){
-        return view('admin.cloudbackup.add');
+        $title = 'Thêm mới Cloud Backup';
+        return view('admin.cloudbackup.add', compact('title'));
     }
 
     public function addSubmit(Request $request)
@@ -32,8 +34,9 @@ class CloudBackUpController extends Controller
         return redirect()->route('admin.cloudbackup.index');
     }
     public function editForm($id){
+        $title = 'Cập nhật Cloud Backup';
         $backup = CloudBackup::find($id);
-        return view('admin.cloudbackup.edit', compact('backup'));
+        return view('admin.cloudbackup.edit', compact('backup', 'title'));
     }
 
 

@@ -115,6 +115,28 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li>
+                                <a data-bs-toggle="collapse" href="#serviceserver">
+                                    <i class="fas fa-map-marker-alt"></i> <!-- Icon for server location -->
+                                    <p>Quản trị máy chủ</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="serviceserver">
+                                    <ul class="nav nav-collapse" style="margin-left: 20px; margin-bottom: 0px">
+                                        <li>
+                                            <a href="{{ route('admin.service.add') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.service.index') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </li>

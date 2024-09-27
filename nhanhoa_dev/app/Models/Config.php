@@ -21,7 +21,9 @@ class Config extends Model
         'email',
         'store_name',
         'phone',
-        'address'
+        'address',
+        'title',
+        'mota'
 
     ];
 

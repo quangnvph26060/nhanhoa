@@ -14,6 +14,17 @@
     <link href="{{ asset('client/assets/css/bootstrap/bootstrap.css') }}" rel="stylesheet" type="text/css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="{{ asset('client/assets/css/popup.css') }}">
+    <!-- Toastr CSS -->
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Toastr CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+    <!-- Toastr JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 
 </head>
 
@@ -267,47 +278,55 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            @forelse ($servicePricing as $index => $item )
+                            @if ($index <2) <div class="col-4">
                                 <div class="item">
                                     <div class="item-col item-col-top">
-                                        QUẢN TRỊ CƠ BẢN <br>
-                                        (Part Managed)
+                                        {{ $item->name }} <br>
+                                        {{-- (Part Managed) --}}
                                     </div>
                                     <div class="item-col">
-                                        15 phút
+                                        {{ $item->category_implementation }}
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-times-circle fa-lg" style="color: #c81e1e;"></i>
+                                        <i class="fas fa-times-circle fa-lg"
+                                            style="color: {{ $item->server_optimization == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-times-circle fa-lg" style="color: #c81e1e;"></i>
+                                        <i class="fas fa-times-circle fa-lg"
+                                            style="color:{{ $item->server_security == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                        <i class="fas fa-check-circle fa-lg"
+                                            style="color: {{ $item->server_security == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col">
-                                        Tối đa 10 website hoặc
-                                        50GB/tháng
+                                        {{ $item->website_data_migration }}
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                        <i class="fas fa-check-circle fa-lg"
+                                            style="color: {{ $item->basic_monitoring == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                        <i class="fas fa-check-circle fa-lg"
+                                            style="color:{{ $item->advanced_monitoring == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-times-circle fa-lg" style="color: #c81e1e;"></i>
+                                        <i class="fas fa-times-circle fa-lg"
+                                            style="color:{{ $item->incident_reporting == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                        <i class="fas fa-check-circle fa-lg"
+                                            style="color: {{ $item->periodic_reporting_by_email == 1 ? '#74C0FC':'#c81e1e' }};"></i>
                                     </div>
                                     <div class="item-col item-col-bottom">
-                                        330.000đ
+                                        {{ number_format($item->price, '0', ',', '.') }}đ
                                     </div>
                                 </div>
                                 <div class="btn-price">
-                                    <a href="javascript:void(0)" onclick="return cart_add(948, this);">
-
+                                    <a class="btn-add-cart btn-service add_service_cart"
+                                        onclick="openPopup({{ $item->id }}, '{{ $item->name }}')"
+                                        data-service_id="{{ $item->id }}">
                                         <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                             <div class="rect1"></div>
                                             <div class="rect2"></div>
@@ -319,65 +338,66 @@
 
                                     </a>
                                 </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="item">
-                                    <div class="item-col item-col-top">
-                                        QUẢN TRỊ CAO CẤP <br>
-                                        (Full Managed)
-                                    </div>
-                                    <div class="item-col">
-                                        10 phút
-                                    </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col">
 
-                                        <div class="dsc">
-                                            Chuyển dữ liệu website về server
-                                            khách hàng
-                                        </div>
+
+                        </div>
+
+                        @endif
+                        @empty
+
+                        @endforelse
+                    </div>
+                    <div class="popup-cart" id="popup">
+                        <div class="content_popup">
+                            <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                title="close">×</a>
+                            <div class="input-content">
+                                <div class="input-content-intro">
+                                    <div class="input-content-intro-icon">
+                                        <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
                                     </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col">
-                                        <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                    </div>
-                                    <div class="item-col item-col-bottom">
-                                        990.000đ
+                                    <div class="input-content-intro-des">
+                                        <div class="text-hello">Xin chào,</div>
+                                        <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ
+                                            lại
+                                            với bạn.</p>
                                     </div>
                                 </div>
-                                <div class="btn-price">
-                                    <a href="javascript:void(0)" onclick="return cart_add(949, this);">
-                                        <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
-                                            <div class="rect1"></div>
-                                            <div class="rect2"></div>
-                                            <div class="rect3"></div>
-                                            <div class="rect4"></div>
-                                            <div class="rect5"></div>
+                                <form action="{{ route('page.pay-server-administration') }}" method="POST">
+                                    @csrf
+                                    <input class="form-control" type="text" placeholder="Họ và tên" name="name"
+                                        id="name">
+                                    <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px"
+                                        id="name_error"></span>
+
+                                    <input class="form-control" type="text" placeholder="Số điện thoại" name="phone"
+                                        id="phone">
+                                    <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px"
+                                        id="phone_error"></span>
+
+                                    <input class="form-control" type="text" placeholder="Email" name="email" id="email">
+                                    <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px"
+                                        id="email_error"></span>
+                                    <div class="product-info">
+                                        <p>Gói dịch vụ quản trị máy chủ : </p>
+                                        <span class="product-name" id="product_name">
+
+                                        </span>
+                                    </div>
+
+                                    <div class="submit-content">
+                                        <button type="button" class="btn btn-submit" onclick="submitlienhe(event)">Gửi Đi</button>
+                                        <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                            (24/7)
                                         </div>
-                                        <span class="btn_text">Mua</span>
-                                    </a>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
         <div class="section-box-hmht" id="ho-tro">
@@ -405,75 +425,89 @@
                                     Software/Application Assistance
                                 </h3>
 
-                               <div class="container">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="item-text">
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Apache Configuration
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Dovecot
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Nginx Configuration
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Mail server troubleshooting (Exim, Postfix, Sendmail, Smartermail)
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    R1soft
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    WordPress
-                                                </li>
-                                            </ul>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="item-text">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Apache Configuration
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Dovecot
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Nginx Configuration
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Mail server troubleshooting (Exim, Postfix, Sendmail,
+                                                        Smartermail)
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        R1soft
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        WordPress
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div class="col-6">
-                                        <div class="item-text">
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Softaculous Installation
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    EasyApache
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Exim
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    MySQL Setup
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Best effort support for 3rd Party Applications not listed
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Server Density Installation and Troubleshooting
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Webmail (Horde/Squirrelmail/Roundcube)
-                                                </li>
-                                            </ul>
+                                        <div class="col-6">
+                                            <div class="item-text">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Softaculous Installation
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        EasyApache
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Exim
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        MySQL Setup
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Best effort support for 3rd Party Applications not listed
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Server Density Installation and Troubleshooting
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Webmail (Horde/Squirrelmail/Roundcube)
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                               </div>
                             </div>
                         </div>
                     </div>
@@ -483,40 +517,40 @@
                                 <h3 class="title">
                                     cPanel
                                 </h3>
-                               <div class="container">
-                                <div class="item-text">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            cPanel Configuration
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            cPanel to cPanel Migration
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            DNS Clustering Configuration
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            Database Restoration ( from local DB or with .sql file)
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            cPanel Installation
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            PHP Modules in EasyApache
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            cPanel Backup Configuration
-                                        </li>
-                                    </ul>
+                                <div class="container">
+                                    <div class="item-text">
+                                        <ul>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                cPanel Configuration
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                cPanel to cPanel Migration
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                DNS Clustering Configuration
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                Database Restoration ( from local DB or with .sql file)
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                cPanel Installation
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                PHP Modules in EasyApache
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                cPanel Backup Configuration
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                               </div>
                             </div>
 
                             <div class="col-md-4 col-12">
@@ -541,40 +575,47 @@
                                 </h3>
                                 <div class="row">
                                     <div class="col-6">
-                                       <div class="container">
-                                        <div class="item-text">
-                                            <ul>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Cron/ Anacron Configuration
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    CentOS
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Fedora
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    RedHat Enterprise Linux
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    File permissions Troubleshooting
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Kernel Upgrades
-                                                </li>
-                                                <li>
-                                                    <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                                    Linux Kernel Modules
-                                                </li>
-                                            </ul>
+                                        <div class="container">
+                                            <div class="item-text">
+                                                <ul>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Cron/ Anacron Configuration
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        CentOS
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Fedora
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        RedHat Enterprise Linux
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        File permissions Troubleshooting
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Kernel Upgrades
+                                                    </li>
+                                                    <li>
+                                                        <i class="fas fa-check-circle fa-lg"
+                                                            style="color: #74C0FC;"></i>
+                                                        Linux Kernel Modules
+                                                    </li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                       </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="item-text">
@@ -616,28 +657,28 @@
                                 <h3 class="title">
                                     Networking & DNS
                                 </h3>
-                              <div class="container">
-                                <div class="item-text">
-                                    <ul>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            Custom Nameserver
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            Spam Filtering (Spam Assassin)
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            DNS Zone File and Record Management
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
-                                            Basic Network Configuration
-                                        </li>
-                                    </ul>
+                                <div class="container">
+                                    <div class="item-text">
+                                        <ul>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                Custom Nameserver
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                Spam Filtering (Spam Assassin)
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                DNS Zone File and Record Management
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-check-circle fa-lg" style="color: #74C0FC;"></i>
+                                                Basic Network Configuration
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
 
                             <div class="col-md-4 col-12">
@@ -844,11 +885,11 @@
                         Dịch vụ quản trị máy chủ giúp bạn tiết kiệm thời gian và nhân sự, hơn 60.000+ khách hàng đã lựa
                         chọn Nhân Hòa.
                     </div>
-                    <div class="link text-center">
+                    {{-- <div class="link text-center">
                         <a href="#tuvanngay" title="Liên hệ tư vấn" class="btn_show_popup">
                             Liên hệ tư vấn
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -859,25 +900,24 @@
                     <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="tab-office">
-                                <div class="title-section text-left">Kết nối với Nhân Hoà</div>
+                                <div class="title-section text-left">Kết nối với Chúng tôi</div>
                                 <div class="tab-content-office">
                                     <ul role="tablist" class="nav nav-tabs">
                                         <li class="nav-item">
-                                            <a aria-selected="true" aria-controls="ha_noi" role="tab"
-                                                href="#ha_noi" data-toggle="tab" id="ha_noi-tab"
-                                                class="nav-link active show">
+                                            <a aria-selected="true" aria-controls="ha_noi" role="tab" href="#ha_noi"
+                                                data-toggle="tab" id="ha_noi-tab" class="nav-link active show">
                                                 Văn phòng Hà Nội
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a aria-selected="false" aria-controls="hcm" role="tab"
-                                                href="#hcm" data-toggle="tab" id="hcm-tab" class="nav-link">
+                                            <a aria-selected="false" aria-controls="hcm" role="tab" href="#hcm"
+                                                data-toggle="tab" id="hcm-tab" class="nav-link">
                                                 Văn phòng TP. HCM
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a aria-selected="false" aria-controls="vinh" role="tab"
-                                                href="#vinh" data-toggle="tab" id="vinh-tab" class="nav-link">
+                                            <a aria-selected="false" aria-controls="vinh" role="tab" href="#vinh"
+                                                data-toggle="tab" id="vinh-tab" class="nav-link">
                                                 Văn phòng Vinh
                                             </a>
                                         </li>
@@ -908,8 +948,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div aria-labelledby="hcm-tab" role="tabpanel" id="hcm"
-                                            class="tab-pane">
+                                        <div aria-labelledby="hcm-tab" role="tabpanel" id="hcm" class="tab-pane">
                                             <div class="info-office">
                                                 <p class="address">
                                                     <img alt="Map"
@@ -933,8 +972,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <div aria-labelledby="vinh-tab" role="tabpanel" id="vinh"
-                                            class="tab-pane">
+                                        <div aria-labelledby="vinh-tab" role="tabpanel" id="vinh" class="tab-pane">
                                             <div class="info-office">
                                                 <p class="address">
                                                     <img alt="Map"
@@ -1037,14 +1075,14 @@
                                 </div>
                                 <ul>
                                     <li>
-                                        <a href="https://nhanhoa.com/tin-tuc/huong-dan-thanh-toan.html"
-                                            target="_blank" title="Hướng dẫn thanh toán"><span>Hướng dẫn thanh
+                                        <a href="https://nhanhoa.com/tin-tuc/huong-dan-thanh-toan.html" target="_blank"
+                                            title="Hướng dẫn thanh toán"><span>Hướng dẫn thanh
                                                 toán</span></a>
                                     </li>
                                     <li>
                                         <a href="https://nhanhoa.com/tin-tuc/huong-dan-thu-tuc-bo-sung-ban-khai-dang-ky-ten-mien-qua-ho-so-dien-tu.html"
-                                            target="_blank"
-                                            title="Hướng dẫn hoàn thiện hồ sơ tên miền .VN"><span>Hướng dẫn hoàn thiện
+                                            target="_blank" title="Hướng dẫn hoàn thiện hồ sơ tên miền .VN"><span>Hướng
+                                                dẫn hoàn thiện
                                                 hồ sơ tên miền .VN</span></a>
                                     </li>
                                     <li>
@@ -1268,8 +1306,7 @@
                                 <a class="group_child" href="https://esoc.vn/" target="_blank">
                                     <img class="logo_name_1"
                                         src="https://nhanhoa.com/manager-service/image/esoc-white.png" />
-                                    <img class="logo_name_2"
-                                        src="https://nhanhoa.com/manager-service/image/esoc.png" />
+                                    <img class="logo_name_2" src="https://nhanhoa.com/manager-service/image/esoc.png" />
                                 </a>
                                 <a class="group_child" href="https://cloud365.vn/" target="_blank">
                                     <img class="logo_name_1"
@@ -1313,6 +1350,7 @@
 
     <script src="{{ asset('client/assets/js/swiper/swiper-bundle.min.js') }}"></script>
 
+    <script src="{{ asset('validator/client.js') }}"></script>
 
     @include('client.include.section-vfone')
     <script>
@@ -1333,6 +1371,16 @@
                     $(".header-top").removeClass("fix");
                 }
             });
+
+             @if (session('success'))
+             toastr.success("{{ session('success') }}", "Thông báo:", {
+                positionClass: "toast-bottom-right",
+                timeOut: 3000,
+                closeButton: true,
+                progressBar: true,
+                preventDuplicates: true,
+            });
+            @endif
         });
 
         const menuButton = document.querySelector(".btn-menu-mobile");
@@ -1357,6 +1405,18 @@
             menu.classList.remove("open");
             backDrop.classList.remove("open");
         });
+
+        function openPopup(cloudId, productName) {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('cloud_id_input').value = cloudId; // Cập nhật giá trị cloud_id
+            document.getElementById('product_name').textContent = productName; // Cập nhật tên sản phẩm
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+
     </script>
 
 </html>

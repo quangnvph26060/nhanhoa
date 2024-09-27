@@ -5,7 +5,7 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="info-left-count">
                         <div class="number">+500.000</div>
-                        <div class="name">Khách hàng đã lựa chọn Nhân Hòa</div>
+                        <div class="name">Khách hàng đã lựa chọn Chúng Tôi</div>
                         <div class="description">Cảm ơn +500.000 khách hàng đã tin tưởng và sử dụng dịch
                             vụ của chúng
                             tôi</div>

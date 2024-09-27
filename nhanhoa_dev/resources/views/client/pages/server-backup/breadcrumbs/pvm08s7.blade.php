@@ -34,150 +34,6 @@
                                 @empty
 
                                 @endforelse
-                                {{-- <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 4</div>
-                                        <div class="gb">150 GB</div>
-                                        <div class="price"><span class="new"><strong> 589.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=2048">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 5</div>
-                                        <div class="gb">200 GB</div>
-                                        <div class="price"><span class="new"><strong> 649.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=2049">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 6</div>
-                                        <div class="gb">300 GB</div>
-                                        <div class="price"><span class="new"><strong> 899.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=2050">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 7</div>
-                                        <div class="gb">400 GB</div>
-                                        <div class="price"><span class="new"><strong> 1.099.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=2977">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 8</div>
-                                        <div class="gb">500 GB</div>
-                                        <div class="price"><span class="new"><strong> 1.299.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=2975">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 9</div>
-                                        <div class="gb">600 GB</div>
-                                        <div class="price"><span class="new"><strong> 1.399.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=3115">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 10</div>
-                                        <div class="gb">800 GB</div>
-                                        <div class="price"><span class="new"><strong> 1.599.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=3117">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="item-price">
-                                        <div class="title">Server Pro 11</div>
-                                        <div class="gb">1000 GB</div>
-                                        <div class="price"><span class="new"><strong> 1.899.000
-                                                    đ</strong>/tháng</span></div>
-                                        <div class="info">
-                                            <p class="item_pricing_desc">Agent(Server/VPS): 1</p>
-                                            <p class="item_pricing_desc">Mã hóa dữ liệu: 256bit-AES</p>
-                                            <p class="item_pricing_desc">Nén dữ liệu: Có</p>
-                                            <p class="item_pricing_desc">Chủ động thiết lập lịch sao lưu: Có</p>
-                                            <p class="item_pricing_desc">Sao lưu tự động: Có</p>
-                                        </div>
-                                        <div class="link-register"><a class="btn-register"
-                                                href="https://nhanhoa.com/?site=cart&act=cart_add_serverpcs&id=3119">ĐĂNG
-                                                KÝ NGAY</a></div>
-                                    </div>
-                                </div> --}}
                             </div><!-- If we need navigation buttons -->
                             <div class="swiper-button-next"><i class="fas fa-angle-right fa-xs"></i></div>
                             <div class="swiper-button-prev"><i class="fas fa-angle-left fa-xs"></i></div>
@@ -197,13 +53,16 @@
                                                 bạn.</p>
                                         </div>
                                     </div>
-                                    <form action="{{ route('page.serverlocation.pay') }}" method="POST">
+                                    <form action="{{ route('page.backup365.pay') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" id="cloud_id_input" name="serverlocation_id">
-                                        <input class="form-control" type="text" placeholder="Họ và tên" name="name">
-                                        <input class="form-control" type="text" placeholder="Số điện thoại"
-                                            name="phone">
-                                        <input class="form-control" type="text" placeholder="Email" name="email">
+                                        <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">
+                                        <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="name_error"></span>
+
+                                        <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" id="phone">
+                                        <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="phone_error"></span>
+
+                                        <input class="form-control" type="text" placeholder="Email" name="email" id="email">
+                                        <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="email_error"></span>
                                         <div class="product-info">
                                             <p>Gói Server Backup365 : </p>
                                             <span class="product-name">
@@ -212,7 +71,7 @@
                                         </div>
 
                                         <div class="submit-content">
-                                            <button class="btn btn-submit">Gửi Đi</button>
+                                            <button type="button" class="btn btn-submit" onclick="submitlienhe(event)">Gửi Đi</button>
                                             <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
                                                 (24/7)
                                             </div>
@@ -235,6 +94,7 @@
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+<script src="{{ asset('validator/client.js') }}"></script>
 
 <script>
     function openPopup(cloudId, productName) {

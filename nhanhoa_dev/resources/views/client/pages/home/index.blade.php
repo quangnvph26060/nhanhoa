@@ -4,7 +4,7 @@
     @include('client.pages.home.breadcrumbs.section-service-nh')
 
     <!-- section-list-service -->
-    @include('client.pages.home.breadcrumbs.section-list-service')
+    {{-- @include('client.pages.home.breadcrumbs.section-list-service') --}}
     <!-- section-list-service -->
 
     <!--section-register-service -->

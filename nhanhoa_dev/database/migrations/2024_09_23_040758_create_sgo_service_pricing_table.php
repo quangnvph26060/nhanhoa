@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             // Cột lưu trữ thông tin về hạng mục thực hiện, giá trị boolean (true/false), mặc định là false
-            $table->boolean('category_implementation')->default(false);
+            $table->text('category_implementation');
 
             // Cột lưu trữ thông tin về tối ưu server, giá trị boolean (true/false), mặc định là false
             $table->boolean('server_optimization')->default(false);
@@ -24,10 +24,10 @@ return new class extends Migration
             $table->boolean('server_security')->default(false);
 
             // Cột lưu trữ thông tin về cấu hình backup, giá trị boolean (true/false), mặc định là false
-            $table->boolean('backup_configuration')->default(false);
+            $table->boolean('c')->default(false);
 
-            // Cột lưu trữ thông tin về chuyển dữ liệu website, giá trị boolean (true/false), mặc định là false
-            $table->boolean('website_data_migration')->default(false);
+            // Cột lưu trữ thông tin về chuyển dữ liệu website,
+            $table->text('website_data_migration');
 
             // Cột lưu trữ thông tin về giám sát cơ bản, giá trị boolean (true/false), mặc định là false
             $table->boolean('basic_monitoring')->default(false);

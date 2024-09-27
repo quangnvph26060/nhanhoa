@@ -19,6 +19,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\ContractEsocController;
 use App\Http\Controllers\Admin\EmailSettingController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\ServicePricingController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Page\AffiliateController;
 use App\Http\Controllers\Page\CloudController as PageCloudController;
@@ -244,6 +245,16 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::post('store', [AdminNewsController::class, 'store'])->name('store');
         Route::get('{slug}.{id}', [AdminNewsController::class, 'show'])->name('show');
         Route::post('{slug}.{id}', [AdminNewsController::class, 'update'])->name('update');
+
+    });
+
+    Route::prefix('service')->name('service.')->group(function () {
+        Route::get('', [ServicePricingController::class, 'index'])->name('index');
+        Route::get('add', [ServicePricingController::class, 'add'])->name('add');
+        Route::post('add', [ServicePricingController::class, 'addsubmit'])->name('addsubmit');
+        Route::get('{id}', [ServicePricingController::class, 'edit'])->name('edit');
+        Route::post('{id}', [ServicePricingController::class, 'editsubmit'])->name('editsubmit');
+        Route::post('delete/{id}', [ServicePricingController::class, 'delete'])->name('delete');
     });
 });
 
@@ -265,16 +276,17 @@ Route::name('page.')->group(function () {
         Route::get('may-chu-cloud-backup', [PageCloudController::class, 'backup'])->name('cloud-backup');
         Route::get('may-chu-cloud-storage', [PageCloudController::class, 'storage'])->name('cloud-storage');
         Route::get('vps-cloud-quoc-te', [PageCloudController::class, 'international'])->name('cloud-international');
-        Route::Post('cloud/pay', [PageCloudController::class, 'cloudpay'])->name('cloud.pay');
-        Route::Post('cloudbackup/pay', [PageCloudController::class, 'cloudbackuppay'])->name('cloudbackup.pay');
-        Route::Post('server_-backup365/pay', [PageServerController::class, 'payBackup365'])->name('backup365.pay');
+        Route::post('cloud/pay', [PageCloudController::class, 'cloudpay'])->name('cloud.pay');
+        Route::post('cloudbackup/pay', [PageCloudController::class, 'cloudbackuppay'])->name('cloudbackup.pay');
+        Route::post('server_-backup365/pay', [PageServerController::class, 'payBackup365'])->name('backup365.pay');
         // Route::get('vps-cloud-quoc-te', [PageCloudController::class, 'international'])->name('cloud-international');
         Route::get('may-chu', [PageServerController::class, 'dedicatedServer'])->name('dedicated-server');
         Route::get('cho-dat-may-chu-colo', [PageServerController::class, 'serverLocation'])->name('server-location');
         Route::get('backup365', [PageServerController::class, 'serverBackup'])->name('server-backup');
         Route::get('dich-vu-quan-ly-may-chu', [PageServerController::class, 'serverAdministration'])->name('server-administration');
-        Route::Post('pay', [PageServerController::class, 'pay'])->name('server.pay');
-        Route::Post('server-location/pay', [PageServerController::class, 'paylocation'])->name('serverlocation.pay');
+        Route::post('dich-vu-quan-ly-may-chu', [PageServerController::class, 'PayserverAdministration'])->name('pay-server-administration');
+        Route::post('pay', [PageServerController::class, 'pay'])->name('server.pay');
+        Route::post('server-location/pay', [PageServerController::class, 'paylocation'])->name('serverlocation.pay');
     });
 
     Route::get('email/email-server', [EmailController::class, 'emailServer'])->name('email-server');

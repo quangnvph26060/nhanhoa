@@ -12,6 +12,7 @@ class ServicePricing extends Model
 
     // Các thuộc tính có thể được gán hàng loạt
     protected $fillable = [
+        'name',
         'category_implementation',
         'server_optimization',
         'server_security',

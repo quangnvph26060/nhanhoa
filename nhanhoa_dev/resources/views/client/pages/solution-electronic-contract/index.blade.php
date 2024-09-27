@@ -1411,7 +1411,7 @@
             <div class="col-lg-8 col-md-8 col-12">
                 <div class="tab-office">
                     <div class="title-section text-left">
-                        Kết nối với Nhân Hoà
+                        Kết nối với Chúng Tôi
                     </div>
                     <div class="tab-content-office">
                         <ul class="nav nav-tabs" id="nav-tab" role="tablist">

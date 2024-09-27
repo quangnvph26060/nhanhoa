@@ -177,7 +177,12 @@ function generateErrorMessage(code, values = []) {
          E0078: 'Chọn UPS/Máy điện dự phòng.',
          E0079: 'Chọn điều hòa nhiệt độ.',
          E0080: 'Nhập ổ cắm mạng.',
-         E0081: 'Nhập địa chỉ IP.'
+         E0081: 'Nhập địa chỉ IP.',
+         // service
+         E0081: 'Nhập tên gói.',
+         E0082: 'Nhập nạng mục thực hiện.',
+         E0083: 'Nhập chuyển dữ liệu website.',
+         E0084: 'Nhập giá.'
 
     };
     const errorMessage = errorMessages[code];

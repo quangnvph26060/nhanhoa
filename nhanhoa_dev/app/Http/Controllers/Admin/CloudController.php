@@ -19,14 +19,15 @@ class CloudController extends Controller
     }
 
     public function index(){
+        $title = 'Cloud Server';
         $clouds = $this->cloudService->getcloudAll();
-        // dd($clouds[0]->promotion[0]->promotion);
-        return view('admin.cloud.index', compact('clouds'));
+        return view('admin.cloud.index', compact('clouds', 'title'));
     }
 
     public function addform(){
+        $title = 'Thêm Cloud Server';
         $promotion = $this->promotionService->getPromotionAll();
-        return view('admin.cloud.add', compact('promotion'));
+        return view('admin.cloud.add', compact('promotion', 'title'));
     }
 
     public function addsubmit(Request $request){
@@ -42,10 +43,11 @@ class CloudController extends Controller
     }
 
     public function editform($id){
+        $title = 'Thay đổi Cloud Server';
         $cloud = Cloud::find($id);
         $promotion = $this->promotionService->getPromotionAll();
         $promotionselect = CloudPromotion::where('cloud_id', $id)->pluck('promotion_id')->toArray();
-        return view('admin.cloud.edit', compact('cloud', 'promotion', 'promotionselect'));
+        return view('admin.cloud.edit', compact('cloud', 'promotion', 'promotionselect', 'title'));
     }
 
     public function editsubmit($id, Request $request){

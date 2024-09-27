@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="tab-office">
-                        <div class="title-section text-left">Kết nối với Nhân Hoà </div>
+                        <div class="title-section text-left">Kết nối với Chúng tôi </div>
                         <div class="tab-content-office">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item"><a class="nav-link active" id="ha_noi-tab"

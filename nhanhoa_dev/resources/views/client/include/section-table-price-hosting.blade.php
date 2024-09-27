@@ -146,13 +146,17 @@
                                                     với bạn.</p>
                                             </div>
                                         </div>
-                                        <form action="{{ route('page.hosting-pay') }}" method="POST">
+                                        <form action="{{ route('page.hosting-pay') }}" method="POST" id="lienhe">
                                             @csrf
                                             <input type="hidden" id="cloud_id_input" name="hostingid">
-                                            <input class="form-control" type="text" placeholder="Họ và tên" name="name">
-                                            <input class="form-control" type="text" placeholder="Số điện thoại"
-                                                name="phone">
-                                            <input class="form-control" type="text" placeholder="Email" name="email">
+                                            <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">
+                                            <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="name_error"></span>
+
+                                            <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" id="phone">
+                                            <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="phone_error"></span>
+
+                                            <input class="form-control" type="text" placeholder="Email" name="email" id="email">
+                                            <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="email_error"></span>
                                             <div class="product-info">
                                                 <p>Gói Hosting : </p>
                                                 <span class="product-name" >
@@ -162,7 +166,7 @@
 
 
                                             <div class="submit-content">
-                                                <button class="btn btn-submit">Gửi Đi</button>
+                                                <button type="button" class="btn btn-submit" onclick="submitlienhe(event)">Gửi Đi</button>
                                                 <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span> (24/7)
                                                 </div>
                                             </div>
@@ -194,7 +198,7 @@
 
 <!-- Toastr JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+<script src="{{ asset('validator/client.js') }}"></script>
 
 <script>
 function openPopup(cloudId, productName) {

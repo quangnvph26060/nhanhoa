@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Mail\PricingPayNotification;
+use App\Mail\ServerPayEmail;
 use App\Mail\ServicePricingPayEmail;
 use App\Models\ServicePricing;
 use App\Models\ServicePricingPay;
@@ -15,11 +17,13 @@ use Illuminate\Support\Facades\Storage;
 class ServicePricingService
 {
     protected $servicePricing;
+    protected $clientService;
 
 
-    public function __construct(ServicePricing $servicePricing)
+    public function __construct(ServicePricing $servicePricing, ClientService $clientService)
     {
         $this->servicePricing = $servicePricing;
+        $this->clientService = $clientService;
     }
 
     public function getServicePricingAll()
@@ -50,15 +54,17 @@ class ServicePricingService
             DB::beginTransaction();
 
             $datanew = [
-                'category_implementation' => $data['category_implementation'] ?? null,
-                'server_optimization' => $data['server_optimization'] ?? null,
-                'server_security' => $data['server_security'] ?? null,
-                'backup_configuration' => $data['backup_configuration'] ?? null,
-                'website_data_migration' => $data['website_data_migration'] ?? null,
-                'basic_monitoring' => $data['basic_monitoring'] ?? null,
-                'advanced_monitoring' => $data['advanced_monitoring'] ?? null,
-                'incident_reporting' => $data['incident_reporting'] ?? null,
-                'periodic_reporting_by_email' => $data['periodic_reporting_by_email'] ?? null,
+                'name' => $data['name'],
+                'category_implementation' => $data['category_implementation'] ?? '',
+                'server_optimization' => $data['server_optimization'] ?? false,
+                'server_security' => $data['server_security'] ?? false,
+                'backup_configuration' => $data['backup_configuration'] ?? false,
+                'website_data_migration' => $data['website_data_migration'] ?? false,
+                'basic_monitoring' => $data['basic_monitoring'] ?? false,
+                'advanced_monitoring' => $data['advanced_monitoring'] ?? false,
+                'incident_reporting' => $data['incident_reporting'] ?? false,
+                'periodic_reporting_by_email' => $data['periodic_reporting_by_email'] ?? false,
+                'price' => $data['price'],
             ];
 
             $ServicePricing = $this->servicePricing->create($datanew);
@@ -75,20 +81,23 @@ class ServicePricingService
     public function updateServicePricing(array $data, $id): ServicePricing
     {
         try {
+            //  dd($data);
             DB::beginTransaction();
 
             $ServicePricingbyId = $this->servicePricing->find($id);
 
             $datanew = [
-                'category_implementation' => $data['category_implementation'] ?? null,
-                'server_optimization' => $data['server_optimization'] ?? null,
-                'server_security' => $data['server_security'] ?? null,
-                'backup_configuration' => $data['backup_configuration'] ?? null,
-                'website_data_migration' => $data['website_data_migration'] ?? null,
-                'basic_monitoring' => $data['basic_monitoring'] ?? null,
-                'advanced_monitoring' => $data['advanced_monitoring'] ?? null,
-                'incident_reporting' => $data['incident_reporting'] ?? null,
-                'periodic_reporting_by_email' => $data['periodic_reporting_by_email'] ?? null,
+                'name' => $data['name'],
+                'category_implementation' => $data['category_implementation'] ?? '',
+                'server_optimization' => $data['server_optimization'] ?? false,
+                'server_security' => $data['server_security'] ?? false,
+                'backup_configuration' => $data['backup_configuration'] ?? false,
+                'website_data_migration' => $data['website_data_migration'] ?? false,
+                'basic_monitoring' => $data['basic_monitoring'] ?? false,
+                'advanced_monitoring' => $data['advanced_monitoring'] ?? false,
+                'incident_reporting' => $data['incident_reporting'] ?? false,
+                'periodic_reporting_by_email' => $data['periodic_reporting_by_email'] ?? false,
+                'price' => $data['price'],
             ];
 
             $ServicePricingbyId->update($datanew);
@@ -116,38 +125,32 @@ class ServicePricingService
         }
     }
 
-    // public function payServicePricing(array $data)
-    // {
-    //     try {
-    //         DB::beginTransaction();
-
-
-    //         $ServicePricing = $this->servicePricing->find($data['ServicePricing_id']);
-
-    //         $dataemail = [
-    //             'name' => $data['name'],
-    //             'phone' => $data['phone'],
-    //             'email' => $data['email'],
-    //             'productname' => $ServicePricing->name,
-    //             'package_name' => 'ServicePricing Backup - ' . $ServicePricing->name,
-    //             'title' => 'ServicePricing Backup'
-    //         ];
-
-    //         $this->clientService->createClient($dataemail);
-
-    //         Mail::to($data['email'])->send(new ServicePricingPayEmail($dataemail));
-
-    //         $emailTo = env('MAIL_USERNAME');
-    //         Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
-    //             $message->to($emailTo)
-    //                 ->subject('Đăng ký tư vấn');
-    //         });
-    //         DB::commit();
-    //         return $ServicePricingPay;
-    //     } catch (Exception $e) {
-    //         DB::rollback();
-    //         Log::error('Failed to pay for ServicePricing: ' . $e->getMessage());
-    //         throw new Exception('Failed to pay for ServicePricing');
-    //     }
-    // }
+    public function PayService(array $data)
+    {
+        try {
+            DB::beginTransaction();
+            DB::commit();
+            $service = $this->servicePricing->find($data['service_id']);
+            $dataemail = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'productname' => $service->name,
+                'package_name' => 'Dịch vụ quản trị máy chủ - ' . $service->name,
+                'title' => 'Dịch vụ quản trị máy chủ'
+            ];
+            $client = $this->clientService->createClient($dataemail);
+            Mail::to($data['email'])->send(new PricingPayNotification($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
+            return $client;
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::error('Failed to create server: ' . $e->getMessage());
+            throw new Exception('Failed to create server');
+        }
+    }
 }

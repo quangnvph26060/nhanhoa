@@ -12,7 +12,8 @@ class ClientController extends Controller
     //
     public function index()
     {
-        return view('admin.client.index');
+        $title = 'Danh sách khách hàng';
+        return view('admin.client.index', compact('title'));
     }
     public function listclient()
     {

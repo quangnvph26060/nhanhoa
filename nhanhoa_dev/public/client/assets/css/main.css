@@ -45655,7 +45655,7 @@ button.toast-close-button {
 }
 
 .content-info-service .info-top {
-    border-bottom: 2px solid var(--color-highlight);
+    border-bottom: 2px solid #1150a2;
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
@@ -46175,7 +46175,7 @@ button.toast-close-button {
 
 :root {
     --color-highlight: #058dc2;
-    --color-main: #4abab9;
+    --color-main: #1150a2;
     --color-text: #00172e;
     --color-black: #252525;
     --color-main-02: #1d2b4f;
