@@ -382,7 +382,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-5 col-md-5 col-12">
+                        {{-- <div class="col-lg-5 col-md-5 col-12">
                             <div class="item-logo-bmtt float-right">
                                 <div class="logo-bottom logo-ican">
                                     <a href="javascript:;">
@@ -411,7 +411,7 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

@@ -25,9 +25,9 @@ class AuthController extends Controller
                 $user = Auth::user();
                 // dd($user);
                 if ($user->is_active == 1) {
-                    if ($user->role_id == 1) {
-                        return redirect()->route('admin.dashboard')->with('successlogin', 'Chào mừng trở lại !, Admin!');
-                    } elseif ($user->role_id == 2) {
+                    if ($user->role_id == 1 || $user->role_id == 2) {
+                        return redirect()->route('admin.dashboard')->with('successlogin', 'Chào mừng trở lại !');
+                    } elseif ($user->role_id == 3) {
                         return redirect()->route('page.home');
                     }
                 }else{

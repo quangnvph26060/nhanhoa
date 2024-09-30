@@ -333,7 +333,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-12">
+            {{-- <div class="col-md-6 col-12">
                 <div nh-block="1zuy76r" nh-block-cache="true" class="">
                     <div class="item-logo-bmtt float-right">
                         <div class="logo-bottom"><a href="javascript:;"><img nh-lazy="image"
@@ -362,7 +362,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>

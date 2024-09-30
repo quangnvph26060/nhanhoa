@@ -13,9 +13,9 @@
                             </a>
                         </div>
                         <div class="info">
-                            <p>
+                            {{-- <p>
                                 Copyright © 2002 – 2024 Nhan Hoa Software Company. All Rights Reserved.
-                            </p>
+                            </p> --}}
                             <p class="d-none d-md-block">
                                {{ $config->store_name }}. Đại diện: {{ $config->receiver }}
                             </p>
@@ -49,7 +49,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-5 col-12">
+                {{-- <div class="col-lg-5 col-md-5 col-12">
                     <div class="nhanhoa_group">
                         <a class="group_name group-logo-home-nh" href="javascript:void(0);">
                             <img class="logo_name_1 nh-lazyload ls-is-cached lazyloaded"
@@ -117,7 +117,7 @@
                                 data-src="https://nhanhoa.com/templates/images/v2/webp/footer-logo/umail.webp">
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

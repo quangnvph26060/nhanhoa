@@ -1268,7 +1268,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-5 col-md-5 col-12">
+                        {{-- <div class="col-lg-5 col-md-5 col-12">
                             <div class="nhanhoa_group">
                                 <a class="group_name group-logo-home-nh" href="javascript:void(0);">
                                     <img class="logo_name_1"
@@ -1324,7 +1324,7 @@
                                         src="https://nhanhoa.com/manager-service/image/umail.png" />
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

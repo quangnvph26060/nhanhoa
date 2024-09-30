@@ -8,8 +8,8 @@
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
             <a href="{{ route('admin.dashboard') }}" class="logo">
-                <img src="{{ asset('assets/img/kaiadmin/logo_light.svg') }}" alt="navbar brand" class="navbar-brand"
-                    height="20" />
+                <img src="{{ asset($config->logo) }}" alt="navbar brand" class="navbar-brand"
+                    height="50" />
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -28,12 +28,15 @@
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
         <div class="sidebar-content">
             <ul class="nav nav-secondary">
+
                 <li class="nav-item active">
                     <a href="{{ route('admin.dashboard') }}" class="collapsed">
                         <i class="fas fa-home"></i>
                         <p>Dashboard</p>
+
                     </a>
                 </li>
+                @if(auth()->user()->role_id == 1)
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#cauhinh">
                         <i class="fas fa-users"></i>
@@ -77,6 +80,8 @@
                         </ul>
                     </div>
                 </li>
+                @endif
+
                 <li class="nav-item">
                     <a href="{{ route('admin.client.index') }}">
                         <i class="fas fa-users"></i>
@@ -85,9 +90,31 @@
                     </a>
 
                 </li>
+                @if(auth()->user()->role_id == 1)
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#user">
+                        <i class="fas fa-user"></i>
+                        <p>Tài khoản</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="user">
+                        <ul class="nav nav-collapse" style="margin-bottom: 0px">
+                            <li>
+                                <a href="{{ route('admin.user.add') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.user.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#partner">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-handshake"></i>
                         <p>Đối tác</p>
                         <span class="caret"></span>
                     </a>
@@ -377,6 +404,28 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#news">
+                        <i class="fas fa-newspaper"></i>
+                        <p>Tin tức</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="news">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.new.add') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.new.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                @endif
 
                 {{-- <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#giaiphap">
@@ -513,27 +562,7 @@
                         </ul>
                     </div>
                 </li> --}}
-                <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#news">
-                        <i class="fas fa-tags"></i> <!-- Icon for Promotion -->
-                        <p>Tin tức</p>
-                        <span class="caret"></span>
-                    </a>
-                    <div class="collapse" id="news">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="{{ route('admin.new.add') }}">
-                                    <span class="sub-item">Thêm</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.new.index') }}">
-                                    <span class="sub-item">Danh sách</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+
             </ul>
         </div>
     </div>

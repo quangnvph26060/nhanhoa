@@ -187,7 +187,7 @@
                 <div class="col-lg-12">
                     <div class="item-menu-footer">
 
-                        <div class="footer-inline-icon">
+                        {{-- <div class="footer-inline-icon">
                             <span>Kết nối mạng xã hội cùng Chúng Tôi</span>
                             <ul class="list-img-fanpage">
                                 <li>
@@ -247,7 +247,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

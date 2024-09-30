@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\EmailSettingController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\ServicePricingController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Page\AffiliateController;
 use App\Http\Controllers\Page\CloudController as PageCloudController;
@@ -70,9 +71,22 @@ Route::get('auth/google', [LoginController::class, 'redirectToGoogle'])->name('a
 Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
 
-Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['checkLogin', 'checkRole:1,2'])->prefix('admin')->name('admin.')->group(function () {
+
+    Route::prefix('user')->name('user.')->group(function () {
+        Route::get('', [UserController::class, 'index'])->name('index');
+        Route::get('add', [UserController::class, 'add'])->name('add');
+        Route::post('add', [UserController::class, 'store'])->name('store');
+        Route::get('edit/{id}', [UserController::class, 'edit'])->name('edit');
+        Route::post('edit/{id}', [UserController::class, 'update'])->name('update');
+        Route::post('delete/{id}', [UserController::class, 'delete'])->name('delete');
+
+        Route::post('update-user', [UserController::class, 'updateuser'])->name('updateuser');
+    });
+
     Route::prefix('customer')->name('customer.')->group(function () {
     });
+
     Route::prefix('solution')->name('solution.')->group(function () {
         Route::get('', [AdminSolutionController::class, 'index'])->name('index');
         Route::get('search', [AdminSolutionController::class, 'search'])->name('search');

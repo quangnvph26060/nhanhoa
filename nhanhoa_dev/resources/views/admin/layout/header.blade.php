@@ -2,8 +2,8 @@
     <div class="main-header-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="index.html" class="logo">
-                <img src="{{ asset('assets/img/kaiadmin/logo_light.svg') }}" alt="navbar brand" class="navbar-brand" height="20" />
+            <a href="{{ route('admin.dashboard') }}" class="logo">
+                <img src="{{ asset($config->logo) }}" alt="navbar brand" class="navbar-brand" height="20" />
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -19,6 +19,7 @@
         </div>
         <!-- End Logo Header -->
     </div>
+
     <!-- Navbar Header -->
     <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
         <div class="container-fluid">
@@ -32,9 +33,15 @@
                     <input type="text" placeholder="Search ..." class="form-control" />
                 </div>
             </nav> --}}
-
+            <div style="flex: 2; align-items: baseline; display: flex; margin-right: 20px">
+                <marquee id="demoMarquee" scrollamount="7" style="color: red">
+                    <span style="margin-right: 300px">{{ $config->store_name }}</span>
+                    <span>{{ $config->store_name }}</span>
+                </marquee>
+            </div>
             <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
-                <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+
+                {{-- <li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                         aria-expanded="false" aria-haspopup="true">
                         <i class="fa fa-search"></i>
@@ -46,8 +53,8 @@
                             </div>
                         </form>
                     </ul>
-                </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
+                </li> --}}
+                {{-- <li class="nav-item topbar-icon dropdown hidden-caret">
                     <a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-envelope"></i>
@@ -243,12 +250,13 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
 
                 <li class="nav-item topbar-user dropdown hidden-caret" style="padding: 0px 20px !important">
                     <a class="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                         <div class="avatar-sm">
-                            <img src="{{ asset('assets/img/profile.jpg') }}" alt="..." class="avatar-img rounded-circle" />
+                            <img src="{{ isset(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('assets/img/profile.jpg') }}"
+                                alt="..." class="avatar-img rounded-circle" />
                         </div>
                         <span class="profile-username">
                             <span class="op-7">Hi,</span>
@@ -260,23 +268,20 @@
                             <li>
                                 <div class="user-box">
                                     <div class="avatar-lg">
-                                        <img src="{{ asset('assets/img/profile.jpg') }}"  alt="image profile"
-                                            class="avatar-img rounded" />
+                                        <img src="{{Auth::user()->avatar ? asset(Auth::user()->avatar) : asset('assets/img/profile.jpg') }}"
+                                            alt="image profile" class="avatar-img rounded" />
                                     </div>
                                     <div class="u-text">
                                         <h4>{{ Auth::user()->name }}</h4>
                                         <p class="text-muted">{{ Auth::user()->email }}</p>
-                                        <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                        <a href="#" class="btn btn-xs btn-secondary btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#viewProfileModal">View Profile</a>
+
+                                        <!-- Modal -->
                                     </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Profile</a>
-                                <a class="dropdown-item" href="#">My Balance</a>
-                                <a class="dropdown-item" href="#">Inbox</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Account Setting</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -287,11 +292,127 @@
                                     @csrf
                                 </form>
                             </li>
+
                         </div>
                     </ul>
                 </li>
             </ul>
+
         </div>
     </nav>
+
     <!-- End Navbar -->
 </div>
+
+<div class="modal fade" id="viewProfileModal" tabindex="-1" aria-labelledby="viewProfileLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewProfileLabel">Thông tịn tài khoản</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" enctype="multipart/form-data"  action="{{ route('admin.user.updateuser') }}">
+                    @csrf
+                    <div class="row">
+                        <div class="col-lg-6 add_product">
+                            <div>
+                                <label for="nameInput" class="form-label">Họ tên</label>
+                                <input type="text" class="form-control" name="name" id="name"
+                                    value="{{ Auth::user()->name }}" required>
+                                <div class="col-lg-9">
+                                    <span class="invalid-feedback d-block" style="font-weight: 500"
+                                        id="name_error"></span>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}"
+                                    required id="email">
+                                <div class="col-lg-9">
+                                    <span class="invalid-feedback d-block" style="font-weight: 500"
+                                        id="email_error"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 add_product">
+                            <div>
+                                <label for="phone" class="form-label">Điện thoại</label>
+                                <input type="text" class="form-control" name="phone" value="{{ Auth::user()->phone }}"
+                                    required id="phone">
+                                <div class="col-lg-9">
+                                    <span class="invalid-feedback d-block" style="font-weight: 500"
+                                        id="phone_error"></span>
+                                </div>
+                            </div>
+
+
+
+                            <div>
+                                <label for="address" class="form-label">Địa chỉ</label>
+                                <input type="text" class="form-control" name="address"
+                                    value="{{ Auth::user()->address }}" id="address" required>
+                                <div class="col-lg-9">
+                                    <span class="invalid-feedback d-block" style="font-weight: 500"
+                                        id="address_error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 add_product">
+                            <div class="form-group">
+                                <label for="avatar" class="form-label">Avatar</label>
+                                <div class="custom-file">
+                                    <input id="avatar" class="custom-file-input @error('avatar') is-invalid @enderror"
+                                        type="file" name="avatar" accept="image/*">
+                                    <label class="custom-file-label" for="avatar">Chọn
+                                        avatar</label>
+                                </div>
+                                @error('avatar')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <img id="profileImageavatar" style="width:100px; height:100px"
+                                    src="{{ isset(Auth::user()->avatar) && !empty(Auth::user()->avatar) ? asset(Auth::user()->avatar) : asset('images/avatar2.jpg') }}"
+                                    alt="image avatar" class="avatar">
+                            </div>
+                        </div>
+
+
+                        <div class="modal-footer m-2" style="display: flex; justify-content: center">
+                            <button type="submit" class="btn btn-primary w-md">Xác
+                                nhận</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    document.getElementById('avatar').addEventListener('change', function(event) {
+                    const input = event.target;
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        document.getElementById('profileImageavatar').src = e.target.result;
+                    };
+
+                    if (input.files && input.files[0]) {
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                });
+</script>
+
+<style>
+     .form-label {
+        font-weight: 500;
+    }
+
+</style>
