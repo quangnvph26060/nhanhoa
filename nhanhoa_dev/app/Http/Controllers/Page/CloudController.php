@@ -7,7 +7,7 @@ use App\Models\CustomerReview;
 use App\Models\Footer;
 use App\Services\ClientService;
 use App\Services\CloudBackupService;
-use App\Services\cloudService;
+use App\Services\CloudService;
 use Illuminate\Http\Request;
 
 class CloudController extends Controller

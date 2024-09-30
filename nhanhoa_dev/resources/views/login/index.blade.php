@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
 
-    <link rel="icon" href="{{ asset('assets/img/kaiadmin/favicon.ico') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset($config->icon) }}" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('login/fonts/icomoon/style.css') }}">
 
     <link rel="stylesheet" href="{{ asset('login/css/owl.carousel.min.css') }}">
@@ -43,7 +43,7 @@
                         <!-- Login Form -->
                         <div id="loginForm" class="form-block mx-auto active">
                             <div class="text-center mb-5">
-                                <h3 class="text-uppercase">Login to <strong>Colorlib</strong></h3>
+                                <h3 class="text-uppercase">Đăng nhập <strong> Admin</strong></h3>
                             </div>
                             <form method="post" action="{{ route('login') }}">
                                 @csrf
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group last mb-3">
                                     <label for="loginPassword">Password</label>
-                                    <input type="password" class="form-control" placeholder="Your Password" name="password" id="loginPassword">
+                                    <input type="password" class="form-control" placeholder="Mật khẩu" name="password" id="loginPassword">
                                 </div>
 
                                 <div class="d-sm-flex mb-5 align-items-center">
@@ -65,7 +65,7 @@
                                     {{-- <span class="ml-auto"><a href="#" onclick="showForgotPasswordForm(event);" class="forgot-pass">Forgot Password</a></span> --}}
                                 </div>
 
-                                <input type="submit" value="Log In" class="btn btn-block py-2 btn-primary">
+                                <input type="submit" value="Xác nhận" class="btn btn-block py-2 btn-primary">
 
                                 {{-- <span class="text-center my-3 d-block">or</span>
 
