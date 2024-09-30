@@ -23,7 +23,7 @@
                         <h3 class="mb5 img_center">Ưu đãi mới nhất</h3>
                         <p class=" mb30" style="text-align:justify;">Trang thông tin mã giảm giá Coupon, các ưu đãi Domain
                             Tên Miền, Cloud Hosting, Cloud Vps, Cloud Server, Umail, Tổng Đài Điện Thoại Vfone, Hóa Đơn Điện
-                            Tử Mới Nhất tại Nhân Hòa Software Company. Tìm tất cả các dịch vụ tốt nhất của chúng tôi tại
+                            Tử Mới Nhất tại Chúng Tôi Software Company. Tìm tất cả các dịch vụ tốt nhất của chúng tôi tại
                             đây!</p>
                     </div>
                 </div>
@@ -105,21 +105,21 @@
                         <div class="img">
                             <a href="https://nhanhoa.com/nhan-hoa-app.html">
                                 <img src="https://uploads.nhanhoa.com/logo/1715759843_banner_app_nh_640x360.png"
-                                    alt="Khuyến mãi Nhân Hòa App">
+                                    alt="Khuyến mãi Chúng Tôi App">
                             </a>
                         </div>
                         <div class="inner-content">
                             <div class="date">
-                                <p class="pro">Nhiều ưu đãi hấp dẫn chỉ có trên Nhân Hòa App - Cài đặt ngay!</p>
+                                <p class="pro">Nhiều ưu đãi hấp dẫn chỉ có trên Chúng Tôi App - Cài đặt ngay!</p>
                             </div>
                             <div class="name">
-                                <a href="https://nhanhoa.com/nhan-hoa-app.html" title="Khuyến mãi Nhân Hòa App">
-                                    Khuyến mãi Nhân Hòa App
+                                <a href="https://nhanhoa.com/nhan-hoa-app.html" title="Khuyến mãi Chúng Tôi App">
+                                    Khuyến mãi Chúng Tôi App
                                 </a>
                             </div>
                             <div class="btn_view">
                                 <a href="https://nhanhoa.com/nhan-hoa-app.html" class=""
-                                    title="Khuyến mãi Nhân Hòa App">Xem chi tiết</a>
+                                    title="Khuyến mãi Chúng Tôi App">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>

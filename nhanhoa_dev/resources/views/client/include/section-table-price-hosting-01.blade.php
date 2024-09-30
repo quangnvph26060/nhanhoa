@@ -184,11 +184,11 @@
 
                             </div>
                         </div>
-                        <div class="link-dktv-price">
+                        {{-- <div class="link-dktv-price">
                             <a href="#tuvanngay" class="btn_show_popup">
                                 Đăng ký tư vấn
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="tab-pane" id="geotrust" role="tabpanel" aria-labelledby="geotrust-tab">
@@ -880,11 +880,11 @@
 
                             </div>
                         </div>
-                        <div class="link-dktv-price">
+                        {{-- <div class="link-dktv-price">
                             <a href="#tuvanngay">
                                 Đăng ký tư vấn
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="tab-pane" id="digicert" role="tabpanel" aria-labelledby="digicert-tab">
@@ -1660,11 +1660,11 @@
 
                             </div>
                         </div>
-                        <div class="link-dktv-price">
+                        {{-- <div class="link-dktv-price">
                             <a href="#tuvanngay" class="btn_show_popup">
                                 Đăng ký tư vấn
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

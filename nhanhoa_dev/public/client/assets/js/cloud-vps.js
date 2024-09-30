@@ -33766,7 +33766,7 @@ function check_domain_transfer() {
                                 domain +
                                 " </strong></p><span>Không thuộc quản lý của Nhanhoa.com. <a href='" +
                                 site_root_domain +
-                                "/?site=domain&view=info_transfer'>Click vào đây</a> để chuyển tên miền về Nhân Hòa.</span>"
+                                "/?site=domain&view=info_transfer'>Click vào đây</a> để chuyển tên miền về Chúng Tôi.</span>"
                         );
                     }
                 },

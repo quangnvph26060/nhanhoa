@@ -17,7 +17,7 @@
                                 <div class="item-online-support">
                                     <div class="title-section text-left">Đăng ký nhận tư vấn dịch vụ</div>
                                     <div class="description">Bạn đang quan tâm đến Backup365? Bạn vui lòng để lại
-                                        thông tin để Nhân Hòa tư vấn cho bạn.</div>
+                                        thông tin để Chúng Tôi tư vấn cho bạn.</div>
                                     <div class="form-support">
                                         <form nh-form-contact="3HZO5VFWIK" action="/contact/send-info"
                                             method="POST" autocomplete="off">

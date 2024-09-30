@@ -2,7 +2,7 @@
     <div class="container">
         <div class="content-table-price">
             <h2 class="title-section">
-                Bảng Giá Dịch Vụ Thuê Server - Máy Chủ Riêng Nhân Hòa
+                Bảng Giá Dịch Vụ Thuê Server - Máy Chủ Riêng Chúng Tôi
             </h2>
             <div class="slogan-section text-center">
 
@@ -129,11 +129,11 @@
 
                     </div>
                 </div>
-                <div class="link-dktv-price cta-tu-van">
+                {{-- <div class="link-dktv-price cta-tu-van">
                     <a href="#tuvanngay" class="btn_show_popup">
                         Đăng ký tư vấn
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

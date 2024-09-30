@@ -2,7 +2,7 @@
     <div class="container">
         <div class="item-list-footer item-list-footer-one d-none d-md-block d-lg-block">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-6">
+                {{-- <div class="col-lg-3 col-md-4 col-6">
                     <div class="item-menu-footer">
                         <div class="title-footer">
                             Công ty
@@ -13,11 +13,11 @@
                                     Giới thiệu về Công ty
                                 </a>
                             </li>
-                            <!--li>
-                        <a href="https://nhanhoa.com/tuyen-dung.html">
-                            Tuyển dụng
-                        </a>
-                    </li -->
+                           <li>
+                                <a href="https://nhanhoa.com/tuyen-dung.html">
+                                    Tuyển dụng
+                                </a>
+                            </li>
                             <li>
                                 <a href="https://nhanhoa.com/lien-he.html">
                                     Liên hệ
@@ -55,18 +55,24 @@
 
                         </ul>
                     </div>
-                </div>
+                </div> --}}
+                @forelse ($footers as $item )
                 <div class="col-lg-3 col-md-4 col-6">
                     <div class="item-menu-footer">
                         <div class="title-footer">
-                            Trợ giúp
+                            {{ $item->title }}
                         </div>
                         <ul>
+                            @forelse ($item->new as $new )
+
                             <li>
-                                <a href="https://nhanhoa.com/tin-tuc/huong-dan-thanh-toan.html"
-                                    title=""><span>Hướng dẫn thanh toán</span></a>
+                                <a  href="{{ route('page.news-detail', ['slug'=>$new->new->slug, 'id'=>$new->new->id]) }}"
+                                    title=""><span> {{ $new->new->title }}</span></a>
                             </li>
-                            <li>
+                            @empty
+
+                            @endforelse
+                            {{-- <li>
                                 <a href="https://nhanhoa.com/tin-tuc/huong-dan-thu-tuc-bo-sung-ban-khai-dang-ky-ten-mien-qua-ho-so-dien-tu.html"
                                     title=""><span>Hướng dẫn hoàn thiện hồ sơ tên miền
                                         .VN</span></a>
@@ -74,7 +80,7 @@
                             <li>
                                 <a href="https://nhanhoa.com/tin-tuc/quy-trinh-giai-quyet-khieu-nai-khach-hang.html"
                                     title=""><span>Quy trình giải quyết khiếu nại</span></a>
-                            </li>
+                            </li> --}}
                             <!--li>
                         <a href="https://nhanhoa.com/trang/download-van-ban.html" title=""><span>Download văn bản</span></a>
                     </li -->
@@ -85,7 +91,11 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-4 col-6">
+                @empty
+
+                @endforelse
+
+                {{-- <div class="col-lg-3 col-md-4 col-6">
                     <div class="item-menu-footer">
                         <div class="title-footer">
                             Quy định &amp; Chính sách
@@ -132,7 +142,7 @@
                         <ul class="logo-app-footer">
                             <li>
                                 <a target="_blank" href="https://nhanhoa.com/nhan-hoa-app.html">
-                                    Giới thiệu Nhân Hòa App
+                                    Giới thiệu Chúng Tôi App
                                 </a>
                             </li>
                             <li>
@@ -168,7 +178,7 @@
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="item-list-footer mb-0">
@@ -178,7 +188,7 @@
                     <div class="item-menu-footer">
 
                         <div class="footer-inline-icon">
-                            <span>Kết nối mạng xã hội cùng Nhân Hòa</span>
+                            <span>Kết nối mạng xã hội cùng Chúng Tôi</span>
                             <ul class="list-img-fanpage">
                                 <li>
                                     <a href="https://www.facebook.com/nhanhoacom" target="_blank">

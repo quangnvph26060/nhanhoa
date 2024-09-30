@@ -19,7 +19,7 @@
 
                         <div id="faq_01" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="info">
-                                NVMe Hosting là dịch vụ hosting chất lượng cao của Nhân Hòa, điểm khác biệt với hosting
+                                NVMe Hosting là dịch vụ hosting chất lượng cao của Chúng Tôi, điểm khác biệt với hosting
                                 thông thường là NVMe Hosting được xây dựng trên nền tảng điện toán đám, sử dụng 100% ổ
                                 cứng NVMe thế hệ mới với cổng kết nối mạng tới 10GBps giúp mang lại tốc độ tối ưu cho
                                 website.
@@ -43,13 +43,13 @@
                     <div class="card">
                         <div class="title collapsed" data-toggle="collapse" data-target="#faq_03"
                             aria-expanded="false" aria-controls="collapseTwo">
-                            Nhân Hòa có hỗ trợ khách hàng 24/7 không?
+                            Chúng Tôi có hỗ trợ khách hàng 24/7 không?
                             <i class="fas fa-plus-circle" style="color: #DCF7FF;"></i>
                         </div>
                         <div id="faq_03" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="info">
-                                Nhân Hòa luôn duy trì đội ngũ kỹ thuật túc trực 24/7 sẵn sàng hỗ trợ khách hàng mọi vấn
-                                đề phát sinh trong quá trình sử dụng dịch vụ. Việc cam kết hỗ trợ 24/7 đươc Nhân Hòa
+                                Chúng Tôi luôn duy trì đội ngũ kỹ thuật túc trực 24/7 sẵn sàng hỗ trợ khách hàng mọi vấn
+                                đề phát sinh trong quá trình sử dụng dịch vụ. Việc cam kết hỗ trợ 24/7 đươc Chúng Tôi
                                 thực hiện nghiêm túc và nhận được sự đánh giá cao từ khách hàng.
                             </div>
                         </div>
@@ -72,13 +72,13 @@
                     <div class="card">
                         <div class="title collapsed" data-toggle="collapse" data-target="#faq_05"
                             aria-expanded="false" aria-controls="collapseTwo">
-                            Tôi có được hỗ trợ chuyển dữ liệu khi chuyển hosting về Nhân Hòa không?
+                            Tôi có được hỗ trợ chuyển dữ liệu khi chuyển hosting về Chúng Tôi không?
                             <i class="fas fa-plus-circle" style="color: #DCF7FF;"></i>
                         </div>
                         <div id="faq_05" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="info">
-                                Có, Nhân Hòa hỗ trợ chuyển dữ liệu hosting miễn phí cho Quý khách khi Quý khách chuyển
-                                hosting về Nhân Hòa.
+                                Có, Chúng Tôi hỗ trợ chuyển dữ liệu hosting miễn phí cho Quý khách khi Quý khách chuyển
+                                hosting về Chúng Tôi.
                             </div>
                         </div>
                     </div>
@@ -90,9 +90,9 @@
                         </div>
                         <div id="faq_06" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="info">
-                                Nhân Hòa duy trì chính sách hoàn tiền trong 30 ngày sau khi khách hàng đăng ký dịch vụ
+                                Chúng Tôi duy trì chính sách hoàn tiền trong 30 ngày sau khi khách hàng đăng ký dịch vụ
                                 như một sự cam kết về chất lượng dịch vụ. Trong 30 ngày kể từ ngày đăng ký nếu Quý khách
-                                không hài lòng về chất lượng dịch vụ, Nhân Hòa sẽ hoàn 100% phí dịch vụ cho Quý khách.
+                                không hài lòng về chất lượng dịch vụ, Chúng Tôi sẽ hoàn 100% phí dịch vụ cho Quý khách.
                             </div>
                         </div>
                     </div>

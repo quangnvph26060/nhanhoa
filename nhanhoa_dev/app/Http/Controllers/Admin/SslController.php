@@ -15,12 +15,14 @@ class SslController extends Controller
         $this->sslService = $sslService;
     }
     public function index(){
+        $title = "SSL";
         $ssl = $this->sslService->getSslAll();
-        return view('admin.ssl.index', compact('ssl'));
+        return view('admin.ssl.index', compact('ssl', 'title'));
     }
 
     public function addform(){
-        return view('admin.ssl.add');
+        $title = "Thêm SSL";
+        return view('admin.ssl.add', compact('title'));
     }
 
     public function addsubmit(Request $request){
@@ -29,8 +31,9 @@ class SslController extends Controller
     }
 
     public function editform($id){
+        $title = "Thay đổi SSL";
         $ssl = Ssl::find($id);
-        return view('admin.ssl.edit', compact('ssl'));
+        return view('admin.ssl.edit', compact('ssl', 'title'));
     }
 
     public function editsubmit(Request $request, $id){

@@ -1,5 +1,5 @@
 var arCuMessages = [
-	"Nhân Hòa xin chào!"
+	"Chúng Tôi xin chào!"
 ];
 var arCuLoop = false;
 var arCuCloseLastMessage = false;

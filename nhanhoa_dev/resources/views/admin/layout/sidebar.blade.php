@@ -52,24 +52,75 @@
                                     <span class="sub-item">Email</span>
                                 </a>
                             </li>
+
+                            <li class="nav-item">
+                                <a data-bs-toggle="collapse" href="#footer">
+                                    <i class="fas fa-users"></i>
+                                    <p>Footer</p>
+                                    <span class="caret"></span>
+                                </a>
+                                <div class="collapse" id="footer">
+                                    <ul class="nav nav-collapse" style="margin-bottom: 0px">
+                                        <li>
+                                            <a href="{{ route('admin.config.footer.add') }}">
+                                                <span class="sub-item">Thêm</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('admin.config.footer.index') }}">
+                                                <span class="sub-item">Danh sách</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#client">
+                    <a href="{{ route('admin.client.index') }}">
                         <i class="fas fa-users"></i>
                         <p>Khách hàng</p>
+                        {{-- <span class="caret"></span> --}}
+                    </a>
+
+                </li>
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#partner">
+                        <i class="fas fa-users"></i>
+                        <p>Đối tác</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="client">
+                    <div class="collapse" id="partner">
                         <ul class="nav nav-collapse" style="margin-bottom: 0px">
                             <li>
-                                <a href="{{ route('admin.client.index') }}">
+                                <a href="{{ route('admin.partner.add') }}">
                                     <span class="sub-item">Thêm</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.client.index') }}">
+                                <a href="{{ route('admin.partner.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#review">
+                        <i class="fas fa-file-alt"></i> <!-- Icon for domain -->
+                        <p>Đánh giá</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="review">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.reviews.add') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.reviews.index') }}">
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>
@@ -326,6 +377,7 @@
                         </ul>
                     </div>
                 </li>
+
                 {{-- <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#giaiphap">
                         <i class="fas fa-flag"></i>

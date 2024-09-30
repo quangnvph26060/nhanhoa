@@ -53,6 +53,15 @@ class CloudService
         try {
             DB::beginTransaction();
 
+            $logo = $data['logo'];
+            $directoryPath = 'public/cloud';
+
+            $logoFileName = 'image_' . $logo->getClientOriginalName();
+            $logoFilePath = 'storage/cloud/' . $logoFileName;
+
+            Storage::putFileAs($directoryPath, $logo, $logoFileName);
+            // $data['logo'] = $logoFilePath;
+
             $datanew = [
                 'name' => $data['name'],
                 'price' => $data['price'],
@@ -62,7 +71,8 @@ class CloudService
                 'ram' => $data['ram'],
                 'ip' => $data['ip'],
                 'bandwidth' => $data['bandwidth'],
-                'cloudtypes_id' => $data['cloudtypes_id']
+                'cloudtypes_id' => $data['cloudtypes_id'],
+                'logo' =>  $logoFilePath,
             ];
 
 
@@ -102,6 +112,17 @@ class CloudService
                 'bandwidth' => $data['bandwidth'],
                 'cloudtypes_id' => $data['cloudtypes_id']
             ];
+            if (isset($data['logo'])) {
+
+                $directoryPath = 'public/logocloud';
+                // Storage::deleteDirectory($directoryPath);
+                // Storage::makeDirectory($directoryPath);
+                $logo = $data['logo'];
+                $logoFileName = 'image_' . $logo->getClientOriginalName();
+                $logoFilePath = 'storage/logocloud/' . $logoFileName;
+                Storage::putFileAs('public/logocloud', $logo, $logoFileName);
+                $datanew['logo'] = $logoFilePath;
+            }
             CloudPromotion::where('cloud_id', $id)->delete();
             $cloudbyId->update($datanew);
             if (!empty($data['promotion'])) {

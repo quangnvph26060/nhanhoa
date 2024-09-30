@@ -6,7 +6,7 @@
     <base href="https://vfone.vn/">
     <meta charset="UTF-8">
     <title>
-        Tổng đài điện thoại ảo Voip Cloud VFone Nhân Hòa #1 Việt Nam </title>
+        Tổng đài điện thoại ảo Voip Cloud VFone Chúng Tôi #1 Việt Nam </title>
 
     <!-- <meta name='revisit-after' content='1 days' /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -733,7 +733,7 @@
                     <span>
                         ©Copyright 2019 <a style="color: #fff;" rel="nofollow"
                             href="https://nhanhoa.com/?utm_source=VFONE_nhanhoa.com&utm_medium=VFONE_nhanhoa.com">CÔNG
-                            TY TNHH PHẦN MỀM NHÂN HÒA</a>. All Rights Reserved. </span>
+                            TY TNHH PHẦN MỀM Chúng Tôi</a>. All Rights Reserved. </span>
                 </div>
             </div>
             <script>

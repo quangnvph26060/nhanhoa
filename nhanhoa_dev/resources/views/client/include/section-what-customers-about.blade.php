@@ -6,16 +6,15 @@
                     <span class="slogan-section text-center d-block">
                         <span> Đánh giá </span>
                     </span>
-                    Khách hàng nói gì về dịch vụ tại Nhân Hòa
+                    Khách hàng nói gì về dịch vụ Chúng Tôi
                 </h2>
             </div>
 
             <div class="list-content-what-customers-about">
-                <div
-                    class="swiper swiper_customers_about swiper-initialized swiper-horizontal swiper-pointer-events">
+                <div class="swiper swiper_customers_about swiper-initialized swiper-horizontal swiper-pointer-events">
                     <div class="swiper-wrapper" id="swiper-wrapper-9a53241066c3ba208" aria-live="off">
-                        <div class="swiper-slide" data-swiper-slide-index="0" role="group"
-                            aria-label="1 / 5" style="width: 370px; margin-right: 30px">
+                        {{-- <div class="swiper-slide" data-swiper-slide-index="0" role="group" aria-label="1 / 5"
+                            style="width: 370px; margin-right: 30px">
                             <div class="item-customers_about">
                                 <div class="icon-before">
                                     <img class="nh-lazyload ls-is-cached lazyloaded"
@@ -35,8 +34,7 @@
                                         <img class="nh-lazyload ls-is-cached lazyloaded"
                                             src="https://nhanhoa.com/templates/images/v2/customer/df.jpeg"
                                             data-src="https://nhanhoa.com/templates/images/v2/customer/df.jpeg"
-                                            alt="Khách hàng Đồng Trọng Phương"
-                                            title="Khách hàng Đồng Trọng Phương" />
+                                            alt="Khách hàng Đồng Trọng Phương" title="Khách hàng Đồng Trọng Phương" />
                                     </div>
                                     <div class="name-job">
                                         <div class="name">
@@ -48,8 +46,8 @@
                             </div>
                         </div>
 
-                        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1"
-                            role="group" aria-label="2 / 5" style="width: 370px; margin-right: 30px">
+                        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" role="group"
+                            aria-label="2 / 5" style="width: 370px; margin-right: 30px">
                             <div class="item-customers_about">
                                 <div class="icon-before">
                                     <img class="nh-lazyload ls-is-cached lazyloaded"
@@ -69,8 +67,7 @@
                                         <img class="nh-lazyload ls-is-cached lazyloaded"
                                             src="https://nhanhoa.com/templates/images/v2/customer/dfsa.jpg"
                                             data-src="https://nhanhoa.com/templates/images/v2/customer/dfsa.jpg"
-                                            alt="Khách hàng Nguyễn Phúc Lâm"
-                                            title="Khách hàng Nguyễn Phúc Lâm" />
+                                            alt="Khách hàng Nguyễn Phúc Lâm" title="Khách hàng Nguyễn Phúc Lâm" />
                                     </div>
                                     <div class="name-job">
                                         <div class="name">Nguyễn Phúc Lâm</div>
@@ -80,8 +77,8 @@
                             </div>
                         </div>
 
-                        <div class="swiper-slide" data-swiper-slide-index="4" role="group"
-                            aria-label="5 / 5" style="width: 370px; margin-right: 30px">
+                        <div class="swiper-slide" data-swiper-slide-index="4" role="group" aria-label="5 / 5"
+                            style="width: 370px; margin-right: 30px">
                             <div class="item-customers_about">
                                 <div class="icon-before">
                                     <img class="nh-lazyload lazyloaded"
@@ -110,8 +107,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
-                            role="group" aria-label="1 / 5" style="width: 370px; margin-right: 30px">
+                        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" role="group"
+                            aria-label="1 / 5" style="width: 370px; margin-right: 30px">
                             <div class="item-customers_about">
                                 <div class="icon-before">
                                     <img class="nh-lazyload lazyloaded"
@@ -131,8 +128,7 @@
                                         <img class="nh-lazyload ls-is-cached lazyloaded"
                                             src="https://nhanhoa.com/templates/images/v2/customer/df.jpeg"
                                             data-src="https://nhanhoa.com/templates/images/v2/customer/df.jpeg"
-                                            alt="Khách hàng Đồng Trọng Phương"
-                                            title="Khách hàng Đồng Trọng Phương" />
+                                            alt="Khách hàng Đồng Trọng Phương" title="Khách hàng Đồng Trọng Phương" />
                                     </div>
                                     <div class="name-job">
                                         <div class="name">
@@ -165,8 +161,7 @@
                                         <img class="nh-lazyload ls-is-cached lazyloaded"
                                             src="https://nhanhoa.com/templates/images/v2/customer/dfsa.jpg"
                                             data-src="https://nhanhoa.com/templates/images/v2/customer/dfsa.jpg"
-                                            alt="Khách hàng Nguyễn Phúc Lâm"
-                                            title="Khách hàng Nguyễn Phúc Lâm" />
+                                            alt="Khách hàng Nguyễn Phúc Lâm" title="Khách hàng Nguyễn Phúc Lâm" />
                                     </div>
                                     <div class="name-job">
                                         <div class="name">Nguyễn Phúc Lâm</div>
@@ -174,7 +169,43 @@
                                     </div>
                                 </div>
                             </div>
+                        </div> --}}
+
+                        @forelse($customerreivew as $index => $review)
+                        <div class="swiper-slide" data-swiper-slide-index="{{ $index }}" role="group"
+                            aria-label="{{ $index + 1 }} / {{ count($customerreivew) }}"
+                            style="width: 370px; margin-right: 30px">
+                            <div class="item-customers_about">
+                                <div class="icon-before">
+                                    <img class="nh-lazyload ls-is-cached lazyloaded" src="https://nhanhoa.com/templates/images/v2/customer/fbv.svg"
+                                        data-src="{https://nhanhoa.com/templates/images/v2/customer/fbv.svg" alt="https://nhanhoa.com/templates/images/v2/customer/fbv.svg"
+                                        title="Khách hàng {{ $review->name }}" />
+                                </div>
+                                <div class="description">
+                                    {{ $review->content }}
+                                </div>
+                                <div class="info-name-img">
+                                    <div class="img">
+                                        <img class="nh-lazyload ls-is-cached lazyloaded" src="{{ asset($review->avatar) }}"
+                                            data-src="{{ asset($review->avatar) }}" alt="Khách hàng {{ $review->name }}"
+                                            title="Khách hàng {{ $review->name }}" />
+                                    </div>
+                                    <div class="name-job">
+                                        <div class="name">{{ $review->name }}</div>
+                                        <div class="job">{{ $review->web }}</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        @empty
+                        <div class="swiper-slide" role="group" aria-label="No reviews available">
+                            <div class="item-customers_about">
+                                <div class="description">
+                                    Không có đánh giá nào để hiển thị.
+                                </div>
+                            </div>
+                        </div>
+                        @endforelse
 
                     </div>
                     <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>

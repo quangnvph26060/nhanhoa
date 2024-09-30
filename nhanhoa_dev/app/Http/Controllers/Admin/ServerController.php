@@ -20,13 +20,15 @@ class ServerController extends Controller
     }
 
     public function index(){
+        $title = 'Server';
         $servers = $this->serverService->getServerAll();
-        return view('admin.server.index', compact('servers'));
+        return view('admin.server.index', compact('servers', 'title'));
     }
 
     public function addform(){
+        $title = 'Thêm Server';
         $promotion = $this->promotionService->getPromotionAll();
-        return view('admin.server.add', compact('promotion'));
+        return view('admin.server.add', compact('promotion', 'title'));
     }
 
     public function addsubmit(Request $request){
@@ -41,10 +43,11 @@ class ServerController extends Controller
     }
 
     public function editform($id){
+        $title = 'Thay đổi Server';
         $server = Server::find($id);
         $promotion = $this->promotionService->getPromotionAll();
         $promotionselect = ServerPromotion::where('server_id', $id)->pluck('promotion_id')->toArray();
-        return view('admin.server.edit', compact('server', 'promotion', 'promotionselect'));
+        return view('admin.server.edit', compact('server', 'promotion', 'promotionselect', 'title'));
     }
 
     public function editsubmit($id, Request $request){

@@ -568,7 +568,7 @@
                                 <div class="name">
                                     <a
                                         href="https://nhanhoa.com/tin-tuc/nhan-hoa-dong-hanh-cung-tan-sinh-vien-2024.html">
-                                        NHÂN HÒA ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024...
+                                        Chúng Tôi ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024...
                                     </a>
                                 </div>
                                 <div class="description d-none">
@@ -606,7 +606,7 @@
 
                                 <div class="name">
                                     <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-cloud-storage.html">
-                                        Nhân Hòa Cloud Storage - Lưu trữ thông minh,...
+                                        Chúng Tôi Cloud Storage - Lưu trữ thông minh,...
                                     </a>
                                 </div>
                                 <div class="description d-none">
@@ -684,7 +684,7 @@
                                 <div class="name">
                                     <a
                                         href="https://nhanhoa.com/tin-tuc/nhan-hoa-dong-hanh-cung-doanh-nghiep-ho-kinh-doanh-trong-cac-dich-vu-so-su-dung-ten-mien-vn-tai-hai-duong.html">
-                                        Nhân Hòa đồng hành cùng doanh nghiệp, hộ...
+                                        Chúng Tôi đồng hành cùng doanh nghiệp, hộ...
                                     </a>
                                 </div>
                                 <div class="description d-none">

@@ -4,7 +4,7 @@
             <div class="logo-section">
                 <a href="/" class="active">
                     <img class="img-fluid" src="https://cdn1460.cdn4s4.io.vn/media/logo/logo-1c.png"
-                        alt="Công Ty Phần Mềm Nhân Hòa">
+                        alt="Công Ty Phần Mềm Chúng Tôi">
                 </a>
             </div>
         </div>

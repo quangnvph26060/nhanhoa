@@ -4,9 +4,11 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\CloudBackUpController;
 use App\Http\Controllers\Admin\CloudController;
 use App\Http\Controllers\Admin\ConfigController;
+use App\Http\Controllers\Admin\CustomerReviewController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\DomainController;
 use App\Http\Controllers\Admin\EmailServerController;
+use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\GoogleWorkspaceController;
 use App\Http\Controllers\Admin\HostingController;
 use App\Http\Controllers\Admin\PromotionController;
@@ -19,6 +21,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\ContractEsocController;
 use App\Http\Controllers\Admin\EmailSettingController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
+use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\ServicePricingController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Page\AffiliateController;
@@ -78,6 +81,8 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::post('store', [AdminSolutionController::class, 'store'])->name('store');
         Route::get('edit/{id}', [AdminSolutionController::class, 'edit'])->name('edit');
         Route::put('update/{id}', [AdminSolutionController::class, 'update'])->name('update');
+
+
     });
 
     Route::get('', [DashBoardController::class, 'index'])->name('dashboard');
@@ -85,8 +90,19 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
     Route::prefix('config')->name('config.')->group(function () {
         Route::get('', [ConfigController::class, 'index'])->name('detail');
         Route::post('', [ConfigController::class, 'update'])->name('update');
+        Route::post('home', [ConfigController::class, 'updatehome'])->name('updatehome');
+        Route::post('sale', [ConfigController::class, 'updatesale'])->name('updatesale');
         Route::post('/email-env', [EmailSettingController::class, 'update'])->name('update.email');
         Route::get('/config-email', [EmailSettingController::class, 'showForm'])->name('config.email');
+
+        Route::prefix('footer')->name('footer.')->group(function () {
+            Route::get('', [FooterController::class, 'index'])->name('index');
+            Route::get('add', [FooterController::class, 'add'])->name('add');
+            Route::post('store', [FooterController::class, 'store'])->name('store');
+            Route::get('edit/{id}', [FooterController::class, 'edit'])->name('edit');
+            Route::post('update/{id}', [FooterController::class, 'update'])->name('update');
+            Route::post('delete/{id}', [FooterController::class, 'delete'])->name('delete');
+        });
     });
 
     Route::prefix('server')->name('server.')->group(function () {
@@ -255,6 +271,24 @@ Route::middleware(['checkLogin', 'checkRole:1'])->prefix('admin')->name('admin.'
         Route::get('{id}', [ServicePricingController::class, 'edit'])->name('edit');
         Route::post('{id}', [ServicePricingController::class, 'editsubmit'])->name('editsubmit');
         Route::post('delete/{id}', [ServicePricingController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('partner')->name('partner.')->group(function () {
+        Route::get('', [PartnersController::class, 'index'])->name('index');
+        Route::get('add', [PartnersController::class, 'add'])->name('add');
+        Route::post('add', [PartnersController::class, 'addsubmit'])->name('addsubmit');
+        Route::get('{id}', [PartnersController::class, 'edit'])->name('edit');
+        Route::post('{id}', [PartnersController::class, 'editsubmit'])->name('editsubmit');
+        Route::post('delete/{id}', [PartnersController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('reviews')->name('reviews.')->group(function () {
+        Route::get('/', [CustomerReviewController::class, 'index'])->name('index');
+        Route::get('add/', [CustomerReviewController::class, 'add'])->name('add');
+        Route::post('add/', [CustomerReviewController::class, 'store'])->name('store');
+        Route::get('/{id}', [CustomerReviewController::class, 'show'])->name('show');
+        Route::post('/{id}', [CustomerReviewController::class, 'update'])->name('update');
+        Route::post('delete/{id}', [CustomerReviewController::class, 'destroy'])->name('destroy');
     });
 });
 

@@ -13,15 +13,17 @@ class NewsController extends Controller
 {
     public function index()
     {
+        $title = "Tin tức";
         $news = SgoNews::all();
 
-        return view('admin.news.index', compact('news'));
+        return view('admin.news.index', compact('news', 'title'));
     }
 
     // Hiển thị form tạo mới bài báo
     public function create()
     {
-        return view('admin.news.add');
+        $title = "Thêm mới Tin tức";
+        return view('admin.news.add', compact('title'));
     }
 
     // Lưu bài báo mới vào cơ sở dữ liệu
@@ -57,9 +59,9 @@ class NewsController extends Controller
     // Hiển thị thông tin chi tiết của một bài báo
     public function show($slug, $id)
     {
-
+        $title = "Thay đổi Tin Tức";
         $new = SgoNews::find($id);
-        return view('admin.news.edit', compact('new'));
+        return view('admin.news.edit', compact('new', 'title'));
     }
 
     public function update(Request $request, $slug, $id)

@@ -23,6 +23,7 @@ class EmailServer extends Model
         'unlimited_email_domain',
         'ip_address',
         'promotion_id',
+        'logo'
     ];
 
     protected $appends = ['promotion'];

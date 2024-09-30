@@ -16,12 +16,14 @@ class ServicePricingController extends Controller
     }
 
     public function index(){
+        $title = "Dịch vụ quản trị máy chủ";
         $service = $this->servicePricingService->getServicePricingAll();
-        return view('admin.serviceserver.index', compact('service'));
+        return view('admin.serviceserver.index', compact('service', 'title'));
     }
 
     public function add(){
-        return view('admin.serviceserver.add');
+        $title = "Thêm Dịch vụ quản trị máy chủ";
+        return view('admin.serviceserver.add', compact('title'));
     }
 
     public function addsubmit(Request $request){
@@ -30,8 +32,9 @@ class ServicePricingController extends Controller
     }
 
     public function edit($id){
+        $title = "Thêm Dịch vụ quản trị máy chủ";
         $service = ServicePricing::find($id);
-        return view('admin.serviceserver.edit', compact('service'));
+        return view('admin.serviceserver.edit', compact('service', 'title'));
     }
 
     public function editsubmit(Request $request, $id){

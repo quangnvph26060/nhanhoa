@@ -15,8 +15,9 @@ class PromotionController extends Controller
         $this->promotionService = $promotionService;
     }
     public function index(){
+        $title = "Danh sách khuyễn mại";
         $promotions = $this->promotionService->getPromotionAll();
-        return view('admin.promotion.index', compact('promotions'));
+        return view('admin.promotion.index', compact('promotions', 'title'));
     }
 
     public function getSslAll(){
@@ -25,7 +26,8 @@ class PromotionController extends Controller
     }
 
     public function addform(){
-        return view('admin.promotion.add');
+        $title = "Thêm khuyễn mại";
+        return view('admin.promotion.add', compact('title'));
     }
 
     public function addsubmit(Request $request){
@@ -34,8 +36,9 @@ class PromotionController extends Controller
     }
 
     public function editform($id){
+        $title = "Thay đổi khuyễn mại";
         $promotion = Promotion::find($id);
-        return view('admin.promotion.edit', compact('promotion'));
+        return view('admin.promotion.edit', compact('promotion', 'title'));
     }
 
     public function editsubmit(Request $request, $id){

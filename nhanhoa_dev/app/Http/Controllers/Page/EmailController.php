@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerReview;
 use App\Models\EmailServer;
+use App\Models\Footer;
 use App\Services\ClientService;
 use App\Services\EmailServerService;
 use App\Services\GoogleWorkspaceService;
@@ -24,7 +26,9 @@ class EmailController extends Controller
     public function emailServer(){
         $emailServer = $this->emailServerService->getAllEmailServers();
         $title = "Email Server";
-        return view('client.pages.email-server.index', compact('emailServer', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.email-server.index', compact('emailServer', 'title', 'customerreivew', 'footers'));
     }
 
 
@@ -38,7 +42,9 @@ class EmailController extends Controller
         $googleWorkspaceEducation = $this->googleWorkspaceService->getAllGoogleWorkspaceEducation();
         $googleWorkspaceBusiness = $this->googleWorkspaceService->getAllGoogleWorkspaceBusiness();
         $title = "Google Workspace";
-        return view('client.pages.google-workspace.index', compact('googleWorkspaceEducation', 'googleWorkspaceBusiness', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.google-workspace.index', compact('googleWorkspaceEducation', 'googleWorkspaceBusiness', 'title', 'customerreivew', 'footers'));
     }
 
     public function googleWorkspaceEducationPay(Request $request){

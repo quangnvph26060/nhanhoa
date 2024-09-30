@@ -5,7 +5,7 @@
             <span class="slogan-section text-center d-block">
                 Tính năng nổi bật
             </span>
-            Khi Thuê Cloud Server - Cloud365 Giá Rẻ Nhân Hòa
+            Khi Thuê Cloud Server - Cloud365 Giá Rẻ Chúng Tôi
         </h2>
 
         <div class="content-internal-feature-sever">
@@ -37,7 +37,7 @@
                         <h3 class="title-section text-left">Multi Region – Tối ưu vị trí địa lý</h3>
                         <div class="info">
                             <p>
-                                Hạ tầng máy chủ CLOUD365 của Nhân Hòa đặt tại hầu hết các trung tâm dữ liệu hàng đầu tại
+                                Hạ tầng máy chủ CLOUD365 của Chúng Tôi đặt tại hầu hết các trung tâm dữ liệu hàng đầu tại
                                 Việt Nam như Viettel, FPT, CMC... cho phép khách hàng lựa chọn nơi đặt máy chủ Cloud
                                 VPS/ Cloud Server đáp ứng được yêu cầu của doanh nghiệp, qua đó tối ưu việc truyền tải
                                 dữ liệu và hiệu suất của máy chủ.

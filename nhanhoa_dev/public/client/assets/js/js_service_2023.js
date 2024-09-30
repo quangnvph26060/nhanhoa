@@ -2558,7 +2558,7 @@ var Service = {
                         if (data == 0) {
                             _that.find(".domain_add_cart").fadeIn("slow");
                             var msg =
-                                "Tên miền đã được backorder tại Nhân Hòa.<br> Mời bạn chọn tên miền khác.";
+                                "Tên miền đã được backorder tại Chúng Tôi.<br> Mời bạn chọn tên miền khác.";
                             System_js.error_notify(msg);
                         } else {
                             _that.find(".un_select").fadeIn("slow");

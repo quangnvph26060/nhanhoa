@@ -18,8 +18,9 @@ class HostingController extends Controller
         $this->promotionService = $promotionService;
     }
     public function index(){
+        $title = "Hosting";
         $hostings = $this->hostingService->getHostingAll();
-        return view('admin.hosting.index', compact('hostings'));
+        return view('admin.hosting.index', compact('hostings', 'title'));
     }
 
     public function getHostingAll(){
@@ -28,8 +29,9 @@ class HostingController extends Controller
     }
 
     public function addform(){
+        $title = "Thêm Hosting";
         $promotion = $this->promotionService->getPromotionAll();
-        return view('admin.hosting.add', compact('promotion'));
+        return view('admin.hosting.add', compact('promotion', 'title'));
     }
 
     public function addsubmit(Request $request){
@@ -38,11 +40,12 @@ class HostingController extends Controller
     }
 
     public function editform($id){
+        $title = "Thay đổi Hosting";
         $hosting = Hosting::find($id);
         $promotion = $this->promotionService->getPromotionAll();
         $promotionArray = SgoHostingPromotion::where('hosting_id', $id)->pluck('promotion_id');
         $promotionselect = $promotionArray->toArray();
-        return view('admin.hosting.edit', compact('hosting', 'promotion', 'promotionselect'));
+        return view('admin.hosting.edit', compact('hosting', 'promotion', 'promotionselect', 'title'));
     }
 
     public function editsubmit(Request $request, $id){

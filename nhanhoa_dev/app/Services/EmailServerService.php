@@ -10,6 +10,7 @@ use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Summary of EmailServerService
@@ -57,7 +58,12 @@ class EmailServerService
     {
         try {
             DB::beginTransaction();
+            $logo = $data['logo'];
+            $directoryPath = 'public/logoemail';
 
+            $logoFileName = 'image_' . $logo->getClientOriginalName();
+            $logoFilePath = 'storage/logoemail/' . $logoFileName;
+            Storage::putFileAs($directoryPath, $logo, $logoFileName);
             $newData = [
                 'name' => $data['name'],
                 'price' => $data['price'],
@@ -68,7 +74,8 @@ class EmailServerService
                 'unlimited_email_list' => $data['unlimited_email_list'],
                 'unlimited_email_domain' => $data['unlimited_email_domain'],
                 'ip_address' => $data['ip_address'],
-                'promotion_id' => $data['promotion_id']
+                'promotion_id' => $data['promotion_id'],
+                'logo' =>  $logoFilePath,
             ];
 
             $emailServer = $this->emailServer->create($newData);
@@ -100,7 +107,17 @@ class EmailServerService
                 'ip_address' => $data['ip_address'],
                 'promotion_id' => $data['promotion_id']
             ];
+            if (isset($data['logo'])) {
 
+                $directoryPath = 'public/logoemail';
+                // Storage::deleteDirectory($directoryPath);
+                // Storage::makeDirectory($directoryPath);
+                $logo = $data['logo'];
+                $logoFileName = 'image_' . $logo->getClientOriginalName();
+                $logoFilePath = 'storage/logoemail/' . $logoFileName;
+                Storage::putFileAs('public/logoemail', $logo, $logoFileName);
+                $updatedData['logo'] = $logoFilePath;
+            }
             $emailServer->update($updatedData);
             DB::commit();
             return $emailServer;

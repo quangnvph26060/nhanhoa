@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="img_center mb30 page-title-domain">Bảng giá tên miền tại Nhân Hòa</h1>
+                    <h1 class="img_center mb30 page-title-domain">Bảng giá tên miền tại Chúng Tôi</h1>
                     <figure class="html_tab clearfix">
                         <ul class="nav nav-tabs hidden-sm hidden-xs" id="myTab">
                             <li class="active">
@@ -30,10 +30,10 @@
                         <article id="tab-one" class="tab-pane in area_tab_content active show">
                             <figure class="des">
                                 <img src="https://nhanhoa.com/templates/images/vnic-120x88.png"
-                                    alt="Nhân Hòa - Bảng giá Tên miền Domain Quốc Gia &amp; Quốc Tế">
+                                    alt="Chúng Tôi - Bảng giá Tên miền Domain Quốc Gia &amp; Quốc Tế">
                                 <div>
                                     <h2 class="font18 mb10">Nhà đăng ký tên miền Quốc gia .VN của VNNIC</h2>
-                                    <p class="font15 hevr mb5">Nhân Hòa là nhà đăng ký Tên miền Quốc gia .VN chính thức
+                                    <p class="font15 hevr mb5">Chúng Tôi là nhà đăng ký Tên miền Quốc gia .VN chính thức
                                         của Trung Tâm Internet Việt Nam (VNNIC) - trực thuộc Bộ Thông Tin Truyền Thông.
                                     </p>
                                     <p><a
@@ -123,9 +123,9 @@
                             </figure>
                             <img src="https://nhanhoa.com/templates/images/domain/1409805426_rocket.jpg"
                                 alt="" class="img_center d-none">
-                            <h3 class=" d-none blue mb10 img_center mtb20">NHÂN HÒA luôn cùng bạn bảo vệ và phát triển
+                            <h3 class=" d-none blue mb10 img_center mtb20">Chúng Tôi luôn cùng bạn bảo vệ và phát triển
                                 thương hiệu của mình trên Internet</h3>
-                            <p class="font15 hevr img_center mb30">Nhân Hòa đã có uy tín lâu năm trong việc cung cấp
+                            <p class="font15 hevr img_center mb30">Chúng Tôi đã có uy tín lâu năm trong việc cung cấp
                                 dịch vụ đăng ký tên miền cho hơn 50.000 khách hàng, bạn hoàn toàn có thể tin tưởng để
                                 bắt đầu đăng ký tên miền tại công ty chúng tôi với dịch vụ chuyên nghiệp nhất.</p>
                             <section class="form_dk d-none">
@@ -192,7 +192,7 @@
                                             </tbody>
                                         </table>
                                         <!--<p class="font14 hevr">(Dịch vụ liên quan đến tên miền Việt Nam không chịu thuế VAT)</p>-->
-                                        <!--p class="font14 hevr"><span class="hevb">Chú ý:</span> Trung tâm internet Việt Nam (VNNIC) bắt đầu cho phép các tổ chức và cá nhân đăng ký tên miền 1 &amp; 2 ký tự từ ngày 10/1/2011. Quý khách có thể liên hệ với Nhân Hòa ngay từ bây giờ để đăng ký cho mình những tên miền tốt nhất.</p-->
+                                        <!--p class="font14 hevr"><span class="hevb">Chú ý:</span> Trung tâm internet Việt Nam (VNNIC) bắt đầu cho phép các tổ chức và cá nhân đăng ký tên miền 1 &amp; 2 ký tự từ ngày 10/1/2011. Quý khách có thể liên hệ với Chúng Tôi ngay từ bây giờ để đăng ký cho mình những tên miền tốt nhất.</p-->
                                         <a href="https://nhanhoa.com/tin-tuc/quy-dinh-moi-cua-vnnic-ve-ten-mien-viet-nam.html"
                                             title="" class="dk img_center mt15">QUY ĐỊNH MỚI CỦA VNNIC VỀ TÊN
                                             MIỀN VIỆT NAM</a>
@@ -203,10 +203,10 @@
                         <article id="tab-two" class="tab-pane in area_tab_content">
                             <figure class="des">
                                 <img src="https://nhanhoa.com/templates/images/domain/icann.jpg"
-                                    alt="Nhân Hòa - Bảng giá Tên miền Domain Quốc Gia &amp; Quốc Tế">
+                                    alt="Chúng Tôi - Bảng giá Tên miền Domain Quốc Gia &amp; Quốc Tế">
                                 <div>
                                     <h2 class="font18 mb10">Nhà đăng ký tên miền của ICANN</h2>
-                                    <p class="font15 hevr mb5">Nhân Hòa là nhà đăng ký tên miền chính thức (Registrar)
+                                    <p class="font15 hevr mb5">Chúng Tôi là nhà đăng ký tên miền chính thức (Registrar)
                                         của Tổ chức Quản lý Tên miền Quốc tế (ICANN) và là 1 trong 3 nhà đăng ký duy
                                         nhất của ICANN tại Việt Nam.</p>
                                     <p><a href="" title="" class="hevb">Xem danh sách các nhà đăng ký
@@ -252,12 +252,12 @@
                                     <section class="html_content">
                                         <h2 class=" img_center mt15">Tên miền địa giới hành chính</h2>
                                         <figure class="des"> <img
-                                                alt="Nhân Hòa - Bảng giá Tên miền Domain Quốc Gia &amp; Quốc Tế"
+                                                alt="Chúng Tôi - Bảng giá Tên miền Domain Quốc Gia &amp; Quốc Tế"
                                                 src="https://nhanhoa.com/templates/images/domain/diagioihc.jpg">
                                             <p class="font15 hevr mb5">Theo Thông tư số 189/2010/TT-BTC ngày 24/11/2010
                                                 của Bộ Tài chính ban hành, tên miền quốc gia Việt Nam “.vn” hiện tại
                                                 khách hàng đã có thể đăng ký tên miền quốc gia Việt Nam cấp 3 dưới tên
-                                                miền cấp 2 theo địa giới hành chính (63 tỉnh, thành phố) tại Nhân Hòa
+                                                miền cấp 2 theo địa giới hành chính (63 tỉnh, thành phố) tại Chúng Tôi
                                                 Khách hàng có thể tra cứu sự tồn tại của các tên miền cấp 3 dưới tên
                                                 miền cấp 2 theo địa giới hành chính (VD: tenmien.hanoi.vn;…) để thuận
                                                 tiện cho việc đăng ký và sử dụng.</p>
@@ -394,8 +394,8 @@
                                             <p>Đối với <a>tên miền Việt Nam</a> bạn cần trỏ các thông số sau:</p>
                                             <br>
                                             <p><span class="hevb">Thủ tục:</span> Bạn liên hệ với bộ phận kinh doanh
-                                                của Nhân Hòa để làm hợp đồng dịch vụ, thanh toán phí và cung cấp thông
-                                                tin tên miền để Nhân Hòa tiến hành chuyển đổi cho bạn.</p>
+                                                của Chúng Tôi để làm hợp đồng dịch vụ, thanh toán phí và cung cấp thông
+                                                tin tên miền để Chúng Tôi tiến hành chuyển đổi cho bạn.</p>
                                             <ul>
                                                 <li>ns1.zonedns.vn – IP: 103.28.36.30</li>
                                                 <li>ns2.zonedns.vn&nbsp;- IP: 123.30.50.41</li>
@@ -403,7 +403,7 @@
                                                 <li>ns4.zonedns.vn&nbsp;- IP: 125.221.225.141</li>
                                             </ul>
                                             <p><span class="hevb">Lưu ý:</span> Khi khách hàng đăng ký <a
-                                                    href="#">tên miền quốc tế</a>, Nhân Hòa sẽ lock (khóa) tên
+                                                    href="#">tên miền quốc tế</a>, Chúng Tôi sẽ lock (khóa) tên
                                                 miền lại để bảo mật cho khách hàng trong quá trình sử dụng tên miền.</p>
                                             <br>
                                             <p>Quý khách cần hỗ trợ về dịch vụ này vui lòng liên hệ với chúng tôi.
@@ -424,7 +424,7 @@
                                                     href="#">Domain</a> Forwarding, người truy cập chỉ việc gõ
                                                 địa chỉ: https://www.mydomain.com là có thể vào được website của bạn.
                                             </p>
-                                            <p>Bạn có thể sử dụng dịch vụ này miễn phí tại Nhân Hòa.</p>
+                                            <p>Bạn có thể sử dụng dịch vụ này miễn phí tại Chúng Tôi.</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-6">

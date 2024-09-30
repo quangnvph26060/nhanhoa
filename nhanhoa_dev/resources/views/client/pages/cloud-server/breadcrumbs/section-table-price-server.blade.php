@@ -37,7 +37,7 @@
                     <div class="info-table-price">
                         <div class="info-emty">
                             <div class="row">
-                                @forelse ($cloud as $item )
+                                @forelse ($clouds as $item )
                                 <div class="col-lg-4 col-md-6 col-12 mb-3 0 pricing-item-order-2">
                                     <div class="item">
                                         <div class="bgr-top">
@@ -151,11 +151,11 @@
 
                             </div>
                         </div>
-                        <div class="link-dktv-price cta-tu-van">
+                        {{-- <div class="link-dktv-price cta-tu-van">
                             <a href="#tuvanngay" class="btn_show_popup">
                                 Đăng ký tư vấn
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 

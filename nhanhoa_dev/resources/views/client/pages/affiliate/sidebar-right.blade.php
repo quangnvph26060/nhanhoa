@@ -86,8 +86,8 @@
                                 </div>
                                 <div class="name">
                                     <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-thong-bao-lich-nghi-le-quoc-khanh-nam-2024.html"
-                                        title="Nhân Hòa thông báo Lịch nghỉ lễ Quốc Khánh năm 2024">
-                                        Nhân Hòa thông báo Lịch nghỉ lễ Quốc Khánh...
+                                        title="Chúng Tôi thông báo Lịch nghỉ lễ Quốc Khánh năm 2024">
+                                        Chúng Tôi thông báo Lịch nghỉ lễ Quốc Khánh...
                                     </a>
                                 </div>
 

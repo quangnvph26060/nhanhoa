@@ -5,7 +5,7 @@
             <span class="slogan-section text-center d-block">
                 Tại sao nên lựa chọn
             </span>
-            Dịch vụ Cloud Backup của Nhân Hòa
+            Dịch vụ Cloud Backup của Chúng Tôi
         </h2>
         <div class="info">
             <div class="row">
@@ -74,7 +74,7 @@
                         </h3>
                         <div class="dsc">
                             Bất kỳ lúc nào khách hàng cũng hoàn toàn chủ động trong việc khôi phục dữ liệu mà không cần
-                            sự can thiệp của Kỹ thuật Nhân Hòa.
+                            sự can thiệp của Kỹ thuật Chúng Tôi.
                         </div>
                     </div>
                 </div>

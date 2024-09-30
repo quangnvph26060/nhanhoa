@@ -276,7 +276,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Máy chủ',
+                    title: 'Cloud',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

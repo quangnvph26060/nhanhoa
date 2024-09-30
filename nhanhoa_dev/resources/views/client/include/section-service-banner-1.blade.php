@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-md-6 col-12">
                     <div class="video-image-wrapper">
-                        <img alt="Dịch vụ SSL bảo mật tại Nhân Hòa"
+                        <img alt="Dịch vụ SSL bảo mật tại Chúng Tôi"
                             src="https://nhanhoa.com/uploads/attach/1702373350_ssl.png" class="video-image">
                     </div>
 

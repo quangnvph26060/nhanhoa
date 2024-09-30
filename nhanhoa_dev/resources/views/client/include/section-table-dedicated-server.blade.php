@@ -123,11 +123,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="link-dktv-price cta-tu-van">
+                {{-- <div class="link-dktv-price cta-tu-van">
                     <a href="#tuvanngay" class="btn_show_popup">
                         Đăng ký tư vấn
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

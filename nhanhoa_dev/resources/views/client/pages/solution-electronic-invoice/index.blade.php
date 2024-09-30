@@ -449,7 +449,7 @@
                             <h2>Khách hàng nói gì về HOADON.BIZ</h2>
                             <p class="fs-6 text-muted">
                                 Hàng ngàn khách hàng và doanh nghiệp đã tin tưởng và sử dụng HOADON.BIZ cùng các dịch vụ
-                                khác của Nhân Hòa
+                                khác của Chúng Tôi
                             </p>
 
                             <div class="customer-logo">
@@ -506,9 +506,9 @@
                                             <div class="feedback-item--contain">
                                                 <i class="fas fa-quote-left fa-sm" style="color: #74C0FC;"></i>
                                                 <span>
-                                                    Mình khá hài lòng với cách tiếp cận nhanh chóng của Nhân Hòa về khâu
+                                                    Mình khá hài lòng với cách tiếp cận nhanh chóng của Chúng Tôi về khâu
                                                     phát triển các hệ thống phần mềm điện tử đáp ứng các yêu cầu chuyển
-                                                    đổi số. Mình đã sử dụng một vài sản phẩm của Nhân Hòa như ESOC,
+                                                    đổi số. Mình đã sử dụng một vài sản phẩm của Chúng Tôi như ESOC,
                                                     eChungtu. Nhìn chung HoaDonBiz rất dễ sử dụng còn tiết kiệm thời
                                                     gian và giá cả hợp lý
                                                 </span>
@@ -536,7 +536,7 @@
                                             <div class="feedback-item--contain">
                                                 <i class="fas fa-quote-left fa-sm" style="color: #74C0FC;"></i>
                                                 <span>
-                                                    Mình đã sử dụng tên miền và hosting của Nhân Hòa được 3 năm nay. Khi
+                                                    Mình đã sử dụng tên miền và hosting của Chúng Tôi được 3 năm nay. Khi
                                                     được giới thiệu sản phẩm HoaDonBiz, mình đã đăng ký dùng thử. Các
                                                     thủ tục về hóa đơn của doanh nghiệp mình được giải quyết nhanh
                                                     chóng.
@@ -567,8 +567,8 @@
                                                 <i class="fas fa-quote-left fa-sm" style="color: #74C0FC;"></i>
                                                 <span>
                                                     Mình là một người khá là "low tech". Ban đầu khi sử dụng HoaDonBiz
-                                                    của Nhân Hòa, mình còn ái ngại. Tuy nhiên sau khi được đội ngũ tư
-                                                    vấn của Nhân Hòa hướng dẫn nhiệt tình, bên họ còn lên cả văn phòng
+                                                    của Chúng Tôi, mình còn ái ngại. Tuy nhiên sau khi được đội ngũ tư
+                                                    vấn của Chúng Tôi hướng dẫn nhiệt tình, bên họ còn lên cả văn phòng
                                                     công ty mình để training trực tiếp, nên mình đã không còn phải lo
                                                     lắng về vấn đề hóa đơn của doanh nghiệp nữa.
                                                 </span>

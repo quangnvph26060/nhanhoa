@@ -46374,9 +46374,9 @@ img {
 }
 
 .btn-action-header.btn-promotion > a:hover {
-    background: var(--color-highlight);
+    background: #1150a2;
     color: var(--white);
-    border-color: var(--color-highlight);
+    border-color: #1150a2;
 }
 
 .btn-app:hover .content-app {
@@ -46387,7 +46387,7 @@ img {
 
 .btn-action-header.btn-login > a:hover {
     color: var(--white);
-    background: var(--color-main);
+    background: #1150a2;
 }
 
 .btn-minicart > a:hover {

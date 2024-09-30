@@ -20,7 +20,7 @@
         </div>
         <div id="PARAGRAPH15" class="ladi-element">
             <div class="ladi-paragraph">
-                Nhân Hòa Cloud Storage là một giải pháp lưu trữ đám mây ưu việt được cung cấp bởi Nhân Hòa. Với
+                Chúng Tôi Cloud Storage là một giải pháp lưu trữ đám mây ưu việt được cung cấp bởi Chúng Tôi. Với
                 mục tiêu cung cấp không gian lưu trữ an toàn, linh hoạt và hiệu quả trên nền tảng đám mây, Nhân
                 Hòa Cloud Storage
                 giúp các tổ chức và cá nhân dễ dàng quản lý và truy cập vào dữ liệu mọi lúc, mọi nơi.

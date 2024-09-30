@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{ isset($title) ? $title : 'Nhân hòa' }}</title>
+    <title>{{ isset($config->store_name) ? $config->store_name : '1sOnline' }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">

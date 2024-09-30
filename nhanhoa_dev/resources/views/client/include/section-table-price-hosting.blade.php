@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="title-section title-tab-hosting-mobile">
-        Các gói hosting tại Nhân Hòa
+        Các gói hosting tại Chúng Tôi
     </div>
     <div class="tab-hosting">
         <div class="container">
@@ -180,11 +180,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="link-dktv-price">
+                {{-- <div class="link-dktv-price">
                     <a href="#tuvanngay" class="btn_show_popup">
                         Đăng ký tư vấn
                     </a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

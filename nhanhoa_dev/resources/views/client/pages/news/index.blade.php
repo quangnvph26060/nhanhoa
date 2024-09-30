@@ -99,7 +99,7 @@
                             <div class="description">
 
                                 Kính gửi Quý khách hàng,
-                                Cảm ơn Quý khách đã tin tưởng và ủng hộ Nhân Hòa trong suốt thời gian qua.
+                                Cảm ơn Quý khách đã tin tưởng và ủng hộ Chúng Tôi trong suốt thời gian qua.
                                 Do hệ thống tên...
                             </div>
                             <div class="d-flex align-items-center justify-content-between meta--wrap">
@@ -181,8 +181,8 @@
                             <div class="inner-content">
                                 <div class="name">
                                     <a href="https://nhanhoa.com/tin-tuc/nvme-cloud-vps-nhan-hoa.html"
-                                        title="NVMe Cloud VPS Nhân Hòa - Giải pháp lưu trữ website “siêu tốc”">
-                                        NVMe Cloud VPS Nhân Hòa - Giải pháp lưu trữ...
+                                        title="NVMe Cloud VPS Chúng Tôi - Giải pháp lưu trữ website “siêu tốc”">
+                                        NVMe Cloud VPS Chúng Tôi - Giải pháp lưu trữ...
                                     </a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between meta--wrap">
@@ -212,8 +212,8 @@
                             <div class="inner-content">
                                 <div class="name">
                                     <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-thong-bao-lich-nghi-le-quoc-khanh-nam-2024.html"
-                                        title="Nhân Hòa thông báo Lịch nghỉ lễ Quốc Khánh năm 2024">
-                                        Nhân Hòa thông báo Lịch nghỉ lễ Quốc Khánh...
+                                        title="Chúng Tôi thông báo Lịch nghỉ lễ Quốc Khánh năm 2024">
+                                        Chúng Tôi thông báo Lịch nghỉ lễ Quốc Khánh...
                                     </a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between meta--wrap">
@@ -242,8 +242,8 @@
                             <div class="inner-content">
                                 <div class="name">
                                     <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-dong-hanh-cung-tan-sinh-vien-2024.html"
-                                        title="NHÂN HÒA ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024 - TỪ ƯỚC MƠ BAY CAO - TỚI TƯƠNG LAI HUY HOÀNG">
-                                        NHÂN HÒA ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024...
+                                        title="Chúng Tôi ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024 - TỪ ƯỚC MƠ BAY CAO - TỚI TƯƠNG LAI HUY HOÀNG">
+                                        Chúng Tôi ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024...
                                     </a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between meta--wrap">
@@ -272,8 +272,8 @@
                             <div class="inner-content">
                                 <div class="name">
                                     <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-cloud-storage.html"
-                                        title="Nhân Hòa Cloud Storage - Lưu trữ thông minh, An tâm vận hành">
-                                        Nhân Hòa Cloud Storage - Lưu trữ thông minh,...
+                                        title="Chúng Tôi Cloud Storage - Lưu trữ thông minh, An tâm vận hành">
+                                        Chúng Tôi Cloud Storage - Lưu trữ thông minh,...
                                     </a>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between meta--wrap">
@@ -377,8 +377,8 @@
 
                             <div class="name">
                                 <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-dong-hanh-cung-tan-sinh-vien-2024.html"
-                                    title="NHÂN HÒA ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024 - TỪ ƯỚC MƠ BAY CAO - TỚI TƯƠNG LAI HUY HOÀNG">
-                                    NHÂN HÒA ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024...
+                                    title="Chúng Tôi ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024 - TỪ ƯỚC MƠ BAY CAO - TỚI TƯƠNG LAI HUY HOÀNG">
+                                    Chúng Tôi ĐỒNG HÀNH CÙNG TÂN SINH VIÊN 2024...
                                 </a>
                             </div>
                             <div class="description d-none">
@@ -412,8 +412,8 @@
 
                             <div class="name">
                                 <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-cloud-storage.html"
-                                    title="Nhân Hòa Cloud Storage - Lưu trữ thông minh, An tâm vận hành">
-                                    Nhân Hòa Cloud Storage - Lưu trữ thông minh,...
+                                    title="Chúng Tôi Cloud Storage - Lưu trữ thông minh, An tâm vận hành">
+                                    Chúng Tôi Cloud Storage - Lưu trữ thông minh,...
                                 </a>
                             </div>
                             <div class="description d-none">
@@ -483,8 +483,8 @@
 
                             <div class="name">
                                 <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-dong-hanh-cung-doanh-nghiep-ho-kinh-doanh-trong-cac-dich-vu-so-su-dung-ten-mien-vn-tai-hai-duong.html"
-                                    title="Nhân Hòa đồng hành cùng doanh nghiệp, hộ kinh doanh trong các dịch vụ số sử dụng tên miền “.VN” tại Hải Dương">
-                                    Nhân Hòa đồng hành cùng doanh nghiệp, hộ...
+                                    title="Chúng Tôi đồng hành cùng doanh nghiệp, hộ kinh doanh trong các dịch vụ số sử dụng tên miền “.VN” tại Hải Dương">
+                                    Chúng Tôi đồng hành cùng doanh nghiệp, hộ...
                                 </a>
                             </div>
                             <div class="description d-none">

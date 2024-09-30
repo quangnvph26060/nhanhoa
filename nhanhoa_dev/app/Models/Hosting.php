@@ -24,6 +24,7 @@ class Hosting extends Model
         'alias_parked_domain',
         'email_account',
         'hostingtype_id',
+        'logo'
     ];
 
     protected $appends = ['promotion'];

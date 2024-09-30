@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footer;
 use App\Services\DomainService;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class DomainController extends Controller
         $doaminqt = $this->domainService->getDomainByType(1);
         $doaminvn = $this->domainService->getDomainByType(2);
         $title = "Mua đăng ký tên miền";
-        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title'));
+        $footers = Footer::get();
+        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title', 'footers'));
     }
 }

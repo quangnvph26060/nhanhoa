@@ -49,7 +49,13 @@ class HostingService
     {
         try {
             DB::beginTransaction();
+                $logo = $data['logo'];
+                $directoryPath = 'public/hosting';
 
+                $logoFileName = 'image_' . $logo->getClientOriginalName();
+                $logoFilePath = 'storage/hosting/' . $logoFileName;
+
+                Storage::putFileAs($directoryPath, $logo, $logoFileName);
             $datanew = [
                 'name' => $data['name'],
                 'price' => $data['price'],
@@ -64,6 +70,7 @@ class HostingService
                 'alias_parked_domain' => $data['alias_parked_domain'],
                 'email_account' => $data['email_account'],
                 'hostingtype_id' => $data['hostingtype_id'],
+                'logo' =>  $logoFilePath,
             ];
 
             $hosting = $this->hosting->create($datanew);
@@ -107,6 +114,17 @@ class HostingService
                 'email_account' => $data['email_account'],
                 'hostingtype_id' => $data['hostingtype_id'],
             ];
+            if (isset($data['logo'])) {
+
+                $directoryPath = 'public/logohosting';
+                // Storage::deleteDirectory($directoryPath);
+                // Storage::makeDirectory($directoryPath);
+                $logo = $data['logo'];
+                $logoFileName = 'image_' . $logo->getClientOriginalName();
+                $logoFilePath = 'storage/logohosting/' . $logoFileName;
+                Storage::putFileAs('public/logohosting', $logo, $logoFileName);
+                $datanew['logo'] = $logoFilePath;
+            }
             $hosting->update($datanew);
             SgoHostingPromotion::where('hosting_id', $id)->delete();
             if(!empty($data['promotion'])){

@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Backup365;
 use App\Models\Cloud;
+use App\Models\Config;
 use App\Models\EmailServer;
 use App\Models\GoogleWorkspace;
 use App\Models\GoogleWorkspaceEducation;
 use App\Models\Hosting;
 use App\Models\Server;
 use App\Models\ServerLocation;
+use App\Models\SgoHome;
 use App\Services\ClientService;
 use Illuminate\Http\Request;
 
@@ -21,9 +23,12 @@ class DashBoardController extends Controller
         $this->clientService = $clientService;
     }
     public function index(){
+        $home = SgoHome::first();
+        $config = Config::first();
+        $title = $config->store_name;
         $clients = $this->clientService->getClientAll();
         $total = $this->totalPay();
-        return view('admin.dashboard.index', compact('clients', 'total'));
+        return view('admin.dashboard.index', compact('clients', 'total','title', 'home'));
     }
 
     public function totalPay(){

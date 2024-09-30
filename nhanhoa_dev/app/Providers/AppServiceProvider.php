@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Client;
+use App\Models\Cloud;
+use App\Models\EmailServer;
 use App\Models\EmailSetting;
+use App\Models\Ssl;
 use App\Services\ConfigService;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,7 +28,17 @@ class AppServiceProvider extends ServiceProvider
         $config = \App\Models\Config::first();
         //  $this->loadEmailSettingsToEnv();
         //  dd($config);
-        view()->share('config', $config);
+        $ssl = Ssl::orderBy('price', 'asc')->first();
+        $cloud = Cloud::orderBy('price', 'asc')->first();
+        $email = EmailServer::orderBy('price', 'asc')->first();
+        $clients = Client::all();
+        view()->share([
+            'config' => $config,
+            'ssl' => $ssl,
+            'cloud' => $cloud,
+            'email' => $email,
+            'client' => count($clients)
+        ]);
 
     }
 

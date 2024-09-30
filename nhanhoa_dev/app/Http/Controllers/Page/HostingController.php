@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerReview;
+use App\Models\Footer;
 use App\Services\ClientService;
 use App\Services\HostingService;
 use Illuminate\Http\Request;
@@ -21,7 +23,9 @@ class HostingController extends Controller
         $hosting = $this->hostingService->getHostingByType(2);
         $titleSection  = "Bảng giá Hosting Linux";
         $title = 'Hosting giá rẻ chất lượng cao';
-        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title', 'customerreivew', 'footers'));
     }
 
     public function windows()
@@ -29,7 +33,9 @@ class HostingController extends Controller
         $titleSection   = "Bảng giá Hosting Windows";
         $hosting = $this->hostingService->getHostingByType(1);
         $title = 'Hosting giá rẻ chất lượng cao';
-        return view('client.pages.windows-hosting.index', compact('titleSection', 'hosting', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title', 'customerreivew', 'footers'));
     }
 
     public function pay(Request $request){

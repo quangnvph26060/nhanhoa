@@ -23,35 +23,36 @@ class DomainController extends Controller
     public function index()
     {
         $domains = $this->domainService->getDomainAll();
-        //  dd($domains);
-        return view('admin.domain.index', compact('domains'));
+        $title= "Tên miền";
+        return view('admin.domain.index', compact('domains', 'title'));
     }
 
     public function addform()
     {
-        return view('admin.domain.add');
+        $title= "Thêm Tên miền";
+        return view('admin.domain.add', compact('title'));
     }
 
     public function addsubmit(Request $request)
     {
 
-        // $data = [
-        //     "name" => $request->name,
-        //     "domaintype_id" => $request->domaintype_id,
-        //     "le_phi" => $request->le_phi,
-        //     "phiduytri" => $request->phiduytri,
-        //     "dichvu" => $request->dichvu,
-        //     "dicvunamsau" => $request->dicvunamsau,
-        // ];
+        $data = [
+            "name" => $request->name,
+            "domaintype_id" => $request->domaintype_id,
+            "le_phi" => $request->le_phi,
+            "phiduytri" => $request->phiduytri,
+            "dichvu" => $request->dichvu,
+            "dicvunamsau" => $request->dicvunamsau,
+        ];
 
-        // $logo = $request->file('logo');
-        // $directoryPath = 'public/domain';
+        $logo = $request->file('logo');
+        $directoryPath = 'public/domain';
 
-        // $logoFileName = 'image_' . $logo->getClientOriginalName();
-        // $logoFilePath = 'storage/domain/' . $logoFileName;
+        $logoFileName = 'image_' . $logo->getClientOriginalName();
+        $logoFilePath = 'storage/domain/' . $logoFileName;
 
-        // Storage::putFileAs($directoryPath, $logo, $logoFileName);
-        // $data['logo'] = $logoFilePath;
+        Storage::putFileAs($directoryPath, $logo, $logoFileName);
+        $data['logo'] = $logoFilePath;
 
         $domain = $this->domainService->createDomain($request->all());
 
@@ -60,8 +61,9 @@ class DomainController extends Controller
 
     public function editform($id)
     {
+        $title= "Thay đổi Tên miền";
         $domain = Domain::find($id);
-        return view('admin.domain.edit', compact('domain'));
+        return view('admin.domain.edit', compact('domain', 'title'));
     }
 
     public function editsubmit(Request $request, $id)

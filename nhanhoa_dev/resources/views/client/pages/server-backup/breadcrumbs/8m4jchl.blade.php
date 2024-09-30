@@ -151,7 +151,7 @@
                                                 ĐỘI NGŨ KỸ THUẬT HỖ TRỢ
                                             </div>
                                             <div class="description">
-                                                BACKUP365.VN là sản phẩm của Công ty TNHH phần mềm Nhân Hòa – Nhà
+                                                BACKUP365.VN là sản phẩm của Công ty TNHH phần mềm Chúng Tôi – Nhà
                                                 đăng ký tên miền và cung cấp giải pháp lưu trữ dữ liệu hàng đầu Việt
                                                 Nam, với hơn 15 năm kinh nghiệm cung cấp dịch vụ cho hơn 50.000
                                                 khách hàng. Với đội kỹ thuật là những chuyên gia hàng đầu về hệ

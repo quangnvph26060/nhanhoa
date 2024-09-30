@@ -4,7 +4,7 @@
             <a href="{{route('page.home')}}">
                 <img class="img-fluid nh-lazyload ls-is-cached lazyloaded"
                     src="{{ asset($config->logo) }}"
-                    data-src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp" alt="Logo Nhân Hòa">
+                    data-src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp" alt="Logo Chúng Tôi">
             </a>
         </div>
     </div>
@@ -159,7 +159,7 @@
                                                 Bảng giá tên miền
                                             </span>
                                             <span class="description">
-                                                Bảng giá tên miền tại Nhân Hòa
+                                                Bảng giá tên miền tại Chúng Tôi
                                             </span>
                                         </div>
                                     </div>
@@ -209,14 +209,14 @@
                                     <div class="item-menu">
                                         <div class="icon">
                                             <img src="https://nhanhoa.com/templates/images/v2/menu/icon_menu_ten_mien.png"
-                                                alt="Chuyển tên miền về Nhân Hòa">
+                                                alt="Chuyển tên miền về Chúng Tôi">
                                         </div>
                                         <div class="name-description">
                                             <span class="name">
-                                                Chuyển tên miền về Nhân Hòa
+                                                Chuyển tên miền về Chúng Tôi
                                             </span>
                                             <span class="description">
-                                                Chuyển đổi nhà cung cấp sang Nhân Hòa.
+                                                Chuyển đổi nhà cung cấp sang Chúng Tôi.
                                             </span>
                                         </div>
                                     </div>
@@ -329,7 +329,7 @@
                                                 Cloud VPS Quốc tế
                                             </span>
                                             <span class="description">
-                                                Dịch vụ VPS Quốc tế hiệu suất cao của Nhân Hòa
+                                                Dịch vụ VPS Quốc tế hiệu suất cao của Chúng Tôi
                                             </span>
                                         </div>
                                     </div>
@@ -718,8 +718,8 @@
     <div class="col-lg-2 col-md-2">
         <div class="header-right">
             <div class="btn-action-header btn-promotion">
-                <a href="{{route('page.affiliate')}}" title="Chương trình ưu đãi đang diễn ra">
-                    Ưu đãi
+                <a href="{{route('page.news')}}" >
+                    Sự kiện
                 </a>
             </div>
             <!--Begin Member Info-->

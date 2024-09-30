@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerReview;
+use App\Models\Footer;
 use App\Services\ClientService;
 use App\Services\CloudBackupService;
 use App\Services\cloudService;
@@ -21,26 +23,34 @@ class CloudController extends Controller
     }
     public function server(){
         $titleSection = "Cloud365 - Bảng Giá Mua Cloud VPS Giá Rẻ";
-        $cloud = $this->cloudService->getcloudByType(1);
+        $clouds = $this->cloudService->getcloudByType(1);
         $title = "Cloud Server";
-        return view('client.pages.cloud-server.index', compact('titleSection', 'cloud', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.cloud-server.index', compact('titleSection', 'clouds', 'title', 'customerreivew', 'footers'));
     }
 
     public function backup(){
         $cloudvps = $this->cloudBackupService->getBackupsByType(1);
         $cloudserver = $this->cloudBackupService->getBackupsByType(2);
         $title = "Cloud Backup";
-        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title', 'customerreivew', 'footers'));
     }
 
     public function storage(){
         $title = "Cloud Storage";
-        return view('client.pages.cloud-storage.index', compact('title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.cloud-storage.index', compact('title', 'customerreivew', 'footers'));
     }
     public function international(){
-        $cloud = $this->cloudService->getcloudByType(2);
+        $clouds = $this->cloudService->getcloudByType(2);
         $title = "Cloud VPS Quốc Tế";
-        return view('client.pages.cloud-international.index', compact('cloud', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.cloud-international.index', compact('clouds', 'title', 'customerreivew', 'footers'));
     }
 
     public function cloudpay(Request $request){

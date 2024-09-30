@@ -2,11 +2,10 @@
     <div class="container">
         <div class="content-register-service">
             <h2 class="title-section">
-                Đăng ký dịch vụ của chúng tôi ngay hôm nay để được ưu đãi
+               {{ $home->section1_title }}
             </h2>
             <div class="slogan-section text-thin" style="color:rgb(29, 29, 29);">
-                Nhân Hoà cung cấp các dịch vụ hosting, domain, cloud vps, email doanh nghiệp chất lượng cao
-                với hơn 500.000+ khách hàng tin dùng
+                {{ $home->section1_content }}
             </div>
             <div class="info--register-service">
                 <ul class="nav nav-tabs" role="tablist">
@@ -64,20 +63,8 @@
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="content-left">
                                         <div class="info-top">
-                                            <div class="title">Tên miền của bạn, ý tưởng của bạn. "Có
-                                                không giữ, mất
-                                                đừng tìm"</div>
-                                            <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
-                                                miền "bkav.com".
-                                                “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
-                                                USD để mua
-                                                lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
-                                                mua lại tên
-                                                miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
-                                                chọn đúng và
-                                                đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
-                                                miền quốc
-                                                gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
+                                            <div class="title"> {{ $home->section2_title }}</div>
+                                            <div class="description"> {{ $home->section2_content }}</div>
                                         </div>
                                         <div class="info-bottom">
                                             <div class="title">Lưu ý quan trọng khi đăng ký tên miền
@@ -135,7 +122,7 @@
                                                                 &nbsp;
                                                             </div>
                                                             <div class="link-service">
-                                                                <a class="bg-gradient "
+                                                                <a class="bg-gradient" href="{{ route('page.domain-registration') }}"
                                                                     title=" tên miền quốc gia {{ $item->name }}">
                                                                     Đăng ký tên miền
                                                                 </a>
@@ -201,19 +188,8 @@
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="content-left">
                                 <div class="info-top">
-                                    <div class="title">BKAV đã mất 2.3 tỷ để mua lại tên
-                                        miền "bkav.com".</div>
-                                    <div class="description">BKAV đã mất 2.3 tỷ để mua lại tên
-                                        miền "bkav.com".
-                                        “Đại gia” như Apple cũng phải bỏ ra con số lên tới 4,5 triệu
-                                        USD để mua
-                                        lại “icloud.com”, Facebook đã phải trả tới 8,5 triệu USD để
-                                        mua lại tên
-                                        miền “Fb.com”. <br> Nếu có ý tưởng kinh doanh mới, việc lựa
-                                        chọn đúng và
-                                        đăng ký sớm, kịp thời để sở hữu nhiều tên miền quốc tế, tên
-                                        miền quốc
-                                        gia là cấp thiết để bảo vệ thương hiệu của bạn.</div>
+                                    <div class="title">{{ $home->section3_title }}</div>
+                                    <div class="description">{{ $home->section3_content }}</div>
                                 </div>
                                 <div class="info-bottom">
                                     <div class="title">Lưu ý quan trọng khi đăng ký tên miền
@@ -254,9 +230,9 @@
                                             <div class="item-service">
                                                 <div class="img position-relative">
                                                     <img class="rtbs nh-lazyload lazyloaded"
-                                                        src="https://nhanhoa.com/templates/images/v2/webp/home/cloud_dv.webp"
-                                                        data-src="https://nhanhoa.com/templates/images/v2/webp/home/cloud_dv.webp"
-                                                        alt=" tên miền quốc tế .com">
+                                                        src="{{ asset($item->logo) }}"
+                                                        data-src="{{ asset($item->logo) }}"
+                                                        alt="">
                                                 </div>
                                                 <div class="inner-content">
                                                     <div class="name">
@@ -286,7 +262,7 @@
                                                     </div>
                                                     <div class="link-service">
                                                         <a class="bg-gradient btn-add-cart-direct"
-                                                            data-service_id="1961" href="javascript:;"
+                                                            data-service_id="1961" href="{{ route('page.cloud-server') }}"
                                                             title="ssd cloud vps e">
                                                             <div
                                                                 class="spinner spinner-sm spinner-light nh-btn-loader d-none">
@@ -296,8 +272,7 @@
                                                                 <div class="rect4"></div>
                                                                 <div class="rect5"></div>
                                                             </div>
-                                                            <span class="btn_text">Thêm vào giỏ
-                                                                hàng</span>
+                                                            <span class="btn_text">Đăng ký cloud</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -326,13 +301,9 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="content-left">
                             <div class="info-top">
-                                <div class="title">Hosting Nhân Hòa, Load dưới 2S, Không lo bỏ lỡ khách hàng
+                                <div class="title">{{ $home->section4_title }}
                                 </div>
-                                <div class="description">Website truy cập rất chậm, khách hàng của bạn đã đặt hàng xong
-                                    ở bên website của đối thủ. Đừng làm kinh doanh cho "vui" nhé. Đăng ký và sử dụng
-                                    ngay dịch vụ Hosting tại Nhân Hòa. Tăng tốc độ website lên gấp 25 lần so với hosting
-                                    thường, Giúp Seo website của bạn lên top Google dễ dàng. Gia tăng thời gian giữ chân
-                                    khách hàng trên website, nâng cao tỷ lệ chuyển đổi.</div>
+                                <div class="description">{{ $home->section4_content }}</div>
                             </div>
                             <div class="info-bottom">
                                 <div class="title">Mua hosting tốt nhất
@@ -373,8 +344,8 @@
                                         <div class="item-service">
                                             <div class="img position-relative">
                                                 <img class="rtbs nh-lazyload lazyloaded"
-                                                    src="https://nhanhoa.com/templates/images/v2/webp/home/hosting_dv.webp"
-                                                    data-src="https://nhanhoa.com/templates/images/v2/webp/home/hosting_dv.webp"
+                                                    src="{{ asset($item->logo) }}"
+                                                    data-src="{{ asset($item->logo) }}"
                                                     alt=" tên miền quốc tế .com">
                                             </div>
                                             <div class="inner-content">
@@ -405,7 +376,7 @@
                                                 </div>
                                                 <div class="link-service">
                                                     <a class="bg-gradient btn-add-cart-direct" data-service_id="1961"
-                                                        href="javascript:;" title="ssd cloud vps e">
+                                                        href="{{ route('page.linux-hosting') }}" title="ssd cloud vps e">
                                                         <div
                                                             class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                             <div class="rect1"></div>
@@ -414,8 +385,7 @@
                                                             <div class="rect4"></div>
                                                             <div class="rect5"></div>
                                                         </div>
-                                                        <span class="btn_text">Thêm vào giỏ
-                                                            hàng</span>
+                                                        <span class="btn_text">Đăng ký Hosting</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -442,17 +412,11 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="content-left">
                         <div class="info-top">
-                            <div class="title"> Khẳng định sự chuyên nghiệp trong mắt khách hàng, đối tác với Email
-                                doanh nghiệp.</div>
-                            <div class="description">Thay vì dùng email miễn phí @gmail/ @yahoo.com, Email doanh nghiệp
-                                sẽ giúp khách hàng sở hữu địa chỉ email dạng @tenmiencongty.com. Email doanh nghiệp
-                                không chỉ giúp doanh nghiệp quảng bá thương hiệu, mà còn tạo luồng kết nối thông suốt:
-                                tăng tỉ lệ gửi mail vào hòm thư chính, hạn chế spam, tăng tính bảo mật... Đa dạng lựa
-                                chọn phù hợp với mọi loại hình doanh nghiệp, mở "hòm thư chính chủ" của bạn tại Nhân Hoà
-                                ngay!.</div>
+                            <div class="title"> {{ $home->section5_title }}</div>
+                            <div class="description">{{ $home->section5_content }}</div>
                         </div>
                         <div class="info-bottom">
-                            <div class="title">Điểm nổi bật của Email doanh nghiệp tại Nhân Hòa?
+                            <div class="title">Điểm nổi bật của Email doanh nghiệp tại Chúng Tôi?
                             </div>
                             <div class="list-description">
                                 <ul>
@@ -488,9 +452,9 @@
                                     <div class="item-service">
                                         <div class="img position-relative">
                                             <img class="rtbs nh-lazyload lazyloaded"
-                                                src="https://nhanhoa.com/templates/images/v2/webp/home/email.dv.webp"
-                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/email.dv.webp"
-                                                alt=" tên miền quốc tế .com">
+                                                src="{{ asset($item->logo) }}"
+                                                data-src="{{ asset($item->logo) }}"
+                                                alt=" ">
                                         </div>
                                         <div class="inner-content">
                                             <div class="name">
@@ -518,7 +482,7 @@
                                             </div>
                                             <div class="link-service">
                                                 <a class="bg-gradient btn-add-cart-direct" data-service_id="1961"
-                                                    href="javascript:;" title="ssd cloud vps e">
+                                                    href="{{ route('page.email-server') }}" title="ssd cloud vps e">
                                                     <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                         <div class="rect1"></div>
                                                         <div class="rect2"></div>
@@ -526,8 +490,7 @@
                                                         <div class="rect4"></div>
                                                         <div class="rect5"></div>
                                                     </div>
-                                                    <span class="btn_text">Thêm vào giỏ
-                                                        hàng</span>
+                                                    <span class="btn_text">Đăng ký Email</span>
                                                 </a>
                                             </div>
                                         </div>
@@ -554,13 +517,8 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="content-left">
                         <div class="info-top">
-                            <div class="title"> Bí kíp bảo mật website tuyệt đối không được bỏ qua.</div>
-                            <div class="description">Được ví như "Hàng rào bảo mật" vô cùng vững chắc, Secure Sockets
-                                Layer (SSL) là tiêu chuẩn của công nghệ bảo mật, truyền thông mã hoá giữa máy chủ Web
-                                server và trình duyệt. SSL hiện tại cũng là tiêu chuẩn bảo mật cho hàng triệu website
-                                trên toàn thế giới, nó bảo vệ dữ liệu truyền đi trên môi trường internet được an toàn.
-                                Đích thực là "bé hạt tiêu của làng công nghệ", nhỏ mà có võ, tuyệt đối đừng bỏ qua khi
-                                xây dựng website bạn nhé!.</div>
+                            <div class="title"> {{ $home->section6_title }}</div>
+                            <div class="description">{{ $home->section6_content }}</div>
                         </div>
                         <div class="info-bottom">
                             <div class="title">Lưu ý quan trọng khi đăng ký tên miền
@@ -599,8 +557,8 @@
                                     <div class="item-service">
                                         <div class="img position-relative">
                                             <img class="rtbs nh-lazyload lazyloaded"
-                                                src="https://nhanhoa.com/templates/images/v2/webp/home/ssl_dv.webp"
-                                                data-src="https://nhanhoa.com/templates/images/v2/webp/home/ssl_dv.webp"
+                                                src="{{ asset($item->logo) }}"
+                                                data-src="{{ asset($item->logo) }}"
                                                 alt="ssl">
                                         </div>
                                         <div class="inner-content">
@@ -631,7 +589,7 @@
                                             </div>
                                             <div class="link-service">
                                                 <a class="bg-gradient btn-add-cart-direct" data-service_id="1961"
-                                                    href="javascript:;" title="ssd cloud vps e">
+                                                    href="{{ route('page.ssl-comodo') }}" title="ssd cloud vps e">
                                                     <div class="spinner spinner-sm spinner-light nh-btn-loader d-none">
                                                         <div class="rect1"></div>
                                                         <div class="rect2"></div>
@@ -639,8 +597,7 @@
                                                         <div class="rect4"></div>
                                                         <div class="rect5"></div>
                                                     </div>
-                                                    <span class="btn_text">Thêm vào giỏ
-                                                        hàng</span>
+                                                    <span class="btn_text">Đăng ký SSL</span>
                                                 </a>
                                             </div>
                                         </div>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Page;
 
 use App\Http\Controllers\Controller;
+use App\Models\CustomerReview;
+use App\Models\Footer;
 use App\Models\ServicePricing;
 use App\Services\Backup365Service;
 use App\Services\ClientService;
@@ -26,22 +28,30 @@ class ServerController extends Controller
     public function dedicatedServer(){
         $servers = $this->serverService->getServerAll();
         $title = "Thuê máy chủ vật lý";
-        return view('client.pages.dedicated-server.index', compact('servers', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.dedicated-server.index', compact('servers', 'title', 'customerreivew', 'footers'));
     }
     public function serverLocation(){
         $serverloactions = $this->serverService->getServerLocationAll();
         $title = "Vị trí máy chủ";
-        return view('client.pages.server-location.index', compact('serverloactions', 'title'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.server-location.index', compact('serverloactions', 'title', 'customerreivew', 'footers'));
     }
 
     public function serverBackup(){
         $backupservers = $this->backup365Service->getAllBackup365s();
-        return view('client.pages.server-backup.index', compact('backupservers'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.server-backup.index', compact('backupservers', 'customerreivew', 'footers'));
     }
 
     public function serverAdministration(){
         $servicePricing = $this->servicePricingService->getServicePricingAll();
-        return view('client.pages.server-administration.index', compact('servicePricing'));
+        $customerreivew  = CustomerReview::get();
+        $footers = Footer::get();
+        return view('client.pages.server-administration.index', compact('servicePricing', 'customerreivew', 'footers'));
     }
 
     public function PayserverAdministration(Request $request){

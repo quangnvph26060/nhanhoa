@@ -12,7 +12,7 @@
                                             Khách hàng tiêu biểu
                                         </div>
                                         <div class="description">
-                                            Rất nhiều khách hàng lớn đã tin tưởng lựa chọn dịch vụ của Nhân Hòa
+                                            Rất nhiều khách hàng lớn đã tin tưởng lựa chọn dịch vụ của Chúng Tôi
                                         </div>
                                     </div>
                                 </div>

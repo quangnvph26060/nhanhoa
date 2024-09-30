@@ -5,7 +5,7 @@
             <span class="slogan-section text-center d-block">
                 Lý do nên lựa chọn
             </span>
-            Dịch vụ Hosting Linux của Nhân Hòa
+            Dịch vụ Hosting Linux của Chúng Tôi
         </h2>
         <div class="info">
             <div class="row">
@@ -35,7 +35,7 @@
                             Tốc độ truy cập nhanh
                         </h3>
                         <div class="dsc">
-                            Linux Hosting của Nhân Hòa sử dụng hạ tầng máy chủ mạnh mẽ với 100% ổ cứng SSD Enterprise,
+                            Linux Hosting của Chúng Tôi sử dụng hạ tầng máy chủ mạnh mẽ với 100% ổ cứng SSD Enterprise,
                             được cài đặt LiteSpeed Web Server giúp tăng tốc độ website gấp 6 lần so với hosting thông
                             thường.
                         </div>
@@ -104,7 +104,7 @@
                             Công cụ quản trị tốt nhất
                         </h3>
                         <div class="dsc">
-                            Linux Hosting của Nhân Hòa sử dụng cPanel là phần mềm quản trị hosting tốt nhất trên hệ điều
+                            Linux Hosting của Chúng Tôi sử dụng cPanel là phần mềm quản trị hosting tốt nhất trên hệ điều
                             hành Linux hiện nay với nhiều tính năng ưu việt.
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                             Hoàn lại tiền nếu bạn không hài lòng
                         </h3>
                         <div class="dsc">
-                            Nhân Hòa duy trì chính sách hoàn lại 100% phí dịch vụ trong 30 ngày nếu khách hàng không hài
+                            Chúng Tôi duy trì chính sách hoàn lại 100% phí dịch vụ trong 30 ngày nếu khách hàng không hài
                             lòng như một sự cam kết về chất lượng dịch vụ đối với người sử dụng.
                         </div>
                     </div>

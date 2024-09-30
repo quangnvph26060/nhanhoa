@@ -104,7 +104,7 @@
                         <div class="title-footer">Công ty <i class="fas fa-chevron-down"></i></div>
 
                         <ul>
-                            <li class=""><a href="https://nhanhoa.com/ve-nhan-hoa.html">Về Nhân Hòa</a>
+                            <li class=""><a href="https://nhanhoa.com/ve-nhan-hoa.html">Về Chúng Tôi</a>
                             </li>
                             <li class=""><a href="https://nhanhoa.com/tuyen-dung.html">Tuyển dụng</a>
                             </li>
@@ -196,23 +196,23 @@
             <div class="col-md-3 col-12">
                 <div nh-block="s7dw1cj" nh-block-cache="true" class="">
                     <div class="menu-footer">
-                        <div class="title-footer">Ứng dụng Nhân Hòa App <i class="fas fa-chevron-down"></i>
+                        <div class="title-footer">Ứng dụng Chúng Tôi App <i class="fas fa-chevron-down"></i>
                         </div>
                         <ul class="app-1 box-app">
                             <li><a href="https://nhanhoa.com/nhan-hoa-app.html" title="">Giới thiệu Nhân
                                     Hòa App</a></li>
                             <li><a href="https://apps.apple.com/vn/app/nh%C3%A2n-ho%C3%A0/id1469246570"
-                                    target="_blank" title="Nhân hòa App Trên App Store"><img nh-lazy="image"
+                                    target="_blank" title="Chúng Tôi App Trên App Store"><img nh-lazy="image"
                                         class="img-fluid"
                                         data-src="https://cdn1460.cdn4s4.io.vn/media/app-store.png"
-                                        alt="Nhân hòa App Trên App Store"
+                                        alt="Chúng Tôi App Trên App Store"
                                         src="https://cdn1460.cdn4s4.io.vn/media/app-store.png"></a>
                             </li>
                             <li><a href="https://play.google.com/store/apps/details?id=com.nh.domain&amp;hl=vi"
-                                    title="Nhân hòa App Trên Google Play" target="_blank"><img
+                                    title="Chúng Tôi App Trên Google Play" target="_blank"><img
                                         nh-lazy="image" class="img-fluid"
                                         data-src="https://cdn1460.cdn4s4.io.vn/media/google-play.png"
-                                        alt="Nhân hòa App Trên Google Play"
+                                        alt="Chúng Tôi App Trên Google Play"
                                         src="https://cdn1460.cdn4s4.io.vn/media/google-play.png"></a>
                             </li>
                         </ul>
@@ -223,17 +223,17 @@
                             <li><a href="https://nhanhoa.com/nhan-hoa-app.html" title="">Giới thiệu sàn
                                     tên miền</a></li>
                             <li><a href="https://apps.apple.com/vn/app/s%C3%A0n-domain/id6446716327"
-                                    target="_blank" title="Nhân hòa App Trên App Store"><img nh-lazy="image"
+                                    target="_blank" title="Chúng Tôi App Trên App Store"><img nh-lazy="image"
                                         class="img-fluid"
                                         data-src="https://cdn1460.cdn4s4.io.vn/media/app-store.png"
-                                        alt="Nhân hòa App Trên App Store"
+                                        alt="Chúng Tôi App Trên App Store"
                                         src="https://cdn1460.cdn4s4.io.vn/media/app-store.png"></a>
                             </li>
                             <li><a href="https://play.google.com/store/apps/details?id=com.nhanhoa.muabandomain"
-                                    title="Nhân hòa App Trên Google Play" target="_blank"><img
+                                    title="Chúng Tôi App Trên Google Play" target="_blank"><img
                                         nh-lazy="image" class="img-fluid"
                                         data-src="https://cdn1460.cdn4s4.io.vn/media/google-play.png"
-                                        alt="Nhân hòa App Trên Google Play"
+                                        alt="Chúng Tôi App Trên Google Play"
                                         src="https://cdn1460.cdn4s4.io.vn/media/google-play.png"></a>
                             </li>
                         </ul>
@@ -249,7 +249,7 @@
             <div class="col-md-12 col-12">
                 <div nh-block="l2r7nyd" nh-block-cache="true" class="">
                     <div class="footer-menu-fanpage menu-footer d-flex flex-wrap">
-                        <div class="title-footer mr-3">Kết nối với Nhân Hòa:</div>
+                        <div class="title-footer mr-3">Kết nối với Chúng Tôi:</div>
                         <ul class="list-unstyled d-flex mb-0 flex-wrap">
                             <li class="mr-4"><a href="https://www.facebook.com/nhanhoacom"
                                     target="_blank"><img nh-lazy="image" class="img-fluid"
@@ -322,12 +322,12 @@
                     <div class="section-footer-contact">
                         <div class="logo mb-4"><img nh-lazy="image" class="img-fluid"
                                 data-src="https://cdn1460.cdn4s4.io.vn/media/logo/logo_footer.png"
-                                alt="Công ty TNHH Phần mềm Nhân Hòa."
+                                alt="Công ty TNHH Phần mềm Chúng Tôi."
                                 src="https://cdn1460.cdn4s4.io.vn/media/logo/logo_footer.png">
                         </div>
                         <p class="mb-2">Copyright © 2002 – 2021 Nhan Hoa Software Company. All Rights
                             Reserved.</p>
-                        <p class="mb-2">Công ty TNHH Phần mềm Nhân Hòa. Đại diện: Ông Hồ Trung Dũng</p>
+                        <p class="mb-2"> {{ $config->store_name }}. Đại diện: {{ $config->store_name }}</p>
                         <p class="mb-0">Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội
                             cấp ngày 19/09/2002</p>
                     </div>

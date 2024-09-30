@@ -4,9 +4,29 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="info-left-count">
-                        <div class="number">+500.000</div>
+                        <div class="number">@php
+                            $count = $client;
+                            if ($count < 10) {
+                                $roundedNumber = $count;
+                            } elseif ($count < 100) {
+                                $roundedNumber = floor($count / 10) * 10;
+                            } else {
+                                $roundedNumber = floor($count / 100) * 100;
+                            }
+                        @endphp
+                        +{{ $roundedNumber }}</div>
                         <div class="name">Khách hàng đã lựa chọn Chúng Tôi</div>
-                        <div class="description">Cảm ơn +500.000 khách hàng đã tin tưởng và sử dụng dịch
+                        <div class="description">Cảm ơn @php
+                            $count = $client;
+                            if ($count < 10) {
+                                $roundedNumber = $count;
+                            } elseif ($count < 100) {
+                                $roundedNumber = floor($count / 10) * 10;
+                            } else {
+                                $roundedNumber = floor($count / 100) * 100;
+                            }
+                        @endphp
+                        +{{ $roundedNumber }} khách hàng đã tin tưởng và sử dụng dịch
                             vụ của chúng
                             tôi</div>
                     </div>

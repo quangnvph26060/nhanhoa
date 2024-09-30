@@ -6,7 +6,7 @@
         </div>
         <div id="PARAGRAPH28" class="ladi-element">
             <div class="ladi-paragraph">
-                Sử dụng Nhân Hòa Cloud NAS với hệ thống gateway kết nối sẽ giúp người dùng tối ưu chi phí đầu tư
+                Sử dụng Chúng Tôi Cloud NAS với hệ thống gateway kết nối sẽ giúp người dùng tối ưu chi phí đầu tư
                 cho các trường hợp sử dụng NAS. Giảm thiểu rủi ro và thời gian quản lý cho người quản trị.
             </div>
         </div>
@@ -46,7 +46,7 @@
                     <h3 class="ladi-headline">Không gian lưu trữ không giới hạn<br /></h3>
                 </div>
                 <div id="PARAGRAPH29" class="ladi-element">
-                    <div class="ladi-paragraph">Nhân Hòa Cloud NAS tạo ra dung lượng lưu trữ "không đáy".</div>
+                    <div class="ladi-paragraph">Chúng Tôi Cloud NAS tạo ra dung lượng lưu trữ "không đáy".</div>
                 </div>
             </div>
         </div>

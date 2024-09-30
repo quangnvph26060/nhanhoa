@@ -1,8 +1,13 @@
 @extends('admin.layout.index')
 @section('content')
+<!-- Select2 CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+<!-- jQuery (nên thêm trước khi sử dụng Select2) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
@@ -115,7 +120,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Sửa</a>
+                <a href="#">Thêm</a>
             </li>
         </ul>
     </div>
@@ -123,20 +128,20 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Sửa gói cloud </h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Thêm sản phẩm</h4>
                 </div>
                 <div class="card-body">
                     <div class="">
-                        <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4" style="">
-                            <form method="POST" enctype="multipart/form-data" id="editcloud"
-                                action="{{ route('admin.cloud.editsubmit', ['id'=> $cloud->id]) }}">
+                        <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                            <form method="POST" enctype="multipart/form-data" id="addcloud"
+                                action="{{ route('admin.cloud.editsubmit', ['id'=>$cloud->id]) }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
                                         <div>
-                                            <label for="name" class="form-label">Tên gói</label>
-                                            <input type="text" class="form-control" name="name" id="name" value="{{ $cloud->name }}">
+                                            <label for="name" class="form-label">Tên sản phẩm</label>
+                                            <input type="text" class="form-control" name="name" id="name" value="{{ $cloud->name }}" placeholder="VD: Sinh viên +">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="name_error"></span>
@@ -144,9 +149,9 @@
                                         </div>
 
                                         <div>
-                                            <label for="price" class="form-label">Giá nhập<span
+                                            <label for="price" class="form-label">Giá <span
                                                     class="text text-danger">*</span></label>
-                                            <input min='1' required class="form-control" name="price" value="{{ $cloud->price }}"
+                                            <input  min='1' required class="form-control" name="price" value="{{ $cloud->price }}" placeholder="VD: 1000000"
                                                 type="number" id="price">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
@@ -157,21 +162,18 @@
                                         <div>
                                             <label for="cloudtypes_id" class="form-label">Loại Cloud </label>
                                             <select class="form-select" name="cloudtypes_id" id="cloudtypes_id">
-                                                <option value="">--- Chọn loại Hosting ---</option>
+                                                <option value="">--- Chọn loại Cloud ---</option>
                                                 <option {{ $cloud->cloudtypes_id == 1 ? 'selected' : '' }} value="1">SSD Cloud Server </option>
                                                 <option {{ $cloud->cloudtypes_id == 2 ? 'selected' : '' }} value="2">Cloud VPS Quốc Tế</option>
-                                                <option {{ $cloud->cloudtypes_id == 3 ? 'selected' : '' }} value="3">SSD Cloud Storage</option>
-                                                <option {{ $cloud->cloudtypes_id == 4 ? 'selected' : '' }} value="4">SSD Cloud Backup</option>
                                             </select>
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="cloudtypes_id_error"></span>
                                             </div>
                                         </div>
-
                                         <div>
                                             <label for="cpu" class="form-label">CPU</label>
-                                            <input type="text" class="form-control" name="cpu" id="cpu" value="{{ $cloud->cpu }}">
+                                            <input type="text" class="form-control" name="cpu" value="{{ $cloud->cpu }}" id="cpu" placeholder="VD: Intel® Xeon® E5-26xx V1-8 cores, 16 Threads">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="cpu_error"></span>
@@ -179,7 +181,7 @@
                                         </div>
                                         <div>
                                             <label for="core" class="form-label">Core</label>
-                                            <input type="text" class="form-control" name="core" id="core" value="{{ $cloud->core }}">
+                                            <input type="text" class="form-control" name="core" value="{{ $cloud->core }}" id="core" placeholder="VD: 6 Cores">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="core_error"></span>
@@ -190,7 +192,7 @@
                                     <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="ssd" class="form-label">SSD</label>
-                                            <input type="text" class="form-control" name="ssd" id="ssd" value="{{ $cloud->ssd }}">
+                                            <input type="text" class="form-control" name="ssd" value="{{ $cloud->ssd }}" id="ssd" placeholder="VD: 33GB">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ssd_error"></span>
@@ -198,7 +200,7 @@
                                         </div>
                                         <div>
                                             <label for="ram" class="form-label">RAM</label>
-                                            <input type="text" class="form-control" name="ram" id="ram" value="{{ $cloud->ram }}">
+                                            <input type="text" class="form-control" name="ram" value="{{ $cloud->ram }}" id="ram" placeholder="VD: 33GB">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ram_error"></span>
@@ -206,7 +208,7 @@
                                         </div>
                                         <div>
                                             <label for="ip" class="form-label">IP</label>
-                                            <input type="text" class="form-control" name="ip" id="ip" value="{{ $cloud->ip }}">
+                                            <input type="text" class="form-control" name="ip"value="{{ $cloud->ip }}"  id="ip" placeholder="VD: 01">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="ip_error"></span>
@@ -214,31 +216,48 @@
                                         </div>
                                         <div>
                                             <label for="bandwidth" class="form-label">Bandwidth</label>
-                                            <input type="text" class="form-control" name="bandwidth" id="bandwidth" value="{{ $cloud->bandwidth }}">
+                                            <input type="text" class="form-control" name="bandwidth" value="{{ $cloud->bandwidth }}" id="bandwidth" placeholder="VD: 33, Unlimited">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="bandwidth_error"></span>
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="logo" class="form-label">Logo</label>
+                                            <div class="custom-file">
+                                                <input id="logo"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" type="file"
+                                                    name="logo" accept="image/*">
+                                                <label class="custom-file-label" for="logo">Chọn logo</label>
+                                            </div>
+                                            @error('logo')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <img id="profileImagelogo" style="width:100px; height:auto"
+                                                src="{{ isset($cloud->logo) && !empty($cloud->logo) ? asset($cloud->logo) : asset('images/avatar2.jpg') }}"
+                                                alt="image logo" class="logo">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="mt-3 add_product">
-                                        <label class="form-label">
-                                            Khuyễn mãi
-                                            <input id="my-input" style="display:none;" />
-                                        </label>
+                                        <label class="form-label">Khuyến mãi</label>
                                         <select id="multiple-select" class="form-control" name="promotion[]" multiple>
-                                            @foreach($promotion as $key => $item)
-                                            <option  {{ in_array($item->id, $promotionselect) ? 'selected' : '' }} value="{{ $item->id }}">{{ $item->name }}</option>
-                                            @endforeach
+                                            @forelse($promotion as $key => $item)
+                                            <option {{ in_array($item->id, $promotionselect) ? 'selected' : '' }} value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @empty
+                                            <!-- Không có dữ liệu để hiển thị -->
+                                            @endforelse
                                         </select>
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="button" class="btn btn-primary w-md" onclick="submitedit(event)">
-                                        Xác nhận
-                                    </button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitadd(event)" >Xác nhận</button>
                                 </div>
                             </form>
 
@@ -249,6 +268,7 @@
         </div>
     </div>
 </div>
+
 <script>
     var $jq = jQuery.noConflict();
     $jq(document).ready(function() {
@@ -256,6 +276,19 @@
     });
 </script>
 <script>
+
+        document.getElementById('logo').addEventListener('change', function(event) {
+                    const input = event.target;
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        document.getElementById('profileImagelogo').src = e.target.result;
+                    };
+
+                    if (input.files && input.files[0]) {
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                });
     var validateorder = {
            'name': {
                'element': document.getElementById('name'),
@@ -339,7 +372,7 @@
            },
            'bandwidth': {
                'element': document.getElementById('bandwidth'),
-               'error': document.getElementById('bandwidtherror'),
+               'error': document.getElementById('bandwidth_error'),
                'validations': [{
                    'func': function(value) {
                        return checkRequired(value);
@@ -350,11 +383,12 @@
 
        }
 
-       function submitedit(event) {
+       function submitadd(event) {
            event.preventDefault();
            if (validateAllFields(validateorder)) {
-               document.getElementById('editcloud').submit();
+               document.getElementById('addcloud').submit();
            }
        }
+
 </script>
 @endsection

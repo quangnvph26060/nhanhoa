@@ -22,7 +22,7 @@
                 <div class="col-md-6 col-12">
                     <div class="tab-office">
                         <div class="title-section text-left">
-                            Công ty TNHH Phần mềm Nhân Hòa
+                            Công ty TNHH Phần mềm Chúng Tôi
                         </div>
                         <div class="tab-content-office">
                             <ul class="nav nav-tabs" id="tab_company_map" role="tablist">

@@ -38,6 +38,13 @@ class SslService
     {
         try {
             DB::beginTransaction();
+            $logo = $data['logo'];
+            $directoryPath = 'public/logossl';
+
+            $logoFileName = 'image_' . $logo->getClientOriginalName();
+            $logoFilePath = 'storage/logossl/' . $logoFileName;
+
+            Storage::putFileAs($directoryPath, $logo, $logoFileName);
             $datanew = [
                 'name' => $data['name'],
                 'price' => $data['price'],
@@ -51,7 +58,7 @@ class SslService
                 'level' => $data['level'],
                 'time' => $data['time'],
                 'ssltype' => $data['ssltype'],
-
+                'logo' =>  $logoFilePath,
             ];
 
             $ssl = $this->ssl->create($datanew);
@@ -85,6 +92,17 @@ class SslService
                 'time' => $data['time'],
                 'ssltype' => $data['ssltype'],
             ];
+            if (isset($data['logo'])) {
+
+                $directoryPath = 'public/logossl';
+                Storage::deleteDirectory($directoryPath);
+                Storage::makeDirectory($directoryPath);
+                $logo = $data['logo'];
+                $logoFileName = 'image_' . $logo->getClientOriginalName();
+                $logoFilePath = 'storage/logossl/' . $logoFileName;
+                Storage::putFileAs('public/logossl', $logo, $logoFileName);
+                $datanew['logo'] = $logoFilePath;
+            }
             $ssl->update($datanew);
             DB::commit();
             return $ssl;

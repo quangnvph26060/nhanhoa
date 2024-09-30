@@ -5,7 +5,7 @@
             <span class="slogan-section text-center d-none">
                 Lý do nên lựa chọn
             </span>
-            Email Server riêng của Nhân Hòa
+            Email Server riêng của Chúng Tôi
         </h2>
         <div class="info">
             <div class="relative">

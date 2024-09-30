@@ -45,10 +45,8 @@ class ConfigService
             $config->phone = $data['phone'];
             $config->email = $data['email'];
             $config->address = $data['address'];
-            $config->title = $data['title'];
-            $config->mota = $data['mota'];
             $config->save();
-            
+
             // Thiết lập các cột khác
             $config->bank_account = $data['bank_account'];
             $config->bank_id = $data['bank'];

@@ -4,7 +4,7 @@
             <span class="slogan-section text-center d-block">
                 Chính sách
             </span>
-            Dịch vụ Cloud Backup tại Nhân Hòa
+            Dịch vụ Cloud Backup tại Chúng Tôi
         </h2>
         <div class="content-note-service-domail">
             <div class="row align-items-center">

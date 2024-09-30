@@ -1382,7 +1382,7 @@
                             <div id="collapse_2" class="collapse" aria-labelledby="article_2" data-parent="#accordion"
                                 style="">
                                 <div class="card-body mb-30">
-                                    Nhân Hòa thiết kế nhiều gói nhằm đáp ứng nhu cầu kinh doanh của riêng bạn. Để được tư
+                                    Chúng Tôi thiết kế nhiều gói nhằm đáp ứng nhu cầu kinh doanh của riêng bạn. Để được tư
                                     vấn chi tiết, vui lòng liên hệ đến hotline 1900 6680.
                                 </div>
                             </div>
@@ -1418,7 +1418,7 @@
                             <div id="collapse_4" class="collapse" aria-labelledby="article_4" data-parent="#accordion"
                                 style="">
                                 <div class="card-body mb-30">
-                                    Nhân Hòa rất tiếc, Google Workspace là bộ công cụ hoàn chỉnh tuyệt vời liên kết với nhau
+                                    Chúng Tôi rất tiếc, Google Workspace là bộ công cụ hoàn chỉnh tuyệt vời liên kết với nhau
                                     để cùng làm việc. Bạn không thể mua từng dịch vụ riêng lẻ trong bộ Google Workspace của
                                     Google được.
                                 </div>

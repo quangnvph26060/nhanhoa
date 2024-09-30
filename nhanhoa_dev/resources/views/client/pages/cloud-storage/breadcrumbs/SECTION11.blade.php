@@ -3,7 +3,7 @@
     <div class="ladi-overlay"></div>
     <div class="ladi-container">
         <div id="HEADLINE53" class="ladi-element">
-            <h3 class="ladi-headline">Công ty TNHH Phần mềm Nhân Hòa</h3>
+            <h3 class="ladi-headline">Công ty TNHH Phần mềm Chúng Tôi</h3>
         </div>
         <div id="GROUP25" class="ladi-element">
             <div class="ladi-group">

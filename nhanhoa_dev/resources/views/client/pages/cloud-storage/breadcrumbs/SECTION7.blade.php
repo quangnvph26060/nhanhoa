@@ -5,7 +5,7 @@
             <h3 class="ladi-headline">Nhân Hoà Cloud Camera<br /></h3>
         </div>
         <div id="PARAGRAPH24" class="ladi-element">
-            <div class="ladi-paragraph">Nhân Hòa Cloud Camera thực hiện kết nối các hệ thống Video Management
+            <div class="ladi-paragraph">Chúng Tôi Cloud Camera thực hiện kết nối các hệ thống Video Management
                 System (VMS) một cách nhanh chóng và dễ dàng. Giúp người dùng quản lý một cách hiệu quả và an
                 toàn bảo mật.</div>
         </div>

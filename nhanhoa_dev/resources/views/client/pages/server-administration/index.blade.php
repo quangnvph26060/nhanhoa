@@ -38,7 +38,7 @@
                         <div class="logo">
                             <a href="#intro" title="trang chủ">
                                 <img style="height: 50px;"
-                                    src="https://nhanhoa.com/manager-service/image/mobile/logo.png" alt="Logo Nhân Hòa"
+                                    src="https://nhanhoa.com/manager-service/image/mobile/logo.png" alt="Logo Chúng Tôi"
                                     class="img-fluid">
                             </a>
                         </div>
@@ -797,7 +797,7 @@
             <div class="container">
                 <div class="content">
                     <h2 class="title-section text-center">
-                        Tại sao nên lựa chọn Nhân Hòa
+                        Tại sao nên lựa chọn Chúng Tôi
                     </h2>
                     <div class="list-ts">
                         <div class="row">
@@ -812,7 +812,7 @@
                                             Hơn 22 năm kinh nghiệm
                                         </h3>
                                         <div class="dsc">
-                                            Với bề dày kinh nghiệm và giải pháp dịch vụ uy tín, chuyên nghiệp, Nhân Hòa
+                                            Với bề dày kinh nghiệm và giải pháp dịch vụ uy tín, chuyên nghiệp, Chúng Tôi
                                             luôn nằm trong top đầu các đơn vị cùng lĩnh vực.
                                         </div>
                                     </div>
@@ -846,7 +846,7 @@
                                             Đa dạng dịch vụ
                                         </h3>
                                         <div class="dsc">
-                                            Nhân Hòa cung cấp đa dạng gói quản trị máy chủ, đáp ứng mọi nhu cầu của
+                                            Chúng Tôi cung cấp đa dạng gói quản trị máy chủ, đáp ứng mọi nhu cầu của
                                             khách hàng.
                                         </div>
                                     </div>
@@ -863,7 +863,7 @@
                                             Hỗ trợ kỹ thuật 24/7/365
                                         </h3>
                                         <div class="dsc">
-                                            Đội ngũ kỹ thuật Nhân Hòa và các chuyên gia dày dạn kinh nghiệm luôn sẵn
+                                            Đội ngũ kỹ thuật Chúng Tôi và các chuyên gia dày dạn kinh nghiệm luôn sẵn
                                             sàng hỗ trợ khách hàng 24/7 trong suốt quá trình sử dụng.
                                         </div>
                                     </div>
@@ -883,7 +883,7 @@
                     </h3>
                     <div class="dsc">
                         Dịch vụ quản trị máy chủ giúp bạn tiết kiệm thời gian và nhân sự, hơn 60.000+ khách hàng đã lựa
-                        chọn Nhân Hòa.
+                        chọn Chúng Tôi.
                     </div>
                     {{-- <div class="link text-center">
                         <a href="#tuvanngay" title="Liên hệ tư vấn" class="btn_show_popup">
@@ -909,7 +909,7 @@
                                                 Văn phòng Hà Nội
                                             </a>
                                         </li>
-                                        <li class="nav-item">
+                                        {{-- <li class="nav-item">
                                             <a aria-selected="false" aria-controls="hcm" role="tab" href="#hcm"
                                                 data-toggle="tab" id="hcm-tab" class="nav-link">
                                                 Văn phòng TP. HCM
@@ -920,31 +920,22 @@
                                                 data-toggle="tab" id="vinh-tab" class="nav-link">
                                                 Văn phòng Vinh
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                     <div class="tab-content">
                                         <div aria-labelledby="ha_noi-tab" role="tabpanel" id="ha_noi"
                                             class="tab-pane active show">
                                             <div class="info-office">
-                                                <p class="address">
-                                                    <img alt="Map"
-                                                        src="https://nhanhoa.com/manager-service/image/icon_map.svg" />
-                                                    Tầng 4 - Toà nhà 97 - 99 Láng Hạ, Quận Đống Đa, Thành Phố Hà Nội
+                                                <p class="address"><img
+                                                        src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
+                                                        alt="Map"> {{ $config->address }}</p>
+                                                <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
+                                                        alt="Phone"> Điện thoại: {{ $config->phone }}
                                                 </p>
-                                                <p>
-                                                    <img alt="Phone"
-                                                        src="https://nhanhoa.com/manager-service/image/icon_dien_thoai.svg" />
-                                                    Điện thoại: (024) 7308 6680
-                                                </p>
-                                                <p>
-                                                    <img alt="Mail"
-                                                        src="https://nhanhoa.com/manager-service/image/icon_fax.svg" />
-                                                    Mail: sales@nhanhoa.com
-                                                </p>
-                                                <p>
-                                                    <img alt="Hotline"
-                                                        src="https://nhanhoa.com/manager-service/image/smartphone.svg" />
-                                                    Hotline: 091 140 8966
+                                                <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
+                                                        alt="Mail"> Mail: {{ $config->email }}</p>
+                                                <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
+                                                        alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
                                                 </p>
                                             </div>
                                         </div>
@@ -1136,20 +1127,20 @@
                                 </div>
                                 <ul class="logo-app-footer">
                                     <li>
-                                        <a target="_blank" title="Giới thiệu Nhân Hòa App"
+                                        <a target="_blank" title="Giới thiệu Chúng Tôi App"
                                             href="https://nhanhoa.com/nhan-hoa-app.html">
-                                            Giới thiệu Nhân Hòa App
+                                            Giới thiệu Chúng Tôi App
                                         </a>
                                     </li>
                                     <li>
-                                        <a title="Giới thiệu Nhân Hòa App"
+                                        <a title="Giới thiệu Chúng Tôi App"
                                             href="https://apps.apple.com/vn/app/nh%C3%A2n-ho%C3%A0/id1469246570"
                                             target="_blank">
                                             <img src="https://nhanhoa.com/manager-service/image/app_store.png" />
                                         </a>
                                     </li>
                                     <li>
-                                        <a title="Giới thiệu Nhân Hòa App"
+                                        <a title="Giới thiệu Chúng Tôi App"
                                             href="https://play.google.com/store/apps/details?id=com.nh.domain&amp;hl=vi"
                                             target="_blank">
                                             <img src="https://nhanhoa.com/manager-service/image/google_play.png" />
@@ -1184,7 +1175,7 @@
                         <div class="col-lg-12">
                             <div class="item-menu-footer">
                                 <div class="footer-inline-icon">
-                                    <span>Kết nối mạng xã hội cùng Nhân Hòa</span>
+                                    <span>Kết nối mạng xã hội cùng Chúng Tôi</span>
                                     <ul class="list-img-fanpage">
                                         <li>
                                             <a href="https://www.facebook.com/nhanhoacom" target="_blank">
@@ -1267,7 +1258,7 @@
                                         Copyright © 2002 – 2024 Nhan Hoa Software Company. All Rights Reserved.
                                     </p>
                                     <p class="d-none d-md-block">
-                                        Công ty TNHH Phần mềm Nhân Hòa. Đại diện: Ông Hồ Trung Dũng
+                                        {{ $config->store_name }}. Đại diện: {{ $config->store_name }}
                                     </p>
                                     <p class="d-none d-md-block">
                                         Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày

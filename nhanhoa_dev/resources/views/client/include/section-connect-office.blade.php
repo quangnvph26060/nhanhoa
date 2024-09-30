@@ -11,14 +11,14 @@
                                         data-bs-toggle="tab" href="#ha_noi" role="tab"
                                         aria-controls="ha_noi" aria-selected="true">
                                         Văn phòng Hà Nội </a></li>
-                                <li class="nav-item"><a class="nav-link" id="hcm-tab" data-bs-toggle="tab"
+                                {{-- <li class="nav-item"><a class="nav-link" id="hcm-tab" data-bs-toggle="tab"
                                         href="#hcm" role="tab" aria-controls="hcm"
                                         aria-selected="false">
                                         Văn phòng TP. HCM </a></li>
                                 <li class="nav-item"><a class="nav-link" id="vinh-tab" data-bs-toggle="tab"
                                         href="#vinh" role="tab" aria-controls="vinh"
                                         aria-selected="false">
-                                        Văn phòng Vinh </a></li>
+                                        Văn phòng Vinh </a></li> --}}
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade show active" id="ha_noi" role="tabpanel"

@@ -24,7 +24,8 @@ class Ssl extends Model
         'insurance',
         'level',
         'time',
-        'ssltype'
+        'ssltype',
+        'logo'
 
     ];
 }

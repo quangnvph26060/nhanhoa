@@ -11,10 +11,9 @@ class EmailSettingController extends Controller
 
     public function showForm()
     {
-        // dd(env('MAIL_USERNAME'));
-
+        $title = 'Cấu hình Email';
         $emailSetting = EmailSetting::first();
-        return view('admin.config.email', compact('emailSetting'));
+        return view('admin.config.email', compact('emailSetting', 'title'));
     }
     public function update(Request $request)
     {

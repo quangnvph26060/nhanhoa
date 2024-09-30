@@ -34,7 +34,7 @@ class CloudController extends Controller
 
         $this->cloudService->createCloud($request->all());
 
-        return redirect()->route('admin.cloud.index')->with('success', 'Thêm thành công máy chủ ! ');
+        return redirect()->route('admin.cloud.index')->with('success', 'Thêm thành công  ! ');
     }
 
     public function delete($id){
@@ -53,6 +53,6 @@ class CloudController extends Controller
     public function editsubmit($id, Request $request){
         // dd($request->all());
         $cloud = $this->cloudService->updateCloud($request->all(), $id);
-        return redirect()->route('admin.cloud.index')->with('success', 'Sửa thành công máy chủ ! ');
+        return redirect()->route('admin.cloud.index')->with('success', 'Sửa thành công ! ');
     }
 }

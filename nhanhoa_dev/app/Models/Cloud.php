@@ -21,6 +21,7 @@ class Cloud extends Model
         'ip',
         'bandwidth',
         'cloudtypes_id',
+        'logo'
 
     ];
 
@@ -29,7 +30,7 @@ class Cloud extends Model
     public function getPromotionAttribute()
     {
         return CloudPromotion::where('cloud_id', $this->attributes['id'])->get();
-    }  
+    }
 
 
 }

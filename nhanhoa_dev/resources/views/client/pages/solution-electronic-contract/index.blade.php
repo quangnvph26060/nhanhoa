@@ -1379,7 +1379,7 @@
                             Trong thời đại công nghệ thông tin hiện nay, việc ký kết hợp đồng điện tử qua email đã
                             trở nên phổ biến và tiện lợi hơn nhiều so với việc ký kết hợp đồng truyền thống trên
                             giấy tờ. Tuy nhiên, để đảm bảo tính chính xác và giá trị pháp lý của hợp đồng, quy trình
-                            ký kết hợp đồng điện tử qua email cần tuân thủ một số bước nhất định. Hãy cùng Nhân Hòa
+                            ký kết hợp đồng điện tử qua email cần tuân thủ một số bước nhất định. Hãy cùng Chúng Tôi
                             tìm hiểu ngay trong bài viết dưới đây!
 
                         </p>

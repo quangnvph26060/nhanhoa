@@ -235,6 +235,26 @@
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="time_error"></span>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="logo" class="form-label">Logo</label>
+                                            <div class="custom-file">
+                                                <input id="logo"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" type="file"
+                                                    name="logo" accept="image/*">
+                                                <label class="custom-file-label" for="logo">Chọn logo</label>
+                                            </div>
+                                            @error('logo')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <img id="profileImagelogo" style="width:100px; height:auto"
+                                                src="{{ isset($ssl->logo) && !empty($ssl->logo) ? asset($ssl->logo) : asset('images/avatar2.jpg') }}"
+                                                alt="image logo" class="logo">
+                                        </div>
+
 
                                     </div>
                                 </div>
@@ -257,5 +277,19 @@
     $jq(document).ready(function() {
         $jq('#multiple-select').select2();
     });
+
+
+    document.getElementById('logo').addEventListener('change', function(event) {
+                    const input = event.target;
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        document.getElementById('profileImagelogo').src = e.target.result;
+                    };
+
+                    if (input.files && input.files[0]) {
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                });
 </script>
 @endsection

@@ -15,12 +15,14 @@ class ContractEsocController extends Controller
     }
 
     public function index(){
+        $title = "Contract Esoc";
         $contracts = $this->contractEsocService->getAllContracts();
-        return view('admin.giaiphap.contract.index', compact('contracts'));
+        return view('admin.giaiphap.contract.index', compact('contracts', 'title'));
     }
 
     public function addform(){
-        return view('admin.giaiphap.contract.add');
+        $title = " Thêm Contract Esoc";
+        return view('admin.giaiphap.contract.add', compact('title'));
     }
 
     public function addsubmit(Request $request){
@@ -35,8 +37,9 @@ class ContractEsocController extends Controller
     }
 
     public function editform($id){
+        $title = "Thay đổi Contract Esoc";
         $contract = $this->contractEsocService->getContractById($id);
-        return view('admin.giaiphap.contract.edit', compact('contract'));
+        return view('admin.giaiphap.contract.edit', compact('contract', 'title'));
     }
 
     public function editsubmit($id, Request $request){

@@ -4,7 +4,7 @@
             <a href="{{ route('page.home') }}" title="trang chủ">
                 <img style="{{ request()->routeIs('page.domain-registration') ? 'filter: none' : '' }}" class="img-fluid nh-lazyload lazyloaded"
                     src="{{ asset($config->logo) }}"
-                    data-src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp" alt="Logo Nhân Hòa ">
+                    data-src="https://nhanhoa.com/templates/images/v2/webp/home/logo.webp" alt="Logo Chúng Tôi ">
             </a>
         </div>
     </div>
@@ -68,7 +68,7 @@
                                             <a class="menu-link"
                                                 href="https://nhanhoa.com/trang/ten-mien/chuyen-doi-nha-cung-cap.html"
                                                 title="">
-                                                Chuyển tên miền về Nhân Hòa
+                                                Chuyển tên miền về Chúng Tôi
                                             </a>
                                         </li>
 

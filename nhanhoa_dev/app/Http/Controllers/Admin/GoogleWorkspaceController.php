@@ -20,14 +20,16 @@ class GoogleWorkspaceController extends Controller
 
     public function index()
     {
+        $title = 'Google Workspace';
         $business = $this->googleWorkspaceService->getAllGoogleWorkspaceBusiness();
         $educations = $this->googleWorkspaceService->getAllGoogleWorkspaceEducation();
-        return view('admin.googleworkspace.index', compact('business', 'educations'));
+        return view('admin.googleworkspace.index', compact('business', 'educations', 'title'));
     }
 
     public function addForm(){
+        $title = 'Thêm Google Workspace';
         $promotion = $this->promotionService->getPromotionAll();
-        return view('admin.googleworkspace.add', compact('promotion'));
+        return view('admin.googleworkspace.add', compact('promotion', 'title'));
     }
 
     public function addSubmitEducation(Request $request)
@@ -36,8 +38,9 @@ class GoogleWorkspaceController extends Controller
         return redirect()->route('admin.googleworkspace.index');
     }
     public function editFormEducation($id){
+        $title = 'Thay đổi Google Workspace Education';
         $education = GoogleWorkspaceEducation::find($id);
-        return view('admin.googleworkspace.editeducation', compact('education'));
+        return view('admin.googleworkspace.editeducation', compact('education', 'title'));
     }
 
 
@@ -67,9 +70,10 @@ class GoogleWorkspaceController extends Controller
     }
 
     public function editFormBusiness($id){
+        $title = 'Thay đổi Google Workspace Business';
         $business = GoogleWorkspace::find($id);
         $promotion = $this->promotionService->getPromotionAll();
-        return view('admin.googleworkspace.editbusiness', compact('business', 'promotion'));
+        return view('admin.googleworkspace.editbusiness', compact('business', 'promotion', 'title'));
     }
 
 

@@ -191,8 +191,8 @@
                                     <div class="inner-content">
                                         <div class="name">
                                             <a href="https://nhanhoa.com/tin-tuc/nhan-hoa-dong-hanh-cung-doanh-nghiep-ho-kinh-doanh-trong-cac-dich-vu-so-su-dung-ten-mien-vn-tai-hai-duong.html"
-                                                title="Nhân Hòa đồng hành cùng doanh nghiệp, hộ kinh doanh trong các dịch vụ số sử dụng tên miền “.VN” tại Hải Dương">
-                                                Nhân Hòa đồng hành cùng doanh nghiệp, hộ...
+                                                title="Chúng Tôi đồng hành cùng doanh nghiệp, hộ kinh doanh trong các dịch vụ số sử dụng tên miền “.VN” tại Hải Dương">
+                                                Chúng Tôi đồng hành cùng doanh nghiệp, hộ...
                                             </a>
                                         </div>
                                         <div

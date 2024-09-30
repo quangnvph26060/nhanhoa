@@ -19,13 +19,15 @@ class EmailServerController extends Controller
 
     public function index()
     {
+        $title = 'Email Server';
         $email = $this->emailServerService->getAllEmailServers();
-        return view('admin.email.index', compact('email'));
+        return view('admin.email.index', compact('email', 'title'));
     }
 
     public function addForm(){
+        $title = 'Thêm Email Server';
         $promotion = Promotion::all();
-        return view('admin.email.add', compact('promotion'));
+        return view('admin.email.add', compact('promotion', 'title'));
     }
 
     public function addSubmit(Request $request)
@@ -35,9 +37,10 @@ class EmailServerController extends Controller
         return redirect()->route('admin.email.index');
     }
     public function editForm($id){
+        $title = 'Thay đổi Email Server';
         $email = EmailServer::find($id);
         $promotion = Promotion::all();
-        return view('admin.email.edit', compact('email', 'promotion'));
+        return view('admin.email.edit', compact('email', 'promotion', 'title'));
     }
 
 

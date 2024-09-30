@@ -9,7 +9,7 @@
                                 <img class="nh-lazyload ls-is-cached lazyloaded"
                                     src="https://nhanhoa.com/templates/images/v2/webp/footer/logo.webp"
                                     data-src="https://nhanhoa.com/templates/images/v2/webp/footer/logo.webp"
-                                    alt="Nhân Hòa">
+                                    alt="Chúng Tôi">
                             </a>
                         </div>
                         <div class="info">
@@ -17,7 +17,7 @@
                                 Copyright © 2002 – 2024 Nhan Hoa Software Company. All Rights Reserved.
                             </p>
                             <p class="d-none d-md-block">
-                                Công ty TNHH Phần mềm Nhân Hòa. Đại diện: Ông Hồ Trung Dũng
+                               {{ $config->store_name }}. Đại diện: {{ $config->receiver }}
                             </p>
                             <p class="d-none d-md-block">
                                 Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày

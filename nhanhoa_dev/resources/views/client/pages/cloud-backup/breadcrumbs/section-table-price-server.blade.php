@@ -6,7 +6,7 @@
                 Bảng giá Cloud Backup
             </h2>
             <div class="sologan-section text-center">
-                Dịch vụ Cloud Backup áp dụng với khách hàng sử dụng Cloud VPS/ Cloud Server tại Nhân Hòa
+                Dịch vụ Cloud Backup áp dụng với khách hàng sử dụng Cloud VPS/ Cloud Server tại Chúng Tôi
             </div>
             <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item">
@@ -132,11 +132,11 @@
                                 @endforelse
                             </div>
                         </div>
-                        <div class="link-dktv-price">
+                        {{-- <div class="link-dktv-price">
                             <a href="#tuvanngay" class="btn_show_popup">
                                 Đăng ký tư vấn
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -249,11 +249,11 @@
 
                             </div>
                         </div>
-                        <div class="link-dktv-price">
+                        {{-- <div class="link-dktv-price">
                             <a href="#tuvanngay" class="btn_show_popup">
                                 Đăng ký tư vấn
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>

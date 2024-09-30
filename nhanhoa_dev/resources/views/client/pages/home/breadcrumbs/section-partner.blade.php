@@ -15,13 +15,17 @@
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="list-img-partner">
                         <div class="row">
+                            @forelse ( $partner as $item )
                             <div class="col-lg-3 col-md-3 col-2">
                                 <div class="img"><img class="nh-lazyload ls-is-cached lazyloaded"
-                                        src="https://nhanhoa.com/templates/images/v2/webp/brand/brand-1.webp"
-                                        data-src="https://nhanhoa.com/templates/images/v2/webp/brand/brand-1.webp"
-                                        alt="Đối tác"></div>
+                                        src="{{asset( $item->logo) }}"
+                                        data-src="{{asset( $item->logo) }}"
+                                        alt="Đối tác {{ $item->name }}"></div>
                             </div>
-                            <div class="col-lg-3 col-md-3 col-2">
+                            @empty
+
+                            @endforelse
+                            {{-- <div class="col-lg-3 col-md-3 col-2">
                                 <div class="img"><img class="nh-lazyload ls-is-cached lazyloaded"
                                         src="https://nhanhoa.com/templates/images/v2/webp/brand/brand-2.webp"
                                         data-src="https://nhanhoa.com/templates/images/v2/webp/brand/brand-2.webp"
@@ -62,7 +66,7 @@
                                         src="https://nhanhoa.com/templates/images/v2/webp/brand/brand-8.webp"
                                         data-src="https://nhanhoa.com/templates/images/v2/webp/brand/brand-8.webp"
                                         alt="Đối tác"></div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
