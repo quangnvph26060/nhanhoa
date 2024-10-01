@@ -69,6 +69,6 @@ class HomeController extends Controller
         $footers = Footer::get();
 
 
-        return view('client.pages.home.index', compact('user', 'cloud', 'domainqt', 'domainqg','hosting', 'email', 'ssl', 'news', 'title', 'home', 'client', 'partner', 'customerreivew', 'footers'));
+        return view('client.pages.home.index', compact('user', 'cloud', 'domainqt', 'domainqg','hosting', 'email', 'ssl', 'news', 'title', 'home', 'client', 'partner', 'customerreivew'));
     }
 }

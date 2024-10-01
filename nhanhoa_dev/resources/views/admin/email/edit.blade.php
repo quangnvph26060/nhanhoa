@@ -109,13 +109,13 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="">Sản phẩm</a>
+                <a href="">Email</a>
             </li>
             <li class="separator">
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Thêm</a>
+                <a href="#">sửa</a>
             </li>
         </ul>
     </div>
@@ -123,7 +123,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm sản phẩm</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa Email</h4>
                 </div>
                 <div class="card-body">
                     <div class="">

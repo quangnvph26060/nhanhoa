@@ -44,7 +44,7 @@ class EmailController extends Controller
         $title = "Google Workspace";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.google-workspace.index', compact('googleWorkspaceEducation', 'googleWorkspaceBusiness', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.google-workspace.index', compact('googleWorkspaceEducation', 'googleWorkspaceBusiness', 'title', 'customerreivew'));
     }
 
     public function googleWorkspaceEducationPay(Request $request){

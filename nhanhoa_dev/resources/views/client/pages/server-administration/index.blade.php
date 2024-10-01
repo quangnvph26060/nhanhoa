@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dịch vụ quản lý máy chủ</title>
-
+    <link rel="icon" href="{{ asset($config->icon) }}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen"
         href="{{ asset('client/assets/css/bootstrap/jquery-confirm.min.css') }}" />
 
@@ -38,7 +38,7 @@
                         <div class="logo">
                             <a href="#intro" title="trang chủ">
                                 <img style="height: 50px;"
-                                    src="https://nhanhoa.com/manager-service/image/mobile/logo.png" alt="Logo Chúng Tôi"
+                                    src="{{ asset($config->logo) }}" alt="Logo Chúng Tôi"
                                     class="img-fluid">
                             </a>
                         </div>
@@ -1007,7 +1007,46 @@
             <div class="container">
                 <div class="item-list-footer item-list-footer-one">
                     <div class="row">
-                        <div class="col-lg-3 col-md-6 col-6">
+                        @forelse ($footers as $item )
+                        <div class="col-lg-3 col-md-4 col-6">
+                            <div class="item-menu-footer">
+                                <div class="title-footer">
+                                    {{ $item->title }}
+                                </div>
+                                <ul>
+                                    @forelse ($item->new as $new )
+
+                                    <li>
+                                        <a  href="{{ route('page.news-detail', ['slug'=>$new->new->slug, 'id'=>$new->new->id]) }}"
+                                            title=""><span> {{ $new->new->title }}</span></a>
+                                    </li>
+                                    @empty
+
+                                    @endforelse
+                                    {{-- <li>
+                                        <a href="https://nhanhoa.com/tin-tuc/huong-dan-thu-tuc-bo-sung-ban-khai-dang-ky-ten-mien-qua-ho-so-dien-tu.html"
+                                            title=""><span>Hướng dẫn hoàn thiện hồ sơ tên miền
+                                                .VN</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://nhanhoa.com/tin-tuc/quy-trinh-giai-quyet-khieu-nai-khach-hang.html"
+                                            title=""><span>Quy trình giải quyết khiếu nại</span></a>
+                                    </li> --}}
+                                    <!--li>
+                                <a href="https://nhanhoa.com/trang/download-van-ban.html" title=""><span>Download văn bản</span></a>
+                            </li -->
+
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                        @empty
+
+                        @endforelse
+
+                        {{-- <div class="col-lg-3 col-md-6 col-6">
                             <div class="item-menu-footer">
                                 <div class="title-footer">
                                     Công ty
@@ -1167,10 +1206,10 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
-                <div class="item-list-footer mb-0">
+                {{-- <div class="item-list-footer mb-0">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="item-menu-footer">
@@ -1238,7 +1277,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="section-footer-bottom">
@@ -1248,22 +1287,41 @@
                         <div class="col-lg-7 col-md-7 col-12">
                             <div class="info-contact-website">
                                 <div class="logo-footer">
-                                    <a href="https://nhanhoa.com">
-                                        <img src="https://nhanhoa.com/manager-service/image/logo_nhan_hoa.png"
+                                    <a href="{{ route('page.home') }}">
+                                        <img src="{{ asset($config->logo) }}"
                                             alt="Logo" />
                                     </a>
                                 </div>
                                 <div class="info">
-                                    <p>
-                                        Copyright © 2002 – 2024 Nhan Hoa Software Company. All Rights Reserved.
-                                    </p>
                                     <p class="d-none d-md-block">
-                                        {{ $config->store_name }}. Đại diện: {{ $config->store_name }}
-                                    </p>
-                                    <p class="d-none d-md-block">
-                                        Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày
-                                        19/09/2002
-                                    </p>
+                                        {{ $config->store_name }}. Đại diện: {{ $config->receiver }}
+                                     </p>
+                                     {{-- <p class="d-none d-md-block">
+                                         Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày
+                                         19/09/2002
+                                     </p> --}}
+                                     <p style="margin: 0;">
+                                         <a href="javascript:;" class="">
+                                             <img alt="ICANN" src="https://nhanhoa.com/public/icann-logo-2.png"
+                                                 style="max-width: 55px;">
+                                         </a>
+                                         <a href="javascript:;" class="">
+                                             <img alt="VNNIC" src="https://nhanhoa.com/public/vnnic-logo.svg"
+                                                 style="max-width: 90px;">
+                                         </a>
+                                         <a class=""
+                                             href="https://cloud.withgoogle.com/partners/detail/?id=nhan-hoa-software-company-ltd&amp;hl=vi"
+                                             target="_blank">
+                                             <img alt="google-cloud-partner"
+                                                 src="https://nhanhoa.com/public/google-cloud-partner.jpg"
+                                                 style="max-width: 100px;">
+                                         </a>
+                                         <a href="http://online.gov.vn/Home/WebDetails/7714" target="_blank">
+                                             <img alt="Bộ công thương" src="https://nhanhoa.com/public/logoSaleNoti.png"
+                                                 style="max-width: 100px;">
+                                         </a>
+
+                                     </p>
                                 </div>
                             </div>
                         </div>

@@ -18,12 +18,12 @@
                         Cloud VPS Quốc tế
                     </a>
                 </li>
-                <li class="nav-item ">
+                {{-- <li class="nav-item ">
                     <a class="nav-link " id="storage-tab" href="{{ route('page.cloud-storage') }}"
                         role="tab" aria-controls="storage" aria-selected="false">
                         SSD Cloud Storage
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item ">
                     <a class="nav-link " id="storage-tab" href="{{ route('page.cloud-backup') }}"
                         role="tab" aria-controls="storage" aria-selected="false">

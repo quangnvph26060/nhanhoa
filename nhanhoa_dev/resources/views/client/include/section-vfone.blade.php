@@ -1,19 +1,19 @@
-<link href="{{ asset('client/assets/css/contactus.css') }}" rel="stylesheet">
+{{-- <link href="{{ asset('client/assets/css/contactus.css') }}" rel="stylesheet"> --}}
 
-<script src="{{ asset('client/assets/js/contactus.js') }}"></script>
+{{-- <script src="{{ asset('client/assets/js/contactus.js') }}"></script> --}}
 
 <script src="https://nhanhoa.com/khuyenmai/backup365/js/main.js?v=1.0.0"></script>
 <div id='arcontactus'></div>
 <div id='laPlaceholder'></div>
 
-<div id="vfone_call">
+{{-- <div id="vfone_call">
     <div class="vf-btn-wrap">
         <div class="vf-btn-call">
             <div class="vf-btn-text">Gọi miễn phí</div>
             <div class="vf-btn-text-one">Gọi miễn phí</div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <!-- Resend call bottom -->
 

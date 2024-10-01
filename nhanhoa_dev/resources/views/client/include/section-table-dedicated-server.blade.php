@@ -94,7 +94,7 @@
                                         <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với bạn.</p>
                                     </div>
                                 </div>
-                                <form action="{{ route('page.serverlocation.pay') }}" method="POST">
+                                <form action="{{ route('page.serverlocation.pay') }}" method="POST" id="lienhe">
                                     @csrf
                                     <input type="hidden" id="cloud_id_input" name="serverlocation_id">
                                     <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">

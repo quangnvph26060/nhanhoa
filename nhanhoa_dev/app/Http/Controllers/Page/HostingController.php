@@ -25,7 +25,7 @@ class HostingController extends Controller
         $title = 'Hosting giá rẻ chất lượng cao';
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title', 'customerreivew'));
     }
 
     public function windows()
@@ -35,7 +35,7 @@ class HostingController extends Controller
         $title = 'Hosting giá rẻ chất lượng cao';
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.linux-hosting.index', compact('titleSection', 'hosting', 'title', 'customerreivew'));
     }
 
     public function pay(Request $request){

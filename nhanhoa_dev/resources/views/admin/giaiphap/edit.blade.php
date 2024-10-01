@@ -152,7 +152,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Thêm</a>
+                <a href="#">sửa</a>
             </li>
         </ul>
     </div>

@@ -11,7 +11,8 @@ class SystemController extends Controller
     public function showServerCluster($slug, $id)
     {
         $giaiphap = SgoGiaiphap::find($id);
-        return view('client/solution/server-cluster', compact('giaiphap'));
+        // return view('client/solution/server-cluster', compact('giaiphap'));
+        return view('client.pages.giaiphap.detail.detail', compact('giaiphap'));
     }
 
     // // Trang Giải pháp bảo mật

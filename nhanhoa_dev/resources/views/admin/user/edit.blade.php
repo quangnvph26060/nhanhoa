@@ -143,13 +143,13 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="">Sản phẩm</a>
+                <a href="">Tài khoản</a>
             </li>
             <li class="separator">
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Thêm</a>
+                <a href="#">Sửa</a>
             </li>
         </ul>
     </div>
@@ -157,7 +157,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thay đổi tài khoản</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửai tài khoản</h4>
                 </div>
                 <div class="card-body">
                     <div class="">

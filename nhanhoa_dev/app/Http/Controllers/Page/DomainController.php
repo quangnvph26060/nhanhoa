@@ -20,7 +20,7 @@ class DomainController extends Controller
         $domainall = $this->domainService->getDomainAll();
         $title = "Mua đăng ký tên miền";
         $footers = Footer::get();
-        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title', 'footers', 'domainall' ));
+        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title', 'domainall' ));
     }
 
     public function domainPay(Request $request){

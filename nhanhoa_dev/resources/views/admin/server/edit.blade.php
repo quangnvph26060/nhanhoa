@@ -109,7 +109,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="">Sản phẩm</a>
+                <a href="">Server</a>
             </li>
             <li class="separator">
                 <i class="icon-arrow-right"></i>
@@ -123,7 +123,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Sửa sản phẩm </h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa Server </h4>
                 </div>
                 <div class="card-body">
                     <div class="">
@@ -135,7 +135,7 @@
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
                                         <div>
-                                            <label for="placeholderInput" class="form-label">Tên sản phẩm</label>
+                                            <label for="placeholderInput" class="form-label">Tên gói</label>
                                             <input type="text" class="form-control" name="name" id="name"
                                                 value="{{ $server->name }}">
                                             <div class="col-lg-9"><span class="invalid-feedback d-block"

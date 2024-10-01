@@ -122,7 +122,7 @@ class backup365Service
     {
         try {
             DB::beginTransaction();
-            $cloudPay = $this->backup365Pay->create($data);
+            // $cloudPay = $this->backup365Pay->create($data);
             DB::commit();
             $backup = $this->backup365->find($data['backup365_id']);
             $dataemail = [
@@ -133,14 +133,14 @@ class backup365Service
                 'package_name' => 'Cloud Backup365 - '.$backup->name,
                 'title' => 'Cloud Backup365',
             ];
-            $this->clientService->createClient($dataemail);
+            $client = $this->clientService->createClient($dataemail);
             Mail::to($data['email'])->send(new Backup365PayEmail($dataemail));
             $emailTo = env('MAIL_USERNAME');
             Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
                 $message->to($emailTo)
                     ->subject('Đăng ký tư vấn');
             });
-            return $cloudPay;
+            return $client;
         } catch (Exception $e) {
             DB::rollback();
             Log::error('Failed to create cloud: ' . $e->getMessage());

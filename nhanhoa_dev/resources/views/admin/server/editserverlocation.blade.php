@@ -113,7 +113,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="#">Thêm mới</a>
+                <a href="#">Sửa</a>
             </li>
         </ul>
     </div>
@@ -121,7 +121,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm Server Location</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa Server Location</h4>
                 </div>
                 <div class="card-body">
                     <form method="POST" id="serverlocation" action="{{ route('admin.server.editsubmitlocation', ['id' => $serverlocation->id]) }}">

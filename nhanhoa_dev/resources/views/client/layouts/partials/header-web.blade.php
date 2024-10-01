@@ -587,12 +587,10 @@
 
                             @forelse ($giaiphapall as $item )
                             <li>
-                                <a class="menu-link" href="{{route('page.solution-vfone')}}" title="Vfone"
-                                    target="_blank">
+                                <a class="menu-link" href="{{route('page.giaiphap', ['slug' => $item->slug, 'id'=> $item->id])}}" title="{{ $item->title }}"
+                                    >
                                     <div class="item-menu">
                                         <div class="icon">
-                                            {{-- <img src="https://nhanhoa.com/templates/images/v2/menu/vfone.svg"
-                                                alt="Vfone"> --}}
                                                 <i class="fas fa-lightbulb"></i>
                                         </div>
                                         <div class="name-description">
@@ -707,11 +705,11 @@
 
                         </ul>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ route('page.giaiphap', ['slug' => $giaiphapheader->slug, 'id' => $giaiphapheader->id]) }}" title="">
                             Giải Pháp
                         </a>
-                    </li>
+                    </li> --}}
 
                 </ul>
             </div>

@@ -23,7 +23,7 @@ class SslController extends Controller
         $ssls = $this->sslService->getSslByType(1);
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.ssl-comodo.index', compact('title', 'ssls', 'customerreivew', 'footers'));
+        return view('client.pages.ssl-comodo.index', compact('title', 'ssls', 'customerreivew'));
     }
     public function geotrust()
     {
@@ -31,7 +31,7 @@ class SslController extends Controller
         $ssls = $this->sslService->getSslByType(2);
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.ssl-geotrust.index', compact('title', 'ssls', 'customerreivew', 'footers'));
+        return view('client.pages.ssl-geotrust.index', compact('title', 'ssls', 'customerreivew'));
     }
     public function symantec()
     {
@@ -39,7 +39,7 @@ class SslController extends Controller
         $ssls = $this->sslService->getSslByType(3);
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.ssl-symantec.index', compact('title', 'ssls', 'customerreivew', 'footers'));
+        return view('client.pages.ssl-symantec.index', compact('title', 'ssls', 'customerreivew'));
     }
 
     public function pay(Request $request){

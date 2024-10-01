@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Cloud;
 use App\Models\EmailServer;
 use App\Models\EmailSetting;
+use App\Models\Footer;
 use App\Models\SgoGiaiphap;
 use App\Models\Ssl;
 use App\Services\ConfigService;
@@ -35,6 +36,7 @@ class AppServiceProvider extends ServiceProvider
         $clients = Client::all();
         $giaiphapheader = SgoGiaiphap::first();
         $giaiphapall = SgoGiaiphap::get();
+        $footers = Footer::get();
         view()->share([
             'config' => $config,
             'ssl' => $ssl,
@@ -43,6 +45,7 @@ class AppServiceProvider extends ServiceProvider
             'client' => count($clients),
             'giaiphapheader' => $giaiphapheader,
             'giaiphapall' => $giaiphapall,
+            'footers' => $footers,
         ]);
 
     }

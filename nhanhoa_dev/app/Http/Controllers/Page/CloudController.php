@@ -27,7 +27,7 @@ class CloudController extends Controller
         $title = "Cloud Server";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.cloud-server.index', compact('titleSection', 'clouds', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.cloud-server.index', compact('titleSection', 'clouds', 'title', 'customerreivew'));
     }
 
     public function backup(){
@@ -36,21 +36,21 @@ class CloudController extends Controller
         $title = "Cloud Backup";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title', 'customerreivew'));
     }
 
     public function storage(){
         $title = "Cloud Storage";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.cloud-storage.index', compact('title', 'customerreivew', 'footers'));
+        return view('client.pages.cloud-storage.index', compact('title', 'customerreivew'));
     }
     public function international(){
         $clouds = $this->cloudService->getcloudByType(2);
         $title = "Cloud VPS Quốc Tế";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.cloud-international.index', compact('clouds', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.cloud-international.index', compact('clouds', 'title', 'customerreivew'));
     }
 
     public function cloudpay(Request $request){

@@ -30,28 +30,28 @@ class ServerController extends Controller
         $title = "Thuê máy chủ vật lý";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.dedicated-server.index', compact('servers', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.dedicated-server.index', compact('servers', 'title', 'customerreivew'));
     }
     public function serverLocation(){
         $serverloactions = $this->serverService->getServerLocationAll();
         $title = "Vị trí máy chủ";
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.server-location.index', compact('serverloactions', 'title', 'customerreivew', 'footers'));
+        return view('client.pages.server-location.index', compact('serverloactions', 'title', 'customerreivew'));
     }
 
     public function serverBackup(){
         $backupservers = $this->backup365Service->getAllBackup365s();
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.server-backup.index', compact('backupservers', 'customerreivew', 'footers'));
+        return view('client.pages.server-backup.index', compact('backupservers', 'customerreivew'));
     }
 
     public function serverAdministration(){
         $servicePricing = $this->servicePricingService->getServicePricingAll();
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.server-administration.index', compact('servicePricing', 'customerreivew', 'footers'));
+        return view('client.pages.server-administration.index', compact('servicePricing', 'customerreivew'));
     }
 
     public function PayserverAdministration(Request $request){

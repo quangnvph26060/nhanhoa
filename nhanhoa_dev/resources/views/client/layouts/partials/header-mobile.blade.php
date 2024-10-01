@@ -113,13 +113,12 @@
 
                                     </ul>
                                 </li>
-
-                                <li class="position-relative has-child" nh-toggle="maychu">
+                                <li class="position-relative has-child" nh-toggle="cloud">
                                     <a href="javascript:void(0)">
-                                        Máy chủ
+                                        Cloud
                                     </a>
                                     <i class="fas fa-sort-up fa-rotate-180 grower"></i>
-                                    <ul nh-toggle-element="maychu" class="entry-menu dropdown">
+                                    <ul nh-toggle-element="cloud" class="entry-menu dropdown">
                                         <li class="">
                                             <a class="menu-link" href="{{route('page.cloud-server')}}"
                                                 title="">
@@ -143,6 +142,40 @@
                                             <a class="menu-link" href="{{route('page.cloud-backup')}}"
                                                 title="Cloud Storage">
                                                 Cloud Backup
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="position-relative has-child" nh-toggle="maychu">
+                                    <a href="javascript:void(0)">
+                                        Máy chủ
+                                    </a>
+                                    <i class="fas fa-sort-up fa-rotate-180 grower"></i>
+                                    <ul nh-toggle-element="maychu" class="entry-menu dropdown">
+                                        <li class="">
+                                            <a class="menu-link" href="{{route('page.dedicated-server')}}"
+                                                title=" Thuê máy chủ">
+                                               Thuê máy chủ
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="menu-link" href="{{route('page.server-location')}}"
+                                                title=" Chỗ đặt máy chủ">
+                                                Chỗ đặt máy chủ
+                                            </a>
+                                        </li>
+
+                                        <li class=" ">
+                                            <a class="menu-link" href="{{route('page.server-backup')}}"
+                                                title="Backup365">
+                                                Backup365
+                                            </a>
+                                        </li>
+                                        <li class=" ">
+                                            <a class="menu-link" href="{{route('page.server-administration')}}"
+                                                title="Quản trị máy chủ">
+                                                Quản trị máy chủ
                                             </a>
                                         </li>
 
@@ -203,77 +236,28 @@
                                         </li>
                                     </ul>
                                 </li>
-                                {{-- <li class="position-relative has-child" nh-toggle="giaiphap">
+
+                                <li class="position-relative has-child" nh-toggle="giaiphap">
                                     <a href="javascript:void(0)">
                                         Giải pháp
                                     </a>
                                     <i class="fas fa-sort-up fa-rotate-180 grower"></i>
                                     <ul nh-toggle-element="giaiphap" class="entry-menu dropdown">
+                                        @forelse ($giaiphapall as $item )
                                         <li class=" ">
-                                            <a class="menu-link" href="https://vfone.vn" title="Vfone"
-                                                target="_blank">
-                                                Tổng đài VFone
+                                            <a class="menu-link"
+                                                href="{{ route('page.giaiphap',['slug' => $item->slug, 'id'=> $item->id]) }}"
+                                                title="">
+                                               {{ $item->title }}
                                             </a>
                                         </li>
+                                        @empty
 
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://esoc.vn" title="Hợp đồng điện tử"
-                                                target="_blank">
-                                                Hợp đồng điện tử
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://hoadon.biz" title="Hóa đơn điện tử"
-                                                target="_blank">
-                                                Hóa đơn điện tử
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://echungtu.com" title="Chứng từ điện tử"
-                                                target="_blank">
-                                                Chứng từ điện tử
-                                            </a>
-                                        </li>
-
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://esim.nhanhoa.com"
-                                                title="Esim Data Travel" target="_blank">
-                                                Esim du lịch
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a class="menu-link" href="https://nhanhoa.com/license/cpanel.html"
-                                                title="Phần Mềm">
-                                                Phần Mềm
-                                            </a>
-                                        </li>
+                                        @endforelse
 
                                     </ul>
                                 </li>
-                                <li class="position-relative has-child">
-                                    <a href="https://nhanhoa.com/trang/chinh-sach-dai-ly.html" title="">
-                                        Đại Lý
-                                    </a>
 
-                                </li>
-                                <li class="position-relative has-child">
-                                    <a href="https://nhanhoa.com/tin-tuc.html" title="">
-                                        Tin tức
-                                    </a>
-
-                                </li>
-                                <li class="position-relative has-child">
-                                    <a href="https://nhanhoa.com/gioi-thieu.html" title="">
-                                        Giới thiệu
-                                    </a>
-
-                                </li>
-                                <li class="position-relative has-child">
-                                    <a href="https://nhanhoa.com/lien-he.html" title="">
-                                        Liên hệ
-                                    </a>
-
-                                </li> --}}
                             </ul>
                         </div>
                     </div>

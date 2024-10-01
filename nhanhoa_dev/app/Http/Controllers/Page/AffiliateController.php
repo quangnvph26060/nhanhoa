@@ -22,7 +22,7 @@ class AffiliateController extends Controller
         $thongbao = SgoNews::where('type', 2)->take(3)->get();
         $tuyendung = SgoNews::where('type', 3)->take(3)->get();
         $footers = Footer::get();
-        return view('client.pages.news.index', compact('news', 'new1', 'new2', 'new3', 'new4', 'thongbao', 'tuyendung', 'footers'));
+        return view('client.pages.news.index', compact('news', 'new1', 'new2', 'new3', 'new4', 'thongbao', 'tuyendung'));
     }
 
     public function contact(){
@@ -35,7 +35,7 @@ class AffiliateController extends Controller
         $thongbao = SgoNews::where('type', 2)->take(3)->get();
         $tuyendung = SgoNews::where('type', 3)->take(3)->get();
         $footers = Footer::get();
-        return view('client.pages.affiliate.detail.detail', compact('id', 'new', 'thongbao', 'tuyendung', 'footers'));
+        return view('client.pages.affiliate.detail.detail', compact('id', 'new', 'thongbao', 'tuyendung'));
     }
     public function newsChild($id)
     {
@@ -43,7 +43,7 @@ class AffiliateController extends Controller
         $news = SgoNews::where('type', $id)->paginate(12);
         $thongbao = SgoNews::where('type', 2)->take(3)->get();
         $tuyendung = SgoNews::where('type', 3)->take(3)->get();
-        return view('client.pages.affiliate.detail.child', compact('news', 'id', 'thongbao', 'tuyendung', 'footers'));
+        return view('client.pages.affiliate.detail.child', compact('news', 'id', 'thongbao', 'tuyendung'));
     }
 
 }
