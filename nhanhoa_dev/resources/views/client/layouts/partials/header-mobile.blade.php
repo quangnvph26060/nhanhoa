@@ -133,12 +133,12 @@
                                             </a>
                                         </li>
 
-                                        <li class=" ">
+                                        {{-- <li class=" ">
                                             <a class="menu-link" href="{{route('page.cloud-storage')}}"
                                                 title="Cloud Storage">
                                                 Cloud Storage
                                             </a>
-                                        </li>
+                                        </li> --}}
                                         <li class=" ">
                                             <a class="menu-link" href="{{route('page.cloud-backup')}}"
                                                 title="Cloud Storage">

@@ -146,7 +146,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="">Sản phẩm</a>
+                <a href="{{ route('admin.giaiphap.index') }}">Giải pháp</a>
             </li>
             <li class="separator">
                 <i class="icon-arrow-right"></i>
@@ -160,54 +160,29 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm tin tức</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Thêm giải phap</h4>
                 </div>
                 <div class="card-body">
 
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" action="{{ route('admin.new.store') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('admin.giaiphap.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-
                                     <div class="col-md-12">
 
                                         <div class="form-group">
-                                            <label for="exampleSelect" class="form-label">Loại tin tức</label>
-                                            <select class="form-select" id="exampleSelect" name="type">
-                                                <option value="1">Tin tức</option>
-                                                <option value="2">Thông báo</option>
-                                                <option value="3">Tuyển dụng</option>
-                                                <option value="4">Công nghệ</option>
-                                            </select>
+                                            <label class="form-label" for="content">Tiêu đề:</label><br>
+                                            <input type="text" class="form-control" id="title" name="title"
+                                                style="width:100%; padding: 10px;" required >
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="logo" class="form-label">Hình ảnh bài viết</label>
-                                            <div class="custom-file">
-                                                <input id="logo"
-                                                    class="custom-file-input  @error('logo') is-invalid @enderror "
-                                                    type="file" name="logo" accept="image/*">
-                                                <label class="custom-file-label" for="logo">Chọn ảnh</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <img id="profileImage" style="width: 150px;height: auto"
-                                                    src="{{asset('images/avatar2.jpg') }}" alt="image profile"
-                                                    class="avatar">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="form-label" for="title">Tiêu đề bài báo:</label><br>
-                                                <input type="text" class="form-control" id="title" name="title"
-                                                    style="width:100%; padding: 10px;" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label" for="content">Nội dung bài báo:</label><br>
+                                            <label class="form-label" for="content">Nội dung :</label><br>
                                             <textarea name="content" class="form-control" id="content" rows="10"
                                                 cols="80"></textarea><br><br>
                                         </div>
+
                                     </div>
 
                                 </div>
@@ -246,22 +221,29 @@
     ],
     extraPlugins: 'font,colorbutton,justify',
     fontSize_sizes: '11px;12px;13px;14px;15px;16px;18px;20px;22px;24px;26px;28px;30px;32px;34px;36px',
+    on: {
+        instanceReady: function() {
+            // Sử dụng MutationObserver để ẩn thông báo không an toàn
+            var observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    var notifications = mutation.target.querySelectorAll('.cke_notification');
+                    notifications.forEach(function(notification) {
+                        if (notification.textContent.includes('version is not secure')) {
+                            notification.style.display = 'none'; // Ẩn thông báo
+                        }
+                    });
+                });
+            });
+
+            // Bắt đầu theo dõi các thay đổi trong phần tử CKEditor
+            observer.observe(this.container.$.querySelector('.cke_top'), {
+                childList: true,
+                subtree: true
+            });
+        }
+    }
+
 });
-
-
-
-    document.getElementById('logo').addEventListener('change', function(event) {
-            const input = event.target;
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                document.getElementById('profileImage').src = e.target.result;
-            };
-
-            if (input.files && input.files[0]) {
-                reader.readAsDataURL(input.files[0]);
-            }
-        });
 
 </script>
 

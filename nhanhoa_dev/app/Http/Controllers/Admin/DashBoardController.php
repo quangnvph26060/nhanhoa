@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Backup365;
+use App\Models\Client;
 use App\Models\Cloud;
 use App\Models\Config;
 use App\Models\EmailServer;
@@ -13,6 +14,7 @@ use App\Models\Hosting;
 use App\Models\Server;
 use App\Models\ServerLocation;
 use App\Models\SgoHome;
+use App\Models\User;
 use App\Services\ClientService;
 use Illuminate\Http\Request;
 
@@ -27,8 +29,10 @@ class DashBoardController extends Controller
         $config = Config::first();
         $title = $config->store_name;
         $clients = $this->clientService->getClientAll();
+        $countDistinctEmails = Client::distinct('email')->count('email');
         $total = $this->totalPay();
-        return view('admin.dashboard.index', compact('clients', 'total','title', 'home'));
+        $user = User::get();
+        return view('admin.dashboard.index', compact('clients', 'total','title', 'home', 'countDistinctEmails', 'user'));
     }
 
     public function totalPay(){

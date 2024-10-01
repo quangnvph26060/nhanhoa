@@ -335,7 +335,7 @@
                                     </div>
                                 </a>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <a class="menu-link" href="{{route('page.cloud-storage')}}" title="Cloud Storage">
                                     <div class="item-menu">
                                         <div class="icon">
@@ -352,7 +352,7 @@
                                         </div>
                                     </div>
                                 </a>
-                            </li>
+                            </li> --}}
                             <li>
                                 <a class="menu-link" href="{{route('page.cloud-backup')}}" title="Cloud Backup">
                                     <div class="item-menu">
@@ -703,9 +703,8 @@
                         </ul>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('page.server-cluster') }}" title="">
+                        <a class="nav-link" href="{{ route('page.giaiphap', ['slug' => $giaiphapheader->slug, 'id' => $giaiphapheader->id]) }}" title="">
                             Giải Pháp
-
                         </a>
                     </li>
 

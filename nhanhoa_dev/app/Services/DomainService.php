@@ -2,19 +2,24 @@
 
 namespace App\Services;
 
+use App\Mail\DomainPayEmail;
+use App\Mail\HostingPayment;
 use App\Models\Domain;
 use Exception;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class DomainService
 {
     protected $domain;
+    protected $clientService;
 
-    public function __construct(Domain $domain)
+    public function __construct(Domain $domain, ClientService $clientService )
     {
         $this->domain = $domain;
+        $this->clientService = $clientService;
     }
 
     public function getDomainAll()
@@ -92,6 +97,49 @@ class DomainService
             DB::rollback();
             Log::error('Failed to update domain: ' . $e->getMessage());
             throw new Exception('Failed to update domain');
+        }
+    }
+
+    public function payDomain(array $data){
+        try {
+            // dd($data);
+            DB::beginTransaction();
+            // dd($data);
+            $datanew = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' =>$data['email'] ,
+                'domain_id' => $data['domain_id'],
+            ];
+            DB::commit();
+            $domain = $this->domain->find($data['domain_id']);
+
+            if ($domain->domaintype_id == 1) {
+                $hostingname = 'Tên miền quốc tế - ' . $domain->name;
+            } elseif ($domain->domaintype_id == 2) {
+                $hostingname = 'Tên miền quốc gia - ' . $domain->name;
+            }
+            // Tạo mảng dữ liệu email
+            $dataemail = [
+                'name' => $data['name'],
+                'phone' => $data['phone'],
+                'email' => $data['email'],
+                'productname' => $hostingname,
+                'package_name' => $hostingname,
+                'title' => 'Tên miền'
+            ];
+            $client = $this->clientService->createClient($dataemail);
+            Mail::to($data['email'])->send(new DomainPayEmail($dataemail));
+            $emailTo = env('MAIL_USERNAME');
+            Mail::send('client.email.admin', $dataemail, function ($message) use ($emailTo) {
+                $message->to($emailTo)
+                    ->subject('Đăng ký tư vấn');
+            });
+            return $client;
+        } catch (Exception $e) {
+            DB::rollback();
+            Log::error('Failed to create client: ' . $e->getMessage());
+            throw new Exception('Failed to create client');
         }
     }
 }

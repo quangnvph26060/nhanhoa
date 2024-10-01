@@ -6,6 +6,7 @@ use App\Models\Client;
 use App\Models\Cloud;
 use App\Models\EmailServer;
 use App\Models\EmailSetting;
+use App\Models\SgoGiaiphap;
 use App\Models\Ssl;
 use App\Services\ConfigService;
 use Illuminate\Support\ServiceProvider;
@@ -32,12 +33,16 @@ class AppServiceProvider extends ServiceProvider
         $cloud = Cloud::orderBy('price', 'asc')->first();
         $email = EmailServer::orderBy('price', 'asc')->first();
         $clients = Client::all();
+        $giaiphapheader = SgoGiaiphap::first();
+        $giaiphapall = SgoGiaiphap::get();
         view()->share([
             'config' => $config,
             'ssl' => $ssl,
             'cloud' => $cloud,
             'email' => $email,
-            'client' => count($clients)
+            'client' => count($clients),
+            'giaiphapheader' => $giaiphapheader,
+            'giaiphapall' => $giaiphapall,
         ]);
 
     }

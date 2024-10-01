@@ -17,8 +17,15 @@ class DomainController extends Controller
     {
         $doaminqt = $this->domainService->getDomainByType(1);
         $doaminvn = $this->domainService->getDomainByType(2);
+        $domainall = $this->domainService->getDomainAll();
         $title = "Mua đăng ký tên miền";
         $footers = Footer::get();
-        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title', 'footers'));
+        return view('client.pages.domain-register.index',compact('doaminqt', 'doaminvn', 'title', 'footers', 'domainall' ));
+    }
+
+    public function domainPay(Request $request){
+        // $client = $this->clientService->createClient($request->all());
+        $domainpay = $this->domainService->payDomain($request->all());
+        return redirect()->back()->with('success', 'Thông báo thành công!');
     }
 }

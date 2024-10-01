@@ -20,6 +20,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\ContractEsocController;
 use App\Http\Controllers\Admin\EmailSettingController;
+use App\Http\Controllers\Admin\GiaiPhapController;
 use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\ServicePricingController;
@@ -267,6 +268,12 @@ Route::middleware(['checkLogin', 'checkRole:1,2'])->prefix('admin')->name('admin
             Route::post('edit/{id}', [ContractEsocController::class, 'editsubmit'])->name('editsubmit');
             Route::post('delete/{id}', [ContractEsocController::class, 'delete'])->name('delete');
         });
+        Route::get('index', [GiaiPhapController::class, 'index'])->name('index');
+        Route::get('add', [GiaiPhapController::class, 'create'])->name('add');
+        Route::post('store', [GiaiPhapController::class, 'store'])->name('store');
+        Route::get('{slug}.{id}', [GiaiPhapController::class, 'show'])->name('show');
+        Route::post('{slug}.{id}', [GiaiPhapController::class, 'update'])->name('update');
+        Route::post('delete/{id}', [GiaiPhapController::class, 'destroy'])->name('delete');
     });
 
     Route::prefix('news')->name('new.')->group(function () {
@@ -275,7 +282,7 @@ Route::middleware(['checkLogin', 'checkRole:1,2'])->prefix('admin')->name('admin
         Route::post('store', [AdminNewsController::class, 'store'])->name('store');
         Route::get('{slug}.{id}', [AdminNewsController::class, 'show'])->name('show');
         Route::post('{slug}.{id}', [AdminNewsController::class, 'update'])->name('update');
-
+        Route::post('delete/{id}', [AdminNewsController::class, 'destroy'])->name('delete');
     });
 
     Route::prefix('service')->name('service.')->group(function () {
@@ -314,6 +321,7 @@ Route::middleware(['checkLogin', 'checkRole:1,2'])->prefix('admin')->name('admin
 Route::name('page.')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('ten-mien/dang-ky-ten-mien', [PageDomainController::class, 'index'])->name('domain-registration');
+    Route::post('ten-mien/dang-ky-ten-mien', [PageDomainController::class, 'domainPay'])->name('domain.pay');
 
     Route::get('hosting/linux-hosting', [PageHostingController::class, 'linux'])->name('linux-hosting');
     Route::get('hosting/windows-hosting', [PageHostingController::class, 'windows'])->name('windows-hosting');
@@ -367,7 +375,7 @@ Route::name('page.')->group(function () {
 
     Route::post('register-for-consultation', [RegisterConsultationController::class, 'register'])->name('register.consultation');
 
-    Route::get('/xay-dung-cum-server-rieng', [PageSystemController::class, 'showServerCluster'])->name('server-cluster');
+    Route::get('giaiphap/{slug}_{id}', [PageSystemController::class, 'showServerCluster'])->name('giaiphap');
     Route::get('giai-phap-bao-mat', [PageSystemController::class, 'showSecuritySolutions'])->name('security-solutions');
     Route::get('/can-bang-tai-he-thong', [PageSystemController::class, 'showLoadBalancing'])->name('load-balancing');
     Route::get('/chong-ddos', [PageSystemController::class, 'showDDoSProtection'])->name('ddos-protection');

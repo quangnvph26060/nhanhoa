@@ -1,8 +1,12 @@
 @extends('admin.layout.index')
 @section('content')
+<!-- Select2 CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+<!-- jQuery (nên thêm trước khi sử dụng Select2) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
@@ -96,39 +100,6 @@
     #description {
         border-radius: 5px;
     }
-
-    .add_product>div {
-        margin-top: 20px;
-    }
-
-    .tags-input .tag {
-        display: inline-block;
-        background-color: #007bff;
-        color: white;
-        padding: 0.5rem;
-        border-radius: 3px;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-        position: relative;
-    }
-
-    .tags-input .tag button {
-        background: none;
-        border: none;
-        color: white;
-        font-weight: bold;
-        margin-left: 0.5rem;
-        cursor: pointer;
-        padding: 0;
-    }
-
-    .input-container input {
-        width: 100%;
-        padding: 0.5rem;
-        margin-top: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-    }
 </style>
 
 <div class="page-inner">
@@ -157,12 +128,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm tài khoản</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Thêm sản phẩm</h4>
                 </div>
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="hosting"
+                            <form method="POST" enctype="multipart/form-data" id="addcloud"
                                 action="{{ route('admin.user.store') }}">
                                 @csrf
                                 <div class="row">
@@ -178,8 +149,7 @@
 
                                         <div>
                                             <label for="email" class="form-label">Email</label>
-                                            <input type="text"  class="form-control" name="email" required
-                                                id="email">
+                                            <input type="text" class="form-control" name="email" required id="email">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="email_error"></span>
@@ -188,8 +158,7 @@
 
                                         <div>
                                             <label for="phone" class="form-label">Điện thoại</label>
-                                            <input type="text"  class="form-control" name="phone" required
-                                                id="phone">
+                                            <input type="text" class="form-control" name="phone" required id="phone">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="phone_error"></span>
@@ -199,7 +168,8 @@
 
                                         <div>
                                             <label for="password" class="form-label">Mật khẩu</label>
-                                            <input type="password" class="form-control" name="password" id="password" required>
+                                            <input type="password" class="form-control" name="password" id="password"
+                                                required>
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="password_error"></span>
@@ -210,7 +180,8 @@
                                     <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="address" class="form-label">Địa chỉ</label>
-                                            <input type="text" class="form-control" name="address" id="address" required>
+                                            <input type="text" class="form-control" name="address" id="address"
+                                                required>
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="address_error"></span>
@@ -244,34 +215,36 @@
                                             </div>
                                         </div>
 
+
                                         <div class="form-group">
-                                            <label for="avatar" class="form-label">Avatar</label>
+                                            <label for="logo" class="form-label">Logo</label>
                                             <div class="custom-file">
-                                                <input id="avatar"
-                                                    class="custom-file-input @error('avatar') is-invalid @enderror" type="file"
+                                                <input id="logo"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" type="file"
                                                     name="avatar" accept="image/*">
-                                                <label class="custom-file-label" for="avatar">Chọn avatar</label>
+                                                <label class="custom-file-label" for="logo">Chọn logo</label>
                                             </div>
-                                            @error('avatar')
+                                            @error('logo')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <img id="profileImageavatar" style="width:100px; height:100px"
-                                                src="{{ isset($hosting->avatar) && !empty($hosting->avatar) ? asset($hosting->avatar) : asset('images/avatar2.jpg') }}"
-                                                alt="image avatar" class="avatar">
+                                            <img id="profileImagelogo" style="width:100px; height:auto"
+                                                src="{{ asset('images/avatar2.jpg') }}"
+                                                alt="image logo" class="logo">
                                         </div>
+
+
                                     </div>
                                 </div>
 
-
-
                                 <div class="modal-footer m-2">
-                                    <button type="submit" class="btn btn-primary w-md" >Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submitadd(event)" >Xác nhận</button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -285,176 +258,21 @@
     $jq(document).ready(function() {
         $jq('#multiple-select').select2();
     });
-
-    document.getElementById('avatar').addEventListener('change', function(event) {
-                    const input = event.target;
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        document.getElementById('profileImageavatar').src = e.target.result;
-                    };
-
-                    if (input.files && input.files[0]) {
-                        reader.readAsDataURL(input.files[0]);
-                    }
-                });
 </script>
-{{-- <script>
-     document.getElementById('avatar').addEventListener('change', function(event) {
+<script>
+
+        document.getElementById('logo').addEventListener('change', function(event) {
                     const input = event.target;
                     const reader = new FileReader();
 
                     reader.onload = function(e) {
-                        document.getElementById('profileImageavatar').src = e.target.result;
+                        document.getElementById('profileImagelogo').src = e.target.result;
                     };
 
                     if (input.files && input.files[0]) {
                         reader.readAsDataURL(input.files[0]);
                     }
                 });
-    var validateorder = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0049')
-                }, ]
-            },
-            'price': {
-                'element': document.getElementById('price'),
-                'error': document.getElementById('price_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0050')
-                }, ]
-            },
-            'hostingtype_id': {
-                'element': document.getElementById('hostingtype_id'),
-                'error': document.getElementById('hostingtype_id_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0051')
-                }, ]
-            },
-            'storage': {
-                'element': document.getElementById('storage'),
-                'error': document.getElementById('storage_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0052')
-                }, ]
-            },
-            'bandwidth': {
-                'element': document.getElementById('bandwidth'),
-                'error': document.getElementById('bandwidth_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0053')
-                }, ]
-            },
-            'cpu': {
-                'element': document.getElementById('cpu'),
-                'error': document.getElementById('cpu_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0054')
-                }, ]
-            },
-            'ram': {
-                'element': document.getElementById('ram'),
-                'error': document.getElementById('ram_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0055')
-                }, ]
-            },
-            'mysql': {
-                'element': document.getElementById('mysql'),
-                'error': document.getElementById('mysql_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0056')
-                }, ]
-            },
-            'ftp_account': {
-                'element': document.getElementById('ftp_account'),
-                'error': document.getElementById('ftp_account_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0057')
-                }, ]
-            },
-            'domain': {
-                'element': document.getElementById('domain'),
-                'error': document.getElementById('domain_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0058')
-                }, ]
-            },
-            'subdomain': {
-                'element': document.getElementById('subdomain'),
-                'error': document.getElementById('subdomain_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0059')
-                }, ]
-            },
-            'alias_parked_domain': {
-                'element': document.getElementById('alias_parked_domain'),
-                'error': document.getElementById('alias_parked_domain_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0060')ss
-                }, ]
-            },
-            'email_account': {
-                'element': document.getElementById('email_account'),
-                'error': document.getElementById('email_account_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0061')
-                }, ]
-            },
 
-        }
-
-        function submithosting(event) {
-            event.preventDefault();
-            if (validateAllFields(validateorder)) {
-                document.getElementById('hosting').submit();
-            }
-        }
-
-
-
-</script> --}}
-
+</script>
 @endsection

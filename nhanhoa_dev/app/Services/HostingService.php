@@ -159,17 +159,18 @@ class HostingService
 
     public function payHosting(array $data){
         try {
+            // dd($data);
             DB::beginTransaction();
             // dd($data);
             $datanew = [
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'email' =>$data['email'] ,
-                'hostingid' => $data['cloud_id'],
+                'hostingid' => $data['hostingid'],
             ];
             $hostingpay = $this->hostingPay->create($datanew);
             DB::commit();
-            $hosting = $this->hosting->find($data['cloud_id']);
+            $hosting = $this->hosting->find($data['hostingid']);
 
             if ($hosting->hostingtype_id == 1) {
                 $hostingname = 'Windows Hosting - ' . $hosting->name;

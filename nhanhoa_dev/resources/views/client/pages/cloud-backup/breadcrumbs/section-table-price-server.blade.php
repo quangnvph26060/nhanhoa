@@ -99,7 +99,7 @@
                                                         với bạn.</p>
                                                 </div>
                                             </div>
-                                            <form action="{{ route('page.cloudbackup.pay') }}" method="POST">
+                                            <form action="{{ route('page.cloudbackup.pay') }}" method="POST" id="lienhe">
                                                 @csrf
                                                 <input type="hidden" id="cloud_id_input" name="cloudbackup_id">
                                                 <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">

@@ -5,11 +5,11 @@
                 <div class="col-lg-7 col-md-7 col-12">
                     <div class="info-contact-website">
                         <div class="logo-footer">
-                            <a href="https://nhanhoa.com">
+                            <a href="{{ route('page.home') }}">
                                 <img class="nh-lazyload ls-is-cached lazyloaded"
-                                    src="https://nhanhoa.com/templates/images/v2/webp/footer/logo.webp"
-                                    data-src="https://nhanhoa.com/templates/images/v2/webp/footer/logo.webp"
-                                    alt="Chúng Tôi">
+                                    src="{{ asset($config->logo) }}"
+                                    data-src="{{ asset($config->logo) }}"
+                                    alt="{{ $config->store_name }}">
                             </a>
                         </div>
                         <div class="info">

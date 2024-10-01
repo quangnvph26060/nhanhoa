@@ -849,7 +849,7 @@
                                                     với bạn.</p>
                                             </div>
                                         </div>
-                                        <form action="{{ route('page.hosting-pay') }}" method="POST">
+                                        <form action="{{ route('page.hosting-pay') }}" method="POST" id="lienhe">
                                             @csrf
                                             <input type="hidden" id="cloud_id_input" name="cloud_id">
                                             <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">

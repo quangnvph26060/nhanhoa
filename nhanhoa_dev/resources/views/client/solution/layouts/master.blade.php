@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset($config->icon) }}" />
 
-    <title>CÔNG TY CỔ PHẦN CÔNG NGHỆ 1 GIÂY ONLINE</title>
+    <title>{{ $config->store_name }}</title>
 
     <link href="{{ asset('client/solution/themes/fonts/cloudicon/cloudicon.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('client/solution/themes/fonts/fontawesome/css/all.css') }}" rel="stylesheet" type="text/css" />

@@ -8,7 +8,7 @@
                 <div class="col-lg-12">
                     <div class="wrapper animateme" data-when="span" data-from="0" data-to="0.75" data-opacity="1"
                         data-translatey="-50">
-                        <div class="heading">Xây dựng cụm server riêng</div>
+                        <div class="heading">{{ $giaiphap->title }}</div>
                     </div>
                 </div>
             </div>

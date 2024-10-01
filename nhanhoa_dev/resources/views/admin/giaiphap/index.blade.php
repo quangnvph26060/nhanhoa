@@ -166,7 +166,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách tin tức</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách giải pháp</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -174,7 +174,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.new.add') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.giaiphap.add') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>
@@ -189,28 +189,26 @@
                                             <tr role="row">
                                                 <th>STT</th>
                                                 <th>Tiêu đề</th>
-                                                <th>Lượt xem</th>
                                                 <th>Ngày tạo</th>
                                                 <th>Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($news as $key => $item)
+                                            @foreach($giaiphap as $key => $item)
                                             {{-- {{ dd($item->slug, $item->id) }} --}}
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
                                                 <td><a href="#">{{ $item->title }}</a></td>
-                                                <td>{{ $item->views }}</td>
                                                 <td>{{ $item->created_at->format('d-m-Y') }}</td>
                                                 <td align="center">
-                                                    <a class="btn btn-warning" href="{{ route('admin.new.show', ['slug' => $item->slug, 'id' => $item->id]) }}">
+                                                    <a class="btn btn-warning" href="{{ route('admin.giaiphap.show', ['slug' => $item->slug, 'id' => $item->id]) }}">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
                                                     <button class="btn btn-danger btn-delete" data-id="{{ $item->id }}"
                                                         onclick="deleteConfirmation({{ $item->id }})"><i
                                                             class="fa-solid fa-trash"></i></button>
 
-                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.new.delete', ['id' => $item->id]) }}" method="POST"
+                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.giaiphap.delete', ['id' => $item->id]) }}" method="POST"
                                                         style="display: none;">
                                                         @csrf
                                                     </form>

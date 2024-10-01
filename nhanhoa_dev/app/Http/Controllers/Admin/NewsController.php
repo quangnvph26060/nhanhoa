@@ -91,10 +91,11 @@ class NewsController extends Controller
     }
 
     // Xóa bài báo khỏi cơ sở dữ liệu
-    public function destroy(SgoNews $sgoNews)
+    public function destroy($id)
     {
+        $sgoNews = SgoNews::find($id);
         $sgoNews->delete();
 
-        return redirect()->route('sgo_news.index')->with('success', 'Bài viết đã được xóa thành công!');
+        return redirect()->route('admin.new.index')->with('success', 'Bài viết đã được xóa thành công!');
     }
 }

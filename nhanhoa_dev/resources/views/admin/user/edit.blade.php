@@ -262,23 +262,23 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="avatar" class="form-label">Avatar</label>
+                                            <label for="logo" class="form-label">Logo</label>
                                             <div class="custom-file">
-                                                <input id="avatar"
-                                                    class="custom-file-input @error('avatar') is-invalid @enderror" type="file"
+                                                <input id="logo"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" type="file"
                                                     name="avatar" accept="image/*">
-                                                <label class="custom-file-label" for="avatar">Chọn avatar</label>
+                                                <label class="custom-file-label" for="logo">Chọn logo</label>
                                             </div>
-                                            @error('avatar')
+                                            @error('logo')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <img id="profileImageavatar" style="width:100px; height:100px"
-                                                src="{{ isset($user->avatar) && !empty($user->avatar) ? asset($user->avatar) : asset('images/avatar2.jpg') }}"
-                                                alt="image avatar" class="avatar">
+                                            <img id="profileImagelogo" style="width:100px; height:auto"
+                                            src="{{ isset($user->avatar) && !empty($user->avatar) ? asset($user->avatar) : asset('images/avatar2.jpg') }}"
+                                                alt="image logo" class="logo">
                                         </div>
                                     </div>
                                 </div>
@@ -302,176 +302,22 @@
     $jq(document).ready(function() {
         $jq('#multiple-select').select2();
     });
-
-    document.getElementById('avatar').addEventListener('change', function(event) {
-                    const input = event.target;
-                    const reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        document.getElementById('profileImageavatar').src = e.target.result;
-                    };
-
-                    if (input.files && input.files[0]) {
-                        reader.readAsDataURL(input.files[0]);
-                    }
-                });s
 </script>
-{{-- <script>
-     document.getElementById('avatar').addEventListener('change', function(event) {
+<script>
+
+        document.getElementById('logo').addEventListener('change', function(event) {
                     const input = event.target;
                     const reader = new FileReader();
 
                     reader.onload = function(e) {
-                        document.getElementById('profileImageavatar').src = e.target.result;
+                        document.getElementById('profileImagelogo').src = e.target.result;
                     };
 
                     if (input.files && input.files[0]) {
                         reader.readAsDataURL(input.files[0]);
                     }
                 });
-    var validateorder = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0049')
-                }, ]
-            },
-            'price': {
-                'element': document.getElementById('price'),
-                'error': document.getElementById('price_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0050')
-                }, ]
-            },
-            'hostingtype_id': {
-                'element': document.getElementById('hostingtype_id'),
-                'error': document.getElementById('hostingtype_id_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0051')
-                }, ]
-            },
-            'storage': {
-                'element': document.getElementById('storage'),
-                'error': document.getElementById('storage_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0052')
-                }, ]
-            },
-            'bandwidth': {
-                'element': document.getElementById('bandwidth'),
-                'error': document.getElementById('bandwidth_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0053')
-                }, ]
-            },
-            'cpu': {
-                'element': document.getElementById('cpu'),
-                'error': document.getElementById('cpu_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0054')
-                }, ]
-            },
-            'ram': {
-                'element': document.getElementById('ram'),
-                'error': document.getElementById('ram_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0055')
-                }, ]
-            },
-            'mysql': {
-                'element': document.getElementById('mysql'),
-                'error': document.getElementById('mysql_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0056')
-                }, ]
-            },
-            'ftp_account': {
-                'element': document.getElementById('ftp_account'),
-                'error': document.getElementById('ftp_account_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0057')
-                }, ]
-            },
-            'domain': {
-                'element': document.getElementById('domain'),
-                'error': document.getElementById('domain_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0058')
-                }, ]
-            },
-            'subdomain': {
-                'element': document.getElementById('subdomain'),
-                'error': document.getElementById('subdomain_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0059')
-                }, ]
-            },
-            'alias_parked_domain': {
-                'element': document.getElementById('alias_parked_domain'),
-                'error': document.getElementById('alias_parked_domain_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0060')ss
-                }, ]
-            },
-            'email_account': {
-                'element': document.getElementById('email_account'),
-                'error': document.getElementById('email_account_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0061')
-                }, ]
-            },
 
-        }
-
-        function submithosting(event) {
-            event.preventDefault();
-            if (validateAllFields(validateorder)) {
-                document.getElementById('hosting').submit();
-            }
-        }
-
-
-
-</script> --}}
+</script>
 
 @endsection

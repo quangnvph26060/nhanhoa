@@ -195,7 +195,7 @@
                                                 <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với bạn.</p>
                                             </div>
                                         </div>
-                                        <form action="{{ route('page.google-workspace-business-pay') }}" method="POST">
+                                        <form action="{{ route('page.google-workspace-business-pay') }}" method="POST" id="lienhe">
                                             @csrf
                                             <input type="hidden" id="cloud_id_input" name="googleworkspace_id">
                                             <input class="form-control" type="text" placeholder="Họ và tên" name="name">
@@ -317,7 +317,7 @@
                                                     với bạn.</p>
                                             </div>
                                         </div>
-                                        <form action="{{ route('page.google-workspace-education-pay') }}" method="POST">
+                                        <form action="{{ route('page.google-workspace-education-pay') }}" method="POST" id="lienhe">
                                             @csrf
                                             <input type="hidden" id="cloud_id_input1" name="googleworkspace_id">
                                             <input class="form-control" type="text" placeholder="Họ và tên" name="name">

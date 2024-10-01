@@ -7,7 +7,7 @@
         class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
       >
         <div>
-          <h3 class="fw-bold mb-3">Bảng điều khiển</h3>
+          <h3 class="fw-bold mb-3">Bảng thống kê</h3>
         </div>
         {{-- <div class="ms-md-auto py-2 py-md-0">
           <a href="#" class="btn btn-label-info btn-round me-2">Manage</a>
@@ -29,7 +29,7 @@
                 <div class="col col-stats ms-3 ms-sm-0">
                   <div class="numbers">
                     <p class="card-category">Khách hàng</p>
-                    <h4 class="card-title">{{ $clients->count() }}</h4>
+                    <h4 class="card-title">{{ $countDistinctEmails }}</h4>
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@
               <div class="row align-items-center">
                 <div class="col-icon">
                   <div
-                    class="icon-big text-center icon-info bubble-shadow-small">
+                    class="icon-big text-center icon-primary bubble-shadow-small">
                     <i class="fas fa-user-check"></i>
                   </div>
                 </div>
@@ -56,21 +56,21 @@
             </div>
           </div>
         </div>
-        {{-- <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-3">
           <div class="card card-stats card-round">
             <div class="card-body">
               <div class="row align-items-center">
                 <div class="col-icon">
                   <div
-                    class="icon-big text-center icon-success bubble-shadow-small"
+                    class="icon-big text-center icon-primary bubble-shadow-small"
                   >
-                    <i class="fas fa-luggage-cart"></i>
+                  <i class="fas fa-envelope"></i>
                   </div>
                 </div>
                 <div class="col col-stats ms-3 ms-sm-0">
                   <div class="numbers">
-                    <p class="card-category">Sales</p>
-                    <h4 class="card-title">$ 1,345</h4>
+                    <p class="card-category">Danh sách liên hệ</p>
+                    <h4 class="card-title">{{ $clients->count() }}</h4>
                   </div>
                 </div>
               </div>
@@ -78,26 +78,28 @@
           </div>
         </div>
         <div class="col-sm-6 col-md-3">
-          <div class="card card-stats card-round">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class="col-icon">
-                  <div
-                    class="icon-big text-center icon-secondary bubble-shadow-small"
-                  >
-                    <i class="far fa-check-circle"></i>
+            <div class="card card-stats card-round">
+              <div class="card-body">
+                <div class="row align-items-center">
+                  <div class="col-icon">
+                    <div
+                      class="icon-big text-center icon-primary bubble-shadow-small"
+                    >
+                    <i class="fas fa-user-tie"></i>
+
+                    </div>
                   </div>
-                </div>
-                <div class="col col-stats ms-3 ms-sm-0">
-                  <div class="numbers">
-                    <p class="card-category">Order</p>
-                    <h4 class="card-title">576</h4>
+                  <div class="col col-stats ms-3 ms-sm-0">
+                    <div class="numbers">
+                      <p class="card-category">Nhân viên</p>
+                      <h4 class="card-title">{{ $user->count() }}</h4>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div> --}}
+
       </div>
 
       <div class="row">
@@ -141,7 +143,7 @@
           <div class="card card-round">
             <div class="card-header">
               <div class="card-head-row card-tools-still-right">
-                <div class="card-title">Lịch sử đơn hàng</div>
+                <div class="card-title">Lịch sử liên hệ tư vấn</div>
                 {{-- <div class="card-tools">
                   <div class="dropdown">
                     <button
@@ -173,7 +175,7 @@
                   </thead>
                   <tbody>
                     @forelse ($clients as $index =>  $item)
-                    @if ($index <= 5)
+                    @if ($index <= 10)
                     <tr>
                         <th scope="row">
                             {{ $item->name }}

@@ -2,14 +2,26 @@
     .nav-collapse {
         margin-bottom: 0px;
     }
+
+    @media (min-width: 768px) {
+        .nav-toggle {
+            display: none !important;
+        }
+        .image-container{
+            display: flex;
+            justify-content: center;
+
+        }
+    }
+
+
 </style>
 <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
         <!-- Logo Header -->
-        <div class="logo-header" data-background-color="dark">
-            <a href="{{ route('admin.dashboard') }}" class="logo">
-                <img src="{{ asset($config->logo) }}" alt="navbar brand" class="navbar-brand"
-                    height="50" />
+        <div class="logo-header image-container" data-background-color="white">
+            <a href="{{ route('admin.dashboard') }}" class="logo ">
+                <img src="{{ asset($config->logo) }}" alt="navbar brand" class="navbar-brand image" height="50" />
             </a>
             <div class="nav-toggle">
                 <button class="btn btn-toggle toggle-sidebar">
@@ -419,6 +431,27 @@
                             </li>
                             <li>
                                 <a href="{{ route('admin.new.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#giaiphap">
+                        <i class="fas fa-newspaper"></i>
+                        <p>Giải pháp</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="giaiphap">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.giaiphap.add') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.giaiphap.index') }}">
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>

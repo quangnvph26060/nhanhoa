@@ -146,7 +146,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="">Sản phẩm</a>
+                <a href="{{ route('admin.giaiphap.index') }}">Giải pháp</a>
             </li>
             <li class="separator">
                 <i class="icon-arrow-right"></i>
@@ -160,54 +160,32 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm tin tức</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa giải pháp</h4>
                 </div>
                 <div class="card-body">
 
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" action="{{ route('admin.new.store') }}" enctype="multipart/form-data">
+                            <form method="POST"
+                                action="{{ route('admin.giaiphap.update', ['slug' => $giaiphap->slug ,'id' => $giaiphap->id]) }}"
+                                enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
 
                                     <div class="col-md-12">
 
                                         <div class="form-group">
-                                            <label for="exampleSelect" class="form-label">Loại tin tức</label>
-                                            <select class="form-select" id="exampleSelect" name="type">
-                                                <option value="1">Tin tức</option>
-                                                <option value="2">Thông báo</option>
-                                                <option value="3">Tuyển dụng</option>
-                                                <option value="4">Công nghệ</option>
-                                            </select>
+                                            <label class="form-label" for="title">Tiêu đề :</label><br>
+                                            <input type="text" class="form-control" id="title" name="title"
+                                                style="width:100%; padding: 10px;" required value="{{ $giaiphap->title }}">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="logo" class="form-label">Hình ảnh bài viết</label>
-                                            <div class="custom-file">
-                                                <input id="logo"
-                                                    class="custom-file-input  @error('logo') is-invalid @enderror "
-                                                    type="file" name="logo" accept="image/*">
-                                                <label class="custom-file-label" for="logo">Chọn ảnh</label>
-                                            </div>
-                                            <div class="form-group">
-                                                <img id="profileImage" style="width: 150px;height: auto"
-                                                    src="{{asset('images/avatar2.jpg') }}" alt="image profile"
-                                                    class="avatar">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="form-label" for="title">Tiêu đề bài báo:</label><br>
-                                                <input type="text" class="form-control" id="title" name="title"
-                                                    style="width:100%; padding: 10px;" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="form-label" for="content">Nội dung bài báo:</label><br>
+                                            <label class="form-label" for="content">Nội dung :</label><br>
                                             <textarea name="content" class="form-control" id="content" rows="10"
-                                                cols="80"></textarea><br><br>
+                                                cols="80">{{ $giaiphap->content }}</textarea>
                                         </div>
+
                                     </div>
 
                                 </div>
@@ -227,7 +205,7 @@
 </div>
 
 <script>
-  CKEDITOR.replace('content', {
+CKEDITOR.replace('content', {
     toolbar: [
         { name: 'document', items: [ 'Source', '-', 'Save', 'NewPage', 'Preview', 'Print', '-', 'Templates' ] },
         { name: 'clipboard', items: [ 'Undo', 'Redo' ] },
@@ -249,7 +227,6 @@
 });
 
 
-
     document.getElementById('logo').addEventListener('change', function(event) {
             const input = event.target;
             const reader = new FileReader();
@@ -262,6 +239,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         });
+s
 
 </script>
 

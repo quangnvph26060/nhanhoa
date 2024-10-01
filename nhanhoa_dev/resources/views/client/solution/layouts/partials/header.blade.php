@@ -1,3 +1,4 @@
+
 <header id="header">
     <div class="sec-bg3 p-2 pr-3 infonews">
         <div class="container-fluid">
@@ -5,14 +6,14 @@
                 <div class="col-md-6 news">
                     <h6 class="m-0">
                         <div class="badge feat bg-pink mr-2 left">HOT</div>
-                        <small class="text-light">1SONLINE Hỗ trợ tại đây
-                            <a class="c-yellow opa-8" href="https://support.1sonline.vn/">Support.1sonline.vn
+                        <small class="text-light">{{ $config->store_name }}
+                            <a class="c-yellow opa-8" href="https://support.1sonline.vn/">{{ $config->email }}
                                 <i class="fas fa-arrow-circle-right"></i></a></small>
                     </h6>
                 </div>
                 <div class="col-md-6 link">
                     <li class="infonews-nav float-right">
-                        <a href="tel:02466711411"><b>02466.711.411</b></a>
+                        <a href="tel:02466711411"><b>{{ $config->phone }}</b></a>
                     </li>
                 </div>
             </div>
@@ -24,10 +25,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-2 col-md-2">
-                        <a href="index.html">
+                        <a href="{{ route('page.home') }}" class="image-overlay">
                             <img class="logo-menu"
-                                src="{{ asset('client/solution/themes/img/1sonline-logo-light.png') }}"
+                                src="{{ asset($config->logo) }}"
                                 alt="logo Antler" />
+                                <div class="overlay"></div>
                         </a>
                     </div>
                     <nav id="menu" class="col-10 col-md-10">
@@ -38,11 +40,14 @@
                                 <span class="icon"></span>
                             </button>
                             <ul class="main-menu nav navbar-nav navbar-right">
+                                @forelse ($giaiphapall as $item )
                                 <li class="menu-item">
-                                    <a class="pr-1 v-stroke" href="{{ route('page.server-cluster') }}"> Xây dựng cụm server
-                                        riêng</a>
+                                    <a class="pr-1 v-stroke" href="{{ route('page.giaiphap', ['slug' => $item->slug, 'id' => $item->id]) }}"> {{ $item->title }}</a>
                                 </li>
-                                <li class="menu-item">
+                                @empty
+
+                                @endforelse
+                                {{-- <li class="menu-item">
                                     <a class="pr-1 v-stroke" href="{{ route('page.security-solutions') }}"> Bảo mật</a>
                                 </li>
                                 <li class="menu-item">
@@ -55,7 +60,7 @@
                                 <li class="menu-item">
                                     <a class="pr-1 v-stroke" href="{{ route('page.network-consulting') }}"> Thiết kế hệ thống
                                         mạng</a>
-                                </li>
+                                </li> --}}
                                 {{-- <li class="menu-item menu-item-has-children">
                                     <a class="v-stroke" href="#"> GIẢI PHÁP</a>
                                     <div class="sub-menu menu-large">

@@ -7,26 +7,30 @@
                      <div class="heading">Về chúng tôi</div>
                      <ul class="footer-menu">
                          <li class="menu-item">
-                             <a>CÔNG TY CỔ PHẦN CÔNG NGHỆ 1 GIÂY ONLINE</a>
+                             <a>{{ $config->store_name }}</a>
                          </li>
                          <li class="menu-item">
-                             <a href="tel:02466711411">Hotline : 02466.711.411</a>
+                             <a href="tel:02466711411">Hotline : {{ $config->phone }}</a>
                          </li>
                          <li class="menu-item">
-                             <a href="mailto:Support@1sonline.vn">Email: Support@1sonline.vn</a>
+                             <a href="mailto:{{ $config->email }}">Email: {{ $config->email }}</a>
                          </li>
                          <li class="menu-item">
-                             Địa chỉ: Số 12 Di Trạch - Hoài Đức - Hà Nội
+                             Địa chỉ: {{  $config->address }}
                          </li>
                      </ul>
                  </div>
                  <div class="col-sm-4 col-md-4">
                      <div class="heading">Sản phẩm</div>
                      <ul class="footer-menu">
+                         @forelse ($giaiphapall as $item )
                          <li class="menu-item">
-                             <a href="xay-dung-cum-server-rieng-page3.html">Xây dựng cụm server riêng</a>
-                         </li>
-                         <li class="menu-item">
+                            <a href="{{ route('page.giaiphap', ['slug'=> $item->slug, 'id'=> $item->id]) }}">{{ $item->title }}</a>
+                        </li>
+                         @empty
+
+                         @endforelse
+                         {{-- <li class="menu-item">
                              <a href="giai-phap-bao-mat-page4.html">Bảo mật</a>
                          </li>
                          <li class="menu-item">
@@ -37,24 +41,30 @@
                          </li>
                          <li class="menu-item">
                              <a href="tu-van-thiet-ke-he-thong-mang-page6.html">Thiết kế hệ thống mạng</a>
-                         </li>
+                         </li> --}}
                      </ul>
                  </div>
                  <div class="col-sm-4 col-md-4">
                      <div class="heading">Dịch vụ</div>
                      <ul class="footer-menu">
                          <li class="menu-item">
-                             <a href="vps-cloud.html">CLOUD VPS</a>
+                             <a href="{{ route('page.cloud-backup') }}">CLOUD VPS</a>
                          </li>
                          <li class="menu-item">
-                             <a href="smart-server.html">SMART-SERVER</a>
+                             <a href="{{ route('page.domain-registration') }}">Tên miền</a>
                          </li>
                          <li class="menu-item">
-                             <a href="cho-thue-may-chu-supermicro.html">THUÊ MÁY CHỦ</a>
+                             <a href="{{ route('page.server-backup') }}">THUÊ MÁY CHỦ</a>
                          </li>
                          <li class="menu-item">
-                             <a href="cho-dat-may-chu-vnpt.html">CHỖ ĐẶT SERVER</a>
+                             <a href="{{ route('page.server-location') }}">CHỖ ĐẶT SERVER</a>
                          </li>
+                         <li class="menu-item">
+                            <a href="{{ route('page.linux-hosting') }}">Hosting</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="{{ route('page.ssl-comodo') }}">SSL</a>
+                        </li>
                      </ul>
                  </div>
                  <!-- <div class="col-sm-6 col-md-3">

@@ -129,6 +129,9 @@
         border: 1px solid #ccc;
         border-radius: 3px;
     }
+    .cke_notifications_area{
+        display: none;
+    }
 </style>
 
 <div class="page-inner">

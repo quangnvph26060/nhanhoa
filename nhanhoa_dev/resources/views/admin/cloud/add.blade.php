@@ -240,7 +240,7 @@
                                         </div>
                                         <div class="form-group">
                                             <img id="profileImagelogo" style="width:100px; height:auto"
-                                                src="{{ isset($cloud->logo) && !empty($cloud->logo) ? asset($cloud->logo) : asset('images/avatar2.jpg') }}"
+                                                src="{{ asset('images/avatar2.jpg') }}"
                                                 alt="image logo" class="logo">
                                         </div>
                                     </div>

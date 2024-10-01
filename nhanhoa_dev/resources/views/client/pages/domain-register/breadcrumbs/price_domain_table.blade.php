@@ -15,6 +15,9 @@
                             <li>
                                 <a class="tab4" data-toggle="tab" href="#tab-four">Dịch vụ đi kèm</a>
                             </li>
+                            <li>
+                                <a class="tab3" data-toggle="tab" href="#tab-five">Danh sách tên miền</a>
+                            </li>
                         </ul>
                     </figure>
                 </div>
@@ -84,10 +87,13 @@
                                             </td>
                                             <td>{{ number_format($item->dicvunamsau, 0, '', '.') }} đ</td>
                                             <td>
-                                                <del>{{ number_format($item->le_phi + $item->phiduytri  + $item->dichvu + $item->dichvu * 10/100 , 0, '', '.') }} đ</del> <br>
-                                                <span style="color: red;">{{ number_format($item->le_phi + $item->phiduytri  + 0 + 0 * 10/100 , 0, '', '.') }} đ</span>
+                                                <del>{{ number_format($item->le_phi + $item->phiduytri + $item->dichvu +
+                                                    $item->dichvu * 10/100 , 0, '', '.') }} đ</del> <br>
+                                                <span style="color: red;">{{ number_format($item->le_phi +
+                                                    $item->phiduytri + 0 + 0 * 10/100 , 0, '', '.') }} đ</span>
                                             </td>
-                                            <td>{{ number_format($item->phiduytri  + $item->dicvunamsau + $item->dicvunamsau * 10/100 , 0, '', '.') }} đ</td>
+                                            <td>{{ number_format($item->phiduytri + $item->dicvunamsau +
+                                                $item->dicvunamsau * 10/100 , 0, '', '.') }} đ</td>
                                         </tr>
                                         @empty
 
@@ -121,8 +127,8 @@
                                     quy định, là khoản phải thu nộp ngân sách nhà nước, không chịu thuế.</p>
 
                             </figure>
-                            <img src="https://nhanhoa.com/templates/images/domain/1409805426_rocket.jpg"
-                                alt="" class="img_center d-none">
+                            <img src="https://nhanhoa.com/templates/images/domain/1409805426_rocket.jpg" alt=""
+                                class="img_center d-none">
                             <h3 class=" d-none blue mb10 img_center mtb20">Chúng Tôi luôn cùng bạn bảo vệ và phát triển
                                 thương hiệu của mình trên Internet</h3>
                             <p class="font15 hevr img_center mb30">Chúng Tôi đã có uy tín lâu năm trong việc cung cấp
@@ -170,7 +176,8 @@
                                                 </div>
                                             </div>
                                         </figure>
-                                        <table class="specifications table-price-nvme table  list_pirce mb20" style="background:#fff">
+                                        <table class="specifications table-price-nvme table  list_pirce mb20"
+                                            style="background:#fff">
                                             <thead>
                                                 <tr>
                                                     <th width="25%" colspan="3">Dịch vụ đi kèm</th>
@@ -231,8 +238,10 @@
                                             <td>{{ $item->name }}</td>
                                             <td><span style="color:red">Miễn phí</span></td>
                                             <td>
-                                                <font style="text-decoration:line-through;">{{ number_format($item->phiduytri, 0, '', '.') }} đ</font>&nbsp;<font
-                                                    color="red">{{ number_format($item->le_phi, 0, '', '.') }} đ</font><br><small class="hidden">(Áp dụng
+                                                <font style="text-decoration:line-through;">{{
+                                                    number_format($item->phiduytri, 0, '', '.') }} đ</font>&nbsp;<font
+                                                    color="red">{{ number_format($item->le_phi, 0, '', '.') }} đ</font>
+                                                <br><small class="hidden">(Áp dụng
                                                     năm đầu tiên)</small>
                                             </td>
                                             <td>{{ number_format($item->dicvunamsau, 0, '', '.') }} đ</td>
@@ -246,7 +255,7 @@
                                 </table>
                             </figure>
                         </article>
-                        <article id="tab-three" class="tab-pane  in area_tab_content">
+                        {{-- <article id="tab-three" class="tab-pane  in area_tab_content">
                             <section class="price_domain_table">
                                 <div class="container">
                                     <section class="html_content">
@@ -372,7 +381,7 @@
                                     </section>
                                 </div>
                             </section>
-                        </article>
+                        </article> --}}
                         <article id="tab-four" class="tab-pane in area_tab_content">
                             <figure class="custom_domain">
                                 <div class="row">
@@ -402,8 +411,8 @@
                                                 <li>ns3.zonedns.vn&nbsp;- IP: 203.162.79.157</li>
                                                 <li>ns4.zonedns.vn&nbsp;- IP: 125.221.225.141</li>
                                             </ul>
-                                            <p><span class="hevb">Lưu ý:</span> Khi khách hàng đăng ký <a
-                                                    href="#">tên miền quốc tế</a>, Chúng Tôi sẽ lock (khóa) tên
+                                            <p><span class="hevb">Lưu ý:</span> Khi khách hàng đăng ký <a href="#">tên
+                                                    miền quốc tế</a>, Chúng Tôi sẽ lock (khóa) tên
                                                 miền lại để bảo mật cho khách hàng trong quá trình sử dụng tên miền.</p>
                                             <br>
                                             <p>Quý khách cần hỗ trợ về dịch vụ này vui lòng liên hệ với chúng tôi.
@@ -417,11 +426,11 @@
                                                 chỉ URL nào đó (mà bạn muốn người truy cập sử dụng một tên miền dễ nhớ).
                                             </p>
                                             <br>
-                                            <p><span class="hevb">Vi dụ:</span> Địa chỉ một <a
-                                                    href="#">website</a> của bạn khi chưa sử dụng domain
+                                            <p><span class="hevb">Vi dụ:</span> Địa chỉ một <a href="#">website</a> của
+                                                bạn khi chưa sử dụng domain
                                                 forwarding là: https://123.123.123.123/sites/index.html</p>
-                                            <p>Một địa chỉ như vậy thật khó nhớ, khi sử dụng <a
-                                                    href="#">Domain</a> Forwarding, người truy cập chỉ việc gõ
+                                            <p>Một địa chỉ như vậy thật khó nhớ, khi sử dụng <a href="#">Domain</a>
+                                                Forwarding, người truy cập chỉ việc gõ
                                                 địa chỉ: https://www.mydomain.com là có thể vào được website của bạn.
                                             </p>
                                             <p>Bạn có thể sử dụng dịch vụ này miễn phí tại Chúng Tôi.</p>
@@ -443,6 +452,256 @@
                                 </div>
                             </figure>
                         </article>
+                        <article id="tab-five" class="tab-pane  in area_tab_content">
+                            <div class="d-none d-md-block d-lg-block">
+                                <div class="section-price-domain-hot">
+                                    <div class="container">
+                                        <div class="content">
+                                            <h2 class="title-section">Các tên miền </h2>
+                                            <div class="grid-domain-hot">
+                                                @forelse ($domainall as $item)
+                                                <div class="grid-domain-hot-item" data-ext="{{ $item->name }}"
+                                                    >
+                                                    <div class="grid-ext-name">
+
+                                                        <img src="{{ asset($item->logo) }}">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc">{{ $item->domaintype_id == 2 ? " tên miền
+                                                        quốc gia" : ' tên miền quốc tế' }} {{ strtoupper($item->name) }}
+                                                    </div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>{{ number_format($item->le_phi + $item->phiduytri +
+                                                                $item->dichvu +
+                                                                $item->dichvu * 10/100 , 0, '', '.') }} đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>{{ number_format($item->le_phi +
+                                                                $item->phiduytri + 0 + 0 * 10/100 , 0, '', '.') }}
+                                                                đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a  class="grid-ext-register btn btn-primary" onclick="openPopup({{ $item->id }}, '{{ $item->name }}')">
+                                                        Liên hệ</a>
+
+
+                                                </div>
+                                                @empty
+
+                                                @endforelse
+                                                {{-- <div class="grid-domain-hot-item" data-ext="vn"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/vn.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc gia .VN</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>650.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>450.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div>
+                                                <div class="grid-domain-hot-item" data-ext="id.vn"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/id-vn.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc gia .ID.VN</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>80.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>60.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div>
+                                                <div class="grid-domain-hot-item" data-ext="ai.vn"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/ai-vn.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc gia .AI.VN</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>550.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>350.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div>
+                                                <div class="grid-domain-hot-item" data-ext="online"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/online.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc tế .ONLINE</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>790.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>49.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div>
+                                                <div class="grid-domain-hot-item" data-ext="store"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/store.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc tế .STORE</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>1.290.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>79.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div>
+                                                <div class="grid-domain-hot-item" data-ext="site"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/site.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc tế .SITE</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>809.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>49.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div>
+                                                <div class="grid-domain-hot-item" data-ext="top"
+                                                    onclick="System_js.ext_domain_click(this)">
+                                                    <div class="grid-ext-name">
+
+                                                        <img
+                                                            src="https://nhanhoa.com/templates/images/v2/domain/top.png">
+
+                                                    </div>
+                                                    <div class="grid-ext-desc"> tên miền quốc tế .TOP</div>
+                                                    <div class="grid-ext-price">
+                                                        <div>
+                                                            <del>239.000 đ</del>
+                                                        </div>
+                                                        <div class="price-new">
+                                                            <span>50.000 đ</span>/năm
+                                                        </div>
+
+                                                    </div>
+                                                    <a href="javascript:;" class="grid-ext-register btn btn-primary">
+                                                        Đăng ký</a>
+
+
+                                                </div> --}}
+                                            </div>
+                                        </div>
+                                        <div class="popup-cart" id="popup">
+                                            <div class="content_popup">
+                                                <a href="javascript:void(0)" class="re-close-popup close" onclick="closePopup()"
+                                                    title="close">×</a>
+                                                <div class="input-content">
+                                                    <div class="input-content-intro">
+                                                        <div class="input-content-intro-icon">
+                                                            <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
+                                                        </div>
+                                                        <div class="input-content-intro-des">
+                                                            <div class="text-hello">Xin chào,</div>
+                                                            <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ
+                                                                lại
+                                                                với bạn.</p>
+                                                        </div>
+                                                    </div>
+                                                    <form action="{{ route('page.domain.pay') }}" method="POST" id="lienhe">
+                                                        @csrf
+                                                        <input type="hidden" id="cloud_id_input" name="domain_id">
+                                                        <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">
+                                                    <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="name_error"></span>
+
+                                                    <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" id="phone">
+                                                    <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="phone_error"></span>
+
+                                                    <input class="form-control" type="text" placeholder="Email" name="email" id="email">
+                                                    <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="email_error"></span>
+                                                            <div class="product-info">
+                                                                <p>Gói Tên miền : </p>
+                                                                <span class="product-name" >
+                                                                    {{ $item->domaintype_id == 1 ? "Tên miền quốc tế - " : "Tên miền quốc gia - " }} <span id="product_name"></span>
+                                                                </span>
+                                                            </div>
+
+                                                        <div class="submit-content">
+                                                            <button type="button" class="btn btn-submit" onclick="submitlienhe(event)">Gửi Đi</button>
+                                                            <div class="go-hotline">Gọi hotline <span>(024) 7308 6680</span>
+                                                                (24/7)
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                     </figure>
                 </section>
                 <!-- End content bảng giá -->
@@ -451,3 +710,36 @@
 
     </div>
 </section>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Toastr JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="{{ asset('validator/client.js') }}"></script>
+
+<script>
+function openPopup(cloudId, productName) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('cloud_id_input').value = cloudId; // Cập nhật giá trị cloud_id
+    document.getElementById('product_name').textContent = productName; // Cập nhật tên sản phẩm
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+
+$(document).ready(function() {
+        @if (session('success'))
+            toastr.success("{{ session('success') }}", "Thông báo:", {
+                positionClass: "toast-bottom-right",
+                timeOut: 3000,
+                closeButton: true,
+                progressBar: true,
+                preventDuplicates: true,
+            });
+        @endif
+    });
+</script>
