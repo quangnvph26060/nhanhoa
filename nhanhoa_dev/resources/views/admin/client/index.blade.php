@@ -196,7 +196,7 @@
                                         aria-describedby="basic-datatables_info">
                                         <thead>
                                             <tr role="row">
-
+                                                <th>TT</th>
                                                 <th>MKH</th>
                                                 <th style="width: 100px;">Họ tên</th>
                                                 <th style="width: 100px;">Email (SDT)</th>
@@ -307,6 +307,7 @@
                     $.each(data.data, function(index, item) {
                         html += `
                             <tr>
+                                <td>${index + 1}</td>
                                 <td>${item.code}</td>
                                 <td>${item.name}</td>
                                 <td>${item.email} (${item.phone})</td>

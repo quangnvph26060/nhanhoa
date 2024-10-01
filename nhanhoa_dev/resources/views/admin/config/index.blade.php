@@ -178,6 +178,18 @@
         color: white !important;
     }
 
+    .selectize-control{
+        border: 0px;
+        background: #f8f9fa;
+        box-shadow: none !important;
+        padding: 0px !important;
+    }
+    .selectize-input {
+        padding: 10px 15px !important;
+        border-radius: 10px !important;
+
+    }
+
 </style>
 <div class="page-inner">
     <div class="page-header">
@@ -473,7 +485,7 @@
 
                                 <div class="form-group">
                                     <label for="describe" class="form-label">Từ khóa</label>
-                                    <input id="describe" class="form-control " name="describe" type="text"
+                                    <input id="describe" class="form-control " name="describe" type="text" style="border: 0px"
                                         value="{{ old('describe', isset($sale) ? $sale->describe : '') }}" >
                                     @error('describe')
                                     <span class="invalid-feedback" role="alert">
@@ -588,7 +600,7 @@
                 case 'trangchu':
                     return 'Nội dung trang chủ';
                 case 'sale':
-                    return 'Thông tin sale';
+                    return 'Thông tin SEO';
                 default:
                     return 'Thông tin công ty';
             }

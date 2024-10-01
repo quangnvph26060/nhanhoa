@@ -12,9 +12,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-search-domain">
-                            <form class="form-contact form-search-domain-validate" id="form_check_domain_home"
+                            <form class="form-contact form-search-domain-validate" id="form_check_domain_home" style="align-items: flex-start "
                                 onsubmit="return false;">
-                                <div class="form-group mb-0 search_domain">
+                                <div class="form-group mb-0 search_domain" style="border: 0; margin-right: 10px">
                                     <input type="text" class="form-control"
                                         placeholder="Nhập tên miền bạn muốn kiểm tra " name="domain" id="domain_input"
                                         autocomplete="off">
@@ -89,7 +89,27 @@
                         <!-- list ext hot -->
                         <div class="d-none d-md-block d-lg-block">
                             <div class="list-top-domain-data">
+                                @forelse ($domainall as $item )
                                 <div class="top-domain-item" data-ext="com" onclick="System_js.ext_domain_click(this)">
+                                    <span class="tips" data-toggle="tooltip" title=""
+                                        data-original-title="Tên miền .COM (viết tắt của từ commercial - thương mại, hoặc company - công ty) là tên miền cấp một (gTLD) dành cho các tổ chức kinh tế thương mại, được sử dụng trong hệ thống tên miền toàn cầu.">
+                                        <i style="color: var(--color-text);" class="fas fa-question-circle"></i>
+                                    </span>
+                                    <div class="top-domain-ext">
+                                        {{ $item->name }}
+                                    </div>
+                                    <div class="top-domain-price">
+                                        <div class="price-new">{{ number_format($item->le_phi +
+                                            $item->phiduytri + 0 + 0 * 10/100 , 0, '', '.') }} đ</div>
+                                        <div class="price-old">{{ number_format($item->le_phi + $item->phiduytri +
+                                            $item->dichvu +
+                                            $item->dichvu * 10/100 , 0, '', '.') }} đ</div>
+                                    </div>
+                                </div>
+                                @empty
+
+                                @endforelse
+                                {{-- <div class="top-domain-item" data-ext="com" onclick="System_js.ext_domain_click(this)">
                                     <span class="tips" data-toggle="tooltip" title=""
                                         data-original-title="Tên miền .COM (viết tắt của từ commercial - thương mại, hoặc company - công ty) là tên miền cấp một (gTLD) dành cho các tổ chức kinh tế thương mại, được sử dụng trong hệ thống tên miền toàn cầu.">
                                         <i style="color: var(--color-text);" class="fas fa-question-circle"></i>
@@ -156,7 +176,7 @@
 
                                         <div class="price-new">325.000 đ</div>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <!-- list ext hot -->

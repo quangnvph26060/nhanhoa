@@ -439,7 +439,7 @@
                 </li>
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#giaiphap">
-                        <i class="fas fa-newspaper"></i>
+                        <i class="fas fa-lightbulb"></i>
                         <p>Giải pháp</p>
                         <span class="caret"></span>
                     </a>
