@@ -160,7 +160,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm giải phap</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Thêm giải pháp</h4>
                 </div>
                 <div class="card-body">
 

@@ -114,7 +114,7 @@
                 <i class="icon-arrow-right"></i>
             </li>
             <li class="nav-item">
-                <a href="">Sản phẩm</a>
+                <a href="">Cloud</a>
             </li>
             <li class="separator">
                 <i class="icon-arrow-right"></i>

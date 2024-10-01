@@ -577,7 +577,7 @@
                             </li>
                         </ul>
                     </li>
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="javascript:;" title="">
                             Giải Pháp
                             <span class="sub"></span>
@@ -585,26 +585,31 @@
 
                         <ul class="entry-menu dropdown">
 
+                            @forelse ($giaiphapall as $item )
                             <li>
                                 <a class="menu-link" href="{{route('page.solution-vfone')}}" title="Vfone"
                                     target="_blank">
                                     <div class="item-menu">
                                         <div class="icon">
-                                            <img src="https://nhanhoa.com/templates/images/v2/menu/vfone.svg"
-                                                alt="Vfone">
+                                            {{-- <img src="https://nhanhoa.com/templates/images/v2/menu/vfone.svg"
+                                                alt="Vfone"> --}}
+                                                <i class="fas fa-lightbulb"></i>
                                         </div>
                                         <div class="name-description">
                                             <span class="name">
-                                                Tổng đài VFone
+                                                {{ $item->title }}
                                             </span>
                                             <span class="description">
-                                                Giải pháp Tổng đài doanh nghiệp
+                                                {{-- Giải pháp Tổng đài doanh nghiệp --}}
                                             </span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li>
+                            @empty
+
+                            @endforelse
+                            {{-- <li>
                                 <a class="menu-link" href="{{route('page.electronic-contract')}}"
                                     title="Hợp đồng điện tử" target="_blank">
                                     <div class="item-menu">
@@ -621,8 +626,8 @@
                                             </span>
                                         </div>
                                     </div>
-                                </a>
-                            </li>
+                                </a> --}}
+                            {{-- </li>
                             <li>
                                 <a class="menu-link" href="{{route('page.electronic-invoice')}}" title="Hóa đơn điện tử"
                                     target="_blank">
@@ -698,10 +703,10 @@
                                         </div>
                                     </div>
                                 </a>
-                            </li>
+                            </li> --}}
 
                         </ul>
-                    </li> --}}
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('page.giaiphap', ['slug' => $giaiphapheader->slug, 'id' => $giaiphapheader->id]) }}" title="">
                             Giải Pháp
