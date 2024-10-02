@@ -240,7 +240,25 @@
         </div>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    @if (session('success'))
+    <script>
+        $(document).ready(function() {
+                $.notify({
+                    icon: 'icon-bell',
+                    title: 'Email',
+                    message: '{{ session('success') }}',
+                }, {
+                    type: 'secondary',
+                    placement: {
+                        from: "bottom",
+                        align: "right"
+                    },
+                    time: 1000,
+                });
+            });
+    </script>
+    @endif
 <script>
     function deleteConfirmation(id) {
         Swal.fire({

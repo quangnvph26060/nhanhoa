@@ -1,3 +1,8 @@
+<style>
+    .invalid-feedback{
+        color:  red !important;
+    }
+</style>
 <div nh-row="pvm08s7" class="bg-light-nh pt-50 pb-50">
     <div class="container">
         <div class="row ">
@@ -44,9 +49,9 @@
                                     title="close">×</a>
                                 <div class="input-content">
                                     <div class="input-content-intro">
-                                        <div class="input-content-intro-icon">
+                                        {{-- <div class="input-content-intro-icon">
                                             <i class="fas fa-calendar-week" style="color: #4ABAB9;"></i>
-                                        </div>
+                                        </div> --}}
                                         <div class="input-content-intro-des">
                                             <div class="text-hello">Xin chào,</div>
                                             <p class="conten-sub">Vui lòng nhập thông tin để chúng tôi liên hệ lại với
@@ -57,7 +62,7 @@
                                         @csrf
                                         <input type="hidden" id="cloud_id_input" name="backup365_id">
                                         <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">
-                                        <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="name_error"></span>
+                                        <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px;" id="name_error"></span>
 
                                         <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" id="phone">
                                         <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="phone_error"></span>

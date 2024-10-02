@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Backup365Controller;
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\CloudBackUpController;
 use App\Http\Controllers\Admin\CloudController;
@@ -170,6 +171,15 @@ Route::middleware(['checkLogin', 'checkRole:1,2'])->prefix('admin')->name('admin
         Route::get('edit/{id}', [CloudBackUpController::class, 'editform'])->name('editform');
         Route::post('edit/{id}', [CloudBackUpController::class, 'editsubmit'])->name('editsubmit');
         Route::post('delete/{id}', [CloudBackUpController::class, 'delete'])->name('delete');
+    });
+
+    Route::prefix('backup365')->name('backup365.')->group(function () {
+        Route::get('', [Backup365Controller::class, 'index'])->name('index');
+        Route::get('add', [Backup365Controller::class, 'addform'])->name('addform');
+        Route::post('add', [Backup365Controller::class, 'addsubmit'])->name('addsubmit');
+        Route::get('edit/{id}', [Backup365Controller::class, 'editform'])->name('editform');
+        Route::post('edit/{id}', [Backup365Controller::class, 'editsubmit'])->name('editsubmit');
+        Route::post('delete/{id}', [Backup365Controller::class, 'delete'])->name('delete');
     });
 
     Route::prefix('ssl')->name('ssl.')->group(function () {

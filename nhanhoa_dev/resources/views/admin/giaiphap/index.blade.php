@@ -235,7 +235,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Tin tức',
+                    title: 'Giải pháp',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

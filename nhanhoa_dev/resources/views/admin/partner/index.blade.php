@@ -247,7 +247,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Hosting',
+                    title: 'Đánh giá khách hàng',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

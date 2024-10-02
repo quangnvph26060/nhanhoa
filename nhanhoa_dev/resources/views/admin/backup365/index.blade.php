@@ -166,7 +166,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Danh sách vị trí máy chủ</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Danh sách Backup365</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -174,7 +174,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.server.addform') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.cloudbackup.addform') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>
@@ -189,30 +189,30 @@
                                             <tr role="row">
                                                 <th>Tên gói</th>
                                                 <th>Giá</th>
-
-                                                <th>Công xuát nguồn</th>
-                                                <th>Dữ liệu chuyền vào</th>
-                                                <th>Ổ cắm mạng</th>
+                                                <th>Dung lượng</th>
+                                                <th>Mã hóa dữ liệu</th>
+                                                {{-- <th>Nén dữ liệu</th>
+                                                <th>Sao lưu tự động</th> --}}
                                                 <th>Trạng thái</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($servers as $key => $item)
+                                            @foreach($backups as $key => $item)
                                             <tr>
                                                 <td><a href="#" data-toggle="modal"
                                                         data-target="#productModal{{ $key }}">{{ $item->name }}</a></td>
                                                 <td>{{ $item->price }}</td>
-
-                                                <td>{{ $item->power_capacity }}</td>
-                                                <td>{{ $item->data_transfer }}</td>
-                                                <td>{{ $item->network_socket }}</td>
+                                                <td>{{ $item->storage }} GB</td>
+                                                <td>{{ $item->data_encryption }}</td>
+                                                {{-- <td>{{ $item->data_compression }}</td>
+                                                <td>{{ $item->auto_backup }}</td> --}}
                                                 <td align="center">
-                                                    <a class="btn btn-warning" href="{{ route('admin.server.editformlocation', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
+                                                    <a class="btn btn-warning" href="{{ route('admin.backup365.editform', ['id' => $item->id]) }}"><i class="fas fa-edit"></i></a>
                                                     <button class="btn btn-danger btn-delete" data-id="{{ $item->id }}"
                                                         onclick="deleteConfirmation({{ $item->id }})"><i
                                                             class="fa-solid fa-trash"></i></button>
 
-                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.server.deletelocation', ['id' => $item->id]) }}" method="POST"
+                                                    <form id="delete-form-{{ $item->id }}" action="{{ route('admin.backup365.delete', ['id' => $item->id]) }}" method="POST"
                                                         style="display: none;">
                                                         @csrf
                                                     </form>
@@ -225,21 +225,21 @@
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="productModalLabel{{ $key }}">
-                                                                Thông tin chi tiết</h5>
+                                                            <h5 class="modal-title" id="productModalLabel{{ $key }}">Thông tin chi tiết</h5>
+                                                            {{-- <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button> --}}
                                                         </div>
                                                         <div class="modal-body">
-                                                            <p><strong>Tên gói : </strong> {{ $item->name }}</p>
-                                                            <p><strong>BW trong nước : </strong> {{ $item->bw_in_country }}</p>
-                                                            <p><strong>BW quốc tế : </strong> {{ $item->bw_international }}</p>
-                                                            <p><strong>Dữ liệu truyền: </strong> {{ $item->data_transfer }} </p>
-                                                            <p><strong>Không gian rack : </strong> {{ $item->rack_space }}</p>
-                                                            <p><strong>Công suốt nguồn : </strong> {{ $item->power_capacity }}</p>
-                                                            <p><strong>UPS/Máy điện dự phòng : </strong> {{$item->ups_backup }}</p>
-                                                            <p><strong>Điều hòa nhiệt độ : </strong> {{$item->ip_address }}</p>
-                                                            <p><strong>Ổ cắm mạng : </strong> {{$item->network_socket }}</p>
-                                                            <p><strong>Địa chỉ IP : </strong> {{$item->ip_address }}</p>
-                                                            <p><strong>Khuyễn mãi : </strong> {{$item->promotion->name }}</p>
+                                                            <p><strong>Tên gói :</strong> {{ $item->name }}</p>
+                                                            <p><strong>Giá:</strong> {{ $item->price }}</p>
+                                                            <p><strong>Dung lượng:</strong> {{ $item->storage }} GB</p>
+                                                            <p><strong>Agent(Server/VPS):</strong> {{ $item->agent }} </p>
+                                                            <p><strong>Mã hóa dữ liệu:</strong> {{ $item->data_encryption }}</p>
+                                                            <p><strong>Nén dữ liệu:</strong> {{ $item->data_compression }}</p>
+                                                            <p><strong>Chủ động thiết lập lịch sao lưu:</strong> {{ $item->schedule_backup }}</p>
+                                                            <p><strong>Sao lưu tự động:</strong> {{ $item->auto_backup }}</p>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
@@ -270,7 +270,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Vị trí máy chủ',
+                    title: 'Backup 365',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

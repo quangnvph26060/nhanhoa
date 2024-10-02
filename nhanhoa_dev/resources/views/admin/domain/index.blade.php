@@ -283,7 +283,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Máy chủ',
+                    title: 'Tên miền',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

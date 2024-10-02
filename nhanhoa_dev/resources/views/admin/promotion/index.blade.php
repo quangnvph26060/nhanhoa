@@ -238,7 +238,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Hosting',
+                    title: 'Khuyễn mãi',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

@@ -284,7 +284,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Máy chủ',
+                    title: 'SSL',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',

@@ -323,6 +323,27 @@
                         </ul>
                     </div>
                 </li>
+                  <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#backup365">
+                        <i class="fas fa-shield-alt"></i> <!-- Icon for SSL -->
+                        <p>Backup365</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="backup365">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('admin.backup365.addform') }}">
+                                    <span class="sub-item">Thêm</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.backup365.index') }}">
+                                    <span class="sub-item">Danh sách</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#email">
                         <i class="fas fa-envelope"></i> <!-- Icon for Email -->
