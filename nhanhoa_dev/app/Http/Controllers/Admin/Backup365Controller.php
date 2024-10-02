@@ -25,7 +25,7 @@ class Backup365Controller extends Controller
 
     public function addForm(){
         $title = 'Thêm mới Backup365';
-        return view('admin.cloudbackup.add', compact('title'));
+        return view('admin.backup365.add', compact('title'));
     }
 
     public function addSubmit(Request $request)
