@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Cloud;
 use App\Models\CloudPromotion;
-use App\Services\cloudService;
+use App\Services\CloudService;
 use App\Services\PromotionService;
 use Illuminate\Http\Request;
 
