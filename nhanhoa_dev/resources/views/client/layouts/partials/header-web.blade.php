@@ -755,7 +755,7 @@
                     <span class="cart_count cart_number">0</span>
                 </a>
             </div> --}}
-            <div class="btn-app">
+            {{-- <div class="btn-app">
                 <span>
                     <img src="https://nhanhoa.com/templates/images/v2/home/download_app.png" alt="Download app">
                 </span>
@@ -772,7 +772,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
