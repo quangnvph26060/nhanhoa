@@ -8,7 +8,7 @@
                             <span class="slogan-section text-left d-block">
                                 Giải pháp
                             </span>
-                            Bảng Giá Dịch Vụ Thuê VPS Cloud Server - CLoud365 Tại Nhân Hòa
+                            Bảng Giá Dịch Vụ Thuê VPS Cloud Server - CLoud365 Tại Chúng tôi
                         </h1>
                         <div class="dcs">
                             <p>

@@ -643,7 +643,7 @@
         <div class="container">
             <div class="content">
                 <h2 class="title-section text-center">
-                    Tại sao nên lựa chọn Nhân Hòa
+                    Tại sao nên lựa chọn Chúng tôi
                 </h2>
                 <div class="list-ts">
                     <div class="row">
@@ -658,7 +658,7 @@
                                         Hơn 22 năm kinh nghiệm
                                     </h3>
                                     <div class="dsc">
-                                        Với bề dày kinh nghiệm và giải pháp dịch vụ uy tín, chuyên nghiệp, Nhân Hòa
+                                        Với bề dày kinh nghiệm và giải pháp dịch vụ uy tín, chuyên nghiệp, Chúng tôi
                                         luôn nằm trong top đầu các đơn vị cùng lĩnh vực.
                                     </div>
                                 </div>
@@ -692,7 +692,7 @@
                                         Đa dạng dịch vụ
                                     </h3>
                                     <div class="dsc">
-                                        Nhân Hòa cung cấp đa dạng gói quản trị máy chủ, đáp ứng mọi nhu cầu của
+                                        Chúng tôi cung cấp đa dạng gói quản trị máy chủ, đáp ứng mọi nhu cầu của
                                         khách hàng.
                                     </div>
                                 </div>
@@ -709,7 +709,7 @@
                                         Hỗ trợ kỹ thuật 24/7/365
                                     </h3>
                                     <div class="dsc">
-                                        Đội ngũ kỹ thuật Nhân Hòa và các chuyên gia dày dạn kinh nghiệm luôn sẵn
+                                        Đội ngũ kỹ thuật Chúng tôi và các chuyên gia dày dạn kinh nghiệm luôn sẵn
                                         sàng hỗ trợ khách hàng 24/7 trong suốt quá trình sử dụng.
                                     </div>
                                 </div>

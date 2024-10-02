@@ -35,7 +35,7 @@
                             Toàn quyền quản trị máy chủ
                         </h3>
                         <div class="dsc">
-                            Khách hàng được trao lại quyền quản trị cao nhất, Nhân Hòa chỉ được truy cập vào máy chủ khi có sự phép từ khách hàng.
+                            Khách hàng được trao lại quyền quản trị cao nhất, Chúng tôi chỉ được truy cập vào máy chủ khi có sự phép từ khách hàng.
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
 
                         </h3>
                         <div class="dsc">
-                            Thuê máy chủ riêng tại Nhân Hòa khách hàng được tặng gói dịch vụ quản trị cơ bản, giúp dịch vụ luôn được quản lý và giám sát liên tục
+                            Thuê máy chủ riêng tại Chúng tôi khách hàng được tặng gói dịch vụ quản trị cơ bản, giúp dịch vụ luôn được quản lý và giám sát liên tục
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                             Hỗ trợ kỹ thuật 24/7
                         </h3>
                         <div class="dsc">
-                            Đội ngũ kỹ thuật Nhân Hòa với các chuyên gia dày dạn kinh nghiệm luôn túc trực 24/7 để hỗ trợ khách hàng trong suốt quá trình sử dụng
+                            Đội ngũ kỹ thuật Chúng tôi với các chuyên gia dày dạn kinh nghiệm luôn túc trực 24/7 để hỗ trợ khách hàng trong suốt quá trình sử dụng
                         </div>
                     </div>
                 </div>

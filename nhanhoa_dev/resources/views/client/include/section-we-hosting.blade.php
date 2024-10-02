@@ -24,7 +24,7 @@
                         <div class="img position-relative"><img class="rtbs nh-lazyload ls-is-cached lazyloaded"
                                 src="https://nhanhoa.com/templates/images/v2/hosting/img_we.png"
                                 data-src="https://nhanhoa.com/templates/images/v2/hosting/img_we.png"
-                                alt="Hơn 500.000+ khách hàng đã tin tưởng và sử dụng dịch vụ của Nhân Hòa!"></div>
+                                alt="Hơn 500.000+ khách hàng đã tin tưởng và sử dụng dịch vụ của Chúng tôi!"></div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">

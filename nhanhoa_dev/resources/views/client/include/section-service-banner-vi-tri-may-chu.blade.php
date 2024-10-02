@@ -18,7 +18,7 @@
                             </p>
                             <p>
                                 <i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                Trung tâm dữ liệu của Nhân Hòa được đặt tại các đơn vị uy tín hàng đầu như Viettel, FPT, CMC
+                                Trung tâm dữ liệu của Chúng tôi được đặt tại các đơn vị uy tín hàng đầu như Viettel, FPT, CMC
                             </p>
 
                             <p>

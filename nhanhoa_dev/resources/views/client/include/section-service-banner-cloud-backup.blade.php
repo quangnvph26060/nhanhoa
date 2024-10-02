@@ -12,7 +12,7 @@
                         </h1>
                         <div class="dcs">
                             <p>
-                                Dịch vụ sao lưu và khôi phục nhằm đảm bảo an toàn dữ liệu cho khách hàng đang sử dụng VPS/Cloud Server tại Nhân Hòa
+                                Dịch vụ sao lưu và khôi phục nhằm đảm bảo an toàn dữ liệu cho khách hàng đang sử dụng VPS/Cloud Server tại Chúng tôi
                             </p>
 
 
