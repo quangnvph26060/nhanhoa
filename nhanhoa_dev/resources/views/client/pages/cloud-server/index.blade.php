@@ -11,7 +11,7 @@
 
 @include('client.pages.cloud-server.breadcrumbs.section-internal-feature-sever')
 
-@include('client.include.section-why-cloud')
+@include('client.include.section-why-cloud-server')
 
 @include('client.include.section-what-customers-about')
 

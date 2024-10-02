@@ -9,7 +9,7 @@
 
     @include('client.include.section-internal-feature-sever')
 
-    @include('client.include.section-why-cloud')
+    @include('client.include.section-why-cloud-quoc-te')
 
     @include('client.include.section-what-customers-about')
 
