@@ -40,9 +40,10 @@ class CustomerReviewController extends Controller
     // Lấy đánh giá theo ID
     public function show($id)
     {
+        $title = "Sửa đánh giá";
         $reviews = $this->reviewService->getReviewById($id);
 
-        return view('admin.customer.edit', compact('reviews'));
+        return view('admin.customer.edit', compact('reviews', 'title'));
     }
 
     // Cập nhật đánh giá
