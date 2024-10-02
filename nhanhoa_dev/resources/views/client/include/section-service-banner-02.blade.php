@@ -8,36 +8,28 @@
                             <span class="slogan-section text-left d-block">
                                 Giải pháp
                             </span>
-                            Bảng Giá Dịch Vụ Thuê VPS Cloud Server - CLoud365 Tại Chúng Tôi
+                            Email Server hàng đầu dành cho các doanh nghiệp
                         </h1>
                         <div class="dcs">
                             <p>
                               <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Hệ thống sao lưu bảo mật dữ liệu cao
+                              Tỷ lệ thư vào mailbox lên tới 99%
                             </p>
                             <p>
                               <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Tỷ lệ uptime đạt 99,9%. Đảm bảo ổn định
+                              Toàn quyền quản trị hệ thống
                             </p>
                             <p>
                               <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Hỗ trợ cài đặt phần mềm quản lý (nếu cần)
+                              Nâng cấp/ mở rộng dễ dàng không gián đoạn dịch vụ
                             </p>
                             <p>
                               <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Hỗ trợ miễn phí chuyển dữ liệu
+                              Hỗ trợ đa ngôn ngữ
                             </p>
                             <p>
                               <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Khởi tạo vps siêu nhanh chỉ vài thao tác click
-                            </p>
-                            <p>
-                              <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Đội ngũ chuyên gia hỗ trợ 24/7
-                            </p>
-                            <p>
-                              <i class="far fa-check-circle" style="color: #74C0FC;"></i>
-                                Hoàn tiền trong 30 ngày nếu không hài lòng
+                              Chỉ từ 320k/tháng (không giới hạn user)
                             </p>
 
                         </div>

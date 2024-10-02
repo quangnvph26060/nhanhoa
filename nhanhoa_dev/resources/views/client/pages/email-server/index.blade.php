@@ -7,7 +7,7 @@
 
     @include('client.include.section-table-dedicated-email-server')
 
-    @include('client.include.section-why-cloud')
+    @include('client.include.section-why-email')
 
     @include('client.include.section-service-email-02')
 
