@@ -12,14 +12,16 @@ class FooterController extends Controller
 {
 
     public function index(){
+        $title = "Quản lý nội dung hiện thị footer";
         $footers = Footer::all();
         // dd($footers[0]->new[0]->new);
-        return view('admin.footer.index', compact('footers'));
+        return view('admin.footer.index', compact('footers', 'title'));
     }
 
     public function add(){
+        $title = "Thêm nội dung hiện thị footer";
         $news = SgoNews::get();
-        return view('admin.footer.add', compact('news'));
+        return view('admin.footer.add', compact('news', 'title'));
     }
 
     public function store(Request $request){
@@ -37,11 +39,12 @@ class FooterController extends Controller
     }
 
     public function edit($id){
+        $title = "Sửa nội dung hiện thị footer";
         $footer = Footer::find($id);
         $news = SgoNews::get();
         $newArray = FooterNew::where('footer_id', $id)->pluck('new_id');
         $newselect = $newArray->toArray();
-        return view('admin.footer.edit', compact('footer', 'news', 'newselect'));
+        return view('admin.footer.edit', compact('footer', 'news', 'newselect', 'title'));
     }
 
     public function update(Request $request, $id){
