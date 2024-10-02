@@ -4,7 +4,7 @@
 @section('content')
     @include('client.include.service-breadcrumbs')
 
-    @include('client.include.section-service-banner-02')
+    @include('client.include.section-service-banner-vi-tri-may-chu')
 
     @include('client.include.section-table-dedicated-server')
 

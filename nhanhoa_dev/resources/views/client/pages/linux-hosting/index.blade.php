@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- section-service-banner-->
-    @include('client.include.section-service-banner-1')
+    @include('client.include.section-service-banner-hosting')
     <!-- section-service-banner-->
 
 

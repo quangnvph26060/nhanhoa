@@ -5,7 +5,7 @@
 
     @include('client.include.service-breadcrumbs')
 
-    @include('client.include.section-service-banner-1')
+    @include('client.include.section-service-banner-cloud-backup')
 
     @include('client.pages.cloud-backup.breadcrumbs.section-note-service-domail')
 

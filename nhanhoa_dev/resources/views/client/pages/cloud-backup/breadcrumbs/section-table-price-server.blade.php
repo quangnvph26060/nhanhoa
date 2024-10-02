@@ -102,13 +102,13 @@
                                             <form action="{{ route('page.cloudbackup.pay') }}" method="POST" id="lienhe">
                                                 @csrf
                                                 <input type="hidden" id="cloud_id_input" name="cloudbackup_id">
-                                                <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name">
+                                                <input class="form-control" type="text" placeholder="Họ và tên" name="name" id="name" required>
                                                 <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="name_error"></span>
 
-                                                <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" id="phone">
+                                                <input class="form-control" type="text" placeholder="Số điện thoại" name="phone" id="phone" required>
                                                 <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="phone_error"></span>
 
-                                                <input class="form-control" type="text" placeholder="Email" name="email" id="email">
+                                                <input class="form-control" type="text" placeholder="Email" name="email" id="email" required>
                                                 <span class="invalid-feedback d-block" style="text-align: left; margin-bottom: 20px" id="email_error"></span>
                                                 <div class="product-info">
                                                     <p>Gói Cloud Backup : </p>
@@ -217,10 +217,10 @@
                                             <form action="{{ route('page.cloudbackup.pay') }}" method="POST">
                                                 @csrf
                                                 <input type="hidden" id="cloud_id_input1" name="cloudbackup_id">
-                                                <input class="form-control" type="text" placeholder="Họ và tên" name="name">
-                                                <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                <input class="form-control" type="text" placeholder="Họ và tên" name="name" required>
+                                                <input class="form-control" type="text" placeholder="Số điện thoại" required
                                                     name="phone">
-                                                <input class="form-control" type="text" placeholder="Email" name="email">
+                                                <input class="form-control" type="text" placeholder="Email" name="email" required>
                                                 <div class="product-info">
                                                     <p>Gói Cloud Backup : </p>
                                                     <span class="product-name">

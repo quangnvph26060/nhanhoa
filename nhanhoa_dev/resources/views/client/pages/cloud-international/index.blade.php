@@ -3,7 +3,7 @@
 @section('content')
     @include('client.include.service-breadcrumbs')
 
-    @include('client.include.section-service-banner-1')
+    @include('client.include.section-service-banner-vps-qt')
 
     @include('client.pages.cloud-international.breadcrumbs.section-table-price-server')
 

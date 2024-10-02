@@ -5,7 +5,7 @@
 
 @include('client.include.service-breadcrumbs')
 
-@include('client.include.section-service-banner-02')
+@include('client.include.section-service-banner-cloud')
 
 @include('client.pages.cloud-server.breadcrumbs.section-table-price-server')
 
