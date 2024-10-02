@@ -153,23 +153,23 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="avatar" class="form-label">Avatar</label>
+                                        <label for="logo" class="form-label">Avatar</label>
                                         <div class="custom-file">
-                                            <input id="avatar"
-                                                class="custom-file-input @error('avatar') is-invalid @enderror" type="file"
+                                            <input id="logo"
+                                                class="custom-file-input @error('logo') is-invalid @enderror" type="file"
                                                 name="avatar" accept="image/*">
-                                            <label class="custom-file-label" for="avatar">Chọn avatar</label>
+                                            <label class="custom-file-label" for="logo">Chọn avatar</label>
                                         </div>
-                                        @error('avatar')
+                                        @error('logo')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <img id="profileImageavatar" style="width:100px; height:auto"
-                                            src="{{ isset($reviews->avatar) && !empty($reviews->avatar) ? asset($reviews->avatar) : asset('images/avatar2.jpg') }}"
-                                            alt="image avatar" class="avatar">
+                                        <img id="profileImagelogo" style="width:100px; height:auto"
+                                        src="{{ isset($reviews->avatar) && !empty($reviews->avatar) ? asset($reviews->avatar) : asset('images/avatar2.jpg') }}"
+                                            alt="image logo" class="logo">
                                     </div>
                                 </div>
 
@@ -186,12 +186,12 @@
     </div>
 </div>
 <script>
-     document.getElementById('avatar').addEventListener('change', function(event) {
+         document.getElementById('logo').addEventListener('change', function(event) {
                     const input = event.target;
                     const reader = new FileReader();
 
                     reader.onload = function(e) {
-                        document.getElementById('profileImageavatar').src = e.target.result;
+                        document.getElementById('profileImagelogo').src = e.target.result;
                     };
 
                     if (input.files && input.files[0]) {

@@ -234,7 +234,7 @@
         $(document).ready(function() {
                 $.notify({
                     icon: 'icon-bell',
-                    title: 'Cloud',
+                    title: 'Đánh giá',
                     message: '{{ session('success') }}',
                 }, {
                     type: 'secondary',
