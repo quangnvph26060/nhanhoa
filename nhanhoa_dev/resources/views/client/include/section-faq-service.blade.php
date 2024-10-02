@@ -104,7 +104,7 @@
                         <img src="https://nhanhoa.com/templates/images/v2/faq/faq.svg"
                             alt="MỘT SỐ CÂU HỎI THƯỜNG GẶP">
                     </div>
-                    <div class="info-bottom">
+                    {{-- <div class="info-bottom">
                         <div class="title">
                             Bất kỳ câu hỏi nào
                         </div>
@@ -117,7 +117,7 @@
                         <button type="button" class="btn-service-02 btn_show_popup">
                             Gửi câu hỏi
                         </button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
