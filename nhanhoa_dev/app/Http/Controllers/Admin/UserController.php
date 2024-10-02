@@ -15,12 +15,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get();
-        return view('admin.user.index', compact('users'));
+        $title = 'Danh sách tài khoản';
+        return view('admin.user.index', compact('users', 'title'));
     }
 
     public function add()
     {
-        return view('admin.user.add');
+        $title = 'Thêm tài khoản';
+        return view('admin.user.add', compact('title'));
     }
 
     public function store(Request $request)
@@ -56,8 +58,9 @@ class UserController extends Controller
 
     public function edit($id)
     {
+        $title = 'Sửa tài khoản';
         $user = User::find($id);
-        return view('admin.user.edit', compact('user'));
+        return view('admin.user.edit', compact('user', 'title'));
     }
     public function update(Request $request, $id)
     {
