@@ -184,6 +184,8 @@
                                                 </option>
                                                 <option value="4" {{ $new->type == 4 ? 'selected' : '' }}>Công nghệ
                                                 </option>
+                                                <option value="5" {{ $new->type == 5 ? 'selected' : '' }}>Ưu đãi</option>
+                                                <option value="6" {{ $new->type == 6 ? 'selected' : '' }}>Trợ giúp</option>
                                             </select>
                                         </div>
 

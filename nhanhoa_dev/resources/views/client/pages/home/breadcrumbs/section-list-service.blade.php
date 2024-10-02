@@ -4,7 +4,7 @@
             <h2 class="title-section mb-0">
                 Chương trình ưu đãi
             </h2>
-            <a href="https://nhanhoa.com/uu-dai-nhan-hoa.html" title="Xem thêm">
+            <a href="{{ route('page.news-child', ['id' => 5]) }}" title="Xem thêm">
                 Xem tất cả
                 <i class="fas fa-arrow-right"></i>
             </a>
@@ -12,7 +12,23 @@
 
         <div class="list list-banner-promotion">
             <div class="row">
+                @forelse ($uudai as $item )
                 <div class="col-lg-3 col-md-6 col-6 logo-order-1">
+                    <div class="item">
+                        <div class="img img-default position-relative">
+                            <a href="{{ route('page.news-detail', ['slug' => $item->slug, 'id' => $item->id]) }}">
+                                <img class="rtbs nh-lazyload ls-is-cached lazyloaded"
+                                    src="{{ asset($item->logo) }}"
+                                    data-src="{{ asset($item->logo) }}"
+                                    alt="{{ asset($item->logo) }}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                @empty
+
+                @endforelse
+                {{-- <div class="col-lg-3 col-md-6 col-6 logo-order-1">
                     <div class="item">
                         <div class="img img-default position-relative">
                             <a href="https://nhanhoa.com/uu-dai/ten-mien-hosting-email-server/">
@@ -23,8 +39,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-6 logo-order-4">
+                </div> --}}
+                {{-- <div class="col-lg-3 col-md-6 col-6 logo-order-4">
                     <div class="item">
                         <div class="img img-default position-relative">
                             <a href="https://esim.nhanhoa.com/">
@@ -59,7 +75,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 

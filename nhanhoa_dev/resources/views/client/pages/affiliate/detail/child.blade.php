@@ -20,6 +20,10 @@
                             Tuyển dụng
                             @elseif ($id == 4)
                             Công nghệ
+                            @elseif ($id == 5)
+                            Ưu đãi
+                            @elseif ($id == 6)
+                            Trợ giúp
                             @endif
                         </li>
 

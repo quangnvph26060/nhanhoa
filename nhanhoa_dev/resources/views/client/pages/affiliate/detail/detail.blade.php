@@ -41,6 +41,14 @@
                             <a href="{{ route('page.news-child', ['id' => 4]) }}">
                                 Công nghệ
                             </a>
+                        @elseif ($new->type == 5)
+                            <a href="{{ route('page.news-child', ['id' => 3]) }}">
+                                Ưu đãi
+                            </a>
+                        @elseif ($new->type == 5)
+                            <a href="{{ route('page.news-child', ['id' => 4]) }}">
+                                Trợ giúp
+                            </a>
                         @endif
 
 

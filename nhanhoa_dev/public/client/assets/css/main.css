@@ -45626,7 +45626,7 @@ button.toast-close-button {
     width: 100%;
     height: 0;
     transition: 0.3s;
-    background: #00172e;
+    background: #31c5f4;
     left: 0;
     bottom: 0;
     border-bottom-right-radius: 5px;
@@ -46208,10 +46208,10 @@ button.toast-close-button {
 }
 
 .bg-gradient {
-    background-image: linear-gradient(left, #058dc2, #4abab9);
-    background-image: -webkit-linear-gradient(left, #058dc2, #4abab9);
-    background-image: -o-linear-gradient(left, #058dc2, #4abab9);
-    background-image: -moz-linear-gradient(left, #058dc2, #4abab9);
+    background-image: linear-gradient(left, #1150a2, #1150a2);
+    background-image: -webkit-linear-gradient(left, #1150a2, #1150a2);
+    background-image: -o-linear-gradient(left, #1150a2, #1150a2);
+    background-image: -moz-linear-gradient(left, #1150a2, #1150a2);
 }
 
 .color-main {
@@ -63331,7 +63331,7 @@ section.promotion_detail .item-article .img {
 
 .promotion_detail .item-article .btn_view a {
     font-size: 14px;
-    color: var(--color-highlight);
+    color: #31c5f4;
 }
 
 .content-online-support .item-video {
@@ -63383,7 +63383,7 @@ section.promotion_detail .item-article .img {
 }
 
 .popup-re-call > .content_popup > .input-content > .conten-sub {
-    color: var(--color-main);
+    color: #31c5f4;
     font-size: 14px;
     font-weight: 500;
     padding-top: 5px;
@@ -63420,7 +63420,7 @@ section.promotion_detail .item-article .img {
 
 .popup-re-call > .content_popup > .input-content > .submit-content > .send-go,
 .popup-check-domain > .content_popup > .submit-content > .add_service_cart {
-    background: var(--color-highlight);
+    background: #31c5f4 !important;
     color: #fff;
     border-radius: 25px;
     border: 0;
@@ -63428,14 +63428,14 @@ section.promotion_detail .item-article .img {
 
 .input-content-intro-icon i {
     font-size: 38px;
-    color: var(--color-highlight);
+    color: #31c5f4 !important;
 }
 
 .text-hello {
     font-size: 18px;
     margin: 5px 0;
     font-weight: bold;
-    color: var(--color-highlight);
+    color: #31c5f4 !important;
 }
 
 .popup-re-call

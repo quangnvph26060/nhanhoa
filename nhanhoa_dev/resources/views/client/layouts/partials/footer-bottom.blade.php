@@ -22,7 +22,7 @@
                             <p class="d-none d-md-block">
                                 {{ $config->giayphep }}
                             </p>
-                            <p style="margin: 0;">
+                            {{-- <p style="margin: 0;">
                                 <a href="javascript:;" class="">
                                     <img alt="ICANN" src="https://nhanhoa.com/public/icann-logo-2.png"
                                         style="max-width: 55px;">
@@ -43,7 +43,7 @@
                                         style="max-width: 100px;">
                                 </a>
 
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                 </div>

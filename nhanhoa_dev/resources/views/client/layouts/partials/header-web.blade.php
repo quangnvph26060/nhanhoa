@@ -719,9 +719,16 @@
     </div>
     <div class="col-lg-2 col-md-2">
         <div class="header-right">
+
             <div class="btn-action-header btn-promotion">
-                <a href="{{route('page.news')}}" >
-                    Sự kiện
+                <a href="{{ route('page.call.phone', ['phone' => $config->phone]) }}">
+                    Hotline
+                </a>
+            </div>
+
+            <div class="btn-action-header btn-promotion">
+                <a href="{{route('page.news-child', ['id' => 5])}}" >
+                    Ưu đãi
                 </a>
             </div>
             <!--Begin Member Info-->

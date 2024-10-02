@@ -901,7 +901,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="download-app">
+                            {{-- <div class="download-app">
                                 <div>
                                     Tải App Nhân Hoà trên ứng dụng di động
                                 </div>
@@ -919,7 +919,7 @@
                                         Google Play
                                     </a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 

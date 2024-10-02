@@ -68,7 +68,14 @@ class HomeController extends Controller
 
         $footers = Footer::get();
 
+        $uudai = SgoNews::where('type', '5')->take(4)->get();
 
-        return view('client.pages.home.index', compact('user', 'cloud', 'domainqt', 'domainqg','hosting', 'email', 'ssl', 'news', 'title', 'home', 'client', 'partner', 'customerreivew'));
+        return view('client.pages.home.index', compact('user', 'cloud', 'domainqt', 'domainqg','hosting', 'email', 'ssl', 'news', 'title', 'home', 'client', 'partner', 'customerreivew', 'uudai'));
+    }
+
+    public function callPhone($phone)
+    {
+        $formattedPhone = preg_replace('/[^0-9]/', '', $phone);
+        return redirect("tel:{$formattedPhone}");
     }
 }

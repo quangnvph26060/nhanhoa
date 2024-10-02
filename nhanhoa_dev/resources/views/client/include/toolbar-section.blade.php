@@ -1,6 +1,6 @@
 <div class="toolbar-section" style="background:#fff;">
     <div class="item">
-        <a href="https://nhanhoa.com" title="Trang chủ">
+        <a href="{{ route('page.home') }}" title="Trang chủ">
             <span class="icon">
                 <img src="https://nhanhoa.com/templates/images/v2/webp/mobile/toolbar/house.webp"
                     data-src="https://nhanhoa.com/templates/images/v2/webp/mobile/toolbar/house.webp" alt="Trang chủ"

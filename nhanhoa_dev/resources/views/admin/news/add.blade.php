@@ -179,6 +179,8 @@
                                                 <option value="2">Thông báo</option>
                                                 <option value="3">Tuyển dụng</option>
                                                 <option value="4">Công nghệ</option>
+                                                <option value="5">Ưu đãi</option>
+                                                <option value="6">Trợ giúp</option>
                                             </select>
                                         </div>
 

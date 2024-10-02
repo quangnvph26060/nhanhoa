@@ -4,7 +4,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="info-left-count">
-                        <div class="number">@php
+                        <div class="number" style="font-size: 30px !important">@php
                             $count = $client;
                             if ($count < 10) {
                                 $roundedNumber = $count;
@@ -14,8 +14,8 @@
                                 $roundedNumber = floor($count / 100) * 100;
                             }
                         @endphp
-                        +{{ $roundedNumber }}</div>
-                        <div class="name">Khách hàng đã lựa chọn Chúng Tôi</div>
+                        +{{ $roundedNumber }} Khách hàng đã lựa chọn Chúng Tôi</div>
+                        <div class="name"></div>
                         <div class="description">Cảm ơn @php
                             $count = $client;
                             if ($count < 10) {

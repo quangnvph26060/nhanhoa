@@ -263,8 +263,8 @@
                     </div>
                     <div class="download">
                         <a href="https://nhanhoa.com/nhan-hoa-app.html" title="" target="_blank">
-                            <i class="fas fa-download fa-sm me-2" style="color: #74C0FC;"></i> Tải
-                            app Nhân Hoà
+                            <i class="fas fa-download fa-sm me-2" style="color: #74C0FC;"></i>
+                            Hotline
                         </a>
                     </div>
                 </nav>

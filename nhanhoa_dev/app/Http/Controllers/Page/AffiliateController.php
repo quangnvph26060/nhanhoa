@@ -14,7 +14,7 @@ class AffiliateController extends Controller
     }
 
     public function news(){
-        $news = SgoNews::get();
+        $news = SgoNews::where('type', '!=', 5)->get();
         $new1 = SgoNews::where('type', 1)->get();
         $new2 = SgoNews::where('type', 2)->get();
         $new3 = SgoNews::where('type', 3)->get();

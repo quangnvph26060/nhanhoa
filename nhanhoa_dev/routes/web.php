@@ -390,5 +390,7 @@ Route::name('page.')->group(function () {
     Route::get('/can-bang-tai-he-thong', [PageSystemController::class, 'showLoadBalancing'])->name('load-balancing');
     Route::get('/chong-ddos', [PageSystemController::class, 'showDDoSProtection'])->name('ddos-protection');
     Route::get('/tu-van-thiet-ke-he-thong-mang', [PageSystemController::class, 'showNetworkConsulting'])->name('network-consulting');
+    Route::get('/call/{phone}', [HomeController::class, 'callPhone'])->name('call.phone');
+
 });
 //

@@ -11,7 +11,7 @@
 <div class="breadcrumbs service-breadcrumbs">
     <div class="container">
         <nav class="breadcrumbs-section">
-            <a href="https://nhanhoa.com">
+            <a href="{{ route('page.home') }}">
                 <img src="https://nhanhoa.com/templates/images/v2/mobile/icon_home.png" alt="Trang chủ">
             </a>
             <a href="javascript:vod(0)">Dịch vụ Máy chủ</a>
