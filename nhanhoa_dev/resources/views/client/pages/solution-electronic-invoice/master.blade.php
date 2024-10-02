@@ -369,14 +369,13 @@
                                 </div>
                                 <div class="info">
                                     <p>
-                                        Copyright © 2002 – 2021 Nhan Hoa Software Company. All Rights Reserved.
+                                        {{ $config->footer }}
                                     </p>
                                     <p>
                                         {{ $config->store_name }}. Đại diện: {{ $config->store_name }}
                                     </p>
                                     <p>
-                                        Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày
-                                        19/09/2002
+                                        {{ $config->giayphep }}
                                     </p>
                                 </div>
                             </div>

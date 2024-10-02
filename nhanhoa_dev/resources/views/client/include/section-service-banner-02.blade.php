@@ -42,9 +42,9 @@
 
                         </div>
                         <div class="link-more">
-                            <a href="#tuvanngay" title="Liên hệ tư vấn" class="btn_show_popup">
+                            {{-- <a href="#tuvanngay" title="Liên hệ tư vấn" class="btn_show_popup">
                                 Liên hệ tư vấn
-                            </a>
+                            </a> --}}
                             <a href="#price_table" class="btn-view-price btn-scroll" data-href="#price_table"
                                 title="Bảng giá">
                                 Xem Bảng giá

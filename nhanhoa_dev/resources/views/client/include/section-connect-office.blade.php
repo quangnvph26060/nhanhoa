@@ -75,9 +75,9 @@
                 </div>
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="img-office position-relative"><img class="rtbs nh-lazyload lazyloaded"
-                            src="https://nhanhoa.com/templates/images/v2/webp/ket-noi-nhan-hoa.webp"
-                            data-src="https://nhanhoa.com/templates/images/v2/webp/ket-noi-nhan-hoa.webp"
-                            alt="Kết nối với Nhân Hoà">
+                            src="{{ asset($config->logo) }}"
+                            data-src="{{ asset($config->logo) }}"
+                            alt="{{ $config->store_name }}">
                     </div>
                 </div>
             </div>

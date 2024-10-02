@@ -22,7 +22,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="TƯƠNG THÍCH ĐA NỀN TẢNG"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 TƯƠNG THÍCH ĐA NỀN TẢNG
@@ -46,7 +46,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="SAO LƯU THÔNG MINH"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 SAO LƯU THÔNG MINH
@@ -71,7 +71,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="LƯU TRỮ PHÂN TÁN"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 LƯU TRỮ PHÂN TÁN
@@ -96,7 +96,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="MÃ HÓA DỮ LIỆU"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 MÃ HÓA DỮ LIỆU
@@ -120,7 +120,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="SAO LƯU NHIỀU THỜI ĐIỂM"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 SAO LƯU NHIỀU THỜI ĐIỂM
@@ -145,7 +145,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="ĐỘI NGŨ KỸ THUẬT HỖ TRỢ"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 ĐỘI NGŨ KỸ THUẬT HỖ TRỢ
@@ -170,7 +170,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="TIẾT KIỆM CHI PHÍ"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 TIẾT KIỆM CHI PHÍ
@@ -192,7 +192,7 @@
                                                 <img nh-lazy="image" class="img-fluid"
                                                     data-src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png"
                                                     alt="CAM KẾT SLA 99.9%"
-                                                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon.png">
                                             </div>
                                             <div class="title">
                                                 CAM KẾT SLA 99.9%

@@ -29,9 +29,9 @@
 
                         </div>
                         <div class="link-more link-tu-van">
-                            <a href="#tuvanngay" title="" class="btn_show_popup">
+                            {{-- <a href="#tuvanngay" title="" class="btn_show_popup">
                                 Liên hệ tư vấn
-                            </a>
+                            </a> --}}
                             <a href="javascript:;" class="btn-view-price btn-scroll" data-href="#price_table"
                                 title="Bảng giá">
                                 Xem Bảng giá

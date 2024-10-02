@@ -12,67 +12,61 @@
                                             data-toggle="tab" href="#tab_0" role="tab"
                                             aria-controls="tab_0" aria-selected="true">Văn phòng Hà Nội</a>
                                     </li>
-                                    <li class="nav-item "><a class="nav-link " id="item_1_tab"
+                                    {{-- <li class="nav-item "><a class="nav-link " id="item_1_tab"
                                             data-toggle="tab" href="#tab_1" role="tab"
                                             aria-controls="tab_1" aria-selected="true">Văn phòng TP. HCM</a>
                                     </li>
                                     <li class="nav-item "><a class="nav-link " id="item_2_tab"
                                             data-toggle="tab" href="#tab_2" role="tab"
-                                            aria-controls="tab_2" aria-selected="true">Văn phòng Vinh</a></li>
+                                            aria-controls="tab_2" aria-selected="true">Văn phòng Vinh</a></li> --}}
                                 </ul>
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="tab_0" role="tabpanel"
-                                        aria-labelledby="item_0_tab">
+                                    <div class="tab-pane fade show active" id="ha_noi" role="tabpanel"
+                                        aria-labelledby="ha_noi-tab">
                                         <div class="info-office">
-                                            <p class="address"><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_map.svg"
-                                                    alt="">Tầng 4 - Toà nhà 97 - 99 Láng Hạ, Quận Đống
-                                                Đa, Thành Phố Hà Nội</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_dien_thoai.svg"
-                                                    alt="">Điện thoại: (024) 7308 6680</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_fax.svg"
-                                                    alt="">Mail: sales@nhanhoa.com</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/smartphone.svg"
-                                                    alt="">Hotline: 1900 6680</p>
+                                            <p class="address"><img
+                                                    src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
+                                                    alt="Map"> {{ $config->address }}</p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
+                                                    alt="Phone"> Điện thoại: {{ $config->phone }}
+                                            </p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
+                                                    alt="Mail"> Mail: {{ $config->email }}</p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
+                                                    alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="tab-pane " id="tab_1" role="tabpanel"
-                                        aria-labelledby="item_1_tab">
+                                    <div class="tab-pane fade" id="hcm" role="tabpanel"
+                                        aria-labelledby="hcm-tab">
                                         <div class="info-office">
-                                            <p class="address"><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_map.svg"
-                                                    alt="">927/1 CMT8, Phường 7, Quận Tân Bình, Thành
-                                                phố Hồ Chí Minh</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_dien_thoai.svg"
-                                                    alt="">Điện thoại: (024) 7308 6680</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_fax.svg"
-                                                    alt="">Mail: hcmsales@nhanhoa.com</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/smartphone.svg"
-                                                    alt="">Hotline: 1900 6680</p>
+                                            <p class="address"><img
+                                                    src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
+                                                    alt="Map"> {{ $config->address }}</p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
+                                                    alt="Phone"> Điện thoại: {{ $config->phone }}
+                                            </p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
+                                                    alt="Mail"> Mail: {{ $config->email }}</p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
+                                                    alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
+                                            </p>
                                         </div>
                                     </div>
-                                    <div class="tab-pane " id="tab_2" role="tabpanel"
-                                        aria-labelledby="item_2_tab">
+                                    <div class="tab-pane fade" id="vinh" role="tabpanel"
+                                        aria-labelledby="vinh-tab">
                                         <div class="info-office">
-                                            <p class="address"><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_map.svg"
-                                                    alt="">Tầng 2 Tòa nhà Sài Gòn Sky, ngõ 26 Nguyễn
-                                                Thái Học, phường Đội Cung, TP. Vinh, Nghệ An</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_dien_thoai.svg"
-                                                    alt="">Điện thoại: (024) 7308 6680 - nhánh 6</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/icon_fax.svg"
-                                                    alt="">Mail: contact@nhanhoa.com</p>
-                                            <p><img class="img-fluid"
-                                                    src="https://cdn1460.cdn4s4.io.vn/media/icon/smartphone.svg"
-                                                    alt="">Hotline: 1900 6680</p>
+                                            <p class="address"><img
+                                                    src="https://nhanhoa.com/templates/images/v2/home/icon_map.svg"
+                                                    alt="Map"> {{ $config->address }}</p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_dien_thoai.svg"
+                                                    alt="Phone"> Điện thoại: {{ $config->phone }}
+                                            </p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
+                                                    alt="Mail"> Mail: {{ $config->email }}</p>
+                                            <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
+                                                    alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -85,9 +79,9 @@
                 <div nh-block="d3optnq" nh-block-cache="true" class="">
                     <div class="banner-office">
                         <div class="img ratio-16-9"><img nh-lazy="image" class="img-fluid"
-                                data-src="https://cdn1460.cdn4s4.io.vn/media/icon/img_van_phong.png"
+                                data-src="{{ asset($config->logo) }}"
                                 alt=""
-                                src="https://cdn1460.cdn4s4.io.vn/media/icon/img_van_phong.png">
+                                src="{{ asset($config->logo) }}">
                         </div>
                     </div>
                 </div>
@@ -325,11 +319,9 @@
                                 alt="Công ty TNHH Phần mềm Chúng Tôi."
                                 src="https://cdn1460.cdn4s4.io.vn/media/logo/logo_footer.png">
                         </div>
-                        <p class="mb-2">Copyright © 2002 – 2021 Nhan Hoa Software Company. All Rights
-                            Reserved.</p>
+                        <p class="mb-2"> {{ $config->footer }}</p>
                         <p class="mb-2"> {{ $config->store_name }}. Đại diện: {{ $config->store_name }}</p>
-                        <p class="mb-0">Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội
-                            cấp ngày 19/09/2002</p>
+                        <p class="mb-0">{{ $config->giayphep }}</p>
                     </div>
                 </div>
             </div>

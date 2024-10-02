@@ -8,7 +8,7 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="info">
                             <h1 class="title">
-                                Nhân Hoà Là Đối Tác Premier
+                                Chúng tôi Là Đối Tác Premier
                                 <span>
                                     Hàng Đầu Của Google Tại Việt Nam
                                 </span>
@@ -18,20 +18,20 @@
                                 tìm ra giải pháp vượt trội hơn mọi đối thủ cạnh tranh và mở ra nhiều cơ hội
                                 bước tiến mới phát triển hơn trong kỷ nguyên chuyển đổi số.
                             </div>
-                            <div class="logo-google">
-                                <a href="https://cloud.withgoogle.com/partners/detail/?id=ACkb94aonElWsteBUQmLWRQaWBOkSRKhJb3tnmQ_gSYX2CwxpSlNlEaToKBP0YHFUJJJdf7lHiLl&amp;hl=en"
+                            {{-- <div class="logo-google">
+                                <a
                                     target="_blank">
                                     <img src="https://nhanhoa.com/templates/images/v2/google/partner.png"
-                                        alt="Nhân Hoà Là ĐỐI TÁC UỶ QUYỀN HÀNG ĐẦU CỦA GOOGLE TẠI VIỆT NAM">
+                                        alt="{{ $config->store_name }}">
                                 </a>
 
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="img-banner">
-                            <img src="https://nhanhoa.com/templates/images/v2/google/google_slider_01.png"
-                                alt="ĐỐI TÁC UỶ QUYỀN HÀNG ĐẦU CỦA GOOGLE TẠI VIỆT NAM .">
+                            <img src="{{ asset($config->logo) }}"
+                                alt="{{ $config->store_name }} .">
                         </div>
                     </div>
                 </div>

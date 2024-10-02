@@ -2,7 +2,7 @@
     <div class="container">
         <div class="item">
             <div class="row align-items-center">
-                <div class="col-lg-7 col-md-7 col-12">
+                <div class="col-lg-12 col-md-12 col-12">
                     <div class="info-contact-website">
                         <div class="logo-footer">
                             <a href="{{ route('page.home') }}">
@@ -13,15 +13,14 @@
                             </a>
                         </div>
                         <div class="info">
-                            {{-- <p>
-                                Copyright © 2002 – 2024 Nhan Hoa Software Company. All Rights Reserved.
-                            </p> --}}
+                            <p>
+                                {{ $config->footer }}
+                            </p>
                             <p class="d-none d-md-block">
                                {{ $config->store_name }}. Đại diện: {{ $config->receiver }}
                             </p>
                             <p class="d-none d-md-block">
-                                Giấy phép kinh doanh số: 0101289966 do Sở kế hoạch và Đầu tư Hà nội cấp ngày
-                                19/09/2002
+                                {{ $config->giayphep }}
                             </p>
                             <p style="margin: 0;">
                                 <a href="javascript:;" class="">

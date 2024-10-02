@@ -45,6 +45,8 @@ class ConfigService
             $config->phone = $data['phone'];
             $config->email = $data['email'];
             $config->address = $data['address'];
+            $config->giayphep = $data['giayphep'];
+            $config->footer = $data['footer'];
             $config->save();
 
             // Thiết lập các cột khác

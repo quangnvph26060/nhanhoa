@@ -277,6 +277,25 @@
                                         src="{{ isset($config->logo) && !empty($config->logo) ? asset($config->logo) : asset('images/avatar2.jpg') }}"
                                         alt="image profile" class="avatar">
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="icon" class="form-label">Icon</label>
+                                    <div class="custom-file">
+                                        <input id="icon" class="custom-file-input @error('icon') is-invalid @enderror"
+                                            type="file" name="icon" accept="image/*">
+                                        <label class="custom-file-label" for="icon">Chọn Icon</label>
+                                    </div>
+                                    @error('icon')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <img id="profileImageIcon"
+                                        src="{{ isset($config->icon) && !empty($config->icon) ? asset($config->icon) : asset('images/avatar2.jpg') }}"
+                                        alt="image icon" class="icon">
+                                </div>
                             </div>
                             <!-- Second Column -->
                             <div class="col-lg-6">
@@ -327,23 +346,30 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="icon" class="form-label">Icon</label>
-                                    <div class="custom-file">
-                                        <input id="icon" class="custom-file-input @error('icon') is-invalid @enderror"
-                                            type="file" name="icon" accept="image/*">
-                                        <label class="custom-file-label" for="icon">Chọn Icon</label>
-                                    </div>
-                                    @error('icon')
+                                    <label for="giayphep" class="form-label">Giấy phép kinh doanh</label>
+                                    <input id="giayphep" class="form-control @error('config') is-invalid @enderror"
+                                        name="giayphep" type="text"
+                                        value="{{ old('giayphep', isset($config) ? $config->giayphep : '') }}">
+                                    @error('giayphep')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </div>
+
                                 <div class="form-group">
-                                    <img id="profileImageIcon"
-                                        src="{{ isset($config->icon) && !empty($config->icon) ? asset($config->icon) : asset('images/avatar2.jpg') }}"
-                                        alt="image icon" class="icon">
+                                    <label for="footer" class="form-label">Footer</label>
+                                    <input id="footer" class="form-control @error('footer') is-invalid @enderror"
+                                        name="footer" type="text"
+                                        value="{{ old('footer', isset($config) ? $config->footer : '') }}">
+                                    @error('footer')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
+
+
                             </div>
                         </div>
                         <!-- Buttons Row -->
