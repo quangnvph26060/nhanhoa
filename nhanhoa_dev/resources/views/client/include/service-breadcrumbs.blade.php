@@ -14,7 +14,7 @@
             <a href="{{ route('page.home') }}">
                 <img src="https://nhanhoa.com/templates/images/v2/mobile/icon_home.png" alt="Trang chủ">
             </a>
-            <a href="javascript:vod(0)">Dịch vụ Máy chủ</a>
+            <a href="javascript:vod(0)">Dịch vụ {{ $title }}</a>
         </nav>
     </div>
 </div>

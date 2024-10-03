@@ -26,6 +26,7 @@ class EmailController extends Controller
     public function emailServer(){
         $emailServer = $this->emailServerService->getAllEmailServers();
         $title = "Email Server";
+        
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
         return view('client.pages.email-server.index', compact('emailServer', 'title', 'customerreivew', 'footers'));

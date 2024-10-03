@@ -26,31 +26,35 @@ class CloudController extends Controller
         $clouds = $this->cloudService->getcloudByType(1);
         $title = "Cloud Server";
         $customerreivew  = CustomerReview::get();
+        $tieude = 'Cloud Server';
         $footers = Footer::get();
-        return view('client.pages.cloud-server.index', compact('titleSection', 'clouds', 'title', 'customerreivew'));
+        return view('client.pages.cloud-server.index', compact('titleSection', 'clouds', 'title', 'customerreivew', 'tieude'));
     }
 
     public function backup(){
         $cloudvps = $this->cloudBackupService->getBackupsByType(1);
         $cloudserver = $this->cloudBackupService->getBackupsByType(2);
         $title = "Cloud Backup";
+        $tieude = 'Cloud Backup';
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title', 'customerreivew'));
+        return view('client.pages.cloud-backup.index', compact('cloudvps', 'cloudserver', 'title', 'customerreivew', 'tieude'));
     }
 
     public function storage(){
         $title = "Cloud Storage";
         $customerreivew  = CustomerReview::get();
+        $tieude = 'Cloud Storage';
         $footers = Footer::get();
-        return view('client.pages.cloud-storage.index', compact('title', 'customerreivew'));
+        return view('client.pages.cloud-storage.index', compact('title', 'customerreivew', 'tieude'));
     }
     public function international(){
         $clouds = $this->cloudService->getcloudByType(2);
         $title = "Cloud VPS Quốc Tế";
+        $tieude = 'Cloud VPS Quốc Tế';
         $customerreivew  = CustomerReview::get();
         $footers = Footer::get();
-        return view('client.pages.cloud-international.index', compact('clouds', 'title', 'customerreivew'));
+        return view('client.pages.cloud-international.index', compact('clouds', 'title', 'customerreivew','tieude'));
     }
 
     public function cloudpay(Request $request){

@@ -5,7 +5,7 @@
             <span class="slogan-section text-center d-block">
                 Lý do nên lựa chọn
             </span>
-            6 lý do khách hàng nên sử dụng VPS Quốc tế tại Nhân Hòa
+            6 lý do khách hàng nên sử dụng VPS Quốc tế tại Chúng tôi
         </h2>
         <div class="info">
             <div class="row">
@@ -35,7 +35,7 @@
                             Chi phí tối ưu - Hiệu suất tối đa
                         </h3>
                         <div class="dsc">
-                            Nhân Hòa cung cấp cấu hình VPS quốc tế mạnh mẽ với giá thành hợp lý. Hạ tầng mạnh mẽ cùng với nhiều tính năng dịch vụ ưu việt mang lại hiệu suất cao cho các dịch vụ của người dùng.                        </div>
+                            Chúng tôi cung cấp cấu hình VPS quốc tế mạnh mẽ với giá thành hợp lý. Hạ tầng mạnh mẽ cùng với nhiều tính năng dịch vụ ưu việt mang lại hiệu suất cao cho các dịch vụ của người dùng.                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-6">
@@ -59,7 +59,7 @@
 
                         </h3>
                         <div class="dsc">
-                            Nhân Hòa đặt sự an toàn và bảo mật lên hàng đầu. VPS quốc tế được trang bị hệ thống bảo mật tiên tiến giúp ngăn chặn các cuộc tấn công DDoS, virus,... giúp bảo vệ dữ liệu của bạn an toàn.                        </div>
+                            Chúng tôi đặt sự an toàn và bảo mật lên hàng đầu. VPS quốc tế được trang bị hệ thống bảo mật tiên tiến giúp ngăn chặn các cuộc tấn công DDoS, virus,... giúp bảo vệ dữ liệu của bạn an toàn.                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-6">
@@ -79,7 +79,7 @@
                             Dễ dàng nâng cấp & mở rộng
                         </h3>
                         <div class="dsc">
-                            Với VPS quốc tế Nhân Hòa, bạn có thể dễ dàng nâng cấp tài nguyên (CPU, ổ cứng, RAM,...) nhanh chóng và dễ dàng mà không cần phải chuyển đổi dữ liệu hay chuyển từ máy chủ này sang máy chủ khác.                        </div>
+                            Với VPS quốc tế Chúng tôi, bạn có thể dễ dàng nâng cấp tài nguyên (CPU, ổ cứng, RAM,...) nhanh chóng và dễ dàng mà không cần phải chuyển đổi dữ liệu hay chuyển từ máy chủ này sang máy chủ khác.                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-6">
@@ -113,7 +113,7 @@
                             Sử dụng được hầu hết các hệ điều hành
                         </h3>
                         <div class="dsc">
-                            VPS quốc tế Nhân Hòa Hỗ trợ linh hoạt các hệ điều hành phổ biến như CentOS, Ubuntu, Debian và Windows từ 32bit đến 64bit                        </div>
+                            VPS quốc tế Chúng tôi Hỗ trợ linh hoạt các hệ điều hành phổ biến như CentOS, Ubuntu, Debian và Windows từ 32bit đến 64bit                        </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-6">

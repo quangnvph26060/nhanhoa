@@ -5,7 +5,7 @@
             <span class="slogan-section text-center d-block">
                 Lý do nên lựa chọn
             </span>
-            Server Chất Lượng Cao Của Nhân Hòa
+            Server Chất Lượng Cao Của Chúng tôi
         </h2>
         <div class="info">
             <div class="row">
@@ -60,7 +60,7 @@
 
                         </h3>
                         <div class="dsc">
-                            Hạ tầng dịch vụ được Nhân Hòa triển khai trên các cụm máy chủ cực mạnh sử dụng thiết bị của các hãng phần cứng uy tín như DELL, IBM, CISCO, HP và đặt tại các trung tâm dữ liệu hàng đầu Việt Nam theo chuẩn TIER3.
+                            Hạ tầng dịch vụ được Chúng tôi triển khai trên các cụm máy chủ cực mạnh sử dụng thiết bị của các hãng phần cứng uy tín như DELL, IBM, CISCO, HP và đặt tại các trung tâm dữ liệu hàng đầu Việt Nam theo chuẩn TIER3.
                         </div>
                     </div>
                 </div>
