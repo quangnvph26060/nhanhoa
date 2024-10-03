@@ -162,7 +162,7 @@
                 <div class="card-body">
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="hosting"
+                            <form method="POST" enctype="multipart/form-data" id="addhosting"
                                 action="{{ route('admin.hosting.addsubmit') }}">
                                 @csrf
                                 <div class="row">
@@ -337,7 +337,7 @@
                                 </div>
 
                                 <div class="modal-footer m-2">
-                                    <button type="button" class="btn btn-primary w-md" onclick="submithosting(event)">Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="submit_hosting(event)">Xác nhận</button>
                                 </div>
                             </form>
                         </div>
@@ -485,7 +485,7 @@
                     'func': function(value) {
                         return checkRequired(value);
                     },
-                    'message': generateErrorMessage('E0060')ss
+                    'message': generateErrorMessage('E0060')
                 }, ]
             },
             'email_account': {
@@ -499,12 +499,13 @@
                 }, ]
             },
 
-        }
+    }
 
-        function submithosting(event) {
+
+    function submit_hosting(event) {
             event.preventDefault();
             if (validateAllFields(validateorder)) {
-                document.getElementById('hosting').submit();
+                document.getElementById('addhosting').submit();
             }
         }
 

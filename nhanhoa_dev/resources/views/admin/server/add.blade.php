@@ -134,17 +134,17 @@
                     <div class="">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                             <form method="POST" enctype="multipart/form-data" id="server"
-                                action="{{ route('admin.server.addsubmit',) }}">
+                                action="{{ route('admin.server.addsubmit') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <!-- Existing fields -->
                                         <div>
                                             <label for="placeholderInput" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name"
+                                            <input type="text" class="form-control" name="name" id="name1"
                                                 >
                                             <div class="col-lg-9"><span class="invalid-feedback d-block"
-                                                    style="font-weight: 500" id="name_error"></span></div>
+                                                    style="font-weight: 500" id="name1_error"></span></div>
                                         </div>
 
                                         <div>
@@ -247,9 +247,9 @@
 </script>
 <script>
     var validateorder = {
-        'name': {
-            'element': document.getElementById('name'),
-            'error': document.getElementById('name_error'),
+        'name1': {
+            'element': document.getElementById('name1'),
+            'error': document.getElementById('name1_error'),
             'validations': [{
                 'func': function(value) {
                     return checkRequired(value);
