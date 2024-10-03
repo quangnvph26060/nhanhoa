@@ -162,7 +162,7 @@
                                         <div>
                                             <label for="cloudtypes_id" class="form-label">Loại Cloud </label>
                                             <select class="form-select" name="cloudtypes_id" id="cloudtypes_id">
-                                                <option value="">--- Chọn loại Cloud ---</option>
+                                                <option value="">--- Chọn loại ---</option>
                                                 <option {{ $cloud->cloudtypes_id == 1 ? 'selected' : '' }} value="1">SSD Cloud Server </option>
                                                 <option {{ $cloud->cloudtypes_id == 2 ? 'selected' : '' }} value="2">Cloud VPS Quốc Tế</option>
                                             </select>
