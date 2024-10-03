@@ -262,7 +262,7 @@
                         </div>
                     </div>
                     <div class="download">
-                        <a href="https://nhanhoa.com/nhan-hoa-app.html" title="" target="_blank">
+                        <a href="{{ route('page.call.phone', ['phone' => $config->phone]) }}" title="" >
                             <i class="fas fa-download fa-sm me-2" style="color: #74C0FC;"></i>
                             Hotline
                         </a>
