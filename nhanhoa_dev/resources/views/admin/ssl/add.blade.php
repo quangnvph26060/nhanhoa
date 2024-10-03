@@ -187,21 +187,21 @@
                                         <!-- Các trường bên phải -->
                                         <div>
                                             <label for="numberdomain" class="form-label">Số lượng tên miền</label>
-                                            <input type="text" class="form-control" name="numberdomain"
+                                            <input type="text" class="form-control" name="numberdomain" required
                                                 id="numberdomain">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="numberdomain_error"></span>
                                         </div>
                                         <div>
                                             <label for="sansupport" class="form-label">Hỗ trợ SAN</label>
-                                            <input type="text" class="form-control" name="sansupport" id="sansupport">
+                                            <input type="text" class="form-control" name="sansupport" id="sansupport" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="sansupport_error"></span>
                                         </div>
                                         <div>
                                             <label for="addressbar" class="form-label">Hiển thị trên thanh địa
                                                 chỉ</label>
-                                                <select class="form-select" name="addressbar" id="addressbar">
+                                                <select class="form-select" name="addressbar" id="addressbar" required>
                                                     <option value="">---Thanh địa chỉ màu xanh ---</option>
                                                     <option value="Có">Có  </option>
                                                     <option value="Không">Không</option>
@@ -212,13 +212,13 @@
                                         </div>
                                         <div>
                                             <label for="insurance" class="form-label">Bảo hiểm</label>
-                                            <input type="text" class="form-control" name="insurance" id="insurance">
+                                            <input type="text" class="form-control" name="insurance" id="insurance" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="insurance_error"></span>
                                         </div>
                                         <div>
                                             <label for="level" class="form-label">Level </label>
-                                            <select class="form-select" name="level" id="level">
+                                            <select class="form-select" name="level" id="level" required>
                                                 <option value="">--- Chọn level ---</option>
                                                 <option value="High">High </option>
                                                 <option value="Highest">Highest</option>
@@ -231,7 +231,7 @@
                                         </div>
                                         <div>
                                             <label for="time" class="form-label">Thời gian đăng ký</label>
-                                            <input type="number" class="form-control" name="time" id="time">
+                                            <input type="number" class="form-control" name="time" id="time" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="time_error"></span>
                                         </div>
@@ -251,7 +251,7 @@
                                         </div>
                                         <div class="form-group">
                                             <img id="profileImagelogo" style="width:100px; height:auto"
-                                                src="{{ isset($ssl->logo) && !empty($ssl->logo) ? asset($ssl->logo) : asset('images/avatar2.jpg') }}"
+                                                src="{{asset('images/avatar2.jpg') }}"
                                                 alt="image logo" class="logo">
                                         </div>
 

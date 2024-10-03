@@ -136,20 +136,20 @@
                                     <div class="col-lg-6 add_product">
                                         <!-- Các trường bên trái -->
                                         <div>
-                                            <label for="name" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name" value="{{ $ssl->name }}">
+                                            <label for="name" class="form-label">Tên gói</label>
+                                            <input type="text" class="form-control" name="name" id="name" value="{{ $ssl->name }}" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="name_error"></span>
                                         </div>
                                         <div>
                                             <label for="price" class="form-label">Giá sản phẩm</label>
-                                            <input type="number" class="form-control" name="price" id="price" value="{{ $ssl->price }}">
+                                            <input type="number" class="form-control" name="price" id="price" value="{{ $ssl->price }}" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="price_error"></span>
                                         </div>
                                         <div>
                                             <label for="ssltype" class="form-label">Loại SSL</label>
-                                            <select class="form-select" name="ssltype" id="ssltype">
+                                            <select class="form-select" name="ssltype" id="ssltype" required>
                                                 <option value="">--- Chọn loại SSL ---</option>
                                                 <option {{ $ssl->ssltype == 1 ? 'selected' : '' }} value="1">Comodo SSL </option>
                                                 <option {{ $ssl->ssltype == 2 ? 'selected' : '' }} value="2">Geotrust SSL</option>
@@ -160,19 +160,19 @@
                                         </div>
                                         <div>
                                             <label for="maintainfee" class="form-label">Phí duy trì</label>
-                                            <input type="text" class="form-control" name="maintainfee" id="maintainfee" value="{{ $ssl->maintainfee }}">
+                                            <input type="text" class="form-control" required name="maintainfee" id="maintainfee" value="{{ $ssl->maintainfee }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="maintainfee_error"></span>
                                         </div>
                                         <div>
                                             <label for="encoding" class="form-label">Mã hóa</label>
-                                            <input type="text" class="form-control" name="encoding" id="encoding" value="{{ $ssl->encoding }}">
+                                            <input type="text" class="form-control" name="encoding" required id="encoding" value="{{ $ssl->encoding }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="encoding_error"></span>
                                         </div>
                                         <div>
                                             <label for="certification" class="form-label">Chứng nhận</label>
-                                            <input type="text" class="form-control" name="certification"
+                                            <input type="text" class="form-control" name="certification" required
                                                 id="certification" value="{{ $ssl->certification }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="certification_error"></span>
@@ -183,34 +183,34 @@
                                         <!-- Các trường bên phải -->
                                         <div>
                                             <label for="numberdomain" class="form-label">Số lượng tên miền</label>
-                                            <input type="text" class="form-control" name="numberdomain"
+                                            <input type="text" class="form-control" name="numberdomain" required
                                                 id="numberdomain" value="{{ $ssl->numberdomain }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="numberdomain_error"></span>
                                         </div>
                                         <div>
                                             <label for="sansupport" class="form-label">Hỗ trợ SAN</label>
-                                            <input type="text" class="form-control" name="sansupport" id="sansupport" value="{{ $ssl->sansupport }}">
+                                            <input type="text" class="form-control" required name="sansupport" id="sansupport" value="{{ $ssl->sansupport }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="sansupport_error"></span>
                                         </div>
                                         <div>
                                             <label for="addressbar" class="form-label">Hiển thị trên thanh địa
                                                 chỉ</label>
-                                            <input type="text" class="form-control" name="addressbar" id="addressbar" value="{{ $ssl->addressbar }}">
+                                            <input type="text" class="form-control" required name="addressbar" id="addressbar" value="{{ $ssl->addressbar }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="addressbar_error"></span>
                                         </div>
                                         <div>
                                             <label for="insurance" class="form-label">Bảo hiểm</label>
-                                            <input type="text" class="form-control" name="insurance" id="insurance" value="{{ $ssl->insurance }}">
+                                            <input type="text" class="form-control" required name="insurance" id="insurance" value="{{ $ssl->insurance }}">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="insurance_error"></span>
                                         </div>
                                         <div>
                                             <label for="level" class="form-label">Level </label>
                                             <select class="form-select" name="level" id="level">
-                                                <option value="">--- Chọn level ---</option>
+                                                <option value="">--- Chọn level ---</option required>
                                                 <option  {{ $ssl->level == 'High' ? 'selected' : '' }} value="High">Hight </option>
                                                 <option  {{ $ssl->level == 'Highest' ? 'selected' : '' }} value="Highest">Highest</option>
                                                 <option  {{ $ssl->level == 'Standard' ? 'selected' : '' }} value="Standard">Standard</option>
@@ -222,7 +222,7 @@
                                         </div>
                                         <div>
                                             <label for="time" class="form-label">Thời gian đăng ký</label>
-                                            <input type="number" class="form-control" name="time" id="time" value="{{ $ssl->time }}">
+                                            <input type="number" class="form-control" name="time" id="time" value="{{ $ssl->time }}" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="time_error"></span>
                                         </div>
