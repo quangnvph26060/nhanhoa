@@ -128,7 +128,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm sản phẩm</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa sản phẩm</h4>
                 </div>
                 <div class="card-body">
                     <div class="">
@@ -227,7 +227,7 @@
                                             <label for="logo" class="form-label">Logo</label>
                                             <div class="custom-file">
                                                 <input id="logo"
-                                                    class="custom-file-input @error('logo') is-invalid @enderror" type="file"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" type="file" required
                                                     name="logo" accept="image/*">
                                                 <label class="custom-file-label" for="logo">Chọn logo</label>
                                             </div>

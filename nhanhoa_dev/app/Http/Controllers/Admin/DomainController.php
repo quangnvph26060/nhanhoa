@@ -44,15 +44,16 @@ class DomainController extends Controller
             "dichvu" => $request->dichvu,
             "dicvunamsau" => $request->dicvunamsau,
         ];
+            if ($request->file('logo')) {
+            $logo = $request->file('logo');
+            $directoryPath = 'public/domain';
 
-        $logo = $request->file('logo');
-        $directoryPath = 'public/domain';
+            $logoFileName = 'image_' . $logo->getClientOriginalName();
+            $logoFilePath = 'storage/domain/' . $logoFileName;
 
-        $logoFileName = 'image_' . $logo->getClientOriginalName();
-        $logoFilePath = 'storage/domain/' . $logoFileName;
-
-        Storage::putFileAs($directoryPath, $logo, $logoFileName);
-        $data['logo'] = $logoFilePath;
+            Storage::putFileAs($directoryPath, $logo, $logoFileName);
+            $data['logo'] = $logoFilePath;
+        }
 
         $domain = $this->domainService->createDomain($request->all());
 

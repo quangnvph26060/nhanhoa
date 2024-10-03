@@ -158,7 +158,7 @@
 
                                         <div>
                                             <label for="le_phi" class="form-label">Lệ Phí</label>
-                                            <input type="text" class="form-control" name="le_phi" id="le_phi" >
+                                            <input type="number" class="form-control" name="le_phi" id="le_phi" >
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
                                                     id="le_phi_error"></span>
@@ -197,7 +197,7 @@
                                             <label for="logo" class="form-label">Logo </label>
                                             <div class="custom-file">
                                                 <input id="logo"
-                                                    class="custom-file-input @error('logo') is-invalid @enderror"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" required
                                                     type="file" name="logo" accept="image/*">
                                                 <label class="custom-file-label" for="logo">Chọn logo</label>
                                             </div>

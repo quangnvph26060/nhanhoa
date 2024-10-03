@@ -188,7 +188,7 @@
                                             <label for="logo" class="form-label">Hình ảnh bài viết</label>
                                             <div class="custom-file">
                                                 <input id="logo"
-                                                    class="custom-file-input  @error('logo') is-invalid @enderror "
+                                                    class="custom-file-input  @error('logo') is-invalid @enderror " required
                                                     type="file" name="logo" accept="image/*">
                                                 <label class="custom-file-label" for="logo">Chọn ảnh</label>
                                             </div>

@@ -156,7 +156,7 @@
                                         <label for="logo" class="form-label">Avatar</label>
                                         <div class="custom-file">
                                             <input id="logo"
-                                                class="custom-file-input @error('logo') is-invalid @enderror" type="file"
+                                                class="custom-file-input @error('logo') is-invalid @enderror" type="file" 
                                                 name="avatar" accept="image/*">
                                             <label class="custom-file-label" for="logo">Chọn avatar</label>
                                         </div>
