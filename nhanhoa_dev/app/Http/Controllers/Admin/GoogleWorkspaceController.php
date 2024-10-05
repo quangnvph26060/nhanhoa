@@ -35,7 +35,7 @@ class GoogleWorkspaceController extends Controller
     public function addSubmitEducation(Request $request)
     {
         $education = $this->googleWorkspaceService->createGoogleWorkspaceEducation($request->all());
-        return redirect()->route('admin.googleworkspace.index');
+        return redirect()->route('admin.googleworkspace.index')->with('success','Thêm thành công');
     }
     public function editFormEducation($id){
         $title = 'Thay đổi Google Workspace Education';
@@ -49,7 +49,7 @@ class GoogleWorkspaceController extends Controller
         $education = $this->googleWorkspaceService->updateGoogleWorkspaceEducation($request->all(), $id);
         session()->flash('displaybusiness', 'none');
         session()->flash('displayeducation', 'block');
-        return redirect()->route('admin.googleworkspace.index');
+        return redirect()->route('admin.googleworkspace.index')->with('success','Thêm thành công');;
     }
 
     public function deleteEducation($id)
@@ -57,7 +57,7 @@ class GoogleWorkspaceController extends Controller
         $this->googleWorkspaceService->deleteGoogleWorkspaceEducation($id);
         session()->flash('displaybusiness', 'none');
         session()->flash('displayeducation', 'block');
-        return redirect()->route('admin.googleworkspace.index');
+        return redirect()->route('admin.googleworkspace.index')->with('success','Xóa thành công');;
     }
 
 
@@ -66,7 +66,7 @@ class GoogleWorkspaceController extends Controller
     {
         $business = $this->googleWorkspaceService->createGoogleWorkspaceBusiness($request->all());
 
-        return redirect()->route('admin.googleworkspace.index');
+        return redirect()->route('admin.googleworkspace.index')->with('success','Thêm thành công');;
     }
 
     public function editFormBusiness($id){
@@ -82,7 +82,7 @@ class GoogleWorkspaceController extends Controller
         $business = $this->googleWorkspaceService->updateGoogleWorkspaceBusiness($request->all(), $id);
         session()->flash('displaybusiness', 'block');
         session()->flash('displayeducation', 'none');
-        return redirect()->route('admin.googleworkspace.index');
+        return redirect()->route('admin.googleworkspace.index')->with('success','Sửa thành công');;
     }
 
     public function deleteBusiness($id)
@@ -90,6 +90,6 @@ class GoogleWorkspaceController extends Controller
         $this->googleWorkspaceService->deleteGoogleWorkspaceBusiness($id);
         session()->flash('displaybusiness', 'block');
         session()->flash('displayeducation', 'none');
-        return redirect()->route('admin.googleworkspace.index');
+        return redirect()->route('admin.googleworkspace.index')->with('success','Xóa thành công');;
     }
 }

@@ -136,10 +136,10 @@
                                         <!-- Tên dịch vụ -->
                                         <div>
                                             <label for="name" class="form-label">Tên gói dịch vụ</label>
-                                            <input type="text" class="form-control" name="name" id="name" value="{{ $email->name }}" placeholder="VD : Mini">
+                                            <input type="text" class="form-control" name="name" id="name1" value="{{ $email->name }}" placeholder="VD : Mini">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                    id="name_error"></span>
+                                                    id="name1_error"></span>
                                             </div>
                                         </div>
 
@@ -294,9 +294,9 @@ document.getElementById('logo').addEventListener('change', function(event) {
                     }
                 });
     var validateorder = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
+            'name1': {
+                'element': document.getElementById('name1'),
+                'error': document.getElementById('name1_error'),
                 'validations': [{
                     'func': function(value) {
                         return checkRequired(value);

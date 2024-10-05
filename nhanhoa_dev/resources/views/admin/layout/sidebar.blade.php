@@ -19,7 +19,7 @@
 <div class="sidebar" data-background-color="dark">
     <div class="sidebar-logo">
         <!-- Logo Header -->
-        <div class="logo-header image-container" data-background-color="white">
+        <div class="logo-header image-container" data-background-color="dark">
             <a href="{{ route('admin.dashboard') }}" class="logo ">
                 <img src="{{ asset($config->logo) }}" alt="navbar brand" class="navbar-brand image" height="50" />
             </a>

@@ -140,20 +140,20 @@
                                     <div class="col-lg-6 add_product">
                                         <!-- Các trường bên trái -->
                                         <div>
-                                            <label for="name" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name">
+                                            <label for="name" class="form-label">Tên gói</label>
+                                            <input type="text" class="form-control" name="name" id="name" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="name_error"></span>
                                         </div>
                                         <div>
                                             <label for="price" class="form-label">Giá sản phẩm</label>
-                                            <input type="number" class="form-control" name="price" id="price">
+                                            <input type="number" class="form-control" name="price" id="price" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="price_error"></span>
                                         </div>
                                         <div>
                                             <label for="ssltype" class="form-label">Loại SSL</label>
-                                            <select class="form-select" name="ssltype" id="ssltype">
+                                            <select class="form-select" name="ssltype" id="ssltype" required>
                                                 <option value="">--- Chọn loại SSL ---</option>
                                                 <option value="1">Comodo SSL </option>
                                                 <option value="2">Geotrust SSL</option>
@@ -164,19 +164,19 @@
                                         </div>
                                         <div>
                                             <label for="maintainfee" class="form-label">Phí duy trì</label>
-                                            <input type="text" class="form-control" name="maintainfee" id="maintainfee">
+                                            <input type="text" class="form-control" name="maintainfee" id="maintainfee" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="maintainfee_error"></span>
                                         </div>
                                         <div>
                                             <label for="encoding" class="form-label">Mã hóa</label>
-                                            <input type="text" class="form-control" name="encoding" id="encoding">
+                                            <input type="text" class="form-control" name="encoding" id="encoding" required>
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="encoding_error"></span>
                                         </div>
                                         <div>
                                             <label for="certification" class="form-label">Chứng nhận</label>
-                                            <input type="text" class="form-control" name="certification"
+                                            <input type="text" class="form-control" name="certification" required
                                                 id="certification">
                                             <span class="invalid-feedback d-block" style="font-weight: 500"
                                                 id="certification_error"></span>

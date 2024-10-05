@@ -336,7 +336,24 @@
         </div>
     </div>
 </div>
-
+@if (session('success'))
+<script>
+    $(document).ready(function() {
+            $.notify({
+                icon: 'icon-bell',
+                title: 'Email',
+                message: '{{ session('success') }}',
+            }, {
+                type: 'secondary',
+                placement: {
+                    from: "bottom",
+                    align: "right"
+                },
+                time: 1000,
+            });
+        });
+</script>
+@endif
 <script>
     function deleteConfirmation(id) {
         Swal.fire({

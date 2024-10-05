@@ -128,7 +128,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm sản phẩm</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Thêm Cloud</h4>
                 </div>
                 <div class="card-body">
                     <div class="">
@@ -141,10 +141,10 @@
                                         <!-- Existing fields -->
                                         <div>
                                             <label for="name" class="form-label">Tên sản phẩm</label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="VD: Sinh viên +">
+                                            <input type="text" class="form-control" name="name" id="name1" placeholder="VD: Sinh viên +">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                    id="name_error"></span>
+                                                    id="name1_error"></span>
                                             </div>
                                         </div>
 
@@ -291,9 +291,9 @@
                     }
                 });
     var validateorder = {
-           'name': {
-               'element': document.getElementById('name'),
-               'error': document.getElementById('name_error'),
+           'name1': {
+               'element': document.getElementById('name1'),
+               'error': document.getElementById('name1_error'),
                'validations': [{
                    'func': function(value) {
                        return checkRequired(value);

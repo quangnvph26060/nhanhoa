@@ -189,28 +189,28 @@
                                         <!-- Tên gói -->
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Tên gói</label>
-                                            <input type="text" class="form-control border border-primary" name="name" id="name" placeholder="VD: QUẢN TRỊ CƠ BẢN" value="{{ $service->name }}">
-                                            <span class="invalid-feedback d-block" id="name_error"></span>
+                                            <input type="text" required class="form-control border border-primary" name="name" id="name1" placeholder="VD: QUẢN TRỊ CƠ BẢN" value="{{ $service->name }}">
+                                            <span class="invalid-feedback d-block" id="name1_error"></span>
                                         </div>
 
                                         <!-- Hạng mục thực hiện -->
                                         <div class="mb-3">
                                             <label for="category_implementation" class="form-label">Hạng mục thực hiện</label>
-                                            <input type="text" class="form-control border border-primary" name="category_implementation" id="category_implementation" placeholder=" VD: 15 phút" value="{{ $service->category_implementation }}">
+                                            <input type="text" required class="form-control border border-primary" name="category_implementation" id="category_implementation" placeholder=" VD: 15 phút" value="{{ $service->category_implementation }}">
                                             <span class="invalid-feedback d-block" id="category_implementation_error"></span>
                                         </div>
 
                                         <!-- Chuyển dữ liệu website -->
                                         <div class="mb-3">
                                             <label for="website_data_migration" class="form-label">Chuyển dữ liệu website</label>
-                                            <input type="text" class="form-control border border-primary" name="website_data_migration" id="website_data_migration" placeholder="VD: Tối đa 10 website hoặc 50GB/tháng" value="{{ $service->website_data_migration }}">
+                                            <input type="text" required class="form-control border border-primary" name="website_data_migration" id="website_data_migration" placeholder="VD: Tối đa 10 website hoặc 50GB/tháng" value="{{ $service->website_data_migration }}">
                                             <span class="invalid-feedback d-block" id="website_data_migration_error"></span>
                                         </div>
 
                                         <!-- Đơn giá/tháng -->
                                         <div class="mb-3">
                                             <label for="price" class="form-label">Đơn giá/tháng</label>
-                                            <input type="number" class="form-control border border-success" name="price" id="price"  placeholder="VD: Nhập giá" value="{{ $service->price }}">
+                                            <input type="number" required class="form-control border border-success" name="price" id="price"  placeholder="VD: Nhập giá" value="{{ $service->price }}">
                                             <span class="invalid-feedback d-block" id="price_error"></span>
                                         </div>
                                     </div>
@@ -309,9 +309,9 @@
 
 
     var validate = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
+            'name1': {
+                'element': document.getElementById('name1'),
+                'error': document.getElementById('name1_error'),
                 'validations': [{
                     'func': function(value) {
                         return checkRequired(value);

@@ -259,9 +259,9 @@
 </div>
 <script>
     var validateServerLocation = {
-    'name': {
-        'element': document.getElementById('name'),
-        'error': document.getElementById('name_error'),
+    'name1': {
+        'element': document.getElementById('name1'),
+        'error': document.getElementById('name1_error'),
         'validations': [{
             'func': function(value) {
                 return checkRequired(value);

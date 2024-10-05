@@ -122,13 +122,13 @@
 
                                     <div class="form-group">
                                         <label for="contact_person" class="form-label">Người đại diện</label>
-                                        <input type="text" class="form-control" name="contact_person" id="contact_person" >
+                                        <input type="text" class="form-control" name="contact_person" id="contact_person"required >
                                         <div class="invalid-feedback" id="contact_person_error"></div>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="phone" class="form-label">Phone</label>
-                                        <input type="text" class="form-control" name="phone" id="phone" >
+                                        <input type="text" class="form-control" name="phone" id="phone" required>
                                         <div class="invalid-feedback" id="phone_error"></div>
                                     </div>
 
@@ -139,14 +139,14 @@
                                 <div class="col-lg-6 add_product">
                                     <div class="form-group">
                                         <label for="address" class="form-label">Địa chỉ</label>
-                                        <input type="text" class="form-control" name="address" id="address" >
+                                        <input type="text" class="form-control" name="address" id="address" required>
                                         <div class="invalid-feedback" id="address_error"></div>
                                     </div>
 
 
                                     <div class="form-group">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email" >
+                                        <input type="email" class="form-control" name="email" id="email" required>
                                         <div class="invalid-feedback" id="email_error"></div>
                                     </div>
 

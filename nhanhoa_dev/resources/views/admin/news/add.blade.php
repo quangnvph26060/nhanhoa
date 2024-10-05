@@ -207,7 +207,7 @@
 
                                         <div class="form-group">
                                             <label class="form-label" for="content">Nội dung bài báo:</label><br>
-                                            <textarea name="content" class="form-control" id="content" rows="10"
+                                            <textarea required name="content" class="form-control" id="content" rows="10"
                                                 cols="80"></textarea><br><br>
                                         </div>
                                     </div>

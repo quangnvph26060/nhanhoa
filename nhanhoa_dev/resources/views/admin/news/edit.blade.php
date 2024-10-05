@@ -160,7 +160,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title" style="text-align: center; color:white">Thêm tin tức</h4>
+                    <h4 class="card-title" style="text-align: center; color:white">Sửa tin tức</h4>
                 </div>
                 <div class="card-body">
 
@@ -193,14 +193,14 @@
                                             <label for="logo" class="form-label">Hình ảnh bài viết</label>
                                             <div class="custom-file">
                                                 <input id="logo"
-                                                    class="custom-file-input @error('logo') is-invalid @enderror"
+                                                    class="custom-file-input @error('logo') is-invalid @enderror" required
                                                     type="file" name="logo" accept="image/*">
                                                 <label class="custom-file-label" for="logo">Chọn ảnh</label>
                                             </div>
 
                                             <div class="form-group">
                                                 <img id="profileImage" style="width: 150px; height: auto"
-                                                    src="{{ isset($new->logo) && !empty($new->logo) ? asset($new->logo) : asset('images/avatar2.jpg') }}"
+                                                    src="{{ isset($new->logo) && !empty($new->logo) ? asset($new->logo) : asset('images/avatar2.jpg') }}" required
                                                     alt="image profile" class="avatar">
                                             </div>
                                         </div>
@@ -208,14 +208,14 @@
 
                                         <div class="form-group">
                                             <label class="form-label" for="title">Tiêu đề bài báo:</label><br>
-                                            <input type="text" class="form-control" id="title" name="title"
+                                            <input type="text" class="form-control" id="title" name="title" required
                                                 style="width:100%; padding: 10px;" required value="{{ $new->title }}">
                                         </div>
 
 
                                         <div class="form-group">
                                             <label class="form-label" for="content">Nội dung bài báo:</label><br>
-                                            <textarea name="content" class="form-control" id="content" rows="10"
+                                            <textarea name="content" class="form-control" id="content" rows="10" required
                                                 cols="80">{{ $new->content }}</textarea>
                                         </div>
                                     </div>

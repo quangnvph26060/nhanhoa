@@ -180,7 +180,7 @@ function generateErrorMessage(code, values = []) {
          E0081: 'Nhập địa chỉ IP.',
          // service
          E0081: 'Nhập tên gói.',
-         E0082: 'Nhập nạng mục thực hiện.',
+         E0082: 'Nhập hạng mục thực hiện.',
          E0083: 'Nhập chuyển dữ liệu website.',
          E0084: 'Nhập giá.'
 

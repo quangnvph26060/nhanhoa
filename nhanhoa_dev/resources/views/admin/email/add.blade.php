@@ -136,10 +136,10 @@
                                         <!-- Tên dịch vụ -->
                                         <div>
                                             <label for="name" class="form-label">Tên gói dịch vụ</label>
-                                            <input type="text" class="form-control" name="name" id="name" placeholder="VD : Mini">
+                                            <input type="text" class="form-control" name="name" id="name1" placeholder="VD : Mini">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                    id="name_error"></span>
+                                                    id="name1_error"></span>
                                             </div>
                                         </div>
 
@@ -199,7 +199,7 @@
                                         </div>
                                         <div class="form-group">
                                             <img id="profileImagelogo" style="width:100px; height:auto"
-                                                src="{{ isset($email->logo) && !empty($email->logo) ? asset($email->logo) : asset('images/avatar2.jpg') }}"
+                                                src="{{ asset('images/avatar2.jpg') }}"
                                                 alt="image logo" class="logo">
                                         </div>
 
@@ -294,9 +294,9 @@ document.getElementById('logo').addEventListener('change', function(event) {
                     }
                 });
     var validateorder = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
+            'name1': {
+                'element': document.getElementById('name1'),
+                'error': document.getElementById('name1_error'),
                 'validations': [{
                     'func': function(value) {
                         return checkRequired(value);

@@ -139,11 +139,11 @@
                                     <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="nameInput" class="form-label">Tên gói</label>
-                                            <input type="text" class="form-control" name="name" id="name"
+                                            <input type="text" class="form-control" name="name" id="name1"
                                                 value="{{ $hosting->name }}">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                    id="name_error"></span>
+                                                    id="name1_error"></span>
                                             </div>
                                         </div>
 
@@ -342,9 +342,9 @@
                     }
                 });
     var validateorder = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
+            'name1': {
+                'element': document.getElementById('name1'),
+                'error': document.getElementById('name1_error'),
                 'validations': [{
                     'func': function(value) {
                         return checkRequired(value);

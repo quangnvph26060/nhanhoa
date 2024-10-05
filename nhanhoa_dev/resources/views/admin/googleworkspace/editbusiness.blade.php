@@ -125,19 +125,19 @@
                     <h4 class="card-title" style="text-align: center; color:white">Sửa Google Workspace - Business</h4>
                 </div>
                 <div class="card-body">
-                    <div class="" id="business" style="display: block;">
+                    <div class=""  style="display: block;">
                         <div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-                            <form method="POST" enctype="multipart/form-data" id="business"
-                                action="{{ route('admin.googleworkspace.busniess.editsubmit', ['id' => $business->id]) }}">
+                            <form method="POST" enctype="multipart/form-data"
+                                action="{{ route('admin.googleworkspace.busniess.editsubmit', ['id' => $business->id]) }}" id="business">
                                 @csrf
                                 <div class="row">
                                     <div class="col-lg-6 add_product">
                                         <div>
                                             <label for="name" class="form-label">Tên gói</label>
-                                            <input type="text" class="form-control" name="name" id="name" required value="{{ $business->name }}">
+                                            <input type="text" class="form-control" name="name" id="name1" required value="{{ $business->name }}">
                                             <div class="col-lg-9">
                                                 <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                    id="name_error"></span>
+                                                    id="name1_error"></span>
                                             </div>
                                         </div>
 
@@ -208,7 +208,7 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer m-2">
-                                    <button type="button" class="btn btn-primary w-md" onclick="submitbusniess(event)">Xác nhận</button>
+                                    <button type="button" class="btn btn-primary w-md" onclick="busniesssubmit(event)">Xác nhận</button>
                                 </div>
                             </form>
                         </div>
@@ -224,9 +224,9 @@
 </div>
 <script>
      var validatebusiness = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
+            'name1': {
+                'element': document.getElementById('name1'),
+                'error': document.getElementById('name1_error'),
                 'validations': [{
                     'func': function(value) {
                         return checkRequired(value);
@@ -297,12 +297,14 @@
 
     }
 
-    function submitbusniess(event) {
-        event.preventDefault();
-        if (validateAllFields(validatebusiness)) {
-            document.getElementById('busniess').submit();
-        }
+    function busniesssubmit(event) {
+    event.preventDefault();
+    if (validateAllFields(validatebusiness)) {
+        console.log(document.getElementById('business'));
+        document.getElementById('business').submit();  // Đã chỉnh 'busniess' thành 'business'
     }
+}
+
 </script>
 @endsection
 

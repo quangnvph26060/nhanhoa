@@ -121,12 +121,12 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="contact_person" class="form-label">Người đại diện</label>
-                                        <input type="text" class="form-control" name="contact_person" value="{{ $partner->contact_person }}" id="contact_person" >
+                                        <input type="text" class="form-control" name="contact_person" required value="{{ $partner->contact_person }}" id="contact_person" >
                                         <div class="invalid-feedback" id="contact_person_error"></div>
                                     </div>
                                     <div class="form-group">
                                         <label for="phone" class="form-label">Phone</label>
-                                        <input type="text" class="form-control" name="phone" id="phone" value="{{ $partner->phone }}" >
+                                        <input type="text" class="form-control" name="phone" id="phone"  required value="{{ $partner->phone }}" >
                                         <div class="invalid-feedback" id="phone_error"></div>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
                                 <div class="col-lg-6 add_product">
                                     <div class="form-group">
                                         <label for="address" class="form-label">Địa chỉ</label>
-                                        <input type="text" class="form-control" name="address" value="{{ $partner->address }}" id="address" >
+                                        <input type="text" class="form-control" name="address" required value="{{ $partner->address }}" id="address" >
                                         <div class="invalid-feedback" id="address_error"></div>
                                     </div>
 
@@ -142,7 +142,7 @@
 
                                     <div class="form-group">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" name="email" value="{{ $partner->email }}" id="email" >
+                                        <input type="email" class="form-control" name="email" required value="{{ $partner->email }}" id="email" >
                                         <div class="invalid-feedback" id="email_error"></div>
                                     </div>
 

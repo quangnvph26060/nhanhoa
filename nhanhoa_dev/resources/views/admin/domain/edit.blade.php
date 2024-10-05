@@ -135,10 +135,10 @@
                                         <div>
                                             <label for="name" class="form-label">Tên miền</label>
                                             <input placeholder=".net.vn/ .com.vn/ .com" type="text" class="form-control"
-                                                name="name" id="name" value="{{ $domain->name }}">
+                                                name="name" id="name1" value="{{ $domain->name }}">
                                                 <div class="col-lg-9">
                                                     <span class="invalid-feedback d-block" style="font-weight: 500"
-                                                        id="name_error"></span>
+                                                        id="name1_error"></span>
                                                 </div>
                                         </div>
 
@@ -248,9 +248,9 @@
     }
 
     var validateorder = {
-            'name': {
-                'element': document.getElementById('name'),
-                'error': document.getElementById('name_error'),
+            'name1': {
+                'element': document.getElementById('name1'),
+                'error': document.getElementById('name1_error'),
                 'validations': [{
                     'func': function(value) {
                         return checkRequired(value);
@@ -308,16 +308,16 @@
                     'message': generateErrorMessage('E0027')
                 }, ]
             },
-            'logo': {
-                'element': document.getElementById('logo'),
-                'error': document.getElementById('logo_error'),
-                'validations': [{
-                    'func': function(value) {
-                        return checkRequired(value);
-                    },
-                    'message': generateErrorMessage('E0028')
-                }, ]
-            },
+            // 'logo': {
+            //     'element': document.getElementById('logo'),
+            //     'error': document.getElementById('logo_error'),
+            //     'validations': [{
+            //         'func': function(value) {
+            //             return checkRequired(value);
+            //         },
+            //         'message': generateErrorMessage('E0028')
+            //     }, ]
+            // },
 
         }
 

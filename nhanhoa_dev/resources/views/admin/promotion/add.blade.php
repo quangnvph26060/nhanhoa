@@ -135,7 +135,7 @@
                                         <!-- Input Name -->
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Khuyến mãi</label>
-                                            <input type="text" class="form-control" name="name" id="name"
+                                            <input type="text" class="form-control" name="name" id="name" required
                                                 placeholder="Nhập tên khuyến mãi">
                                         </div>
 
