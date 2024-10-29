@@ -239,7 +239,7 @@
                                                             <p><strong>Điều hòa nhiệt độ : </strong> {{$item->ip_address }}</p>
                                                             <p><strong>Ổ cắm mạng : </strong> {{$item->network_socket }}</p>
                                                             <p><strong>Địa chỉ IP : </strong> {{$item->ip_address }}</p>
-                                                            <p><strong>Khuyễn mãi : </strong> {{$item->promotion ? $item->promotion->name : '' }}</p>
+                                                            <p><strong>Khuyễn mãi : </strong> {{$item->promotion ? $item->promotion->name : '' }} </p>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
