@@ -56,12 +56,14 @@ class ServerController extends Controller
     }
 
     public function indexlocation(){
+        $title = "Danh sách vị trí máy chủ";
         $servers = $this->serverService->getServerLocationAll();
-        return view('admin.server.indexlocation', compact('servers'));
+        return view('admin.server.indexlocation', compact('servers', 'title'));
     }
     public function addformlocation(){
+        $title = "Thêm vị trí máy chủ";
         $promotion = $this->promotionService->getPromotionAll();
-        return view('admin.server.addserverlocation', compact('promotion'));
+        return view('admin.server.addserverlocation', compact('promotion', 'title'));
     }
 
     public function addsubmitlocation(Request $request){
@@ -83,6 +85,6 @@ class ServerController extends Controller
 
     public function editsubmitlocation($id, Request $request){
         $server = $this->serverService->updateServerLocation($request->all(), $id);
-        return redirect()->route('admin.server.index')->with('success', 'Sửa thành công vị trí máy chủ ! ');
+        return redirect()->route('admin.server.indexlocation')->with('success', 'Sửa thành công vị trí máy chủ ! ');
     }
 }

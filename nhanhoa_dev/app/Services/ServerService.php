@@ -191,7 +191,7 @@ class ServerService
                 'air_conditioning' => $data['air_conditioning'], // Điều hoà nhiệt độ
                 'network_socket' => $data['network_socket'], // Ổ cắm mạng
                 'ip_address' => $data['ip_address'], // Địa chỉ IP
-                'promotion_id' => $data['promotion'] // Khuyến mãi
+                'promotion_id' => !empty($data['promotion_id']) ? $data['promotion_id'] : null,
             ];
 
             $serverlocation = $this->serverLocation->create($datanew);
@@ -223,7 +223,7 @@ class ServerService
                 'air_conditioning' => $data['air_conditioning'], // Điều hoà nhiệt độ
                 'network_socket' => $data['network_socket'], // Ổ cắm mạng
                 'ip_address' => $data['ip_address'], // Địa chỉ IP
-                'promotion_id' => $data['promotion'] // Khuyến mãi
+                'promotion_id' => !empty($data['promotion_id']) ? $data['promotion_id'] : null,
             ];
             $serverlocation->update($datanew);
             DB::commit();
