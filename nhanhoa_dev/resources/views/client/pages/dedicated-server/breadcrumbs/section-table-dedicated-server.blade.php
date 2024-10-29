@@ -31,7 +31,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="info">
+                                <div class="info" style="min-height: 370px !important">
                                     <ul class="pl-0">
                                         <li style="flex-wrap:nowrap;"><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span
                                                 class="package-title"> CPU: {{ $item->cpu }}</span></li>

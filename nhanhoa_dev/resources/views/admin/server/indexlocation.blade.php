@@ -174,7 +174,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="dataTables_length" id="basic-datatables_length">
-                                        <a class="btn btn-primary" href="{{ route('admin.server.addform') }}">Thêm
+                                        <a class="btn btn-primary" href="{{ route('admin.server.addformlocation') }}">Thêm
                                             mới</a>
                                     </div>
                                 </div>

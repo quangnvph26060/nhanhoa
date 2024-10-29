@@ -130,11 +130,11 @@
                             <div class="col-lg-6 add_product">
                                 <div>
                                     <label for="name" class="form-label">Tên gói</label>
-                                    <input type="text" class="form-control" name="name" id="name" value="{{ $serverlocation->name }}"
+                                    <input type="text" class="form-control" name="name" id="name1" value="{{ $serverlocation->name }}"
                                         required>
                                     <div class="col-lg-9">
                                         <span class="invalid-feedback d-block" style="font-weight: 500"
-                                            id="name_error"></span>
+                                            id="name1_error"></span>
                                     </div>
                                 </div>
 
