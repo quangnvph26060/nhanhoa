@@ -104,8 +104,6 @@
                                                     class="package-title">
                                                     Email Account: </span><strong> {{ $item->email_account }}</strong>
                                             </li>
-
-
                                             @forelse ($item->promotion as $key => $promotion )
                                             <li class="promotion-pricing-table"> <i class="fas fa-check-circle"
                                                     style="color: #red;"></i> {{ $promotion->promotion->name }}</li>

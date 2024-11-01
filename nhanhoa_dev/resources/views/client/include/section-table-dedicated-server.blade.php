@@ -30,7 +30,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="info">
+                                    <div class="info" style="min-height:340px ">
                                         <ul class="pl-0">
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">BW
                                                     trong nước: </span><strong> {{ $item->bw_in_country	 }} </strong></li>
@@ -54,8 +54,11 @@
                                                     cắm mạng: </span><strong> {{ $item->network_socket	 }}</strong></li>
                                             <li><i class="fas fa-check-circle" style="color: #4ABAB9;"></i> <span class="package-title">Địa
                                                     chỉ IP: </span><strong> {{ $item->ip_address	 }}</strong></li>
+                                            @if($item->promotion)
                                             <li class="promotion-pricing-table"><i class="fas fa-check-circle" style="color: #4ABAB9;"></i>
-                                                {{ $item->promotion->name }}</li>
+                                                {{ $item->promotion? $item->promotion->name : '' }}</li>
+                                            @endif
+
                                         </ul>
                                     </div>
                                     <div class="link-add-cart add_to_cart that_data_service_1462">

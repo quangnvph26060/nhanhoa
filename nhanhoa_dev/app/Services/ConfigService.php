@@ -43,6 +43,7 @@ class ConfigService
             // Update user details
             $config->store_name = $data['store_name'];
             $config->phone = $data['phone'];
+            $config->phone_hotline = $data['phone_hotline'];
             $config->email = $data['email'];
             $config->address = $data['address'];
             $config->giayphep = $data['giayphep'];

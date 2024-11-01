@@ -721,7 +721,7 @@
         <div class="header-right">
 
             <div class="btn-action-header btn-promotion">
-                <a href="{{ route('page.call.phone', ['phone' => $config->phone]) }}">
+                <a href="{{ route('page.call.phone', ['phone' => $config->phone_hotline]) }}">
                     Hotline
                 </a>
             </div>

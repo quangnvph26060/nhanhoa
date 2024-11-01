@@ -21,6 +21,7 @@ class Config extends Model
         'email',
         'store_name',
         'phone',
+        'phone_hotline',
         'address',
         'giayphep',
         'footer'

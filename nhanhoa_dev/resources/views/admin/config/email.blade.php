@@ -28,7 +28,8 @@
         .card-header {
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            background: linear-gradient(135deg, #6f42c1, #007bff);
+            background: #31c5f4 !important;
+
         }
 
         .card-body {

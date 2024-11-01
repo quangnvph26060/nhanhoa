@@ -33,7 +33,7 @@
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
                                                 alt="Mail"> Mail: {{ $config->email }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
-                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
+                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone_hotline}}
                                         </p>
                                     </div>
                                 </div>
@@ -49,7 +49,7 @@
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
                                                 alt="Mail"> Mail: {{ $config->email }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
-                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
+                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone_hotline}}
                                         </p>
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/icon_fax.svg"
                                                 alt="Mail"> Mail: {{ $config->email }}</p>
                                         <p><img src="https://nhanhoa.com/templates/images/v2/home/smartphone.svg"
-                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone }}
+                                                alt="Hotline"> Phản ánh chất lượng dịch vụ: {{ $config->phone_hotline}}
                                         </p>
                                     </div>
                                 </div>

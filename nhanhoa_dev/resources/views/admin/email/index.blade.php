@@ -24,7 +24,7 @@
     }
 
     .card-header {
-        background: linear-gradient(135deg, #6f42c1, #007bff);
+       background: #31c5f4 !important;
         color: white;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;

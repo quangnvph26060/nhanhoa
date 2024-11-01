@@ -51,7 +51,7 @@
                 @if(auth()->user()->role_id == 1)
                 <li class="nav-item">
                     <a data-bs-toggle="collapse" href="#cauhinh">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-cogs"></i>
                         <p>Cấu hính</p>
                         <span class="caret"></span>
                     </a>
@@ -70,7 +70,7 @@
 
                             <li class="nav-item">
                                 <a data-bs-toggle="collapse" href="#footer">
-                                    <i class="fas fa-users"></i>
+                                    {{-- <i class="fas fa-users"></i> --}}
                                     <p>Footer</p>
                                     <span class="caret"></span>
                                 </a>

@@ -30,7 +30,7 @@
     .card-header {
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        background: linear-gradient(135deg, #6f42c1, #007bff);
+       background: #31c5f4 !important;
     }
 
     .card-body {
@@ -305,6 +305,18 @@
                                         name="receiver" type="text"
                                         value="{{ old('receiver', isset($config) ? $config->receiver : '') }}">
                                     @error('receiver')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone_hotline" class="form-label">Phản ảnh chất lượng dịch vụ </label>
+                                    <input id="phone_hotline" class="form-control @error('phone_hotline') is-invalid @enderror"
+                                        name="phone_hotline" type="text"
+                                        value="{{ old('phone_hotline', isset($config) ? $config->phone_hotline : '') }}">
+                                    @error('phone_hotline')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
